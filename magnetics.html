@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applied Magnetism &amp; Permanent-Magnet Undulators — Magnetostatic Simulation | Dr. Nezah Balal</title>
+<meta name="description" content="Design of permanent-magnet (NdFeB) helical undulators and applied magnet systems: magnetostatic field-map computation, on-axis field and harmonics, and tolerance studies in COMSOL and Radia.">
+<meta name="keywords" content="applied magnetism, permanent magnet undulator, NdFeB, Halbach array, magnetized helix, magnetostatic simulation, magnetic field map, helical undulator design, magnet system, COMSOL AC/DC, Radia, Nezah Balal">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Magnetostatic Design of Permanent-Magnet Helical Undulators","about":["applied magnetism","permanent-magnet undulator","magnetostatic simulation","magnetic field map"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
+  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Applied magnetism · Magnet systems</p>
+  <h1>Applied magnetism &amp; permanent-magnet undulators</h1>
+  <p class="lead">Undulators and magnet systems are only as good as their field. As head of the
+    Applied Magnetic Systems Laboratory, I design <strong>permanent-magnet (NdFeB) helical
+    undulators</strong> and related magnet assemblies, computing the field with
+    <strong>magnetostatic simulation</strong> and validating against measurement.</p>
+
+  <figure>
+    <img src="assets/magnetized-helix-undulator-comsol.gif" alt="COMSOL magnetostatic simulation of a permanent-magnet helical undulator built from two magnetized helices, showing the on-axis magnetic field dynamics.">
+    <figcaption>Magnetostatic model of a helical undulator formed from magnetized helices (COMSOL).
+      The geometry sets the on-axis field amplitude, period and harmonic content that determine
+      undulator performance.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="assets/undulator-field-map.gif" alt="Simulated magnetic field map of a two-helix permanent-magnet undulator rod, used to extract on-axis field and field quality.">
+    <figcaption>Field-map computation for a two-helix magnet rod — the basis for extracting on-axis
+      field, field quality, and sensitivity to magnet tolerances.</figcaption>
+  </figure>
+
+  <h2>What the modeling delivers</h2>
+  <p>For a candidate magnet geometry — helices, ring sectors, or Halbach-type arrays — the model
+    computes the three-dimensional field, the on-axis amplitude and its spatial harmonics, and the
+    forces and torques on the assembly. Parametric sweeps then quantify how field amplitude and
+    quality respond to geometry and to realistic magnet tolerances, which is essential for a
+    manufacturable design.</p>
+
+  <h2>From model to hardware</h2>
+  <p>This work supports compact permanent-magnet undulators for free-electron radiation sources and
+    inverse-FEL acceleration (see <a href="accelerators.html">compact accelerators</a>), including an
+    international industrial collaboration on undulator fabrication. The same magnetostatic workflow
+    applies to sensors, actuators and magnet systems generally.</p>
+
+  <div class="tags"><span class="tag">Permanent magnets (NdFeB)</span><span class="tag">Helical undulator</span>
+    <span class="tag">Halbach array</span><span class="tag">Magnetostatics</span>
+    <span class="tag">Field map &amp; harmonics</span><span class="tag">COMSOL AC/DC · Radia</span></div>
+
+  <p class="back"><a href="index.html">← All research projects</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
+  Open to research collaboration &amp; consulting — <a href="https://orcid.org/0000-0003-4382-4053">contact</a>.
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

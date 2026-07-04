@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compact Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL) — COMSOL Simulation | Dr. Nezah Balal</title>
+<meta name="description" content="Compact particle acceleration by the inverse free-electron laser (IFEL) mechanism: a THz-driven, tapered helical undulator gives MeV-scale energy gain over centimeters, modeled in COMSOL Multiphysics.">
+<meta name="keywords" content="compact particle accelerator, inverse free electron laser, IFEL, helical undulator, THz acceleration, laser driven accelerator, free electron laser, COMSOL beam dynamics, relativistic Lorentz force, Nezah Balal">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Compact Particle Acceleration by the Inverse Free-Electron Laser (IFEL) Mechanism","about":["compact particle accelerator","inverse free-electron laser","helical undulator","terahertz acceleration"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
+  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Compact accelerators · Free-electron devices</p>
+  <h1>Compact particle accelerators &amp; the inverse free-electron laser (IFEL)</h1>
+  <p class="lead">Conventional RF accelerators are large and expensive. The <strong>inverse free-electron
+    laser (IFEL)</strong> offers a route to <strong>compact acceleration</strong>: an electromagnetic
+    wave transfers energy to a relativistic electron beam as it wiggles through a helical undulator,
+    reaching high gradients over centimeter-scale interaction lengths.</p>
+
+  <figure>
+    <img src="assets/ifel-compact-accelerator.gif" alt="COMSOL simulation of inverse free-electron laser (IFEL) compact acceleration: a relativistic electron in a tapered helical undulator driven by a circular terahertz wave, gaining energy from 1.2 to 2.97 MeV.">
+    <figcaption>IFEL acceleration modeled in COMSOL Multiphysics: a relativistic electron in a
+      tapered helical undulator, driven by a circularly-polarized THz wave. Kinetic energy climbs
+      1.20 → 2.97 MeV; the resonance taper (pitch and field) keeps the electron in phase.</figcaption>
+  </figure>
+
+  <h2>The physics</h2>
+  <p>An electron passing through a periodic magnetic (undulator) field acquires a transverse velocity
+    component. When a co-propagating electromagnetic wave — here a circularly-polarized terahertz
+    drive — is phase-matched to that transverse motion, the wave does net work on the electron and it
+    <em>gains</em> energy (the inverse of the free-electron-laser radiation process). Sustaining the
+    energy exchange as the electron accelerates requires <strong>tapering</strong> the undulator
+    (its period/pitch and field) to hold the resonance condition.</p>
+
+  <h2>The model</h2>
+  <p>The trajectory is computed from the full relativistic Lorentz-force equation of motion in
+    COMSOL Multiphysics, coupling the helical undulator field and the THz drive. Outputs include the
+    3-D electron trajectory, the energy-gain curve along the interaction length, and the taper profile
+    required for phase-locked acceleration — the design tools needed to size a real compact-accelerator
+    stage.</p>
+
+  <div class="tags"><span class="tag">Inverse FEL</span><span class="tag">Compact accelerator</span>
+    <span class="tag">Helical undulator</span><span class="tag">THz drive</span>
+    <span class="tag">Relativistic beam dynamics</span><span class="tag">COMSOL</span></div>
+
+  <p class="back"><a href="index.html">← All research projects</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
+  Open to research collaboration &amp; consulting — <a href="https://orcid.org/0000-0003-4382-4053">contact</a>.
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
