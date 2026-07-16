@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnetic-Mirror Particle Trap — Charged-Particle Dynamics &amp; Boris-Pusher Simulation | Dr. Nezah Balal</title>
+<meta name="description" content="Magnetic-mirror (magnetic-bottle) particle trap between two magnetic lenses: Boris-pusher electron tracing in the exact Biot–Savart coil field, meridional field map, mirror condition and loss cone, and a live interactive WebGL simulation.">
+<meta name="keywords" content="magnetic mirror, magnetic bottle, particle trap, magnetic lens, charged particle dynamics, Boris pusher, particle tracing, Lorentz force, guiding center, adiabatic invariant, loss cone, mirror ratio, Biot-Savart, magnetostatic field map, cyclotron motion, plasma confinement, Nezah Balal">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
+</script>
+<style>
+/* --- page-local styles for the interactive simulation --- */
+.simwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0c1420;margin:14px 0 6px}
+.simhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 14px 8px;color:#cdd9e5;font-size:13.5px;font-weight:700}
+.simhead .hint{color:#66798a;font-size:11.5px;font-weight:400}
+#simcanvas{display:block;width:100%;height:auto;cursor:grab}
+#simcanvas:active{cursor:grabbing}
+.simbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 14px;background:#0f1a29;border-top:1px solid #1b2a3d}
+.simbar label{color:#a9bccb;font-size:12px;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.simbar input[type=range]{width:110px;accent-color:#0d7bb8}
+.simbar button{background:#12324a;color:#bfe3f7;border:1px solid #1e4a68;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.simbar button:hover{background:#164060}
+.simbar .chk{accent-color:#0d7bb8}
+.simstat{padding:7px 14px 10px;background:#0f1a29;color:#7e93a6;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:.2px;border-top:1px solid #16233310}
+.simstat b{color:#9fdcff;font-weight:600}
+.simstat .esc{color:#ff8fa8;font-weight:700}
+.simnote{font-size:13px;color:var(--mut);margin:8px 0 22px}
+@media(max-width:600px){.simbar input[type=range]{width:84px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
+  <a href="particle-dynamics.html">Particle Dynamics</a>
+  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Charged-particle dynamics · Magnetic traps</p>
+  <h1>Magnetic-mirror particle traps &amp; charged-particle dynamics</h1>
+  <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. Complementing the
+    field-design work, I trace <strong>electron dynamics</strong> in magnetic-lens systems with an in-house
+    particle-tracing code: a volume-preserving <strong>Boris pusher</strong> integrating the Lorentz force in
+    the exact <strong>Biot–Savart field</strong> of the coil geometry — applied here to the
+    <strong>magnetic-mirror trap</strong> (“magnetic bottle”), the configuration at the root of plasma
+    confinement and of magnetic electron lenses.</p>
+
+  <figure>
+    <img src="assets/electron-magnetic-mirror-trap.gif" alt="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points.">
+    <figcaption>Electron confined in a two-coil magnetic bottle (mirror ratio R ≈ 2.2, pitch angle 50°):
+      the orbit gyrates along the field line and is reflected where the field steepens, ~4 gyrations per
+      bounce. Boris-pusher integration in the exact Biot–Savart field; kinetic energy is conserved to
+      machine precision.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="assets/magnetic-bottle-field-map.gif" alt="Meridional cross-section of the magnetic bottle: computed |B| field map with field lines and coil cross-sections, the electron orbit projected on the plane bouncing between mirror points, and the on-axis field profile showing the mirror condition B equals B0 over sin-squared theta.">
+    <figcaption>The same orbit over the computed field map (meridional plane, |B|/B₀ on a log scale).
+      The projected trajectory turns exactly where the on-axis profile (lower panel) crosses
+      B = B₀/sin²θ₀ — the mirror condition that sets the reflection points.</figcaption>
+  </figure>
+
+  <h2>The physics</h2>
+  <p>In a slowly varying field, the electron’s rapid gyration makes the magnetic moment
+    μ = mv<sub>⊥</sub>²/2B an <strong>adiabatic invariant</strong>. As the particle streams from the weak
+    mid-plane field toward a coil, B grows, v<sub>⊥</sub> must grow with it, and — since the magnetic force
+    does no work — the parallel velocity is exhausted: the particle is reflected at the point where
+    B = B₀/sin²θ₀. Two such <strong>magnetic mirrors</strong> facing each other form the bottle. Confinement
+    is not unconditional: particles launched within the <strong>loss cone</strong>,
+    sin²θ<sub>lc</sub> = B<sub>min</sub>/B<sub>max</sub> = 1/R, stream straight through a coil and escape —
+    for the R ≈ 2.2 geometry shown, θ<sub>lc</sub> ≈ 43°. The displayed orbit is deliberately “fat”
+    (gyroradius ≈ 0.23 of the coil radius) so the gyration is visible; at this scale μ still wanders by
+    several percent over a bounce, and tightens rapidly as the gyroradius shrinks relative to the field
+    scale length (~1.5% at ρ<sub>g</sub> = 0.05a in the same trap).</p>
+
+  <h2>The model</h2>
+  <p>The coil field is evaluated in closed form — the Biot–Savart field of each current loop expressed
+    through complete elliptic integrals — rather than interpolated from a mesh, so field derivatives seen by
+    the particle are exact everywhere including near the wires. The trajectory is advanced with the
+    <strong>Boris algorithm</strong>, the standard volume-preserving pusher of particle-in-cell plasma codes:
+    in a static magnetic field it conserves kinetic energy to machine precision (verified here to ~10⁻¹⁴ over
+    tens of thousands of gyration steps), which keeps long confinement runs trustworthy. The same workflow
+    applies to measured or COMSOL-computed magnetostatic fields, and the identical physics kernel runs live
+    in the browser below.</p>
+
+  <h2 id="sim">Interactive simulation — fly the trap yourself</h2>
+  <p>The model below runs live in the browser: the same Boris pusher and two-coil Biot–Savart field as in the
+    animations above, integrated in real time (WebGL). Change the pitch angle and watch the mirror points move;
+    push it below the <strong>loss-cone angle</strong> (≈43°) and the electron escapes through a coil.</p>
+
+  <div class="simwrap">
+    <div class="simhead"><span>Magnetic-bottle particle tracing — live</span>
+      <span class="hint">drag to rotate · scroll to zoom · runs on your GPU</span></div>
+    <canvas id="simcanvas"></canvas>
+    <div class="simbar">
+      <label>pitch angle <input type="range" id="s_pitch" min="25" max="80" value="50" step="1"> <span id="v_pitch">50°</span></label>
+      <label>field <input type="range" id="s_field" min="0.6" max="2.5" value="1.0" step="0.05"> <span id="v_field">1.00×</span></label>
+      <label>speed <input type="range" id="s_speed" min="0.2" max="3" value="1" step="0.1"> <span id="v_speed">1.0×</span></label>
+      <button id="b_restart">restart</button>
+      <button id="b_pause">pause</button>
+      <button id="b_loss" title="set the pitch angle inside the loss cone">loss-cone shot</button>
+      <label><input type="checkbox" id="c_lines" class="chk" checked> field lines</label>
+      <label><input type="checkbox" id="c_cone" class="chk"> loss cone</label>
+    </div>
+    <div class="simstat" id="simstat">loading WebGL…</div>
+  </div>
+  <p class="simnote">Physics on display: gyration about the field line, slowing of the parallel motion as
+    B grows, reflection at the mirror point where v<sub>∥</sub> → 0, and the approximate conservation of the
+    adiabatic invariant μ (tracked live above — it oscillates at the few-percent level for this deliberately
+    fat orbit, and tightens as the gyroradius shrinks). If WebGL is unavailable, the animations above show
+    the same physics.</p>
+
+  <h2>What the modeling delivers</h2>
+  <p>For a candidate coil or magnet geometry, the workflow computes the field (analytic where possible, COMSOL
+    magnetostatics otherwise) and traces ensembles of particles through it. Outputs include the mirror ratio and
+    loss-cone boundary, confinement maps over pitch angle and energy, bounce and gyration frequencies, drift
+    rates, and the sensitivity of trapping to field errors and coil misalignment — the quantities that decide
+    whether a trap, lens, or transport line will work before it is built.</p>
+
+  <h2>From model to hardware</h2>
+  <p>The same Lorentz-force integration underpins the <a href="accelerators.html">compact IFEL accelerator</a>
+    work — where the electron rides a tapered helical undulator field — and connects directly to the
+    <a href="magnetics.html">applied-magnetism</a> projects, where the fields being designed are the fields
+    particles must fly through. Mirror-type magnetic lenses of the kind shown here are building blocks of
+    electron sources, beam-transport lines, and plasma-confinement devices.</p>
+
+  <div class="tags"><span class="tag">Magnetic mirror / bottle</span><span class="tag">Charged-particle dynamics</span>
+    <span class="tag">Boris pusher</span><span class="tag">Biot–Savart field</span>
+    <span class="tag">Adiabatic invariant μ</span><span class="tag">Loss cone</span>
+    <span class="tag">Magnetostatics</span><span class="tag">Python · WebGL</span></div>
+
+  <p class="back"><a href="index.html">← All research projects</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
+  Open to research collaboration &amp; consulting — <a href="https://orcid.org/0000-0003-4382-4053">contact</a>.
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+        onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onload=function(){window.__initSim&&window.__initSim();};s.onerror=function(){window.__simFail&&window.__simFail();};document.head.appendChild(s);})()"></script>
+<script>
+window.__initSim = function () {
+  "use strict";
+  if (window.__simStarted) return; window.__simStarted = true;
+  var canvas = document.getElementById("simcanvas");
+  var statEl = document.getElementById("simstat");
+  if (!window.THREE) { statEl.textContent = "WebGL library failed to load — the animations above show the same physics."; return; }
+
+  /* ---------------- physics: two-coil Biot-Savart bottle ---------------- */
+  var ZC = 1.25, ACOIL = 1.0;
+
+  // complete elliptic integrals K(m), E(m) — Abramowitz & Stegun 17.3.34/35
+  function ellipKE(m) {
+    if (m > 1 - 1e-12) m = 1 - 1e-12;
+    var m1 = 1 - m, lm = Math.log(1 / m1);
+    var K = (((0.01451196212 * m1 + 0.03742563713) * m1 + 0.03590092383) * m1 + 0.09666344259) * m1 + 1.38629436112
+          + ((((0.00441787012 * m1 + 0.03328355346) * m1 + 0.06880248576) * m1 + 0.12498593597) * m1 + 0.5) * lm;
+    var E = (((0.01736506451 * m1 + 0.04757383546) * m1 + 0.06260601220) * m1 + 0.44325141463) * m1 + 1.0
+          + (((0.00526449639 * m1 + 0.04069697526) * m1 + 0.09200180037) * m1 + 0.24998368310) * m1 * lm;
+    return [K, E];
+  }
+
+  function loopBrz(rho, z, out) {           // single loop at z=0, radius ACOIL
+    var r = Math.max(Math.abs(rho), 1e-9);
+    var d1 = (ACOIL + r) * (ACOIL + r) + z * z;
+    var d2 = (ACOIL - r) * (ACOIL - r) + z * z;
+    var ke = ellipKE(4 * ACOIL * r / d1), K = ke[0], E = ke[1], sq = Math.sqrt(d1);
+    out.bz = (K + (ACOIL * ACOIL - r * r - z * z) / d2 * E) / sq;
+    out.br = (Math.abs(rho) < 1e-9) ? 0 : (z / (r * sq)) * (-K + (ACOIL * ACOIL + r * r + z * z) / d2 * E);
+  }
+
+  var _t1 = { br: 0, bz: 0 }, _t2 = { br: 0, bz: 0 }, BSCALE = 1, FIELD_MULT = 1;
+  function fieldB(x, y, z, out) {           // out: THREE.Vector3
+    var rho = Math.sqrt(x * x + y * y);
+    loopBrz(rho, z - ZC, _t1); loopBrz(rho, z + ZC, _t2);
+    var br = _t1.br + _t2.br, bz = _t1.bz + _t2.bz;
+    var c = rho < 1e-9 ? 1 : x / rho, s = rho < 1e-9 ? 0 : y / rho;
+    out.set(br * c * BSCALE, br * s * BSCALE, bz * BSCALE).multiplyScalar(FIELD_MULT);
+    return out;
+  }
+  var _b0 = new THREE.Vector3(); fieldB(0, 0, 0, _b0); BSCALE = 1 / _b0.z;
+
+  var R_MIRROR = (function () { var a = new THREE.Vector3(), b = new THREE.Vector3();
+    fieldB(0, 0, ZC, a); fieldB(0, 0, 0, b); return a.length() / b.length(); })();
+  var LOSS_DEG = Math.asin(Math.sqrt(1 / R_MIRROR)) * 180 / Math.PI;
+
+  /* ---------------- Boris pusher state ---------------- */
+  var QM = -1, DT = 0.01;
+  var pos = new THREE.Vector3(), vel = new THREE.Vector3();
+  var mu0 = 1, escaped = false, escapedAt = 0, paused = false;
+  var _bv = new THREE.Vector3(), _tv = new THREE.Vector3(), _sv = new THREE.Vector3(), _vp = new THREE.Vector3();
+
+  function borisStep() {
+    fieldB(pos.x, pos.y, pos.z, _bv);
+    _tv.copy(_bv).multiplyScalar(0.5 * DT * QM);
+    var t2 = _tv.lengthSq();
+    _sv.copy(_tv).multiplyScalar(2 / (1 + t2));
+    _vp.copy(vel).add(new THREE.Vector3().crossVectors(vel, _tv));
+    vel.add(new THREE.Vector3().crossVectors(_vp, _sv));
+    pos.addScaledVector(vel, DT);
+  }
+
+  function muNow() {
+    fieldB(pos.x, pos.y, pos.z, _bv);
+    var B = _bv.length(), vpar = vel.dot(_bv) / B;
+    var vperp2 = vel.lengthSq() - vpar * vpar;
+    return { mu: vperp2 / (2 * B), B: B, vpar: vpar,
+             pitch: Math.atan2(Math.sqrt(vperp2), Math.abs(vpar)) * 180 / Math.PI };
+  }
+
+  var lastVz = 1;
+  function restart() {
+    var th = +sPitch.value * Math.PI / 180, vperp = 0.23, v = vperp / Math.sin(th);
+    pos.set(0.08 + vperp / FIELD_MULT, 0, 0);
+    vel.set(0, vperp, v * Math.cos(th));
+    escaped = false; trailReset(); mu0 = muNow().mu; lastVz = vel.z;
+  }
+
+  /* ---------------- three.js scene ---------------- */
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false }); }
+  catch (e) { statEl.textContent = "WebGL is unavailable on this device — the animations above show the same physics."; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var scene = new THREE.Scene(); scene.background = new THREE.Color(0x0c1420);
+  var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 100);
+
+  // coils
+  var coilMat = new THREE.MeshBasicMaterial({ color: 0xffa04e });
+  var coilGlow = new THREE.MeshBasicMaterial({ color: 0xff7a2f, transparent: true, opacity: 0.14, blending: THREE.AdditiveBlending, depthWrite: false });
+  [ZC, -ZC].forEach(function (z) {
+    var t1 = new THREE.Mesh(new THREE.TorusGeometry(ACOIL, 0.028, 12, 90), coilMat);
+    var t2 = new THREE.Mesh(new THREE.TorusGeometry(ACOIL, 0.055, 12, 90), coilGlow);
+    t1.position.z = z; t2.position.z = z; scene.add(t1); scene.add(t2);
+  });
+
+  // symmetry axis
+  (function () {
+    var g = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, -1.55), new THREE.Vector3(0, 0, 1.55)]);
+    scene.add(new THREE.Line(g, new THREE.LineDashedMaterial({ color: 0x24384c, dashSize: 0.07, gapSize: 0.09, transparent: true, opacity: 0.8 })));
+    scene.children[scene.children.length - 1].computeLineDistances();
+  })();
+
+  // field lines (RK4 tracing)
+  var lineGroup = new THREE.Group(); scene.add(lineGroup);
+  function traceLine(seed) {
+    var pts = [], p = seed.clone(), dir, h, k1 = new THREE.Vector3(), k2 = new THREE.Vector3(), k3 = new THREE.Vector3(), k4 = new THREE.Vector3(), tmp = new THREE.Vector3();
+    function f(q, out) { fieldB(q.x, q.y, q.z, out); out.normalize(); }
+    for (dir = -1; dir <= 1; dir += 2) {
+      p.copy(seed); var side = [];
+      for (var i = 0; i < 700; i++) {
+        h = 0.025 * dir;
+        f(p, k1); f(tmp.copy(p).addScaledVector(k1, h / 2), k2);
+        f(tmp.copy(p).addScaledVector(k2, h / 2), k3); f(tmp.copy(p).addScaledVector(k3, h), k4);
+        p.addScaledVector(k1, h / 6).addScaledVector(k2, h / 3).addScaledVector(k3, h / 3).addScaledVector(k4, h / 6);
+        side.push(p.clone());
+        if (Math.hypot(p.x, p.y) > 2.1 || Math.abs(p.z) > 2.2) break;
+      }
+      if (dir < 0) side.reverse().push(seed.clone());
+      pts = pts.concat(side);
+    }
+    return pts;
+  }
+  (function () {
+    var mat = new THREE.LineBasicMaterial({ color: 0x39648f, transparent: true, opacity: 0.35 });
+    for (var ri = 0; ri < 2; ri++) {
+      var r = [0.55, 0.88][ri];
+      for (var k = 0; k < 8; k++) {
+        var ph = k * Math.PI / 4;
+        var pts = traceLine(new THREE.Vector3(r * Math.cos(ph), r * Math.sin(ph), 0));
+        lineGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat));
+      }
+    }
+  })();
+
+  // loss cone (toggle)
+  var coneGroup = new THREE.Group(); coneGroup.visible = false; scene.add(coneGroup);
+  (function () {
+    var hc = 0.85, rc = hc * Math.tan(LOSS_DEG * Math.PI / 180);
+    var mat = new THREE.MeshBasicMaterial({ color: 0xff5c8a, transparent: true, opacity: 0.10, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, depthWrite: false });
+    [1, -1].forEach(function (sg) {
+      var c = new THREE.Mesh(new THREE.ConeGeometry(rc, hc, 40, 1, true), mat);
+      c.rotation.x = sg > 0 ? -Math.PI / 2 : Math.PI / 2;   // open along +/- z
+      c.position.z = sg * hc / 2; coneGroup.add(c);
+    });
+  })();
+
+  // electron sprite + trail
+  function glowTexture(inner, outer) {
+    var cv = document.createElement("canvas"); cv.width = cv.height = 64;
+    var g = cv.getContext("2d"), gr = g.createRadialGradient(32, 32, 2, 32, 32, 30);
+    gr.addColorStop(0, inner); gr.addColorStop(0.35, outer); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(cv);
+  }
+  var head = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture("rgba(255,255,255,1)", "rgba(70,215,255,0.55)"), blending: THREE.AdditiveBlending, depthWrite: false }));
+  head.scale.set(0.22, 0.22, 1); scene.add(head);
+
+  var TRAIL_N = 850, trailPos = new Float32Array(TRAIL_N * 3), trailCol = new Float32Array(TRAIL_N * 3), trailLen = 0;
+  var trailGeo = new THREE.BufferGeometry();
+  trailGeo.setAttribute("position", new THREE.BufferAttribute(trailPos, 3));
+  trailGeo.setAttribute("color", new THREE.BufferAttribute(trailCol, 3));
+  var trail = new THREE.Line(trailGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
+  scene.add(trail);
+  function trailReset() { trailLen = 0; trailGeo.setDrawRange(0, 0); }
+  function trailPush() {
+    if (trailLen < TRAIL_N) trailLen++;
+    trailPos.copyWithin(3, 0, (trailLen - 1) * 3);
+    trailPos[0] = pos.x; trailPos[1] = pos.y; trailPos[2] = pos.z;
+    var c1 = { r: 0.36, g: 0.91, b: 1.0 }, k;                    // head color
+    for (var i = 0; i < trailLen; i++) {
+      k = Math.pow(1 - i / TRAIL_N, 1.7);
+      trailCol[i * 3] = c1.r * k * 0.9; trailCol[i * 3 + 1] = c1.g * k * 0.9; trailCol[i * 3 + 2] = c1.b * k;
+    }
+    trailGeo.attributes.position.needsUpdate = true;
+    trailGeo.attributes.color.needsUpdate = true;
+    trailGeo.setDrawRange(0, trailLen);
+  }
+
+  // mirror pings
+  var pings = [];
+  function spawnPing() {
+    var m = new THREE.Mesh(new THREE.RingGeometry(0.96, 1.0, 48),
+      new THREE.MeshBasicMaterial({ color: 0xa9c3ff, transparent: true, opacity: 0.5, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }));
+    m.position.copy(pos); m.scale.set(0.06, 0.06, 1); m.userData.age = 0;
+    scene.add(m); pings.push(m);
+  }
+  function updatePings() {
+    for (var i = pings.length - 1; i >= 0; i--) {
+      var m = pings[i]; m.userData.age += 1;
+      var k = m.userData.age / 34;
+      m.scale.setScalar(0.06 + 0.55 * k);
+      m.material.opacity = 0.5 * Math.pow(Math.max(1 - k, 0), 1.5);
+      if (k >= 1) { scene.remove(m); m.geometry.dispose(); m.material.dispose(); pings.splice(i, 1); }
+    }
+  }
+
+  /* ---------------- camera control ---------------- */
+  var az = -0.9, el = 0.36, dist = 4.6, autoRot = true, lastUser = 0;
+  function placeCamera() {
+    camera.position.set(dist * Math.cos(el) * Math.cos(az), dist * Math.cos(el) * Math.sin(az), dist * Math.sin(el));
+    camera.up.set(0, 0, 1); camera.lookAt(0, 0, 0);
+  }
+  var dragging = false, px = 0, py = 0;
+  canvas.addEventListener("pointerdown", function (e) { dragging = true; px = e.clientX; py = e.clientY; canvas.setPointerCapture(e.pointerId); });
+  window.addEventListener("pointermove", function (e) {
+    if (!dragging) return;
+    az -= (e.clientX - px) * 0.008; el = Math.min(1.35, Math.max(-1.35, el + (e.clientY - py) * 0.006));
+    px = e.clientX; py = e.clientY; lastUser = performance.now(); autoRot = false;
+  });
+  window.addEventListener("pointerup", function () { dragging = false; });
+  canvas.addEventListener("wheel", function (e) {
+    e.preventDefault(); dist = Math.min(9, Math.max(2.6, dist * (1 + e.deltaY * 0.001)));
+    lastUser = performance.now(); autoRot = false;
+  }, { passive: false });
+
+  /* ---------------- UI ---------------- */
+  var sPitch = document.getElementById("s_pitch"), sField = document.getElementById("s_field"), sSpeed = document.getElementById("s_speed");
+  var vPitch = document.getElementById("v_pitch"), vField = document.getElementById("v_field"), vSpeed = document.getElementById("v_speed");
+  sPitch.oninput = function () { vPitch.textContent = sPitch.value + "°"; restart(); };
+  sField.oninput = function () { FIELD_MULT = +sField.value; vField.textContent = (+sField.value).toFixed(2) + "×"; };
+  sSpeed.oninput = function () { vSpeed.textContent = (+sSpeed.value).toFixed(1) + "×"; };
+  document.getElementById("b_restart").onclick = restart;
+  document.getElementById("b_pause").onclick = function () { paused = !paused; this.textContent = paused ? "run" : "pause"; };
+  document.getElementById("b_loss").onclick = function () {
+    sPitch.value = Math.max(25, Math.round(LOSS_DEG - 6)); vPitch.textContent = sPitch.value + "°"; restart();
+  };
+  document.getElementById("c_lines").onchange = function () { lineGroup.visible = this.checked; };
+  document.getElementById("c_cone").onchange = function () { coneGroup.visible = this.checked; };
+
+  function resize() {
+    var w = canvas.clientWidth || canvas.parentElement.clientWidth;
+    var h = Math.round(w * 0.62);
+    renderer.setSize(w, h, false);
+    canvas.style.height = h + "px";
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener("resize", resize);
+
+  /* ---------------- main loop ---------------- */
+  var frame = 0;
+  function animate(tms) {
+    requestAnimationFrame(animate);
+    if (frame === 0) resize();
+    frame++;
+    if (autoRot || performance.now() - lastUser > 6000) az += 0.0022;
+    placeCamera();
+
+    if (!paused && !escaped) {
+      var sub = Math.max(2, Math.round(16 * +sSpeed.value));
+      for (var i = 0; i < sub; i++) {
+        borisStep();
+        if (vel.z * lastVz < 0) { spawnPing(); }
+        lastVz = vel.z;
+        if (Math.abs(pos.z) > 2.45 || Math.hypot(pos.x, pos.y) > 2.1) { escaped = true; escapedAt = performance.now(); break; }
+      }
+      trailPush();
+      head.position.copy(pos);
+    }
+    updatePings();
+    if (escaped && performance.now() - escapedAt > 5200) restart();
+
+    if (frame % 6 === 0) {
+      var m = muNow();
+      var drift = Math.abs(m.mu / mu0 - 1) * 100;
+      statEl.innerHTML = escaped
+        ? '<span class="esc">ESCAPED — pitch angle inside the loss cone (θ<sub>lc</sub> ≈ ' + LOSS_DEG.toFixed(0) + '°). Press restart.</span>'
+        : "|B| = <b>" + m.B.toFixed(2) + "</b>   v∥ = <b>" + m.vpar.toFixed(3) + "</b>   pitch = <b>" +
+          m.pitch.toFixed(0) + "°</b>   μ drift = <b>" + drift.toFixed(1) + "%</b>   " +
+          "mirror ratio R = <b>" + (R_MIRROR).toFixed(2) + "</b>   loss cone ≈ <b>" + LOSS_DEG.toFixed(0) + "°</b>";
+    }
+    renderer.render(scene, camera);
+  }
+  restart(); resize(); animate(0);
+};
+window.__simFail = function () {
+  document.getElementById("simstat").textContent =
+    "WebGL library failed to load — the animations above show the same physics.";
+};
+if (window.THREE) { window.__initSim(); }
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
