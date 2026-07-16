@@ -41,55 +41,43 @@
 <main class="wrap">
   <p class="sub">Charged-particle dynamics · Magnetic traps</p>
   <h1>Magnetic-mirror particle traps &amp; charged-particle dynamics</h1>
-  <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. Complementing the
-    field-design work, I trace <strong>electron dynamics</strong> in magnetic-lens systems with an in-house
-    particle-tracing code: a volume-preserving <strong>Boris pusher</strong> integrating the Lorentz force in
-    the exact <strong>Biot–Savart field</strong> of the coil geometry — applied here to the
-    <strong>magnetic-mirror trap</strong> (“magnetic bottle”), the configuration at the root of plasma
-    confinement and of magnetic electron lenses.</p>
+  <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. I trace
+    <strong>electron dynamics</strong> in magnetic-lens systems with an in-house particle-tracing code — a
+    volume-preserving <strong>Boris pusher</strong> in the exact <strong>Biot–Savart field</strong> of the
+    coils — applied here to the <strong>magnetic-mirror trap</strong> (“magnetic bottle”), a basic building
+    block of plasma confinement and magnetic electron optics.</p>
 
   <figure>
     <img src="assets/electron-magnetic-mirror-trap.gif" alt="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points.">
-    <figcaption>Electron confined in a two-coil magnetic bottle (mirror ratio R ≈ 2.2, pitch angle 50°):
-      the orbit gyrates along the field line and is reflected where the field steepens, ~4 gyrations per
-      bounce. Boris-pusher integration in the exact Biot–Savart field; kinetic energy is conserved to
-      machine precision.</figcaption>
+    <figcaption>Electron in a two-coil magnetic bottle (mirror ratio R ≈ 2.2, pitch angle 50°): gyration
+      along the field, reflection where it steepens — ~4 gyrations per bounce.</figcaption>
   </figure>
 
   <figure>
     <img src="assets/magnetic-bottle-field-map.gif" alt="Meridional cross-section of the magnetic bottle: computed |B| field map with field lines and coil cross-sections, the electron orbit projected on the plane bouncing between mirror points, and the on-axis field profile showing the mirror condition B equals B0 over sin-squared theta.">
-    <figcaption>The same orbit over the computed field map (meridional plane, |B|/B₀ on a log scale).
-      The projected trajectory turns exactly where the on-axis profile (lower panel) crosses
-      B = B₀/sin²θ₀ — the mirror condition that sets the reflection points.</figcaption>
+    <figcaption>The same orbit over the computed field map (|B|/B₀, log scale): the trajectory turns where
+      the field profile (lower panel) crosses B = B₀/sin²θ₀ — the mirror condition.</figcaption>
   </figure>
 
   <h2>The physics</h2>
-  <p>In a slowly varying field, the electron’s rapid gyration makes the magnetic moment
-    μ = mv<sub>⊥</sub>²/2B an <strong>adiabatic invariant</strong>. As the particle streams from the weak
-    mid-plane field toward a coil, B grows, v<sub>⊥</sub> must grow with it, and — since the magnetic force
-    does no work — the parallel velocity is exhausted: the particle is reflected at the point where
-    B = B₀/sin²θ₀. Two such <strong>magnetic mirrors</strong> facing each other form the bottle. Confinement
-    is not unconditional: particles launched within the <strong>loss cone</strong>,
-    sin²θ<sub>lc</sub> = B<sub>min</sub>/B<sub>max</sub> = 1/R, stream straight through a coil and escape —
-    for the R ≈ 2.2 geometry shown, θ<sub>lc</sub> ≈ 43°. The displayed orbit is deliberately “fat”
-    (gyroradius ≈ 0.23 of the coil radius) so the gyration is visible; at this scale μ still wanders by
-    several percent over a bounce, and tightens rapidly as the gyroradius shrinks relative to the field
-    scale length (~1.5% at ρ<sub>g</sub> = 0.05a in the same trap).</p>
+  <p>The electron’s rapid gyration makes its magnetic moment μ = mv<sub>⊥</sub>²/2B an
+    <strong>adiabatic invariant</strong>: as B grows toward a coil, v<sub>⊥</sub> must grow with it, and —
+    the magnetic force doing no work — v<sub>∥</sub> is exhausted. Reflection occurs where
+    B = B₀/sin²θ₀ (θ₀ — the mid-plane pitch angle); particles inside the <strong>loss cone</strong>,
+    sin²θ<sub>lc</sub> = 1/R, here θ<sub>lc</sub> ≈ 43°, escape through the mirror throat. The orbit shown
+    is deliberately fat to keep the gyration visible, so μ wanders by ~10%; at a gyroradius of 0.05a it
+    tightens to ~1.5%.</p>
 
   <h2>The model</h2>
-  <p>The coil field is evaluated in closed form — the Biot–Savart field of each current loop expressed
-    through complete elliptic integrals — rather than interpolated from a mesh, so field derivatives seen by
-    the particle are exact everywhere including near the wires. The trajectory is advanced with the
-    <strong>Boris algorithm</strong>, the standard volume-preserving pusher of particle-in-cell plasma codes:
-    in a static magnetic field it conserves kinetic energy to machine precision (verified here to ~10⁻¹⁴ over
-    tens of thousands of gyration steps), which keeps long confinement runs trustworthy. The same workflow
-    applies to measured or COMSOL-computed magnetostatic fields, and the identical physics kernel runs live
-    in the browser below.</p>
+  <p>The coil field is evaluated in closed form (complete elliptic integrals), so the field and its
+    gradients are exact even near the wires. Trajectories are advanced with the <strong>Boris
+    algorithm</strong>, the volume-preserving pusher of particle-in-cell plasma codes; in a static magnetic
+    field it conserves kinetic energy to machine precision (~10⁻¹⁴ here). The same pusher runs on
+    COMSOL-computed or measured field maps — and live in the browser below.</p>
 
   <h2 id="sim">Interactive simulation — fly the trap yourself</h2>
-  <p>The model below runs live in the browser: the same Boris pusher and two-coil Biot–Savart field as in the
-    animations above, integrated in real time (WebGL). Change the pitch angle and watch the mirror points move;
-    push it below the <strong>loss-cone angle</strong> (≈43°) and the electron escapes through a coil.</p>
+  <p>The same Boris pusher and two-coil field, integrated live in the browser (WebGL). Push the pitch
+    angle below the <strong>loss cone</strong> (≈43°) and the electron escapes.</p>
 
   <div class="simwrap">
     <div class="simhead"><span>Magnetic-bottle particle tracing — live</span>
@@ -107,25 +95,15 @@
     </div>
     <div class="simstat" id="simstat">loading WebGL…</div>
   </div>
-  <p class="simnote">Physics on display: gyration about the field line, slowing of the parallel motion as
-    B grows, reflection at the mirror point where v<sub>∥</sub> → 0, and the approximate conservation of the
-    adiabatic invariant μ (tracked live above — it oscillates at the few-percent level for this deliberately
-    fat orbit, and tightens as the gyroradius shrinks). If WebGL is unavailable, the animations above show
-    the same physics.</p>
-
-  <h2>What the modeling delivers</h2>
-  <p>For a candidate coil or magnet geometry, the workflow computes the field (analytic where possible, COMSOL
-    magnetostatics otherwise) and traces ensembles of particles through it. Outputs include the mirror ratio and
-    loss-cone boundary, confinement maps over pitch angle and energy, bounce and gyration frequencies, drift
-    rates, and the sensitivity of trapping to field errors and coil misalignment — the quantities that decide
-    whether a trap, lens, or transport line will work before it is built.</p>
+  <p class="simnote">Gyration, mirror reflection where v<sub>∥</sub> → 0, and a live readout of the
+    (approximately conserved) invariant μ. If WebGL is unavailable, the animations above show the same
+    physics.</p>
 
   <h2>From model to hardware</h2>
-  <p>The same Lorentz-force integration underpins the <a href="accelerators.html">compact IFEL accelerator</a>
-    work — where the electron rides a tapered helical undulator field — and connects directly to the
-    <a href="magnetics.html">applied-magnetism</a> projects, where the fields being designed are the fields
-    particles must fly through. Mirror-type magnetic lenses of the kind shown here are building blocks of
-    electron sources, beam-transport lines, and plasma-confinement devices.</p>
+  <p>The same Lorentz-force integration underpins the <a href="accelerators.html">compact IFEL
+    accelerator</a> work and connects to the <a href="magnetics.html">applied-magnetism</a> projects — the
+    fields being designed are the fields particles must fly through. Mirror-type magnetic lenses are
+    building blocks of electron sources, beam-transport lines, and plasma-confinement devices.</p>
 
   <div class="tags"><span class="tag">Magnetic mirror / bottle</span><span class="tag">Charged-particle dynamics</span>
     <span class="tag">Boris pusher</span><span class="tag">Biot–Savart field</span>
