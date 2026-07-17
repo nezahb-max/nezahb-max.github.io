@@ -21,7 +21,7 @@
 <meta name="theme-color" content="#0a5c8a">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
 </script>
 <style>
 /* --- page-local styles for the interactive simulation --- */
@@ -56,8 +56,8 @@
   <h1>Magnetic-mirror particle traps &amp; charged-particle dynamics</h1>
   <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. I trace
     <strong>electron dynamics</strong> in magnetic-lens systems with an in-house particle-tracing code — a
-    volume-preserving <strong>Boris pusher</strong> in the exact <strong>Biot–Savart field</strong> of the
-    coils — applied here to the <strong>magnetic-mirror trap</strong> (“magnetic bottle”), a basic building
+    volume-preserving <strong>Boris pusher</strong> in the ideal thin-loop <strong>Biot–Savart field</strong>
+    of the coils — applied here to the <strong>magnetic-mirror trap</strong> (“magnetic bottle”), a basic building
     block of plasma confinement and magnetic electron optics.</p>
 
   <figure>
@@ -73,7 +73,8 @@
   </figure>
 
   <h2>The physics</h2>
-  <p>The electron’s rapid gyration makes its magnetic moment μ = mv<sub>⊥</sub>²/2B an
+  <p>In the non-relativistic adiabatic limit, the electron’s rapid gyration makes its magnetic moment
+    μ = mv<sub>⊥</sub>²/2B an
     <strong>adiabatic invariant</strong>: as B grows toward a coil, v<sub>⊥</sub> must grow with it, and —
     the magnetic force doing no work — v<sub>∥</sub> is exhausted. Reflection occurs where
     B = B₀/sin²θ₀ (θ₀ — the mid-plane pitch angle); particles inside the <strong>loss cone</strong>,
@@ -82,8 +83,8 @@
     tightens to ~1.5%.</p>
 
   <h2>The model</h2>
-  <p>The coil field is evaluated in closed form (complete elliptic integrals), so the field and its
-    gradients are exact even near the wires. Trajectories are advanced with the <strong>Boris
+  <p>The ideal thin-loop coil field is evaluated from complete-elliptic-integral expressions,
+    avoiding interpolation from a sampled field map. Trajectories are advanced with the <strong>Boris
     algorithm</strong>, the volume-preserving pusher of particle-in-cell plasma codes; in a static magnetic
     field it conserves kinetic energy to machine precision (~10⁻¹⁴ here). The same pusher runs on
     COMSOL-computed or measured field maps — and live in the browser below.</p>
@@ -94,7 +95,7 @@
 
   <div class="simwrap">
     <div class="simhead"><span>Magnetic-bottle particle tracing — live</span>
-      <span class="hint">drag to rotate · scroll to zoom · runs on your GPU</span></div>
+      <span class="hint">drag to rotate · scroll to zoom · rendered with WebGL</span></div>
     <canvas id="simcanvas"></canvas>
     <div class="simbar">
       <label>pitch angle <input type="range" id="s_pitch" min="25" max="80" value="50" step="1"> <span id="v_pitch">50°</span></label>
@@ -123,12 +124,32 @@
     <span class="tag">Adiabatic invariant μ</span><span class="tag">Loss cone</span>
     <span class="tag">Magnetostatics</span><span class="tag">Python · WebGL</span></div>
 
+  <section class="capabilities" aria-labelledby="particle-capabilities">
+    <h2 id="particle-capabilities">Applied research and technical capabilities</h2>
+    <ul class="capability-list">
+      <li>Charged-particle tracing in magnetic and electromagnetic fields</li>
+      <li>Numerical integrator verification and conservation checks</li>
+      <li>Field-map integration and trajectory visualization</li>
+      <li>Loss, stability, and parameter-sensitivity studies</li>
+      <li>Independent review of particle-dynamics models</li>
+    </ul>
+    <div class="example"><strong>Example capability</strong>
+      <p>Independent verification of charged-particle motion in a prescribed magnetic field,
+        including numerical integration, conservation checks, loss conditions, and sensitivity to geometry.</p>
+    </div>
+  </section>
+
+  <div class="inquiry">
+    <p>For research collaboration, technical project inquiries, or expert review related to these
+      topics, please contact Dr. Nezah Balal.</p>
+    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20charged-particle%20dynamics.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">Discuss a technical challenge</a>
+  </div>
+
   <p class="back"><a href="index.html">← All research projects</a></p>
 </main>
 
 <footer><div class="wrap">© <span id="y"></span> Dr. Nezah Balal ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
-  Open to research collaboration &amp; consulting — <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a>.
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Charged-particle dynamics &amp; magnetic traps.
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
