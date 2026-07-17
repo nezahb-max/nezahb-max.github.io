@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nezahb-max.github.io/</loc><priority>1.0</priority></url>
-  <url><loc>https://nezahb-max.github.io/accelerators.html</loc><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/magnetics.html</loc><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/antennas.html</loc><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/radar.html</loc><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/particle-dynamics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/</loc><lastmod>2026-07-17</lastmod><priority>1.0</priority></url>
+  <url><loc>https://nezahb-max.github.io/accelerators.html</loc><lastmod>2026-07-17</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/magnetics.html</loc><lastmod>2026-07-17</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/antennas.html</loc><lastmod>2026-07-17</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/radar.html</loc><lastmod>2026-07-17</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/particle-dynamics.html</loc><lastmod>2026-07-17</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/magnetics.html</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/antennas.html</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/radar.html</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
 </urlset>
