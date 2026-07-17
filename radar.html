@@ -24,7 +24,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/radar.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Millimeter-Wave and Micro-Doppler Radar Systems for Remote Sensing and Classification","about":["millimeter-wave radar","micro-Doppler radar","radar signal processing","target classification"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Millimeter-Wave and Micro-Doppler Radar Systems for Remote Sensing and Classification","about":["millimeter-wave radar","micro-Doppler radar","radar signal processing","target classification"],"author":{"@type":"Person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053"},"inLanguage":"en"}
 </script>
 </head>
 <body>
@@ -39,21 +39,24 @@
 <main class="wrap">
   <p class="sub">Radar · Sensing · Signal processing</p>
   <h1>Millimeter-wave &amp; micro-Doppler radar systems</h1>
-  <p class="lead">At millimeter waves, radar sees fine motion. I develop <strong>94 GHz (W-band)</strong>
-    radar systems and the <strong>micro-Doppler</strong> signal processing that turns tiny
-    frequency shifts into target identity — combining classical estimation with machine learning.</p>
+  <p class="lead">At 94 GHz, the short wavelength provides high phase and Doppler sensitivity to
+    small motions. I develop <strong>W-band radar</strong> systems and <strong>micro-Doppler</strong>
+    processing that converts motion-induced modulations into features for target classification —
+    combining classical estimation with machine learning.</p>
 
   <h2>Applications</h2>
-  <p>The same core sensor and processing chain addresses a range of remote-sensing problems I have
-    published on:</p>
+  <p>The same core sensor and processing chain addresses a range of published and ongoing
+    remote-sensing problems:</p>
   <ul>
-    <li><strong>Target classification &amp; drone detection</strong> — micro-Doppler signatures and
-      shape-aware, machine-learning classifiers separate drones, vehicles and low-RCS targets.</li>
-    <li><strong>Remote metrology</strong> — dual-point Doppler ranging for remote vehicle-height
-      measurement (bridge-collision prevention).</li>
+    <li><strong>Target classification &amp; low-RCS detection</strong> — micro-Doppler signatures and
+      machine-learning methods support classification of vehicles and other targets; ongoing work
+      examines drone detection.</li>
+    <li><strong>Remote metrology</strong> — velocity-independent vehicle-height estimation from the
+      ratio of two Doppler components (bridge-collision prevention).</li>
     <li><strong>Condition monitoring</strong> — multi-fault detection on wind turbines and rotating
       machinery from their micro-Doppler spectra.</li>
-    <li><strong>Human sensing</strong> — remote vital-signs and speech detection.</li>
+    <li><strong>Human sensing</strong> — remote sensing of human micro-motion, including
+      speech-related vibration.</li>
   </ul>
 
   <h2>Method</h2>
@@ -64,9 +67,10 @@
     work</a>.</p>
 
   <h2>Radar cross-section (RCS) modelling</h2>
-  <p>How strongly a target reflects — its <strong>radar cross-section (RCS)</strong> — sets what a
-    radar can detect and identify. I compute RCS from full-wave electromagnetic scattering and, for
-    electrically large targets, physical-optics (PO) methods, in COMSOL and MATLAB.</p>
+  <p>How strongly a target reflects — its <strong>radar cross-section (RCS)</strong> — strongly
+    influences received power and detectability and can contribute aspect-dependent features for
+    classification. I compute RCS from full-wave electromagnetic scattering and, for electrically
+    large targets, physical-optics (PO) methods, in COMSOL and MATLAB.</p>
 
   <figure>
     <img src="assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" alt="COMSOL full-wave electromagnetic simulation of a plane wave scattering off a target, used to compute its radar cross-section (RCS).">
@@ -85,12 +89,32 @@
     <span class="tag">Target classification</span><span class="tag">Drone detection</span>
     <span class="tag">Remote sensing</span><span class="tag">COMSOL · MATLAB · ML</span></div>
 
+  <section class="capabilities" aria-labelledby="radar-capabilities">
+    <h2 id="radar-capabilities">Applied research and technical capabilities</h2>
+    <ul class="capability-list">
+      <li>Radar signal processing and micro-Doppler analysis</li>
+      <li>Target classification and performance evaluation</li>
+      <li>Radar cross-section and scattering simulation</li>
+      <li>MATLAB algorithm development and experimental-data analysis</li>
+      <li>Feasibility and proof-of-concept studies</li>
+    </ul>
+    <div class="example"><strong>Example capability</strong>
+      <p>Development and assessment of a physics-based radar-processing method, including modelling,
+        algorithm design, experimental-data analysis, and performance evaluation.</p>
+    </div>
+  </section>
+
+  <div class="inquiry">
+    <p>For research collaboration, technical project inquiries, or expert review related to these
+      topics, please contact Dr. Nezah Balal.</p>
+    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20radar%20and%20signal%20processing.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">Discuss a technical challenge</a>
+  </div>
+
   <p class="back"><a href="index.html">← All research projects</a></p>
 </main>
 
 <footer><div class="wrap">© <span id="y"></span> Dr. Nezah Balal ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
-  Open to research collaboration &amp; consulting — <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a>.
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Millimeter-wave radar &amp; signal processing.
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
