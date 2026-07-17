@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מכ״ם 94 גיגה־הרץ ומיקרו־דופלר — גילוי רחפנים וסיווג מטרות | ד״ר נצח בלל</title>
+<meta name="description" content="מערכות מכ״ם גלים מילימטריים (94 גיגה־הרץ, W-band) ועיבוד אותות מיקרו־דופלר: גילוי רחפנים וסיווג מטרות, ניטור תקינות, חישה מרחוק וחישוב שטח חתך מכ״ם (RCS) — ב-MATLAB ו-COMSOL. ד״ר נצח בלל, אוניברסיטת אריאל.">
+<meta name="keywords" content="מכ״ם 94 גיגה־הרץ, מיקרו דופלר, גילוי רחפנים, סיווג מטרות, שטח חתך מכ״ם, RCS, מכ״ם גלים מילימטריים, W-band, נצח בלל, אוניברסיטת אריאל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/radar.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/radar.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/radar.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/radar.html">
+<meta property="og:title" content="מכ״ם 94 גיגה־הרץ ומיקרו־דופלר — גילוי רחפנים וסיווג מטרות">
+<meta property="og:description" content="מערכות מכ״ם W-band ועיבוד מיקרו־דופלר: מגילוי רחפנים ועד ניטור תקינות וחישה מרחוק.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/radar.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-radar.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-radar.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="../accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="../particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="../radar.html">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">מכ״ם · חישה · עיבוד אותות</p>
+  <h1>מערכות מכ״ם גלים מילימטריים ומיקרו־דופלר</h1>
+  <p class="lead">בגלים מילימטריים המכ״ם רואה תנועה עדינה. אני מפתח מערכות מכ״ם
+    <strong>94 גיגה־הרץ (W-band)</strong> ואת עיבוד האותות מסוג <strong>מיקרו־דופלר</strong>
+    שהופך הסטי תדר זעירים לזהות המטרה — בשילוב שערוך קלאסי ולמידת מכונה.</p>
+
+  <h2>יישומים</h2>
+  <p>אותה שרשרת חיישן ועיבוד משרתת מגוון בעיות חישה מרחוק שפורסמו במחקריי:
+    <strong>גילוי רחפנים וסיווג מטרות</strong> באמצעות חתימות מיקרו־דופלר ומסווגי למידת מכונה
+    (הפרדה בין רחפנים, כלי רכב ומטרות בעלות שטח חתך מכ״ם נמוך); <strong>מדידה מרחוק</strong> של
+    גובה כלי רכב למניעת פגיעות בגשרים; <strong>ניטור תקינות</strong> של טורבינות רוח ומכונות
+    סובבות מתוך ספקטרום המיקרו־דופלר שלהן; ו<strong>חישת בני אדם</strong> — סימנים חיוניים
+    וזיהוי דיבור מרחוק.</p>
+
+  <figure>
+    <img src="../assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" alt="סימולציית גל-מלא ב-COMSOL של פיזור גל מישורי ממטרה, לחישוב שטח חתך המכ״ם (RCS).">
+    <figcaption>פיזור אלקטרומגנטי מגוף המטרה בסימולציית גל-מלא ב‑COMSOL — הפתרון שממנו מחולץ
+      שטח חתך המכ״ם (RCS).</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" loading="lazy" alt="שטח חתך מכ״ם מונוסטטי כתלות בזווית של להב מסתובב ב-94 גיגה־הרץ, מודל אופטיקה פיזיקלית.">
+    <figcaption>‏RCS מונוסטטי כתלות בזווית עבור להב מסתובב ב‑94 גיגה־הרץ (אופטיקה פיזיקלית) —
+      החתימה הזוויתית שבבסיס סיווג מיקרו־דופלר של מטרות סובבות.</figcaption>
+  </figure>
+
+  <div class="tags"><span class="tag">94 גיגה־הרץ / W-band</span><span class="tag">מיקרו־דופלר</span>
+    <span class="tag">גילוי רחפנים</span><span class="tag">סיווג מטרות</span>
+    <span class="tag">שטח חתך מכ״ם (RCS)</span><span class="tag">COMSOL · MATLAB · ML</span></div>
+
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> ·
+  פתוח לשיתופי פעולה וייעוץ — <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a>.
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
