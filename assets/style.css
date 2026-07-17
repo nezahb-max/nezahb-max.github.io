@@ -20,10 +20,25 @@ figcaption{font-size:13px;color:var(--mut);margin-top:7px;text-align:center}
 .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px;color:inherit}
 .card:hover{border-color:var(--acc);text-decoration:none;box-shadow:0 3px 14px rgba(10,92,138,.08)}
 .card h3{color:var(--acc)}.card p{margin:0;color:var(--mut);font-size:14px}
+.capabilities{margin:30px 0 18px;padding:22px 24px;background:linear-gradient(135deg,#f2f7fa 0%,#f8fbfc 100%);border:1px solid #dce9f0;border-radius:12px}
+.capabilities h2{margin:0 0 8px}.capabilities>p{color:#334954;max-width:760px}
+.capability-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 30px;margin:15px 0 9px;padding:0;list-style:none}
+.capability-list li{position:relative;padding-left:17px;color:#344955;font-size:14.5px}
+.capability-list li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:6px;border-radius:50%;background:var(--acc2)}
+[dir="rtl"] .capability-list li{padding-left:0;padding-right:17px}
+[dir="rtl"] .capability-list li::before{left:auto;right:0}
+.example{margin:18px 0;padding:15px 18px;border-left:3px solid var(--acc2);background:#f5f9fb;border-radius:0 8px 8px 0;color:#334954}
+.example strong{display:block;color:var(--acc);font-size:13px;letter-spacing:.35px;text-transform:uppercase;margin-bottom:3px}
+.example p{margin:0;font-size:14.5px}
+[dir="rtl"] .example{border-left:0;border-right:3px solid var(--acc2);border-radius:8px 0 0 8px}
+.inquiry{margin:24px 0 6px;padding-top:18px;border-top:1px solid var(--line)}
+.inquiry p{max-width:720px;color:#40535f}
+.cta{display:inline-block;border:1px solid var(--acc);border-radius:7px;padding:8px 14px;font-size:14px;font-weight:700;background:#fff;color:var(--acc)}
+.cta:hover{background:#edf6fa;text-decoration:none}
 .creds{background:var(--code);border-radius:10px;padding:14px 18px;font-size:14.5px;color:#33454f;margin:18px 0}
 .creds a{font-weight:600}
 footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0;color:var(--mut);font-size:13.5px}
 footer a{font-weight:600}
 .back{font-size:14px;color:var(--mut)}
-@media(max-width:600px){.grid{grid-template-columns:1fr}h1{font-size:25px}
+@media(max-width:600px){.grid,.capability-list{grid-template-columns:1fr}h1{font-size:25px}
 nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;width:100%}}
