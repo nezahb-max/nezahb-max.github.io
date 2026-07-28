@@ -1,0 +1,26 @@
+# Dr. Nezah Balal — Applied Electromagnetics & Simulation
+
+> Research portfolio of Dr. Nezah Balal, Senior Lecturer in Electrical and Electronics Engineering and Head of the Applied Magnetic Systems (AMS) Lab at Ariel University, and Adjunct Senior Teaching Fellow in Physics at the Technion. Work spans compact particle accelerators, applied magnetism, antenna design, and millimeter-wave radar, modeled in COMSOL Multiphysics and MATLAB (alongside CST and HFSS) with experimental validation.
+
+Dr. Balal holds a PhD in Electrical Engineering (terahertz generation in free-electron devices), is an IEEE Senior Member, and has approximately 500 citations with an h-index of 13 (Google Scholar, as of July 2026). Contact: nezahb@ariel.ac.il.
+
+## Research pages
+
+- [Home](https://nezahb-max.github.io/): Overview of research areas and technical capabilities — computational electromagnetics and numerical simulation for accelerators, magnetics, antennas, and radar.
+- [Compact particle accelerators & IFEL](https://nezahb-max.github.io/accelerators.html): Inverse free-electron laser (IFEL) acceleration with tapered helical undulators, modeled in COMSOL — MeV-scale energy gain over centimeters at high acceleration gradient.
+- [Applied magnetism & undulators](https://nezahb-max.github.io/magnetics.html): Permanent-magnet (NdFeB) helical undulators and magnet systems — magnetostatic field maps, on-axis field and harmonics, and tolerance studies in COMSOL and Radia.
+- [Antenna design](https://nezahb-max.github.io/antennas.html): Horn, ultra-wideband (UWB), and millimeter-wave antennas and waveguide mode converters — full-wave COMSOL modeling with experimental validation.
+- [Millimeter-wave & micro-Doppler radar](https://nezahb-max.github.io/radar.html): 94 GHz radar systems for remote sensing and target classification, with MATLAB signal processing and machine learning.
+- [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html): Electron confinement between two magnetic lenses — Boris-pusher tracing in the exact Biot-Savart coil field, mirror condition and loss cone, with a live interactive simulation.
+
+## Academic profiles
+
+- [ORCID](https://orcid.org/0000-0003-4382-4053)
+- [Google Scholar](https://scholar.google.com/citations?user=WLig7e4AAAAJ)
+- [LinkedIn](https://www.linkedin.com/in/nezah-balal/)
+- [GitHub](https://github.com/nezahb-max)
+
+## Notes
+
+- A Hebrew version of most pages is available under [/he/](https://nezahb-max.github.io/he/).
+- This is a personal academic portfolio, not affiliated content published on behalf of Ariel University or the Technion.
