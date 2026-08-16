@@ -61,6 +61,18 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   Movements and Height Estimation Using Micro-Doppler Millimeter-Wave Radar.
   Sensors 20, 4660 (2020). https://doi.org/10.3390/s20174660
 
+
+## Selected magnetics / accelerator publications (with DOI)
+
+- Balal N, Bandurkin IV, Bratman VL, Fedotov AE. Helical undulator based on partial
+  redistribution of uniform magnetic field. Physical Review Accelerators and Beams
+  20, 122401 (2017). https://doi.org/10.1103/PhysRevAccelBeams.20.122401
+- Magory E, Bratman VL, Balal N. Permanent helical micro-undulators for x-ray free
+  electron lasers. Physics of Plasmas 31, 053301 (2024). https://doi.org/10.1063/5.0199053
+- Balal N, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator
+  radiation from short electron bunches moving in the field of permanent magnets.
+  Physics of Plasmas 28, 093301 (2021). https://doi.org/10.1063/5.0060778
+
 Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
 (580+ citations, h-index 14, as of August 2026).
 
