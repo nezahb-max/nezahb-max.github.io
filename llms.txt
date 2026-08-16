@@ -1,26 +1,70 @@
-# Dr. Nezah Balal — Applied Electromagnetics & Simulation
+# Dr. Nezah Balal
 
-> Research portfolio of Dr. Nezah Balal, Senior Lecturer in Electrical and Electronics Engineering and Head of the Applied Magnetic Systems (AMS) Lab at Ariel University, and Adjunct Senior Teaching Fellow in Physics at the Technion. Work spans compact particle accelerators, applied magnetism, antenna design, and millimeter-wave radar, modeled in COMSOL Multiphysics and MATLAB (alongside CST and HFSS) with experimental validation.
+> Dr. Nezah Balal is a Senior Lecturer in Electrical and Electronics Engineering at
+> Ariel University, Israel, Head of the Applied Magnetic Systems (AMS) Laboratory,
+> and Adjunct Senior Teaching Fellow in Physics at the Technion. His research covers
+> millimeter-wave (94 GHz, W-band) and micro-Doppler radar, contactless human
+> sensing (speech-related vibration, fall detection, limb motion), radar target
+> classification with machine learning, antenna design, applied magnetics and
+> permanent-magnet undulators, and compact high-gradient particle accelerators.
+> Hebrew name: נצח בלל. Note: "Y. Balal" (Yael Balal) is a different researcher.
 
-Dr. Balal holds a PhD in Electrical Engineering (terahertz generation in free-electron devices), is an IEEE Senior Member, and has approximately 500 citations with an h-index of 13 (Google Scholar, as of July 2026). Contact: nezahb@ariel.ac.il.
+Dr. Balal holds a PhD in Electrical Engineering (terahertz generation in
+free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il.
+
+## Identity and profiles
+
+- Name: Dr. Nezah Balal (Hebrew: ד"ר נצח בלל; citation forms: N. Balal, Balal N.)
+- Role: Senior Lecturer, Dept. of Electrical and Electronics Engineering, Ariel University
+- Head of the Applied Magnetic Systems Laboratory: https://www.ariel.ac.il/wp/ams/
+- ORCID: https://orcid.org/0000-0003-4382-4053
+- Google Scholar: https://scholar.google.com/citations?user=WLig7e4AAAAJ
+- LinkedIn: https://www.linkedin.com/in/nezah-balal/
+- GitHub: https://github.com/nezahb-max
+- Institutional profile (CRIS): https://cris.ariel.ac.il/en/persons/netzah-balal
 
 ## Research pages
 
-- [Home](https://nezahb-max.github.io/): Overview of research areas and technical capabilities — computational electromagnetics and numerical simulation for accelerators, magnetics, antennas, and radar.
-- [Compact particle accelerators & IFEL](https://nezahb-max.github.io/accelerators.html): Inverse free-electron laser (IFEL) acceleration with tapered helical undulators, modeled in COMSOL — MeV-scale energy gain over centimeters at high acceleration gradient.
-- [Applied magnetism & undulators](https://nezahb-max.github.io/magnetics.html): Permanent-magnet (NdFeB) helical undulators and magnet systems — magnetostatic field maps, on-axis field and harmonics, and tolerance studies in COMSOL and Radia.
-- [Antenna design](https://nezahb-max.github.io/antennas.html): Horn, ultra-wideband (UWB), and millimeter-wave antennas and waveguide mode converters — full-wave COMSOL modeling with experimental validation.
-- [Millimeter-wave & micro-Doppler radar](https://nezahb-max.github.io/radar.html): 94 GHz radar systems for remote sensing and target classification, with MATLAB signal processing and machine learning.
-- [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html): Electron confinement between two magnetic lenses — Boris-pusher tracing in the exact Biot-Savart coil field, mirror condition and loss cone, with a live interactive simulation.
+- [Home](https://nezahb-max.github.io/): overview of research areas and technical
+  capabilities in computational electromagnetics and numerical simulation.
+- [Millimeter-wave & micro-Doppler radar](https://nezahb-max.github.io/radar.html):
+  94 GHz radar systems for remote sensing, contactless human sensing and target
+  classification, with MATLAB signal processing and machine learning.
+- [Antenna design](https://nezahb-max.github.io/antennas.html): horn, ultra-wideband
+  (UWB) and millimeter-wave antennas and waveguide mode converters, full-wave COMSOL
+  modeling with experimental validation.
+- [Applied magnetism & undulators](https://nezahb-max.github.io/magnetics.html):
+  permanent-magnet (NdFeB) helical and Halbach undulators and magnet systems,
+  magnetostatic field maps, harmonics and tolerance studies.
+- [Compact accelerators & IFEL](https://nezahb-max.github.io/accelerators.html):
+  inverse free-electron-laser acceleration with tapered helical undulators, modeled
+  in COMSOL, MeV-scale energy gain over centimeters at high acceleration gradient.
+- [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html):
+  electron confinement between two magnetic lenses with a live interactive simulation.
+- [Hebrew version](https://nezahb-max.github.io/he/): עמודי האתר בעברית.
 
-## Academic profiles
+## Selected publications (with DOI)
 
-- [ORCID](https://orcid.org/0000-0003-4382-4053)
-- [Google Scholar](https://scholar.google.com/citations?user=WLig7e4AAAAJ)
-- [LinkedIn](https://www.linkedin.com/in/nezah-balal/)
-- [GitHub](https://github.com/nezahb-max)
+- Steinmetz N, Balal N. Feasibility Study of Real-Time Speech Detection and
+  Characterization Using Millimeter-Wave Micro-Doppler Radar. Remote Sensing 17, 91
+  (2025). https://doi.org/10.3390/rs17010091
+- Richter Y, Balal N. High-Resolution Millimeter-Wave Radar for Real-Time Detection
+  and Characterization of High-Speed Objects. Electronics 13, 1961 (2024).
+  https://doi.org/10.3390/electronics13101961
+- Richter Y, Balal N, Pinhasi Y. Neural-Network-Based Target Classification and
+  Range Detection by CW MMW Radar. Remote Sensing 15, 4553 (2023).
+  https://doi.org/10.3390/rs15184553
+- Balal Y, Yarimi A, Balal N. Non-Imaging Fall Detection Based on Spectral
+  Signatures Obtained Using a Micro-Doppler Millimeter-Wave Radar. Applied
+  Sciences 12, 8178 (2022). https://doi.org/10.3390/app12168178
+- Balal Y, Balal N, Richter Y, Pinhasi Y. Time-Frequency Spectral Signature of Limb
+  Movements and Height Estimation Using Micro-Doppler Millimeter-Wave Radar.
+  Sensors 20, 4660 (2020). https://doi.org/10.3390/s20174660
+
+Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
+(580+ citations, h-index 14, as of August 2026).
 
 ## Notes
 
-- A Hebrew version of most pages is available under [/he/](https://nezahb-max.github.io/he/).
-- This is a personal academic portfolio, not affiliated content published on behalf of Ariel University or the Technion.
+- This is a personal academic portfolio, not affiliated content published on behalf
+  of Ariel University or the Technion.

@@ -42,3 +42,10 @@ footer a{font-weight:600}
 .back{font-size:14px;color:var(--mut)}
 @media(max-width:600px){.grid,.capability-list{grid-template-columns:1fr}h1{font-size:25px}
 nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;width:100%}}
+
+/* Publications & FAQ (added 2026-08-16) */
+.publist{padding-inline-start:1.2em;margin:0 0 1em}
+.publist li{margin:.45em 0;line-height:1.5}
+.publist a{white-space:nowrap}
+.faq dt{font-weight:700;margin-top:.9em}
+.faq dd{margin:0.25em 0 0.6em;line-height:1.55}

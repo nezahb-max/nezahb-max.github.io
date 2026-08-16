@@ -1,4 +1,27 @@
+# All crawlers welcome, including AI crawlers
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 Sitemap: https://nezahb-max.github.io/sitemap.xml
+# Machine-readable summary for LLMs: https://nezahb-max.github.io/llms.txt
