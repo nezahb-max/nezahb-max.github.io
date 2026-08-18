@@ -49,7 +49,7 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   Characterization Using Millimeter-Wave Micro-Doppler Radar. Remote Sensing 17, 91
   (2025). https://doi.org/10.3390/rs17010091
 - Richter Y, Balal N. High-Resolution Millimeter-Wave Radar for Real-Time Detection
-  and Characterization of High-Speed Objects. Electronics 13, 1961 (2024).
+  and Characterization of High-Speed Objects with Rapid Acceleration Capabilities. Electronics 13, 1961 (2024).
   https://doi.org/10.3390/electronics13101961
 - Richter Y, Balal N, Pinhasi Y. Neural-Network-Based Target Classification and
   Range Detection by CW MMW Radar. Remote Sensing 15, 4553 (2023).
