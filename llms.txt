@@ -22,6 +22,10 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - LinkedIn: https://www.linkedin.com/in/nezah-balal/
 - GitHub: https://github.com/nezahb-max
 - Institutional profile (CRIS): https://cris.ariel.ac.il/en/persons/nezah-balal/
+- Wikidata: https://www.wikidata.org/wiki/Q141104849
+- dblp: https://dblp.org/pid/186/8915
+- ResearchGate: https://www.researchgate.net/scientific-contributions/Nezah-Balal-2044775662
+- CV: https://nezahb-max.github.io/cv.html (printable: https://nezahb-max.github.io/cv.pdf)
 
 ## Research pages
 
@@ -41,13 +45,22 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   in COMSOL, MeV-scale energy gain over centimeters at high acceleration gradient.
 - [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html):
   electron confinement between two magnetic lenses with a live interactive simulation.
-- [Hebrew version](https://nezahb-max.github.io/he/): עמודי האתר בעברית.
+- [AMS Lab overview](https://nezahb-max.github.io/ams-lab.html): the Applied Magnetic
+  Systems Laboratory at Ariel University, research lines, outputs and funding.
+- [RF capabilities for industry](https://nezahb-max.github.io/ams-rf-industry-collaboration/):
+  prototyping, measurements and applied RF collaboration packages of the AMS Lab.
+- [Hebrew version](https://nezahb-max.github.io/he/): עמודי האתר בעברית, כולל
+  https://nezahb-max.github.io/he/radar.html, https://nezahb-max.github.io/he/antennas.html,
+  https://nezahb-max.github.io/he/magnetics.html.
 
 ## Selected publications (with DOI)
 
 - Steinmetz N, Balal N. Feasibility Study of Real-Time Speech Detection and
   Characterization Using Millimeter-Wave Micro-Doppler Radar. Remote Sensing 17, 91
   (2025). https://doi.org/10.3390/rs17010091
+- Balal Y, Steinmetz N, Sherenzon A, Balal N. Bending-Aware Spectrogram Correlation for
+  W-Band Quadcopter Detection: A Physics-Informed Non-Coherent Detection Framework.
+  Sensors 26, 4851 (2026). https://doi.org/10.3390/s26154851
 - Richter Y, Balal N. High-Resolution Millimeter-Wave Radar for Real-Time Detection
   and Characterization of High-Speed Objects with Rapid Acceleration Capabilities. Electronics 13, 1961 (2024).
   https://doi.org/10.3390/electronics13101961
@@ -69,6 +82,13 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   20, 122401 (2017). https://doi.org/10.1103/PhysRevAccelBeams.20.122401
 - Magory E, Bratman VL, Balal N. Permanent helical micro-undulators for x-ray free
   electron lasers. Physics of Plasmas 31, 053301 (2024). https://doi.org/10.1063/5.0199053
+- Balal N, Bamberg E, Bratman VL, Magory E. Fabrication and Experimental Study of
+  Prototype NdFeB Helical Undulators. IEEE Transactions on Electron Devices 70,
+  5911-5915 (2023). https://doi.org/10.1109/TED.2023.3315250
+- Magory E, Bratman VL, Steiner A, Balal N. Implementation of Prototype Permanent
+  Microundulators. Preprint, arXiv:2509.06186 (2025). https://arxiv.org/abs/2509.06186
+- Tokman MD, Bratman VL, Magori E, Balal N. Helical Field-Driven Translational-Rotational
+  Conversion in Conductors. Preprint, arXiv:2509.10042 (2025). https://arxiv.org/abs/2509.10042
 - Balal N, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator
   radiation from short electron bunches moving in the field of permanent magnets.
   Physics of Plasmas 28, 093301 (2021). https://doi.org/10.1063/5.0060778
@@ -80,3 +100,5 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
 
 - This is a personal academic portfolio, not affiliated content published on behalf
   of Ariel University or the Technion.
+
+Last updated: 2026-08-18
