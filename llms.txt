@@ -24,7 +24,7 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - Institutional profile (CRIS): https://cris.ariel.ac.il/en/persons/nezah-balal/
 - Wikidata: https://www.wikidata.org/wiki/Q141104849
 - dblp: https://dblp.org/pid/186/8915
-- ResearchGate: https://www.researchgate.net/scientific-contributions/Nezah-Balal-2044775662
+- ResearchGate: https://www.researchgate.net/profile/Nezah-Balal
 - CV: https://nezahb-max.github.io/cv.html (printable: https://nezahb-max.github.io/cv.pdf)
 
 ## Research pages
