@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם | ד״ר נצח בלל</title>
+<meta name="description" content="גלריית סימולציות אלקטרומגנטיות ב-COMSOL (קומסול): Wi-Fi בדירה עם ממ״ד, אנטנת קרן עם עדשה, אנטנת ויוואלדי, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן.">
+<meta name="keywords" content="סימולציה אלקטרומגנטית, סימולציות COMSOL, קומסול, סימולציה של אנטנה, התפשטות גלים, סימולציית מכ״ם, CST, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/simulations.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/simulations.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/simulations.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/simulations.html">
+<meta property="og:title" content="סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם">
+<meta property="og:description" content="Wi-Fi בדירה עם ממ״ד, אנטנת קרן עם עדשה, אנטנת ויוואלדי, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/simulations.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם">
+<meta name="twitter:description" content="Wi-Fi בדירה עם ממ״ד, אנטנת קרן עם עדשה, אנטנת ויוואלדי, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם","description":"גלריית סימולציות אלקטרומגנטיות: Wi-Fi בדירה עם ממ״ד, אנטנת קרן עם עדשה ב־10 GHz, אנטנת ויוואלדי אנטיפודלית, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן ב־94 GHz.","about":["סימולציה אלקטרומגנטית","COMSOL Multiphysics","תכנון אנטנות","התפשטות גלים","מכ״ם"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"he","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/he/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/he/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד, דלת פתוחה, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"אנטנת קרן ב־10 GHz בלי עדשה ועם עדשת PTFE: העדשה ממקדת את הגל, מודל COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"תבנית ההגבר התלת־ממדית של אנטנת ויוואלדי אנטיפודלית מ־3 עד 11 GHz, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"מכ״ם 77 GHz משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"מיקרו־דופלר מדומה של רחפן ארבעה רוטורים במכ״ם 94 GHz"}]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="../accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="../particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../simulations.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">סימולציה אלקטרומגנטית · אנטנות · מכ״ם</p>
+  <h1>סימולציות אלקטרומגנטיות: אנטנות, התפשטות גלים ומכ״ם</h1>
+  <p class="lead">סימולציה אלקטרומגנטית מראה איך גל מתפשט במבנה, באנטנה, בדירה או מאחורי פגוש של רכב, עוד לפני
+    שהמבנה קיים. רוב המודלים בדף נבנו ב‑COMSOL Multiphysics (קומסול), ובעבודות שפורסמו השתמשתי גם
+    ב‑CST Studio Suite. את העיבוד והניתוח אני עושה ב‑MATLAB וב‑Python, ובמידת האפשר משווה את
+    התוצאות למדידות בחדר האל־הד של המעבדה.</p>
+
+  <section id="wifi">
+    <h2>Wi-Fi בדירה עם ממ״ד</h2>
+    <figure>
+      <img src="../assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="אנימציית סימולציה של גלי Wi-Fi בתדר 2.44 GHz בדירה: הגל מתפשט מנקודת הגישה בסלון ונכנס לממ״ד דרך הדלת הפתוחה.">
+      <figcaption>חזיתות הגל של Wi-Fi בתדר 2.44 GHz, דלת הממ״ד פתוחה. סימולציית COMSOL.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/wifi-safe-room-mesh-rebar-comsol.png" width="1400" height="1300" decoding="async" loading="lazy" alt="רשת האלמנטים של COMSOL בפינת הממ״ד, עם טבעות אלמנטים צפופות סביב כל מוט זיון.">
+        <figcaption>רשת האלמנטים בפינת הממ״ד, מעודנת סביב מוטות הזיון.</figcaption>
+      </figure>
+      <div>
+        <p>מודל דו־ממדי של דירה בגודל <bdi dir="ltr">10 × 8</bdi> מ׳ עם ממ״ד מבטון מזוין, דלת הדף ותריס פלדה, וחומרי בנייה לפי
+          ITU-R P.2040-4. השדה נפתר פעמיים, עם דלת הממ״ד פתוחה ועם דלת סגורה.</p>
+        <ul>
+          <li>בממ״ד הרמה הממוצעת נמוכה מהסלון ב־<strong>12 dB</strong> כשהדלת פתוחה וב־<strong>32 dB</strong> כשהיא סגורה</li>
+          <li><strong>3.6 מיליון</strong> דרגות חופש בכל מצב דלת</li>
+        </ul>
+        <p><a href="wifi-mamad.html">Wi‑Fi בממ״ד: הניתוח המלא ←</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lens-horn">
+    <h2>אנטנת קרן עם עדשה ממקדת ב־10 GHz</h2>
+    <figure>
+      <img src="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" loading="lazy" alt="אנימציה של השדה החשמלי ב־10 GHz: למעלה אנטנת קרן בלי עדשה וגל מתבדר, למטה אותה אנטנה עם עדשת PTFE והגל מתכנס למוקד מול הפתח.">
+      <figcaption>למעלה אנטנת הקרן לבדה, למטה עם עדשת PTFE. האנימציה נבנתה מנתוני השדה של מודל COMSOL.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/antenna-lens-horn-field-3d-comsol.png" width="1200" height="763" decoding="async" loading="lazy" alt="הדמיה תלת־ממדית מתוך COMSOL של אנטנת הקרן עם העדשה, לפני מישור השדה החשמלי שבו נראה הגל המתכנס.">
+        <figcaption>הדמיה תלת־ממדית ב‑COMSOL: הקרן והעדשה לפני מישור השדה.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/photos/antenna-lens-horn-3d-printed-ptfe-lens.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="אב־הטיפוס: אנטנת קרן קונית צהובה מודפסת בתלת־ממד, עם עדשת PTFE לבנה על הפתח, על מתקן הרכבה מתכתי.">
+        <figcaption>אב־הטיפוס המודפס עם עדשת ה‑PTFE. מתוך: <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</figcaption>
+      </figure>
+    </div>
+    <p>אנטנת קרן קונית מודפסת בתלת־ממד עם עדשת PTFE דו־קמורה, מתוך עבודה שפורסמה ב‑Electronics
+      ב־2025. העדשה הופכת את חזית הגל המתבדרת של הקרן לחזית מתכנסת ומרכזת את ההספק בכתם קטן מול האנטנה.</p>
+    <ul>
+      <li>רוחב הכתם במוקד (חצי הספק): <strong>כ־27 מ״מ</strong>, 0.89 אורך גל</li>
+      <li>המוקד במדידה ובסימולציה: כ־<strong>67 מ״מ</strong> מהמשטח הקדמי של העדשה, כ־100 מ״מ מעבר לפתח הקרן</li>
+    </ul>
+    <p><a href="antennas.html#lens-horn">התכנון, המדידות והפרסום ←</a></p>
+  </section>
+
+  <section id="vivaldi">
+    <h2>אנטנת ויוואלדי אנטיפודלית רחבת־סרט</h2>
+    <figure>
+      <img src="../assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="אנימציה של תבנית ההגבר התלת־ממדית של אנטנת ויוואלדי: בכל תמונה תדר אחר מ־3 עד 11 GHz, וההגבר בכיוון הקרינה עולה עם התדר.">
+      <figcaption>תבנית ההגבר הממומש בתלת־ממד, תמונה לכל GHz מ־3 עד 11 GHz. סימולציית COMSOL.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/antenna-vivaldi-geometry-comsol.png" width="1400" height="875" decoding="async" loading="lazy" alt="מבט תלת־ממדי מתוך COMSOL על לוח האנטנה: הנחושת העליונה בכתום, הנחושת התחתונה בכחול ופורט ההזנה באדום בקצה הלוח.">
+        <figcaption>הלוח ב‑COMSOL: נחושת עליונה ותחתונה ופורט ההזנה.</figcaption>
+      </figure>
+      <div>
+        <p>אנטנה על לוח Rogers RO4003C בגודל <bdi dir="ltr">60 × 70</bdi> מ״מ, שתוכננה ליעד תדר תחתון של 3 GHz. המודל
+          תלת־ממדי וכולל פורט הזנה, שכבות PML וחישוב שדה רחוק.</p>
+        <p>בסימולציה:</p>
+        <ul>
+          <li>הפסד החזרה של <strong>10 dB לפחות</strong> מכ־3.6 GHz ועד סוף הסריקה ב־12 GHz, פרט לתחום צר סביב
+            5 GHz שבו הוא יורד לכ־9 dB</li>
+          <li>הגבר ממומש בכיוון הקרינה: <strong>8.3 עד 9.1 dBi</strong> בין 6 ל־11 GHz</li>
+        </ul>
+        <p><a href="antennas.html#vivaldi">הגאומטריה והתוצאות המלאות ←</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="radome">
+    <h2>מכ״ם רכב ב־77 GHz מאחורי פגוש</h2>
+    <figure>
+      <img src="../assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="אנימציה: משמאל השדה של מערך מכ״ם ב־77 GHz העובר דרך לוח פגוש שעוביו משתנה, מימין עקומות ההספק המועבר והמוחזר כתלות בעובי הלוח.">
+      <figcaption>משמאל השדה של המערך דרך הלוח, מימין ההספק המועבר והמוחזר כתלות בעובי. סימולציית COMSOL.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/gallery-radome-77ghz-geometry-comsol.png" width="1400" height="1100" decoding="async" loading="lazy" alt="הגאומטריה ב‑COMSOL: מערך של 8 מקורות קוויים לפני מישור הארקה, לוח הפגוש מולו ושכבות PML סביב התחום.">
+        <figcaption>הגאומטריה ב‑COMSOL: מערך, מישור הארקה, לוח הפגוש ושכבות PML.</figcaption>
+      </figure>
+      <div>
+        <p>מערך של 8 מקורות משדר דרך לוח פגוש מתערובת פוליפרופילן, ועובי הלוח משתנה מ־1 עד 4 מ״מ. כשהעובי
+          הוא כפולה של חצי אורך גל בחומר, ההחזר מהלוח קרוב לאפס. בעובי אחר חלק מההספק חוזר אל המכ״ם.
+          המודל דו־ממדי.</p>
+        <ul>
+          <li>העברה מרבית בעובי <strong>1.16, 2.32 ו־3.48 מ״מ</strong></li>
+          <li>עד <strong>22%</strong> מההספק מוחזר בעובי לא מותאם (גל ניצב)</li>
+          <li>על לוח בעובי 3.48 מ״מ שכבת צבע מטאלי מעלה את ההחזר לכ־<strong>40%</strong>. בעובי 1.98 מ״מ ההפסד של הלוח הצבוע הוא 0.87 dB</li>
+        </ul>
+        <p><a href="radar.html#radome">המודל, החומרים והאימות ←</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="micro-doppler">
+    <h2>מיקרו־דופלר של רחפן ב־94 GHz</h2>
+    <figure>
+      <img src="../assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="אנימציה: משמאל מבט־על על ארבעת הרוטורים של רחפן, מימין ספקטרוגרמה של אות מכ״ם ב־94 GHz שבה כל חציית להב יוצרת הבזק אנכי.">
+      <figcaption>משמאל ארבעת הרוטורים, מואטים פי 240. מימין הספקטרוגרמה, שבה כל חציית להב יוצרת הבזק אנכי.</figcaption>
+    </figure>
+    <p>סימולציה של אות מכ״ם CW בתדר 94 GHz המוחזר מרחפן בעל ארבעה רוטורים. כל להב מיוצג כשורה של מפזרים
+      נקודתיים, והמודל נכתב ב‑Python. בכל פעם שלהב חוצה את הניצב לקו הראייה של המכ״ם, נוצר בספקטרוגרמה
+      הבזק אנכי שגובהו נקבע מתדר הדופלר של קצה הלהב.</p>
+    <ul>
+      <li>הבזקי הלהבים מגיעים עד <strong>45 kHz</strong> לכל צד של קו הגוף</li>
+      <li>הבזק אחד לכל רוטור כל <strong>5.5 עד 6.5 ms</strong></li>
+      <li>מסרק קווים ספקטרליים (HERM) לכל רוטור, במרווחים של <strong>155, 164, 170 ו־181 Hz</strong></li>
+    </ul>
+    <p><a href="radar.html#micro-doppler">מיקרו־דופלר ומכ״ם גלים מילימטריים ←</a></p>
+  </section>
+
+  <h2>סימולציות נוספות באתר</h2>
+  <div class="grid">
+    <a class="card" href="radar.html">
+      <figure style="margin:0 0 10px"><img src="../assets/sim/gallery-thumb-rcs-scattering-comsol.jpg" width="600" height="400" decoding="async" loading="lazy" alt="פיזור גל מישורי ממטרה במודל COMSOL, לחישוב שטח חתך מכ״ם."></figure>
+      <h3>שטח חתך מכ״ם (RCS)</h3>
+      <p>פיזור גל מישורי ממטרה, מודל COMSOL</p>
+    </a>
+    <a class="card" href="../particle-dynamics.html" hreflang="en">
+      <figure style="margin:0 0 10px"><img src="../assets/sim/gallery-thumb-electron-mirror-trap.jpg" width="600" height="400" decoding="async" loading="lazy" alt="מסלול סלילי של אלקטרון הכלוא בין שני סלילים במלכודת מראה מגנטית."></figure>
+      <h3>מלכודת מראה מגנטית</h3>
+      <p>מסלול אלקטרון בין שתי עדשות מגנטיות (באנגלית)</p>
+    </a>
+    <a class="card" href="../accelerators.html" hreflang="en">
+      <figure style="margin:0 0 10px"><img src="../assets/sim/gallery-thumb-ifel-accelerator.jpg" width="600" height="400" decoding="async" loading="lazy" alt="אונדולטור סלילי ומסלול אלקטרון במודל COMSOL של מאיץ IFEL, עם גרף עליית האנרגיה."></figure>
+      <h3>מאיץ IFEL קומפקטי</h3>
+      <p>האצת אלקטרון באונדולטור סלילי בעזרת גל טרה־הרץ, מודל COMSOL (באנגלית)</p>
+    </a>
+    <a class="card" href="magnetics.html">
+      <h3>מגנטיות שימושית</h3>
+      <p>מודלים מגנטוסטטיים ב‑COMSOL של אונדולטורים ממגנטים קבועים ומפות שדה מגנטי</p>
+    </a>
+  </div>
+
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · סימולציות אלקטרומגנטיות. · עדכון אחרון: אוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

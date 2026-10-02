@@ -33,25 +33,33 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   capabilities in computational electromagnetics and numerical simulation.
 - [Millimeter-wave & micro-Doppler radar](https://nezahb-max.github.io/radar.html):
   94 GHz radar systems for remote sensing, contactless human sensing and target
-  classification, with MATLAB signal processing and machine learning.
+  classification, with MATLAB signal processing and machine learning; a simulated
+  quadcopter micro-Doppler signature and a COMSOL model of a 77 GHz radar behind a
+  bumper panel.
 - [Antenna design](https://nezahb-max.github.io/antennas.html): horn, ultra-wideband
   (UWB) and millimeter-wave antennas and waveguide mode converters, full-wave COMSOL
-  modeling with experimental validation.
+  and CST modeling with experimental validation: a 3D-printed horn with a PTFE
+  focusing lens, an antipodal Vivaldi (simulation) and a printed X-band mode converter.
 - [Applied magnetism & undulators](https://nezahb-max.github.io/magnetics.html):
   permanent-magnet (NdFeB) helical and Halbach undulators and magnet systems,
-  magnetostatic field maps, harmonics and tolerance studies.
+  magnetostatic field maps, harmonics, tolerance studies and gaussmeter field mapping.
 - [Compact accelerators & IFEL](https://nezahb-max.github.io/accelerators.html):
   inverse free-electron-laser acceleration with tapered helical undulators, modeled
   in COMSOL, MeV-scale energy gain over centimeters at high acceleration gradient.
 - [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html):
   electron confinement between two magnetic lenses with a live interactive simulation.
+- [Electromagnetic simulations](https://nezahb-max.github.io/simulations.html): gallery
+  of COMSOL models with field animations, from antennas and radar to indoor Wi-Fi.
+- [Wi-Fi in an apartment with a safe room](https://nezahb-max.github.io/wifi-safe-room.html):
+  2D COMSOL model of 2.44 GHz Wi-Fi propagation through the reinforced-concrete walls,
+  door and shutter of a residential safe room (mamad).
 - [AMS Lab overview](https://nezahb-max.github.io/ams-lab.html): the Applied Magnetic
   Systems Laboratory at Ariel University, research lines, outputs and funding.
-- [RF capabilities for industry](https://nezahb-max.github.io/ams-rf-industry-collaboration/):
-  prototyping, measurements and applied RF collaboration packages of the AMS Lab.
 - [Hebrew version](https://nezahb-max.github.io/he/): עמודי האתר בעברית, כולל
   https://nezahb-max.github.io/he/radar.html, https://nezahb-max.github.io/he/antennas.html,
-  https://nezahb-max.github.io/he/magnetics.html.
+  https://nezahb-max.github.io/he/magnetics.html,
+  https://nezahb-max.github.io/he/simulations.html (סימולציות אלקטרומגנטיות),
+  https://nezahb-max.github.io/he/wifi-mamad.html (Wi-Fi בדירה עם ממ"ד).
 
 ## Selected publications (with DOI)
 
@@ -61,6 +69,9 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - Balal Y, Steinmetz N, Sherenzon A, Balal N. Bending-Aware Spectrogram Correlation for
   W-Band Quadcopter Detection: A Physics-Informed Non-Coherent Detection Framework.
   Sensors 26, 4851 (2026). https://doi.org/10.3390/s26154851
+- Steinmetz N, Magori E, Balal Y, Sudai YB, Balal N. A 94 GHz Millimeter-Wave Radar
+  System for Remote Vehicle Height Measurement to Prevent Bridge Collisions.
+  Sensors 26, 1921 (2026). https://doi.org/10.3390/s26061921
 - Richter Y, Balal N. High-Resolution Millimeter-Wave Radar for Real-Time Detection
   and Characterization of High-Speed Objects with Rapid Acceleration Capabilities. Electronics 13, 1961 (2024).
   https://doi.org/10.3390/electronics13101961
@@ -74,6 +85,14 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   Movements and Height Estimation Using Micro-Doppler Millimeter-Wave Radar.
   Sensors 20, 4660 (2020). https://doi.org/10.3390/s20174660
 
+## Selected antenna publications (with DOI)
+
+- Michael A, Balal N. 3D-Printed Circular Horn Antenna with Dielectric Lens for
+  Focused RF Energy Delivery. Electronics 14, 3191 (2025).
+  https://doi.org/10.3390/electronics14163191
+- Balal N, Michael A. 3D-Printed Rectangular-to-Circular Waveguide Mode Converters:
+  Design, Fabrication and Experimental Validation at X-Band. PIERS-Fall 2025, pp. 1-5.
+  https://doi.org/10.23919/PIERS-Fall62445.2025.11394043
 
 ## Selected magnetics / accelerator publications (with DOI)
 
@@ -90,7 +109,8 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - Tokman MD, Bratman VL, Magori E, Balal N. Helical Field-Driven Translational-Rotational
   Conversion in Conductors. Preprint, arXiv:2509.10042 (2025). https://arxiv.org/abs/2509.10042
 - Balal N, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator
-  radiation from short electron bunches moving in the field of permanent magnets.
+  radiation from short electron bunches moving in the field of permanently magnetized
+  helices.
   Physics of Plasmas 28, 093301 (2021). https://doi.org/10.1063/5.0060778
 
 Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
@@ -100,4 +120,4 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
 - This is a personal academic portfolio, not affiliated content published on behalf
   of Ariel University or the Technion.
 
-Last updated: 2026-08-20
+Last updated: 2026-10-02
