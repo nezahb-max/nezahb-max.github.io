@@ -105,9 +105,9 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
   Prototype NdFeB Helical Undulators. IEEE Transactions on Electron Devices 70,
   5911-5915 (2023). https://doi.org/10.1109/TED.2023.3315250
 - Magory E, Bratman VL, Steiner A, Balal N. Implementation of Prototype Permanent
-  Microundulators. Preprint, arXiv:2509.06186 (2025). https://arxiv.org/abs/2509.06186
+  Microundulators. Nucl. Instrum. Methods Phys. Res. A 1088, 171473 (2026). https://doi.org/10.1016/j.nima.2026.171473 (preprint: https://arxiv.org/abs/2509.06186)
 - Tokman MD, Bratman VL, Magori E, Balal N. Helical Field-Driven Translational-Rotational
-  Conversion in Conductors. Preprint, arXiv:2509.10042 (2025). https://arxiv.org/abs/2509.10042
+  Conversion in Conductors. Physical Review E 113, 034213 (2026). https://doi.org/10.1103/tnpy-3t47 (preprint: https://arxiv.org/abs/2509.10042)
 - Balal N, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator
   radiation from short electron bunches moving in the field of permanently magnetized
   helices.
