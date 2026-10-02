@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Antenna Design &amp; Electromagnetic Simulation — Horn, UWB &amp; mmWave Antennas (COMSOL) | Dr. Nezah Balal</title>
-<meta name="description" content="Design and full-wave simulation of horn antennas, ultra-wideband (UWB) antennas, millimeter-wave antennas and waveguide mode converters in COMSOL — radiation patterns, return loss and experimental validation.">
-<meta name="keywords" content="antenna design, horn antenna simulation, UWB antenna, ultra wideband antenna, millimeter-wave antenna, waveguide mode converter, COMSOL RF, CST Microwave Studio, Ansys HFSS, HFSS antenna simulation, CST antenna, radiation pattern, full-wave electromagnetic simulation, 3D printed antenna, Nezah Balal">
+<title>Antenna Design &amp; Full-Wave Simulation in COMSOL and CST | Dr. Nezah Balal</title>
+<meta name="description" content="Antenna design and full-wave simulation in COMSOL and CST: a 3D-printed horn with a PTFE focusing lens, an antipodal Vivaldi and a printed mode converter.">
+<meta name="keywords" content="antenna design, horn antenna simulation, dielectric lens antenna, 3D printed horn antenna, Vivaldi antenna, antipodal Vivaldi, UWB antenna, ultra wideband antenna, millimeter-wave antenna, waveguide mode converter, COMSOL RF, CST Studio Suite, CST Microwave Studio, Ansys HFSS, radiation pattern, antenna measurement, anechoic chamber, full-wave electromagnetic simulation, Nezah Balal">
 <link rel="canonical" href="https://nezahb-max.github.io/antennas.html">
-<meta property="og:title" content="Antenna Design &amp; Electromagnetic Simulation — Horn, UWB &amp; mmWave Antennas (COMSOL)">
-<meta property="og:description" content="Design and full-wave simulation of horn antennas, ultra-wideband (UWB) antennas, millimeter-wave antennas and waveguide mode converters in COMSOL — radiation patterns, return loss and experimental validation.">
+<meta property="og:title" content="Antenna Design &amp; Full-Wave Simulation in COMSOL and CST">
+<meta property="og:description" content="Antenna design and full-wave simulation in COMSOL and CST: a 3D-printed horn with a PTFE focusing lens, an antipodal Vivaldi and a printed mode converter.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://nezahb-max.github.io/antennas.html">
-<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-antennas.jpg">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/sim/antenna-lens-horn-og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="he_IL"><meta property="og:site_name" content="Dr. Nezah Balal">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Antenna Design &amp; Electromagnetic Simulation — Horn, UWB &amp; mmWave Antennas (COMSOL)">
-<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-antennas.jpg">
+<meta name="twitter:title" content="Antenna Design &amp; Full-Wave Simulation in COMSOL and CST">
+<meta name="twitter:description" content="A 3D-printed horn with a PTFE focusing lens, an antipodal Vivaldi and a printed waveguide mode converter, modelled in COMSOL and CST and compared with measurement.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/sim/antenna-lens-horn-og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0a5c8a">
@@ -24,7 +26,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/antennas.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Design and Full-Wave Simulation of Horn, UWB and Millimeter-Wave Antennas","about":["antenna design","horn antenna","ultra-wideband antenna","waveguide mode converter","electromagnetic simulation"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"inLanguage":"en","dateModified":"2026-08-20","citation":["https://doi.org/10.3390/electronics14163191"]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Antenna Design and Full-Wave Simulation: Lens Horn, Antipodal Vivaldi and Printed Waveguide Mode Converter","about":["antenna design","horn antenna","dielectric lens antenna","antipodal Vivaldi antenna","ultra-wideband antenna","waveguide mode converter","antenna measurement","electromagnetic simulation","COMSOL Multiphysics","CST Studio Suite"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"url":"https://nezahb-max.github.io/antennas.html","mainEntityOfPage":"https://nezahb-max.github.io/antennas.html","image":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-field-3d-comsol.png","inLanguage":"en","dateModified":"2026-10-02","citation":["https://doi.org/10.3390/electronics14163191","https://doi.org/10.23919/PIERS-Fall62445.2025.11394043"]}
 </script>
 </head>
 <body>
@@ -33,6 +35,7 @@
   <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
   <a href="particle-dynamics.html">Particle Dynamics</a>
   <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+  <a href="simulations.html">Simulations</a>
   <a href="he/antennas.html" lang="he">עברית</a>
 </nav></div></header>
 
@@ -44,31 +47,118 @@
     verify them with full-wave modeling in <strong>COMSOL</strong>, <strong>CST Microwave Studio</strong>
     and <strong>Ansys HFSS</strong>, with selected designs then validated against measurement.</p>
 
+  <h2 id="lens-horn">3D-printed horn with a PTFE focusing lens (10 GHz)</h2>
+  <p>A conical horn spreads its beam once the wave leaves the aperture. A biconvex PTFE lens placed
+    in the aperture turns the diverging wavefront into a converging one, so the power gathers in a
+    spot about 100 mm in front of the horn. The horn was 3D-printed and metallized, and the lens was
+    machined from PTFE (relative permittivity 2.2).</p>
+
   <figure>
-    <img src="assets/antenna-radiation-pattern-comsol.gif" width="640" height="600" decoding="async" alt="COMSOL 3D full-wave simulation of an antenna radiation pattern, showing the far-field directivity lobes.">
-    <figcaption>3-D far-field radiation pattern from a full-wave COMSOL model — directivity, beamwidth
-      and side-lobe structure extracted directly from the simulation.</figcaption>
+    <img src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" alt="COMSOL animation at 10 GHz of the electric field in a conical horn, alone (top) and with a PTFE lens (bottom); with the lens the wavefront converges to a focus about 100 mm in front of the aperture.">
+    <figcaption>COMSOL, 10 GHz: the field E<sub>x</sub> over one phase cycle, horn alone (top) and horn
+      with lens (bottom). The triangles mark the focus.</figcaption>
+  </figure>
+
+  <div class="grid">
+    <figure>
+      <img src="assets/photos/antenna-lens-horn-3d-printed-ptfe-lens.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="The 3D-printed, metallized conical horn (yellow) with the white PTFE lens fixed to its aperture, on a lab bench.">
+      <figcaption>The printed horn with the PTFE lens. From:
+        <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/sim/antenna-lens-horn-field-3d-comsol.png" width="1200" height="763" decoding="async" loading="lazy" alt="COMSOL 3D view of the horn and lens in front of a field plane: the beam narrows beyond the lens.">
+      <figcaption>COMSOL 3D view: horn and lens in front of the E<sub>x</sub> field plane.</figcaption>
+    </figure>
+  </div>
+
+  <p>In the model the on-axis power peaks 101.5 mm in front of the aperture. The focal spot is about
+    27 mm wide at half power (0.9 λ at 10 GHz), against 138 mm for the horn alone at the same
+    distance. The measured axial power also peaks about 100 mm from the aperture. The model is 2D
+    axisymmetric, with perfectly conducting walls and a lossless lens.</p>
+
+  <figure>
+    <img src="assets/photos/antenna-lens-horn-pattern-sim-vs-measured-published.jpg" width="794" height="567" decoding="async" loading="lazy" alt="Normalized radiation pattern of the horn with the PTFE lens at 10 GHz, from -20 to 20 degrees: simulation (line) and measurement with error bars (points).">
+    <figcaption>Radiation pattern of the horn with the lens at 10 GHz: simulation and measurement.
+      From: <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0.</figcaption>
   </figure>
 
   <figure>
-    <img src="assets/uwb-wideband-antenna-fdtd.gif" width="777" height="525" decoding="async" loading="lazy" alt="Time-domain FDTD simulation of an ultra-wideband (UWB) antenna radiating a wideband pulse.">
-    <figcaption>Ultra-wideband antenna — time-domain field propagation, the basis for impedance
-      bandwidth and pulse-fidelity design.</figcaption>
+    <img src="assets/sim/antenna-horn-pattern-comsol-vs-cst.jpg" width="1400" height="771" decoding="async" loading="lazy" alt="Far-field pattern of the horn without the lens at 10 GHz computed in COMSOL Multiphysics (blue points) and CST Studio Suite (red line); the two curves overlap on the main lobe.">
+    <figcaption>The same horn without the lens, modelled in COMSOL (points) and in CST Studio Suite
+      (line), 10 GHz. Horizontal axis: angle in radians, boresight at π/2; vertical axis: normalized
+      pattern. The two solvers agree on the main lobe and on the side-lobe positions. From:
+      <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0.</figcaption>
   </figure>
 
+  <h2 id="vivaldi">Antipodal Vivaldi antenna (simulation, 3 GHz design target)</h2>
+  <p>A Vivaldi antenna is a slot that widens exponentially toward its open end. Each frequency
+    radiates from the part of the flare where the slot is about half a wavelength wide, so one
+    antenna covers a wide band. In the antipodal version the two flares are printed on opposite
+    sides of the board and fed from a microstrip line through a tapered ground. This design uses a
+    60 × 70 mm Rogers RO4003C board with a 50 mm aperture, half a wavelength at 3 GHz.</p>
+
+  <div class="grid">
+    <figure>
+      <img src="assets/sim/antenna-vivaldi-geometry-comsol.png" width="1400" height="875" decoding="async" loading="lazy" alt="COMSOL 3D view of the antipodal Vivaldi board: top copper flare and microstrip in orange, bottom copper flare and ground in blue, lumped port in red.">
+      <figcaption>COMSOL geometry: top copper (orange), bottom copper (blue), 50 Ω port (red).</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="Animated 3D realized-gain pattern of the Vivaldi antenna from 3 to 11 GHz in 1 GHz steps; the main beam points along the board toward the open end of the flare.">
+      <figcaption>Realized-gain pattern from 3 to 11 GHz, one frame per GHz.</figcaption>
+    </figure>
+  </div>
+
   <figure>
-    <img src="assets/tem-horn-antenna-comsol.gif" width="740" height="540" decoding="async" loading="lazy" alt="COMSOL simulation of a TEM horn antenna operating at 1.3 GHz, showing the guided-to-radiated field transition.">
-    <figcaption>TEM horn antenna at 1.3 GHz — the guided-to-radiated transition that sets gain and
-      matching across the band.</figcaption>
+    <img src="assets/sim/antenna-vivaldi-s11-comsol.png" width="1140" height="630" decoding="async" loading="lazy" alt="Simulated |S11| of the Vivaldi antenna from 2 to 12 GHz: below -10 dB from 3.61 GHz to 12 GHz except between 4.96 and 5.64 GHz, with check points from a second mesh.">
+    <figcaption>|S<sub>11</sub>| at the 50 Ω port, sampled every 0.5 GHz with 0.1 GHz steps near the
+      band edges. Squares: a coarser mesh. The lower band edge moves by 1% between the two meshes.</figcaption>
+  </figure>
+
+  <p>In the simulation |S<sub>11</sub>| stays at or below −10 dB from about 3.6 GHz to the end of
+    the sweep at 12 GHz, with a narrow region near 5 GHz where it rises to about −9 dB. The band
+    starts 20% above the 3 GHz set by the aperture width. Boresight realized gain is about 8.3 to
+    9.1 dBi between 6 and 11 GHz. The copper is modelled as a zero-thickness perfect conductor and
+    the feed as a lumped port without a connector, and the antenna has not been built or measured.</p>
+
+  <figure>
+    <img src="assets/sim/antenna-vivaldi-efield-board-3-6-10ghz.png" width="1400" height="471" decoding="async" loading="lazy" alt="Normalized electric-field magnitude in the board plane of the Vivaldi antenna at 3, 6 and 10 GHz, with the copper outlines of the two flares.">
+    <figcaption>|E| in the board plane at 3, 6 and 10 GHz (dB, normalized), with the copper outlines
+      of the top (solid) and bottom (dashed) layers.</figcaption>
+  </figure>
+
+  <h2 id="mode-converter">3D-printed rectangular-to-circular waveguide mode converter (X band)</h2>
+  <p>A rectangular waveguide carries the TE<sub>10</sub> mode, while a circular horn is fed with
+    TE<sub>11</sub>. The converter changes the cross-section over 150 mm, from a standard X-band
+    rectangular guide (22.86 × 10.16 mm) to a circular guide of 11.9 mm radius. Two prototypes, one
+    printed in plastic and one in metal, were measured on a vector network analyzer from 8 to
+    12 GHz and compared with CST Microwave Studio.</p>
+
+  <figure>
+    <img src="assets/sim/antenna-mode-converter-cst-efield-10ghz.jpg" width="1029" height="303" decoding="async" loading="lazy" alt="CST Microwave Studio electric-field arrows at 10 GHz in the mode converter: a vertical field, strongest at the centre, across the rectangular input (left) and the TE11 pattern across the circular output (right).">
+    <figcaption>CST Microwave Studio, 10 GHz: electric field at the rectangular input (left, z = 0)
+      and at the circular output (right, z = 150 mm). © 2025 IEEE. Reprinted from N. Balal,
+      A. Michael, PIERS-Fall 2025,
+      <a href="https://doi.org/10.23919/PIERS-Fall62445.2025.11394043">doi:10.23919/PIERS-Fall62445.2025.11394043</a>.</figcaption>
+  </figure>
+
+  <h2 id="measurements">Antenna measurements</h2>
+  <p>The lab has an anechoic chamber, a vector network analyzer and an XYZ scanning system. I
+    measure S-parameters and radiation patterns and compare them with the simulation of the same
+    structure. The XYZ system also maps the field near an antenna, for example the power along the
+    axis of the lens horn above.</p>
+
+  <figure>
+    <img src="assets/photos/antenna-xyz-scanning-system.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="The lab's XYZ scanning system: a motorized three-axis gantry on a table, facing the yellow 3D-printed horn on a tripod.">
+    <figcaption>The XYZ scanning system, set up for the axial power measurement of the lens horn.
+      From: <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0.</figcaption>
   </figure>
 
   <h2>Design capability</h2>
-  <p>The full-wave model yields the reflection coefficient (return loss / S-parameters), near- and
+  <p>The full-wave model yields the reflection coefficient (return loss, S-parameters), near- and
     far-field radiation patterns, gain, aperture efficiency and bandwidth. This supports horn and UWB
-    antennas, waveguide-to-radiator transitions, and rectangular-to-circular mode converters —
-    including <strong>3-D-printed</strong> millimeter-wave hardware, where I have designed and
-    <em>experimentally validated</em> Ka-band horn antennas and X-band mode converters (simulation
-    and measurement in close agreement).</p>
+    antennas, waveguide-to-radiator transitions and rectangular-to-circular mode converters,
+    including <strong>3-D-printed</strong> millimeter-wave hardware: I have designed and
+    <em>experimentally validated</em> Ka-band horn antennas and X-band mode converters.</p>
 
   <div class="tags"><span class="tag">Horn antennas</span><span class="tag">UWB</span>
     <span class="tag">mmWave</span><span class="tag">Waveguide mode converter</span>
@@ -77,6 +167,10 @@
 
   <h2 id="publications">Selected antenna publications</h2>
   <ul class="publist">
+    <li><strong>Balal N</strong>, Michael A. 3D-Printed Rectangular-to-Circular Waveguide Mode Converters:
+      Design, Fabrication and Experimental Validation at X-Band. <em>2025 Photonics &amp; Electromagnetics
+      Research Symposium, Fall (PIERS-Fall)</em>, pp. 1–5 (2025).
+      <a href="https://doi.org/10.23919/PIERS-Fall62445.2025.11394043" style="white-space:normal">doi:10.23919/PIERS-Fall62445.2025.11394043</a></li>
     <li>Michael A, <strong>Balal N</strong>. 3D-Printed Circular Horn Antenna with Dielectric Lens for
       Focused RF Energy Delivery. <em>Electronics</em> 14, 3191 (2025).
       <a href="https://doi.org/10.3390/electronics14163191">doi:10.3390/electronics14163191</a></li>
@@ -91,16 +185,10 @@
       <li>S-parameter, near-field, and far-field analysis</li>
       <li>Optimization and simulation-to-measurement comparison</li>
     </ul>
-    <div class="example"><strong>Example capability</strong>
-      <p>Development of a horn antenna or waveguide component from initial specifications through
-        full-wave modelling, parameter optimization, and simulation-to-measurement comparison.</p>
-    </div>
   </section>
 
   <div class="inquiry">
-    <p>For research collaboration, technical project inquiries, or expert review related to these
-      topics, you are welcome to contact me.</p>
-    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20antenna%20and%20RF%20design.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">Discuss a technical challenge</a>
+    <p>Technical questions and research collaboration: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
   </div>
 
   <p class="back"><a href="index.html">← All research projects</a></p>
@@ -108,7 +196,7 @@
 
 <footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
   <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Antennas, RF &amp; full-wave simulation.
- · Last updated: August 2026</div></footer>
+ · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

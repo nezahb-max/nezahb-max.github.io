@@ -4,27 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>מכ״ם 94 גיגה־הרץ ומיקרו־דופלר, גילוי רחפנים וסיווג מטרות | ד״ר נצח בלל</title>
-<meta name="description" content="מערכות מכ״ם גלים מילימטריים (94 גיגה־הרץ, W-band) ועיבוד אותות מיקרו־דופלר: גילוי רחפנים וסיווג מטרות, ניטור תקינות, חישה מרחוק וחישוב שטח חתך מכ״ם (RCS), ב-MATLAB ו-COMSOL. ד״ר נצח בלל, אוניברסיטת אריאל.">
-<meta name="keywords" content="מכ״ם 94 גיגה־הרץ, מיקרו דופלר, גילוי רחפנים, סיווג מטרות, שטח חתך מכ״ם, RCS, מכ״ם גלים מילימטריים, W-band, נצח בלל, אוניברסיטת אריאל">
+<meta name="description" content="מכ״ם גלים מילימטריים ב־94 גיגה־הרץ ועיבוד מיקרו־דופלר לגילוי רחפנים וסיווג מטרות, סימולציית מיקרו־דופלר של רחפן, ומכ״ם 77 גיגה־הרץ מאחורי פגוש ב‑COMSOL.">
+<meta name="keywords" content="מכ״ם 94 גיגה־הרץ, מיקרו דופלר, גילוי רחפנים, סיווג מטרות, שטח חתך מכ״ם, RCS, מכ״ם גלים מילימטריים, W-band, מכ״ם רכב 77 גיגה־הרץ, פגוש, ראדום, COMSOL, נצח בלל, אוניברסיטת אריאל">
 <link rel="canonical" href="https://nezahb-max.github.io/he/radar.html">
 <link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/radar.html">
 <link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/radar.html">
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/radar.html">
 <meta property="og:title" content="מכ״ם 94 גיגה־הרץ ומיקרו־דופלר, גילוי רחפנים וסיווג מטרות">
-<meta property="og:description" content="מערכות מכ״ם W-band ועיבוד מיקרו־דופלר: מגילוי רחפנים ועד ניטור תקינות וחישה מרחוק.">
+<meta property="og:description" content="מכ״ם W-band ועיבוד מיקרו־דופלר, סימולציית מיקרו־דופלר של רחפן ומכ״ם 77 גיגה־הרץ מאחורי פגוש ב‑COMSOL.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://nezahb-max.github.io/he/radar.html">
-<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-radar.jpg">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-radar.jpg">
+<meta name="twitter:title" content="מכ״ם 94 גיגה־הרץ ומיקרו־דופלר, גילוי רחפנים וסיווג מטרות">
+<meta name="twitter:description" content="מכ״ם W-band ועיבוד מיקרו־דופלר, סימולציית מיקרו־דופלר של רחפן ומכ״ם 77 גיגה־הרץ מאחורי פגוש ב‑COMSOL.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0a5c8a">
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"מערכות מכ״ם גלים מילימטריים ומיקרו-דופלר לחישה מרחוק ולסיווג","author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"citation":["https://doi.org/10.3390/rs17010091","https://doi.org/10.3390/rs15184553","https://doi.org/10.3390/app12168178"],"inLanguage":"he","dateModified":"2026-08-20"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מערכות מכ״ם גלים מילימטריים ומיקרו-דופלר לחישה מרחוק ולסיווג","about":["מכ״ם גלים מילימטריים","מיקרו־דופלר","גילוי רחפנים","סיווג מטרות","שטח חתך מכ״ם","מכ״ם רכב מאחורי פגוש"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"url":"https://nezahb-max.github.io/he/radar.html","mainEntityOfPage":"https://nezahb-max.github.io/he/radar.html","image":"https://nezahb-max.github.io/assets/photos/radar-94ghz-front-end-linear-track.jpg","citation":["https://doi.org/10.3390/s26154851","https://doi.org/10.3390/s26061921","https://doi.org/10.3390/rs17010091","https://doi.org/10.3390/electronics13101961","https://doi.org/10.3390/rs15184553","https://doi.org/10.3390/app12168178","https://doi.org/10.3390/s20174660"],"inLanguage":"he","dateModified":"2026-10-02"}
 </script>
 </head>
 <body>
@@ -35,7 +38,8 @@
   <a href="../particle-dynamics.html">דינמיקת חלקיקים</a>
   <a href="antennas.html">אנטנות</a>
   <a href="radar.html">מכ״ם</a>
-  <a href="../radar.html">English</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../radar.html" lang="en">English</a>
 </nav></div></header>
 
 <main class="wrap">
@@ -45,29 +49,123 @@
     קטנות. אני מפתח מערכות מכ״ם <strong>W-band</strong> ועיבוד <strong>מיקרו־דופלר</strong>,
     הממיר אפנונים שמקורם בתנועה למאפיינים המשמשים לסיווג מטרות, בשילוב שערוך קלאסי ולמידת מכונה.</p>
 
-  <h2>יישומים</h2>
-  <p>אותה שרשרת חישה ועיבוד משמשת מגוון בעיות חישה מרחוק, במחקרים שפורסמו ובעבודה שוטפת:
-    <strong>גילוי רחפנים וסיווג מטרות</strong> באמצעות חתימות מיקרו־דופלר ומסווגי למידת מכונה
-    (הפרדה בין רחפנים, כלי רכב ומטרות בעלות שטח חתך מכ״ם נמוך); <strong>מדידה מרחוק</strong> של
-    גובה כלי רכב למניעת פגיעות בגשרים; <strong>ניטור תקינות</strong> של טורבינות רוח ומכונות
-    סובבות מתוך ספקטרום המיקרו־דופלר שלהן; ו<strong>חישת בני אדם</strong>, סימנים חיוניים
-    וזיהוי דיבור מרחוק.</p>
+  <div class="grid">
+    <figure>
+      <img src="../assets/photos/radar-94ghz-front-end-linear-track.jpg" width="1050" height="1400" decoding="async" alt="יחידת ה‑RF של מכ״ם ב־94 גיגה־הרץ הבנויה מרכיבי גלבו WR-10 מצופי זהב על פלטת אלומיניום, עם אנטנת קרן המכוונת לאורך מסילה ישרה אל מחזיר פינתי.">
+      <figcaption>יחידת ה‑RF של המכ״ם במעבדה ב־94 גיגה־הרץ (רכיבי גלבו WR-10 ואנטנת קרן על פלטת אלומיניום),
+        מכוונת לאורך מסילה ישרה אל מחזיר פינתי.</figcaption>
+    </figure>
+    <div>
+      <h2>יישומים</h2>
+      <p>אותה שרשרת חישה ועיבוד משמשת מגוון בעיות חישה מרחוק, במחקרים שפורסמו ובעבודה שוטפת:</p>
+      <ul>
+        <li><strong>גילוי רחפנים וסיווג מטרות</strong> באמצעות חתימות מיקרו־דופלר ומסווגי למידת
+          מכונה, להפרדה בין רחפנים, כלי רכב ומטרות בעלות שטח חתך מכ״ם נמוך.</li>
+        <li><strong>מדידה מרחוק</strong> של גובה כלי רכב למניעת פגיעות בגשרים, מתוך היחס בין שני
+          רכיבי דופלר (<em>Sensors</em> 2026).</li>
+        <li><strong>ניטור תקינות</strong> של טורבינות רוח ומכונות סובבות מתוך ספקטרום המיקרו־דופלר
+          שלהן.</li>
+        <li><strong>חישת בני אדם</strong>: סימנים חיוניים וזיהוי דיבור מרחוק.</li>
+      </ul>
+    </div>
+  </div>
 
   <figure>
-    <img src="../assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" alt="סימולציית גל-מלא ב-COMSOL של פיזור גל מישורי ממטרה, לחישוב שטח חתך המכ״ם (RCS).">
-    <figcaption>פיזור אלקטרומגנטי מגוף המטרה בסימולציית גל-מלא ב‑COMSOL, הפתרון שממנו מחולץ
+    <img src="../assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" loading="lazy" alt="סימולציית גל־מלא ב‑COMSOL של פיזור גל מישורי ממטרה, לחישוב שטח חתך המכ״ם (RCS).">
+    <figcaption>פיזור אלקטרומגנטי מגוף המטרה בסימולציית גל־מלא ב‑COMSOL, הפתרון שממנו מחולץ
       שטח חתך המכ״ם (RCS).</figcaption>
   </figure>
 
   <figure>
-    <img src="../assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" loading="lazy" alt="שטח חתך מכ״ם מונוסטטי כתלות בזווית של להב מסתובב ב-94 גיגה־הרץ, מודל אופטיקה פיזיקלית.">
-    <figcaption>‏RCS מונוסטטי כתלות בזווית עבור להב מסתובב ב‑94 גיגה־הרץ (אופטיקה פיזיקלית) ,
+    <img src="../assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" loading="lazy" alt="שטח חתך מכ״ם מונוסטטי כתלות בזווית של להב מסתובב ב־94 גיגה־הרץ, מודל אופטיקה פיזיקלית.">
+    <figcaption>‏RCS מונוסטטי כתלות בזווית עבור להב מסתובב ב־94 גיגה־הרץ (אופטיקה פיזיקלית),
       החתימה הזוויתית שבבסיס סיווג מיקרו־דופלר של מטרות סובבות.</figcaption>
   </figure>
+
+  <h2 id="micro-doppler">מיקרו־דופלר של רחפן ארבעה רוטורים ב־94 גיגה־הרץ (סימולציה)</h2>
+  <p>כל להב נע לסירוגין לעבר המכ״ם וממנו בזמן שהרוטור מסתובב, ולכן ההד מכיל הסטות דופלר עד
+    מהירות קצה הלהב. בספקטרוגרמה בחלון קצר זה נראה כהבזקי להב אנכיים, אחד בכל פעם שלהב חוצה
+    את הניצב לקו הראייה. בחלון ארוך אותו אות מתפרק למסרקים של קווי HERM ‏(helicopter rotor
+    modulation), במרווח של מספר הלהבים כפול קצב הסיבוב.</p>
+
+  <figure>
+    <img src="../assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="ספקטרוגרמה מונפשת של רחפן מדומה ב־94 גיגה־הרץ: הבזקי להבים עד כ־±45 קילו־הרץ מופיעים כשהלהבים חוצים את הניצב לקו הראייה של המכ״ם.">
+    <figcaption>משמאל: ארבעת הרוטורים במבט־על, מואטים פי 240. להב נצבע בכתום כשהוא חוצה את הניצב
+      לקו הראייה. מימין: ספקטרוגרמה בחלון של 0.75 אלפיות שנייה. ההבזקים מגיעים ל־±38 עד ±45
+      קילו־הרץ סביב קו הגוף וחוזרים כל 5.5 עד 6.5 אלפיות שנייה בכל רוטור.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../assets/sim/radar-drone-micro-doppler-herm-lines.png" width="1400" height="710" decoding="async" loading="lazy" alt="ספקטרום בחלון ארוך של הרחפן המדומה: ארבעה מסרקי קווים משולבים במרווחים של 155, ‏164, ‏170 ו־181 הרץ, והספקטרום המלא התחום בדופלר של קצות הלהבים.">
+    <figcaption>קווי HERM מחלון של 0.5 שנייה של אותו אות: ארבעה מסרקים משולבים, אחד לכל רוטור,
+      במרווחים של 155, ‏164, ‏170 ו־181 הרץ (שני להבים כפול קצב הסיבוב).</figcaption>
+  </figure>
+
+  <p>המודל מסכם פיזורים נקודתיים לאורך להבים קשיחים (מכ״ם CW, רוטורים ב־4650 עד 5430 סל״ד).
+    דופלר הקצה, מחזור ההבזקים ומרווח הקווים מתאימים לביטויים הקינמטיים הסגורים, וזו בדיקה פנימית
+    של המודל. כיפוף הלהבים ומדידות ב‑W-band מופיעים במאמר שלנו
+    ב‑<bdi><a href="https://doi.org/10.3390/s26154851"><em>Sensors</em> 26, 4851 (2026)</a></bdi>.</p>
+
+  <h2 id="radome">מכ״ם 77 גיגה־הרץ מאחורי לוח פגוש (COMSOL)</h2>
+  <p>מכ״ם רכב מותקן מאחורי פגוש מפלסטיק, והלוח מתנהג כשכבה דיאלקטרית. כשהעובי שלו הוא כפולה
+    של חצי אורך גל בתוך הפלסטיק, ההחזרים משתי הפאות מבטלים זה את זה והגל עובר בהפסד קטן. בעובי
+    אחר חלק מההספק חוזר אל המכ״ם. ב־77 גיגה־הרץ אורך הגל בלוח (פרמיטיביות יחסית 2.82) הוא
+    2.32 מ״מ, ולכן העוביים המותאמים הם 1.16, ‏2.32 ו־3.48 מ״מ.</p>
+
+  <figure>
+    <img src="../assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="אנימציית COMSOL ב־77 גיגה־הרץ: מערך מכ״ם של 8 מקורות משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, ולצדו גרף ההספק המועבר והמוחזר כתלות בעובי.">
+    <figcaption>משמאל: השדה של מערך בן 8 מקורות העובר דרך הלוח, כשהעובי משתנה מ־1 עד 4 מ״מ.
+      מימין: ההספק המועבר והמוחזר לגל מישורי, COMSOL (נקודות) ופתרון אנליטי (קווים). בעובי לא
+      מותאם עד 22% מההספק חוזר.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../assets/sim/radar-radome-77ghz-field-beam30-comsol.jpg" width="1400" height="1100" decoding="async" loading="lazy" alt="מפת שדה מ‑COMSOL ב־77 גיגה־הרץ: אלומת מכ״ם מוטה ב־30 מעלות עוברת דרך לוח פגוש בעובי 2.90 מ״מ, וחלק ממנה מוחזר לצד המכ״ם.">
+    <figcaption>COMSOL, אלומה מוטה ב־30° דרך לוח בעובי 2.90 מ״מ, רבע אורך גל מהעובי המותאם 3.48 מ״מ.
+      חלק מהאלומה עובר וחלק מוחזר החזרה מראתית. בשדה הרחוק האלומה הראשית נחלשת ב־1.1 dB, ואונת
+      ההחזרה מגיעה ל־<bdi dir="ltr">−5.6 dB</bdi> ביחס לשיא האלומה ללא לוח. הערכים בזרמי הזנה שווים, בזווית 30°.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../assets/sim/radar-radome-77ghz-loss-vs-thickness.png" width="1200" height="840" decoding="async" loading="lazy" alt="הפסד חד־כיווני כתלות בעובי הלוח מ־1 עד 4 מ״מ בשלושה מקרים, נקודות COMSOL על קווי הפתרון האנליטי, וגרף ההפרש ביניהם.">
+    <figcaption>הפסד חד־כיווני כתלות בעובי: לוח חשוף בפגיעה ניצבת וב־30°, ולוח עם שכבת צבע מטאלי.
+      נקודות: תא יחידה ב‑COMSOL. קווים: פתרון אנליטי לשכבות. ההפרש המרבי 0.0003 dB. בעובי המותאם
+      הלוח החשוף מוסיף 0.30 dB, ושכבת הצבע מעלה את ההפסד ל־2.7 dB ומחזירה כ־40% מההספק.</figcaption>
+  </figure>
+
+  <p>המודל דו־ממדי, לקיטוב אחד (שדה חשמלי מקביל ללוח), ללוח שטוח ולתדר יחיד. הפרמיטיביות של
+    הלוח ושל הצבע נלקחה ממדידות של דגם בודד מכל חומר בעבודת גמר ב‑Chalmers University of
+    Technology ‏(E. P. Emilsson, 2017). ההתאמה לפתרון האנליטי מאמתת את הפתרון הנומרי, ונתוני
+    החומר הם מקור אי־ודאות נפרד.</p>
 
   <div class="tags"><span class="tag">94 גיגה־הרץ / W-band</span><span class="tag">מיקרו־דופלר</span>
     <span class="tag">גילוי רחפנים</span><span class="tag">סיווג מטרות</span>
     <span class="tag">שטח חתך מכ״ם (RCS)</span><span class="tag">COMSOL · MATLAB · ML</span></div>
+
+  <h2 id="publications">פרסומים נבחרים</h2>
+  <ul class="publist">
+    <li>מתאם ספקטרוגרמות מודע לכיפוף לגילוי רחפנים ב‑W-band: מסגרת גילוי לא־קוהרנטית מבוססת פיזיקה.
+      <em>Sensors</em> 26, 4851 (2026).
+      <a href="https://doi.org/10.3390/s26154851">doi:10.3390/s26154851</a></li>
+    <li>מערכת מכ״ם גלים מילימטריים ב־94 גיגה־הרץ למדידת גובה כלי רכב מרחוק למניעת פגיעות בגשרים.
+      <em>Sensors</em> 26, 1921 (2026).
+      <a href="https://doi.org/10.3390/s26061921">doi:10.3390/s26061921</a></li>
+    <li>גילוי ואפיון דיבור בזמן אמת במכ״ם מיקרו־דופלר בגלים מילימטריים.
+      <em>Remote Sensing</em> 17, 91 (2025).
+      <a href="https://doi.org/10.3390/rs17010091">doi:10.3390/rs17010091</a></li>
+    <li>מכ״ם גלים מילימטריים ברזולוציה גבוהה לגילוי ואפיון עצמים מהירים בזמן אמת.
+      <em>Electronics</em> 13, 1961 (2024).
+      <a href="https://doi.org/10.3390/electronics13101961">doi:10.3390/electronics13101961</a></li>
+    <li>סיווג מטרות ואיתור טווח מבוססי רשתות נוירונים במכ״ם CW מילימטרי.
+      <em>Remote Sensing</em> 15, 4553 (2023).
+      <a href="https://doi.org/10.3390/rs15184553">doi:10.3390/rs15184553</a></li>
+    <li>גילוי נפילות ללא הדמיה מחתימות ספקטרליות במכ״ם מיקרו־דופלר.
+      <em>Applied Sciences</em> 12, 8178 (2022).
+      <a href="https://doi.org/10.3390/app12168178">doi:10.3390/app12168178</a></li>
+    <li>חתימות זמן־תדר של תנועות גפיים והערכת גובה במכ״ם מיקרו־דופלר.
+      <em>Sensors</em> 20, 4660 (2020).
+      <a href="https://doi.org/10.3390/s20174660">doi:10.3390/s20174660</a></li>
+  </ul>
 
   <section class="capabilities" aria-labelledby="radar-capabilities">
     <h2 id="radar-capabilities">מחקר יישומי ויכולות טכניות</h2>
@@ -78,22 +176,17 @@
       <li>פיתוח אלגוריתמים ב‑MATLAB וניתוח נתוני ניסוי</li>
       <li>בחינת היתכנות ובניית הוכחת היתכנות</li>
     </ul>
-    <div class="example"><strong>דוגמה ליכולת</strong>
-      <p>פיתוח והערכה של שיטת עיבוד מכ״ם מבוססת פיזיקה, כולל מידול, תכנון האלגוריתם,
-        ניתוח נתוני ניסוי והערכת ביצועים.</p>
-    </div>
   </section>
 
   <div class="inquiry">
-    <p>לשיתוף פעולה מחקרי, שאלה טכנית או חוות דעת מקצועית בנושאים אלה, אפשר לכתוב לי במייל.</p>
-    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20radar%20and%20signal%20processing.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">דיון באתגר טכני</a>
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
   </div>
 
   <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מכ״ם גלים מילימטריים ועיבוד אותות. · עדכון אחרון: אוגוסט 2026
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מכ״ם גלים מילימטריים ועיבוד אותות. · עדכון אחרון: אוקטובר 2026
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->

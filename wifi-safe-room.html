@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wi-Fi in a Safe Room (Mamad): COMSOL Simulation of an Apartment | Dr. Nezah Balal</title>
+<meta name="description" content="2.44 GHz Wi-Fi in an apartment with a concrete safe room, simulated in COMSOL: 12 dB below the living room with the door open, 32 dB with it closed (2D model).">
+<meta name="keywords" content="Wi-Fi safe room, mamad Wi-Fi, indoor propagation, reinforced concrete attenuation, ITU-R P.2040, COMSOL RF simulation, electromagnetic simulation, Nezah Balal">
+<link rel="canonical" href="https://nezahb-max.github.io/wifi-safe-room.html">
+<meta property="og:title" content="Wi-Fi in a safe room: door open versus door closed (COMSOL simulation)">
+<meta property="og:description" content="2.44 GHz Wi-Fi in an apartment with a concrete safe room, simulated in COMSOL: 12 dB below the living room with the door open, 32 dB with it closed (2D model).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/wifi-safe-room.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-wifi-safe-room.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="he_IL"><meta property="og:site_name" content="Dr. Nezah Balal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wi-Fi in a safe room: door open versus door closed (COMSOL simulation)">
+<meta name="twitter:description" content="2.44 GHz Wi-Fi in an apartment with a concrete safe room, simulated in COMSOL: 12 dB below the living room with the door open, 32 dB with it closed (2D model).">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-wifi-safe-room.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/wifi-safe-room.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/wifi-mamad.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/wifi-safe-room.html">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Wi-Fi in a safe room: door open versus door closed, a COMSOL simulation of an apartment","description":"Electromagnetic simulation of 2.44 GHz Wi-Fi in an apartment with a reinforced-concrete safe room (mamad), door open and door closed, with building materials from ITU-R P.2040-4.","about":["indoor radio propagation","Wi-Fi","reinforced concrete","electromagnetic simulation","COMSOL Multiphysics"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/wifi-safe-room.html","mainEntityOfPage":"https://nezahb-max.github.io/wifi-safe-room.html","citation":["https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi wavefronts in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-field-db-door-closed-vs-open.jpg","caption":"Field level in the apartment with the safe-room door closed and open: the safe room averages 34 dB and 14 dB below the reference"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-floorplan-materials.png","caption":"Model floor plan by material, with the safe-room door and rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-mesh-rebar-comsol.png","caption":"COMSOL mesh at the safe-room corner, refined around each rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-entrance-ez-comsol.gif","caption":"Instantaneous electric field at the safe-room entrance, door open, animation exported from COMSOL"}]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
+  <a href="particle-dynamics.html">Particle Dynamics</a>
+  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+  <a href="simulations.html">Simulations</a>
+  <a href="he/wifi-mamad.html" lang="he">עברית</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Electromagnetic simulation · Indoor propagation</p>
+  <h1>Wi-Fi in a safe room: door open versus door closed</h1>
+  <p class="lead">Many Israeli apartments have a safe room (<em>mamad</em>) built to withstand blast: 25 cm
+    reinforced-concrete walls, a steel door and a steel window shutter. The same structure strongly attenuates
+    the Wi-Fi signal arriving from the living room. I built a COMSOL model of an apartment with a safe room and
+    solved the electromagnetic field at 2.44 GHz twice, with the safe-room door open and with it closed.</p>
+
+  <figure>
+    <img src="assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="Simulation animation: 2.44 GHz Wi-Fi waves spread from the access point in the living room into the rooms and enter the safe room through its open door.">
+    <figcaption>Electric-field wavefronts over one phase cycle, safe-room door open. Brightness shows field
+      strength on a logarithmic scale. The safe room is in the upper right, and the wave enters it mainly
+      through the doorway.</figcaption>
+  </figure>
+
+  <h2>The model</h2>
+  <div class="grid">
+    <figure>
+      <img src="assets/sim/wifi-apartment-floorplan-materials.png" width="1400" height="1003" decoding="async" loading="lazy" alt="Model floor plan coloured by material: living room with the access point, kitchen, two bedrooms, corridor and a reinforced-concrete safe room with rebar, blast door and steel shutter.">
+      <figcaption>Floor plan by material. Inset: safe-room door, rebar and wall layers.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/sim/wifi-apartment-permittivity-map-comsol.png" width="1400" height="1138" decoding="async" loading="lazy" alt="The same apartment inside COMSOL, coloured by relative permittivity: concrete walls in a light colour and rebar as dots inside the safe-room walls.">
+      <figcaption>The same geometry in COMSOL, coloured by relative permittivity. Metal parts are perfect
+        conductors and appear blank.</figcaption>
+    </figure>
+  </div>
+  <p>The model is a horizontal cross-section of a 10 m × 8 m apartment. Exterior walls are 20 cm concrete with
+    glass windows. The safe-room walls are 25 cm concrete holding 148 vertical 12 mm rebar bars in two layers at
+    about 15 cm pitch. The blast door, the window shutter and the kitchen refrigerator are steel. Interior
+    partitions are two plasterboard sheets with an air cavity, and interior doors are wood. The access point (AP)
+    is in the living room.</p>
+  <p>Material properties follow Recommendation
+    <a href="https://www.itu.int/rec/R-REC-P.2040/en">ITU-R P.2040-4</a>, which gives frequency-dependent
+    permittivity and conductivity for common building materials. At 2.44 GHz: concrete, relative permittivity
+    5.24 and conductivity 0.0928 S/m; plasterboard, 2.73 and 0.0197 S/m; wood, 1.99 and 0.0122 S/m; glass,
+    6.31 and 0.0119 S/m.</p>
+
+  <div class="grid">
+    <div>
+      <p>The problem is solved with the COMSOL RF Module in the frequency domain for the vertical component of
+        the electric field. The source is a line current at the access point, and perfectly matched layers
+        (PML) around the apartment absorb the outgoing wave.</p>
+      <p>The maximum element size is one eighth of a wavelength in each material: 15.4 mm in air and 6.7 mm in
+        concrete. On each rebar surface the element size is at most 2.5 mm. The mesh has 1,813,012 triangles and
+        3,588,055 degrees of freedom, and each door state solves in about 80 s.</p>
+    </div>
+    <figure>
+      <img src="assets/sim/wifi-safe-room-mesh-rebar-comsol.png" width="1400" height="1300" decoding="async" loading="lazy" alt="COMSOL mesh at the safe-room corner next to the door: dense triangles in the concrete and plasterboard and tight rings of elements around each rebar.">
+      <figcaption>Mesh at the safe-room corner next to the door frame. Each dense ring is a rebar.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Door closed versus door open</h2>
+  <figure>
+    <img src="assets/sim/wifi-apartment-field-db-door-closed-vs-open.jpg" width="1400" height="620" decoding="async" loading="lazy" alt="Field-level maps of the apartment for both door states. With the door closed the safe room is dark, 34 dB below the reference. With the door open a beam enters through the doorway and the safe room averages 14 dB below the reference.">
+    <figcaption>Field level in dB relative to the mean |E|² on a 1 m circle around the access point, on the same
+      colour scale in both maps. The number in the safe room is the room average.</figcaption>
+  </figure>
+
+  <div class="grid">
+    <div class="card"><h3>12.3 dB</h3><p>Safe-room average below the living room, door open</p></div>
+    <div class="card"><h3>31.7 dB</h3><p>The same difference with the door closed</p></div>
+    <div class="card"><h3>19.4 dB</h3><p>Rise of the safe-room average when the door is opened</p></div>
+    <div class="card"><h3>2.44 GHz</h3><p>Simulation frequency, in the 2.4 GHz Wi-Fi band</p></div>
+  </div>
+
+  <p>With the door closed, the signal reaches the safe room through the reinforced concrete, and a 25 cm
+    concrete slab alone attenuates a normally incident wave by 18 dB. With the door open, the doorway becomes the
+    main path: the wave enters through it and scatters off the door leaf and the rebar. In the other rooms,
+    except the corridor, the door state changes the average level by 0.5 dB or less.</p>
+
+  <figure>
+    <img src="assets/sim/wifi-safe-room-door-zoom-comsol.gif" width="760" height="666" decoding="async" loading="lazy" alt="Animation exported from COMSOL of the instantaneous electric field at the safe-room entrance with the door open: wavefronts pass through the doorway and scatter off the door leaf and the rebar.">
+    <figcaption>The field at the safe-room entrance over one phase cycle, door open, computed in COMSOL. Walls and rebar are drawn.</figcaption>
+  </figure>
+
+  <h2>Validation and limitations</h2>
+  <p>To check how the concrete and the mesh rule are handled inside a wall, I also solved a single 25 cm concrete slab under plane-wave
+    incidence in COMSOL and compared it with the analytic transfer-matrix solution: at 2.44 GHz the transmission
+    is 18.02 dB below the incident wave in the simulation and 18.03 dB analytically, and over 1 to 6 GHz the
+    largest difference is 0.021 dB.</p>
+  <figure>
+    <img src="assets/sim/wifi-concrete-slab-validation-comsol-vs-analytic.png" width="1040" height="624" decoding="async" loading="lazy" alt="Plot comparing COMSOL with the analytic solution for transmission and reflection through a 25 cm concrete slab from 1 to 6 GHz. The simulated points lie on the analytic lines.">
+    <figcaption>Transmission and reflection through a 25 cm concrete slab: COMSOL (markers) against the analytic
+      solution (lines).</figcaption>
+  </figure>
+  <p>The model is a 2D horizontal cross-section: walls, doors and rebar are infinitely tall, the access point is a
+    line source, and there are no paths through the floor or ceiling. The blast door is a seamless steel sheet
+    with no gaps around the frame. Absolute levels and room-to-room differences are therefore estimates of the 2D
+    model, while the shadowing, the loss through walls and door, and the transmission through openings are the
+    physically meaningful part.</p>
+
+  <p class="back"><a href="simulations.html">← All simulations</a> · <a href="index.html">All research projects</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Wi-Fi in a safe room, COMSOL simulation.
+ · Last updated: October 2026</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

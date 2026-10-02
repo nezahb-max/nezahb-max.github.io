@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar | Dr. Nezah Balal</title>
+<meta name="description" content="COMSOL electromagnetic simulations: Wi-Fi in a home with a safe room, a lens horn, a Vivaldi antenna, 77 GHz radar behind a bumper, drone micro-Doppler.">
+<meta name="keywords" content="electromagnetic simulation, COMSOL simulation, COMSOL RF, antenna simulation, wave propagation, radar simulation, CST Studio Suite, Nezah Balal">
+<link rel="canonical" href="https://nezahb-max.github.io/simulations.html">
+<meta property="og:title" content="Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar">
+<meta property="og:description" content="Wi-Fi in an apartment with a safe room, a horn with a focusing lens, a Vivaldi antenna, 77 GHz radar behind a bumper and drone micro-Doppler.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/simulations.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="he_IL"><meta property="og:site_name" content="Dr. Nezah Balal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar">
+<meta name="twitter:description" content="Wi-Fi in an apartment with a safe room, a horn with a focusing lens, a Vivaldi antenna, 77 GHz radar behind a bumper and drone micro-Doppler.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/simulations.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/simulations.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/simulations.html">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar","description":"A gallery of electromagnetic simulations: Wi-Fi in an apartment with a safe room, a horn with a focusing lens at 10 GHz, an antipodal Vivaldi antenna, 77 GHz radar behind a bumper and quadcopter micro-Doppler at 94 GHz.","about":["electromagnetic simulation","COMSOL Multiphysics","antenna design","radio-wave propagation","radar"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"10 GHz horn without and with a PTFE lens: the lens focuses the wave, COMSOL model"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"3D realized-gain pattern of an antipodal Vivaldi antenna from 3 to 11 GHz, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"77 GHz radar array radiating through a bumper panel whose thickness sweeps from 1 to 4 mm, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"Simulated micro-Doppler of a quadcopter seen by a 94 GHz radar"}]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
+  <a href="particle-dynamics.html">Particle Dynamics</a>
+  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+  <a href="simulations.html">Simulations</a>
+  <a href="he/simulations.html" lang="he">עברית</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Electromagnetic simulation · Antennas · Radar</p>
+  <h1>Electromagnetic simulation: antennas, propagation and radar</h1>
+  <p class="lead">An electromagnetic simulation shows how a wave travels through a structure, whether an antenna,
+    an apartment or a car bumper, before that structure is built or measured. Most models on this page were built
+    in <strong>COMSOL Multiphysics</strong>. In published work I have also used <strong>CST Studio Suite</strong>
+   . I process and analyse the results in MATLAB and Python and, where possible, compare
+    them with measurements in the lab's anechoic chamber.</p>
+
+  <section id="wifi">
+    <h2>Wi-Fi in an apartment with a safe room</h2>
+    <figure>
+      <img src="assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="Simulation animation of 2.44 GHz Wi-Fi waves in an apartment: the wave spreads from the access point in the living room and enters the safe room through its open door.">
+      <figcaption>Wi-Fi wavefronts at 2.44 GHz, safe-room door open. COMSOL simulation.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/wifi-safe-room-mesh-rebar-comsol.png" width="1400" height="1300" decoding="async" loading="lazy" alt="COMSOL mesh at the safe-room corner, with tight rings of elements around each rebar.">
+        <figcaption>Mesh at the safe-room corner, refined around the rebar.</figcaption>
+      </figure>
+      <div>
+        <p>A 2D model of a 10 m × 8 m apartment with a reinforced-concrete safe room, a steel blast door and a steel
+          shutter, with building materials from ITU-R P.2040-4. The field is solved twice, with the safe-room door
+          open and closed.</p>
+        <ul>
+          <li>Safe-room average <strong>12 dB</strong> below the living room, door open</li>
+          <li><strong>32 dB</strong> below, door closed</li>
+          <li><strong>3.6 million</strong> degrees of freedom per door state</li>
+        </ul>
+        <p><a href="wifi-safe-room.html">Wi-Fi in a safe room: full case →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lens-horn">
+    <h2>Horn antenna with a focusing lens at 10 GHz</h2>
+    <figure>
+      <img src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" loading="lazy" alt="Animation of the 10 GHz electric field: top, a horn without a lens and a diverging wave; bottom, the same horn with a PTFE lens and the wave converging to a focus in front of the aperture.">
+      <figcaption>Top, the horn alone; bottom, with the PTFE lens. Animation built from COMSOL field data.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/antenna-lens-horn-field-3d-comsol.png" width="1200" height="763" decoding="async" loading="lazy" alt="COMSOL 3D render of the horn with its lens in front of the electric-field plane, showing the converging wave.">
+        <figcaption>COMSOL 3D render: horn and lens in front of the field plane.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/photos/antenna-lens-horn-3d-printed-ptfe-lens.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="The prototype: a yellow 3D-printed conical horn with a white PTFE lens on its aperture, on a metal mount.">
+        <figcaption>The printed prototype with its PTFE lens. From: <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</figcaption>
+      </figure>
+    </div>
+    <p>A 3D-printed conical horn with a biconvex PTFE lens, from work published in <em>Electronics</em> in 2025. The
+      lens turns the diverging wavefront of the horn into a converging one and concentrates the power in a small spot
+      in front of the antenna.</p>
+    <ul>
+      <li>Focal-spot width (half power): <strong>about 27 mm</strong>, 0.89 wavelength</li>
+      <li>Measured and simulated focus: both about <strong>67 mm</strong> from the lens front surface, about 100 mm from the horn aperture</li>
+    </ul>
+    <p><a href="antennas.html#lens-horn">Design, measurements and publication →</a></p>
+  </section>
+
+  <section id="vivaldi">
+    <h2>Antipodal Vivaldi ultra-wideband antenna</h2>
+    <figure>
+      <img src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="Animation of the 3D gain pattern of a Vivaldi antenna: each frame is a different frequency from 3 to 11 GHz, and the boresight gain rises with frequency.">
+      <figcaption>3D realized-gain pattern, one frame per GHz from 3 to 11 GHz. COMSOL simulation.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/antenna-vivaldi-geometry-comsol.png" width="1400" height="875" decoding="async" loading="lazy" alt="COMSOL 3D view of the antenna board: top copper in orange, bottom copper in blue and the feed port in red at the board edge.">
+        <figcaption>The board in COMSOL: top and bottom copper and the feed port.</figcaption>
+      </figure>
+      <div>
+        <p>An antenna on a 60 × 70 mm Rogers RO4003C board, designed for a 3 GHz lower-frequency target. The 3D
+          model includes the feed port, PML and a far-field calculation.</p>
+        <p>In simulation:</p>
+        <ul>
+          <li>|S11| ≤ <strong>−10 dB</strong> from about 3.6 GHz to the end of the 12 GHz sweep, with a narrow
+            region near 5 GHz where it rises to about −9 dB</li>
+          <li>Boresight realized gain <strong>8.3 to 9.1 dBi</strong> between 6 and 11 GHz</li>
+        </ul>
+        <p><a href="antennas.html#vivaldi">Geometry and full results →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="radome">
+    <h2>77 GHz automotive radar behind a bumper</h2>
+    <figure>
+      <img src="assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="Animation: left, the field of a 77 GHz radar array passing through a bumper panel of changing thickness; right, transmitted and reflected power against panel thickness.">
+      <figcaption>Left, the array field through the panel; right, transmitted and reflected power against thickness.
+        COMSOL simulation.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/gallery-radome-77ghz-geometry-comsol.png" width="1400" height="1100" decoding="async" loading="lazy" alt="COMSOL geometry: an array of 8 line sources in front of a ground plane, the bumper panel facing it and PML around the domain.">
+        <figcaption>COMSOL geometry: array, ground plane, bumper panel and PML.</figcaption>
+      </figure>
+      <div>
+        <p>An 8-element array radiates through a polypropylene-blend bumper panel whose thickness sweeps from 1 to
+          4 mm. When the thickness is a multiple of half a wavelength in the plastic, the reflection from the panel
+          drops close to zero. At other thicknesses part of the power returns to the radar. The model is 2D.</p>
+        <ul>
+          <li>Transmission peaks at <strong>1.16, 2.32 and 3.48 mm</strong></li>
+          <li>Up to <strong>22%</strong> of the power reflected at mismatched thickness (normal incidence)</li>
+          <li>On the 3.48 mm panel a metallic-flake basecoat raises the reflection to about <strong>40%</strong>; at 1.98 mm the painted panel loses 0.87 dB</li>
+        </ul>
+        <p><a href="radar.html#radome">Model, materials and validation →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="micro-doppler">
+    <h2>Quadcopter micro-Doppler at 94 GHz</h2>
+    <figure>
+      <img src="assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="Animation: left, a top view of the four rotors of a quadcopter; right, the spectrogram of a 94 GHz radar return in which each blade crossing produces a vertical flash.">
+      <figcaption>Left, the four rotors slowed 240 times. Right, the spectrogram, where each blade crossing produces a
+        vertical flash.</figcaption>
+    </figure>
+    <p>A simulation of the 94 GHz CW radar return from a four-rotor drone. Each blade is a line of point scatterers,
+      and the model is written in Python. Each time a blade crosses perpendicular to the radar line of sight, the
+      spectrogram shows a vertical flash whose height is set by the blade-tip Doppler frequency.</p>
+    <ul>
+      <li>Blade flashes reach <strong>45 kHz</strong> on either side of the body line</li>
+      <li>One flash per rotor every <strong>5.5 to 6.5 ms</strong></li>
+      <li>A spectral line comb (HERM) for each rotor, spaced <strong>155, 164, 170 and 181 Hz</strong></li>
+    </ul>
+    <p><a href="radar.html#micro-doppler">Micro-Doppler and millimeter-wave radar →</a></p>
+  </section>
+
+  <h2>More simulations on this site</h2>
+  <div class="grid">
+    <a class="card" href="radar.html">
+      <figure style="margin:0 0 10px"><img src="assets/sim/gallery-thumb-rcs-scattering-comsol.jpg" width="600" height="400" decoding="async" loading="lazy" alt="Plane-wave scattering from a target in a COMSOL model, used to compute radar cross-section."></figure>
+      <h3>Radar cross-section (RCS)</h3>
+      <p>Plane-wave scattering from a target, COMSOL model</p>
+    </a>
+    <a class="card" href="particle-dynamics.html">
+      <figure style="margin:0 0 10px"><img src="assets/sim/gallery-thumb-electron-mirror-trap.jpg" width="600" height="400" decoding="async" loading="lazy" alt="Helical orbit of an electron trapped between two coils in a magnetic mirror trap."></figure>
+      <h3>Magnetic mirror trap</h3>
+      <p>An electron orbit between two magnetic lenses</p>
+    </a>
+    <a class="card" href="accelerators.html">
+      <figure style="margin:0 0 10px"><img src="assets/sim/gallery-thumb-ifel-accelerator.jpg" width="600" height="400" decoding="async" loading="lazy" alt="Helical undulator and electron trajectory in a COMSOL model of an IFEL accelerator, with the energy-gain plot."></figure>
+      <h3>Compact IFEL accelerator</h3>
+      <p>Electron acceleration in a helical undulator driven by a terahertz wave, COMSOL model</p>
+    </a>
+    <a class="card" href="magnetics.html">
+      <h3>Applied magnetism</h3>
+      <p>Magnetostatic COMSOL models of permanent-magnet undulators and magnetic field maps</p>
+    </a>
+  </div>
+
+  <p class="back"><a href="index.html">← All research projects</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Electromagnetic simulation.
+ · Last updated: October 2026</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

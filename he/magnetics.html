@@ -14,17 +14,17 @@
 <meta property="og:description" content="מפות שדה מגנטוסטטיות, הרמוניות וסבולות של אונדולטורים סליליים, מעבדת המערכות המגנטיות, אוניברסיטת אריאל.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://nezahb-max.github.io/he/magnetics.html">
-<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-magnetics.jpg">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-magnetics.jpg">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-simulations.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0a5c8a">
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"מגנטיות שימושית ואונדולטורים ממגנטים קבועים","author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"inLanguage":"he","dateModified":"2026-08-20"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מגנטיות שימושית ואונדולטורים ממגנטים קבועים","about":["מגנטיות שימושית","אונדולטור ממגנטים קבועים","סימולציה מגנטוסטטית","מפת שדה מגנטי","מיפוי שדה מגנטי"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"url":"https://nezahb-max.github.io/he/magnetics.html","mainEntityOfPage":"https://nezahb-max.github.io/he/magnetics.html","inLanguage":"he","dateModified":"2026-10-02"}
 </script>
 </head>
 <body>
@@ -35,7 +35,8 @@
   <a href="../particle-dynamics.html">דינמיקת חלקיקים</a>
   <a href="antennas.html">אנטנות</a>
   <a href="radar.html">מכ״ם</a>
-  <a href="../magnetics.html">English</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../magnetics.html" lang="en">English</a>
 </nav></div></header>
 
 <main class="wrap">
@@ -46,24 +47,23 @@
     אריאל, אני מתכנן <strong>אונדולטורים סליליים ממגנטים קבועים (NdFeB)</strong> ומכלולי מגנטים,
     מחשב את השדה ב<strong>סימולציה מגנטוסטטית</strong> ומאמת מול מדידה.</p>
 
-  <figure>
-    <img src="../assets/magnetized-helix-undulator-comsol.gif" width="950" height="560" decoding="async" alt="סימולציה מגנטוסטטית ב-COMSOL של אונדולטור סלילי ממגנטים קבועים הבנוי משני סלילים ממוגנטים, עם השדה על הציר.">
-    <figcaption>מודל מגנטוסטטי של אונדולטור סלילי הבנוי מסלילים ממוגנטים (COMSOL), הגאומטריה
-      קובעת את משרעת השדה על הציר, את המחזור ואת תכולת ההרמוניות.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="../assets/undulator-field-map.gif" width="950" height="560" decoding="async" loading="lazy" alt="מפת שדה מגנטי מחושבת של מוט אונדולטור דו-סלילי ממגנטים קבועים.">
-    <figcaption>חישוב מפת שדה למוט מגנטים דו-סלילי, הבסיס לחילוץ השדה על הציר, איכות השדה
-      והרגישות לסבולות המגנטים.</figcaption>
-  </figure>
-
   <h2>מה המידול מספק</h2>
   <p>עבור גאומטריית מגנטים מועמדת, סלילים, מקטעי טבעת או מערכי הלבך, המודל מחשב את השדה
-    התלת-ממדי, את המשרעת על הציר ואת ההרמוניות המרחביות שלה, ואת הכוחות והמומנטים על המכלול.
-    סריקות פרמטריות מכמתות את רגישות השדה לגאומטריה ולסבולות ייצור, תנאי הכרחי לתכנון בר-ייצור.
+    התלת־ממדי, את המשרעת על הציר ואת ההרמוניות המרחביות שלה, ואת הכוחות והמומנטים על המכלול.
+    סריקות פרמטריות מכמתות את רגישות השדה לגאומטריה ולסבולות ייצור, תנאי הכרחי לתכנון בר־ייצור.
     העבודה תומכת באונדולטורים קומפקטיים למקורות קרינה ולהאצת IFEL, ובכלל זה שיתוף פעולה
     תעשייתי בינלאומי לייצור אונדולטורים.</p>
+
+  <h2 id="field-mapping">מיפוי שדה מגנטי</h2>
+  <p>במעבדה אני ממפה את השדה של מכלולי מגנטים בגאוסמטר המותקן על מערכת מיפוי תלת־צירית
+    (XYZ), שמזיזה את הגשש בשלושה צירים סביב המכלול. המפות הנמדדות מושוות לסימולציה המגנטוסטטית
+    של אותה גאומטריה.</p>
+
+  <figure>
+    <img src="../assets/photos/antenna-xyz-scanning-system.jpg" width="1400" height="1050" decoding="async" alt="מערכת הסריקה XYZ של המעבדה: גשר ממונע בשלושה צירים על שולחן, כאן מול אנטנת קרן מודפסת על חצובה.">
+    <figcaption>מערכת הסריקה XYZ של המעבדה, כאן ערוכה למדידת אנטנה. מתוך:
+      <bdi><a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</bdi></figcaption>
+  </figure>
 
   <div class="tags"><span class="tag">מגנטים קבועים (NdFeB)</span><span class="tag">אונדולטור סלילי</span>
     <span class="tag">מערך הלבך</span><span class="tag">מגנטוסטטיקה</span>
@@ -78,22 +78,17 @@
       <li>בחינת סבולות ייצור וישימות הנדסית</li>
       <li>השוואה בין סימולציה למדידה</li>
     </ul>
-    <div class="example"><strong>דוגמה ליכולת</strong>
-      <p>בחינת תכן של מכלול מגנטים קבועים, כולל מידול שדה תלת־ממדי, חישוב כוחות ומומנטים,
-        ניתוח סבולות והשוואה לנתוני מדידה.</p>
-    </div>
   </section>
 
   <div class="inquiry">
-    <p>לשיתוף פעולה מחקרי, שאלה טכנית או חוות דעת מקצועית בנושאים אלה, אפשר לכתוב לי במייל.</p>
-    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20applied%20magnetics%20and%20permanent-magnet%20systems.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">דיון באתגר טכני</a>
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
   </div>
 
   <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מגנטיות שימושית ומערכות מגנטים קבועים. · עדכון אחרון: אוגוסט 2026
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מגנטיות שימושית ומערכות מגנטים קבועים. · עדכון אחרון: אוקטובר 2026
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->

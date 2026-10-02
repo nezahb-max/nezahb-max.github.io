@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קליטת Wi-Fi בממ״ד: סימולציית COMSOL של דירה עם ממ״ד | ד״ר נצח בלל</title>
+<meta name="description" content="סימולציית COMSOL של Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד. במודל הדו־ממדי הרמה בממ״ד נמוכה מהסלון ב־12 dB כשהדלת פתוחה וב־32 dB כשהיא סגורה.">
+<meta name="keywords" content="קליטת WiFi בממד, Wi-Fi בממ״ד, אינטרנט בממ״ד, ממ״ד חוסם WiFi, התפשטות גלים בדירה, סימולציה אלקטרומגנטית, COMSOL, קומסול, ITU-R P.2040, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/wifi-mamad.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/wifi-safe-room.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/wifi-mamad.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/wifi-safe-room.html">
+<meta property="og:title" content="קליטת Wi-Fi בממ״ד: דלת פתוחה מול דלת סגורה (סימולציית COMSOL)">
+<meta property="og:description" content="סימולציית COMSOL של Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד. במודל הדו־ממדי הרמה בממ״ד נמוכה מהסלון ב־12 dB כשהדלת פתוחה וב־32 dB כשהיא סגורה.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/wifi-mamad.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-wifi-mamad.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="קליטת Wi-Fi בממ״ד: דלת פתוחה מול דלת סגורה (סימולציית COMSOL)">
+<meta name="twitter:description" content="סימולציית COMSOL של Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד. במודל הדו־ממדי הרמה בממ״ד נמוכה מהסלון ב־12 dB כשהדלת פתוחה וב־32 dB כשהיא סגורה.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-wifi-mamad.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"קליטת Wi-Fi בממ״ד: דלת פתוחה מול דלת סגורה, סימולציית COMSOL של דירה","description":"סימולציה אלקטרומגנטית של Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד, דלת פתוחה ודלת סגורה, עם חומרי בנייה לפי ITU-R P.2040-4.","about":["קליטת Wi-Fi בממ״ד","התפשטות גלים בתוך מבנים","סימולציה אלקטרומגנטית","COMSOL Multiphysics","בטון מזוין"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"he","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/he/wifi-mamad.html","mainEntityOfPage":"https://nezahb-max.github.io/he/wifi-mamad.html","citation":["https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"חזיתות גל של Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד, דלת הממ״ד פתוחה, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-field-db-door-closed-vs-open-he.jpg","caption":"עוצמת השדה בדירה, דלת הממ״ד סגורה ופתוחה: בממ״ד 34 dB ו־14 dB מתחת לרמת הייחוס"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-floorplan-materials-he.png","caption":"תוכנית הדירה במודל לפי חומרים, כולל דלת הממ״ד ומוטות הזיון"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-mesh-rebar-comsol.png","caption":"רשת האלמנטים של COMSOL בפינת הממ״ד, עם עידון סביב מוטות הזיון"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-entrance-ez-comsol.gif","caption":"השדה החשמלי הרגעי בכניסה לממ״ד, דלת פתוחה, אנימציה מתוך COMSOL"}]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="../accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="../particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../wifi-safe-room.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">סימולציה אלקטרומגנטית · התפשטות גלים בדירה</p>
+  <h1>קליטת Wi‑Fi בממ״ד: דלת פתוחה מול דלת סגורה</h1>
+  <p class="lead">ממ״ד בנוי לעמוד בהדף: קירות בטון מזוין בעובי 25 ס״מ, דלת פלדה ותריס פלדה. אותו מבנה מחליש
+    מאוד גם את אות ה‑Wi-Fi שמגיע מהסלון. בניתי ב‑COMSOL מודל של דירה עם ממ״ד ופתרתי את השדה
+    האלקטרומגנטי בתדר 2.44 GHz בשני מצבים: דלת הממ״ד פתוחה ודלת הממ״ד סגורה.</p>
+
+  <figure>
+    <img src="../assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="אנימציית סימולציה: גלי Wi-Fi בתדר 2.44 GHz מתפשטים מנקודת הגישה בסלון אל חדרי הדירה ונכנסים לממ״ד דרך הדלת הפתוחה.">
+    <figcaption>חזיתות הגל של השדה החשמלי לאורך מחזור פאזה אחד, דלת הממ״ד פתוחה. הבהירות מציינת את עוצמת
+      השדה בסולם לוגריתמי. בפינה הימנית העליונה נמצא הממ״ד, והגל נכנס אליו בעיקר דרך פתח הדלת.</figcaption>
+  </figure>
+
+  <h2>המודל</h2>
+  <div class="grid">
+    <figure>
+      <img src="../assets/sim/wifi-apartment-floorplan-materials-he.png" width="1400" height="1003" decoding="async" loading="lazy" alt="תוכנית הדירה במודל, צבועה לפי חומר: סלון עם נקודת הגישה, מטבח, שני חדרי שינה, מסדרון וממ״ד מבטון מזוין עם מוטות זיון, דלת הדף ותריס פלדה.">
+      <figcaption>תוכנית הדירה לפי חומרים. בהגדלה: דלת הממ״ד, מוטות הזיון ושכבות הקיר.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/sim/wifi-apartment-permittivity-map-comsol.png" width="1400" height="1138" decoding="async" loading="lazy" alt="אותה דירה בתוך COMSOL, צבועה לפי הפרמיטיביות היחסית: קירות הבטון בצבע בהיר ומוטות הזיון כנקודות בקירות הממ״ד.">
+      <figcaption>אותה גאומטריה ב‑COMSOL, צבועה לפי הפרמיטיביות היחסית. חלקי המתכת מוגדרים כמוליך
+        מושלם ומוצגים ריקים.</figcaption>
+    </figure>
+  </div>
+  <p>המודל הוא חתך אופקי של דירה בגודל <bdi dir="ltr">10 × 8</bdi> מ׳. קירות החוץ עשויים בטון בעובי 20 ס״מ, עם חלונות זכוכית.
+    קירות הממ״ד עשויים בטון בעובי 25 ס״מ, ובתוכם 148 מוטות זיון אנכיים בקוטר 12 מ״מ, בשתי שכבות ובמרווח
+    של כ־15 ס״מ. דלת ההדף, תריס החלון והמקרר במטבח עשויים פלדה. המחיצות הפנימיות בנויות משני לוחות גבס
+    עם חלל אוויר ביניהם, והדלתות הפנימיות מעץ. נקודת הגישה (AP) נמצאת בסלון.</p>
+  <p>תכונות החומרים לקוחות מהמלצה
+    <a href="https://www.itu.int/rec/R-REC-P.2040/en">ITU-R P.2040-4</a> של איגוד התקשורת הבין־לאומי,
+    שמגדירה פרמיטיביות ומוליכות כפונקציה של התדר לחומרי בנייה נפוצים. ב־2.44 GHz: לבטון פרמיטיביות
+    יחסית 5.24 ומוליכות 0.0928 S/m; לגבס 2.73 ו־0.0197 S/m; לעץ 1.99 ו־0.0122 S/m; לזכוכית
+    6.31 ו־0.0119 S/m.</p>
+
+  <div class="grid">
+    <div>
+      <p>הפתרון נעשה במודול RF של COMSOL, בתחום התדר, עבור הרכיב האנכי של השדה החשמלי. המקור הוא זרם קווי
+        בנקודת הגישה, ושכבות PML סביב הדירה בולעות את הגל היוצא.</p>
+      <p>גודל האלמנט המרבי הוא שמינית אורך גל בכל חומר: 15.4 מ״מ באוויר ו־6.7 מ״מ בבטון. על היקף כל מוט זיון
+        גודל האלמנט הוא 2.5 מ״מ לכל היותר. הרשת כוללת 1,813,012 משולשים ו־3,588,055 דרגות חופש, וכל מצב דלת נפתר
+        בכ־80 שניות.</p>
+    </div>
+    <figure>
+      <img src="../assets/sim/wifi-safe-room-mesh-rebar-comsol.png" width="1400" height="1300" decoding="async" loading="lazy" alt="רשת האלמנטים של COMSOL בפינת הממ״ד ליד הדלת: משולשים צפופים בבטון ובגבס וטבעות צפופות סביב כל מוט זיון.">
+      <figcaption>רשת האלמנטים בפינת הממ״ד, ליד משקוף הדלת. כל עיגול צפוף הוא מוט זיון.</figcaption>
+    </figure>
+  </div>
+
+  <h2>דלת סגורה מול דלת פתוחה</h2>
+  <figure>
+    <img src="../assets/sim/wifi-apartment-field-db-door-closed-vs-open-he.jpg" width="1400" height="620" decoding="async" loading="lazy" alt="מפות עוצמת השדה בדירה בשני מצבי הדלת. כשהדלת סגורה הממ״ד כהה, 34 dB מתחת לרמת הייחוס. כשהדלת פתוחה אלומה נכנסת דרך הפתח והרמה בממ״ד היא 14 dB מתחת לייחוס.">
+    <figcaption>עוצמת השדה ב‑dB ביחס לממוצע של |E|² על מעגל ברדיוס 1 מ׳ סביב נקודת הגישה, באותו סולם
+      צבעים בשתי המפות. המספר בממ״ד הוא הרמה הממוצעת בחדר.</figcaption>
+  </figure>
+
+  <div class="grid">
+    <div class="card"><h3><bdi>12.3 dB</bdi></h3><p>ההפרש בין הסלון לממ״ד ברמה הממוצעת, דלת פתוחה</p></div>
+    <div class="card"><h3><bdi>31.7 dB</bdi></h3><p>אותו הפרש, דלת סגורה</p></div>
+    <div class="card"><h3><bdi>19.4 dB</bdi></h3><p>העלייה ברמה הממוצעת בממ״ד כשפותחים את הדלת</p></div>
+    <div class="card"><h3><bdi>2.44 GHz</bdi></h3><p>תדר הסימולציה, בתחום 2.4 GHz של Wi-Fi</p></div>
+  </div>
+
+  <p>כשהדלת סגורה, האות מגיע לממ״ד דרך הבטון המזוין, ולוח בטון בעובי 25 ס״מ מחליש גל שפוגע בו בניצב
+    ב־18 dB. כשהדלת פתוחה, הפתח הופך לנתיב העיקרי, והגל נכנס דרכו ומתפזר מכנף הדלת וממוטות הזיון. בשאר
+    החדרים, פרט למסדרון, מצב הדלת משנה את הרמה הממוצעת בעד 0.5 dB.</p>
+
+  <figure>
+    <img src="../assets/sim/wifi-safe-room-door-zoom-comsol.gif" width="760" height="666" decoding="async" loading="lazy" alt="אנימציה מתוך COMSOL של השדה החשמלי הרגעי בכניסה לממ״ד כשהדלת פתוחה: חזיתות גל עוברות דרך הפתח ומתפזרות מכנף הדלת וממוטות הזיון.">
+    <figcaption>השדה בכניסה לממ״ד לאורך מחזור פאזה אחד, דלת פתוחה, מחושב ב‑COMSOL. הקירות ומוטות הזיון מסומנים.</figcaption>
+  </figure>
+
+  <h2>אימות ומגבלות</h2>
+  <p>כדי לבדוק את מימוש הבטון ואת כלל הרשת בתוך קיר, פתרתי ב‑COMSOL גם לוח בטון בודד בעובי 25 ס״מ תחת גל
+    מישורי והשוויתי לפתרון האנליטי (מטריצת מעבר): ב־2.44 GHz ההעברה היא 18.02 dB מתחת לגל הפוגע
+    בסימולציה ו־18.03 dB בחישוב, ובתחום 1 עד 6 GHz ההפרש המרבי הוא 0.021 dB.</p>
+  <figure>
+    <img src="../assets/sim/wifi-concrete-slab-validation-comsol-vs-analytic.png" width="1040" height="624" decoding="async" loading="lazy" alt="גרף השוואה בין COMSOL לפתרון אנליטי עבור העברה והחזרה של גל דרך לוח בטון בעובי 25 ס״מ בתחום 1 עד 6 GHz. נקודות הסימולציה יושבות על הקווים האנליטיים.">
+    <figcaption>העברה והחזרה דרך לוח בטון בעובי 25 ס״מ: COMSOL (נקודות) מול פתרון אנליטי (קווים).</figcaption>
+  </figure>
+  <p>המודל הוא חתך אופקי דו־ממדי: הקירות, הדלתות ומוטות הזיון אינסופיים לגובה, נקודת הגישה היא מקור קווי,
+    ואין מסלולים דרך הרצפה והתקרה. דלת ההדף מיוצגת כלוח פלדה רציף, בלי מרווחים סביב המשקוף. לכן הרמות
+    המוחלטות וההפרשים בין החדרים הם הערכה של המודל הדו־ממדי, וההצללה, ההנחתה בקירות ובדלת והמעבר דרך
+    הפתחים הם החלק המשמעותי פיזיקלית.</p>
+
+  <p class="back"><a href="simulations.html">→ כל הסימולציות</a> · <a href="index.html">כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · קליטת Wi-Fi בממ״ד, סימולציית COMSOL. · עדכון אחרון: אוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

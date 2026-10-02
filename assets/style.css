@@ -49,3 +49,6 @@ nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;w
 .publist a{white-space:nowrap}
 .faq dt{font-weight:700;margin-top:.9em}
 .faq dd{margin:0.25em 0 0.6em;line-height:1.55}
+
+/* Scaled figures keep their aspect ratio (added 2026-10-02) */
+figure img{height:auto}

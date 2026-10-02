@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL) — COMSOL Simulation | Dr. Nezah Balal</title>
+<title>Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL): COMSOL Simulation | Dr. Nezah Balal</title>
 <meta name="description" content="Compact, high-gradient particle acceleration by the inverse free-electron laser (IFEL) mechanism: a THz-driven, tapered helical undulator gives MeV-scale energy gain over centimeters at high acceleration gradient, modeled in COMSOL Multiphysics.">
 <meta name="keywords" content="compact particle accelerator, high-gradient accelerator, high acceleration gradient, high-gradient acceleration, inverse free electron laser, IFEL, helical undulator, THz acceleration, laser driven accelerator, free electron laser, COMSOL beam dynamics, relativistic Lorentz force, muon accelerator, muon collider, muons, rapid acceleration, short-lived particle acceleration, IFEL accelerator, Nezah Balal">
 <link rel="canonical" href="https://nezahb-max.github.io/accelerators.html">
-<meta property="og:title" content="Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL) — COMSOL Simulation">
+<meta property="og:title" content="Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL): COMSOL Simulation">
 <meta property="og:description" content="Compact, high-gradient particle acceleration by the inverse free-electron laser (IFEL) mechanism: a THz-driven, tapered helical undulator gives MeV-scale energy gain over centimeters at high acceleration gradient, modeled in COMSOL Multiphysics.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://nezahb-max.github.io/accelerators.html">
 <meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-accelerators.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL) — COMSOL Simulation">
+<meta name="twitter:title" content="Compact High-Gradient Particle Accelerators &amp; Inverse Free-Electron Lasers (IFEL): COMSOL Simulation">
 <meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-accelerators.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -23,7 +23,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/accelerators.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Compact Particle Acceleration by the Inverse Free-Electron Laser (IFEL) Mechanism","about":["compact particle accelerator","high-gradient acceleration","high acceleration gradient","inverse free-electron laser","helical undulator","terahertz acceleration","rapid acceleration","muon accelerator concepts","muon collider"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"citation":["https://doi.org/10.1103/PhysRevAccelBeams.20.122401","https://doi.org/10.1063/5.0060778","https://doi.org/10.1109/TPS.2014.2381293"],"inLanguage":"en","dateModified":"2026-08-20"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Compact Particle Acceleration by the Inverse Free-Electron Laser (IFEL) Mechanism","about":["compact particle accelerator","high-gradient acceleration","high acceleration gradient","inverse free-electron laser","helical undulator","terahertz acceleration","rapid acceleration","muon accelerator concepts","muon collider"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"citation":["https://doi.org/10.1103/PhysRevAccelBeams.20.122401","https://doi.org/10.1063/5.0060778","https://doi.org/10.1109/TPS.2014.2381293"],"inLanguage":"en","dateModified":"2026-10-02"}
 </script>
 </head>
 <body>
@@ -32,6 +32,7 @@
   <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
   <a href="particle-dynamics.html">Particle Dynamics</a>
   <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
+  <a href="simulations.html">Simulations</a>
 </nav></div></header>
 
 <main class="wrap">
@@ -51,8 +52,8 @@
 
   <h2>The physics</h2>
   <p>An electron passing through a periodic magnetic (undulator) field acquires a transverse velocity
-    component. When a co-propagating electromagnetic wave — here a circularly-polarized terahertz
-    drive — is phase-matched to that transverse motion, the wave does net work on the electron and it
+    component. When a co-propagating electromagnetic wave (here a circularly-polarized terahertz
+    drive) is phase-matched to that transverse motion, the wave does net work on the electron and it
     <em>gains</em> energy (the inverse of the free-electron-laser radiation process). Sustaining the
     energy exchange as the electron accelerates requires <strong>tapering</strong> the undulator
     (its period/pitch and field) to hold the resonance condition.</p>
@@ -61,7 +62,7 @@
   <p>The trajectory is computed from the full relativistic Lorentz-force equation of motion in
     COMSOL Multiphysics, coupling the helical undulator field and the THz drive. Outputs include the
     3-D electron trajectory, the energy-gain curve along the interaction length, and the taper profile
-    required for phase-locked acceleration — the design tools needed to size a real compact-accelerator
+    required for phase-locked acceleration, which are the inputs for sizing a compact-accelerator
     stage.</p>
 
   <h2>High acceleration gradient</h2>
@@ -74,19 +75,26 @@
 
   <h2 id="publications">Selected accelerator &amp; FEL publications</h2>
   <ul class="publist">
-    <li><strong>Balal N</strong>, Bandurkin IV, Bratman VL, Fedotov AE. Helical undulator based on partial
-      redistribution of uniform magnetic field. <em>Physical Review Accelerators and Beams</em> 20, 122401 (2017).
-      <a href="https://doi.org/10.1103/PhysRevAccelBeams.20.122401">doi:10.1103/PhysRevAccelBeams.20.122401</a></li>
+    <li>Magory E, Bratman VL, <strong>Balal N</strong>. Permanent helical micro-undulators for x-ray free electron lasers.
+      <em>Physics of Plasmas</em> 31, 053301 (2024).
+      <a href="https://doi.org/10.1063/5.0199053">doi:10.1063/5.0199053</a></li>
     <li><strong>Balal N</strong>, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator radiation
       from short electron bunches moving in the field of permanently magnetized helices. <em>Physics of Plasmas</em> 28, 093301 (2021).
       <a href="https://doi.org/10.1063/5.0060778">doi:10.1063/5.0060778</a></li>
+    <li><strong>Balal N</strong>, Bandurkin IV, Bratman VL, Fedotov AE. Helical undulator based on partial
+      redistribution of uniform magnetic field. <em>Physical Review Accelerators and Beams</em> 20, 122401 (2017).
+      <a href="https://doi.org/10.1103/PhysRevAccelBeams.20.122401">doi:10.1103/PhysRevAccelBeams.20.122401</a></li>
+    <li><strong>Balal N</strong>, Bandurkin IV, Bratman VL, Magory E, Savilov AV. Negative-mass mitigation of Coulomb repulsion
+      for terahertz undulator radiation of electron bunches. <em>Applied Physics Letters</em> 107, 163505 (2015).
+      <a href="https://doi.org/10.1063/1.4934495">doi:10.1063/1.4934495</a></li>
     <li><strong>Balal N</strong>, Bratman VL. Undulator Radiation of Dense Plane Electron Bunches.
       <em>IEEE Transactions on Plasma Science</em> 43, 532-538 (2015).
       <a href="https://doi.org/10.1109/TPS.2014.2381293">doi:10.1109/TPS.2014.2381293</a></li>
   </ul>
   <p>The undulator designs behind this work are detailed on the
   <a href="magnetics.html">applied magnetism page</a>, and the underlying electron-confinement
-  physics is explored on the <a href="particle-dynamics.html">particle dynamics page</a>.</p>
+  physics is explored on the <a href="particle-dynamics.html">particle dynamics page</a>. Further COMSOL
+  examples are collected on the <a href="simulations.html">simulations page</a>.</p>
 
   <section class="capabilities" aria-labelledby="accelerator-capabilities">
     <h2 id="accelerator-capabilities">Applied research and technical capabilities</h2>
@@ -97,16 +105,10 @@
       <li>Parametric and sensitivity studies</li>
       <li>Feasibility assessment and independent model review</li>
     </ul>
-    <div class="example"><strong>Example capability</strong>
-      <p>Assessment of a compact-accelerator concept, including particle dynamics, phase synchronism,
-        magnetic-field design, parametric sweeps, and identification of the principal feasibility limits.</p>
-    </div>
   </section>
 
   <div class="inquiry">
-    <p>For research collaboration, technical project inquiries, or expert review related to these
-      topics, you are welcome to contact me.</p>
-    <a class="cta" href="mailto:nezahb@ariel.ac.il?subject=Technical%20project%20inquiry&amp;body=Hello%20Dr.%20Balal%2C%0D%0AI%20would%20like%20to%20discuss%20a%20technical%20question%20or%20potential%20project%20related%20to%20compact%20accelerators%20and%20particle%20dynamics.%0D%0AThe%20main%20challenge%20is%3A%0D%0AThe%20desired%20outcome%20is%3A%0D%0AOrganization%3A%0D%0AContact%20details%3A">Discuss a technical challenge</a>
+    <p>Technical questions and research collaboration: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
   </div>
 
   <p class="back"><a href="index.html">← All research projects</a></p>
