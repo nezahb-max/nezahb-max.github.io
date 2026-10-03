@@ -54,7 +54,7 @@
     machined from PTFE (relative permittivity 2.2).</p>
 
   <figure>
-    <img src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" alt="COMSOL animation at 10 GHz of the electric field in a conical horn, alone (top) and with a PTFE lens (bottom); with the lens the wavefront converges to a focus about 100 mm in front of the aperture.">
+    <video autoplay muted loop playsinline poster="assets/sim/antenna-lens-horn-focusing-10ghz-comsol-poster.jpg" width="800" height="704" aria-label="COMSOL animation at 10 GHz of the electric field in a conical horn, alone (top) and with a PTFE lens (bottom); with the lens the wavefront converges to a focus about 100 mm in front of the aperture."><source src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.mp4" type="video/mp4"></video>
     <figcaption>COMSOL, 10 GHz: the field E<sub>x</sub> over one phase cycle, horn alone (top) and horn
       with lens (bottom). The triangles mark the focus.</figcaption>
   </figure>
@@ -103,7 +103,7 @@
       <figcaption>COMSOL geometry: top copper (orange), bottom copper (blue), 50 Ω port (red).</figcaption>
     </figure>
     <figure>
-      <img src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="Animated 3D realized-gain pattern of the Vivaldi antenna from 3 to 11 GHz in 1 GHz steps; the main beam points along the board toward the open end of the flare.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency-poster.jpg" width="760" height="600" aria-label="Animated 3D realized-gain pattern of the Vivaldi antenna from 3 to 11 GHz in 1 GHz steps; the main beam points along the board toward the open end of the flare."><source data-src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.mp4" type="video/mp4"></video>
       <figcaption>Realized-gain pattern from 3 to 11 GHz, one frame per GHz.</figcaption>
     </figure>
   </div>
@@ -199,5 +199,6 @@
  · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

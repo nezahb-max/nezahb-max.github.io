@@ -50,7 +50,7 @@
     האלקטרומגנטי בתדר 2.44 GHz בשני מצבים: דלת הממ״ד פתוחה ודלת הממ״ד סגורה.</p>
 
   <figure>
-    <img src="../assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="אנימציית סימולציה: גלי Wi-Fi בתדר 2.44 GHz מתפשטים מנקודת הגישה בסלון אל חדרי הדירה ונכנסים לממ״ד דרך הדלת הפתוחה.">
+    <video autoplay muted loop playsinline poster="../assets/sim/wifi-apartment-safe-room-comsol-poster.jpg" width="760" height="616" aria-label="אנימציית סימולציה: גלי Wi-Fi בתדר 2.44 GHz מתפשטים מנקודת הגישה בסלון אל חדרי הדירה ונכנסים לממ״ד דרך הדלת הפתוחה."><source src="../assets/sim/wifi-apartment-safe-room-comsol.mp4" type="video/mp4"></video>
     <figcaption>חזיתות הגל של השדה החשמלי לאורך מחזור פאזה אחד, דלת הממ״ד פתוחה. הבהירות מציינת את עוצמת
       השדה בסולם לוגריתמי. בפינה הימנית העליונה נמצא הממ״ד, והגל נכנס אליו בעיקר דרך פתח הדלת.</figcaption>
   </figure>
@@ -110,7 +110,7 @@
     החדרים, פרט למסדרון, מצב הדלת משנה את הרמה הממוצעת בעד 0.5 dB.</p>
 
   <figure>
-    <img src="../assets/sim/wifi-safe-room-door-zoom-comsol.gif" width="760" height="666" decoding="async" loading="lazy" alt="אנימציה מתוך COMSOL של השדה החשמלי הרגעי בכניסה לממ״ד כשהדלת פתוחה: חזיתות גל עוברות דרך הפתח ומתפזרות מכנף הדלת וממוטות הזיון.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/sim/wifi-safe-room-door-zoom-comsol-poster.jpg" width="760" height="666" aria-label="אנימציה מתוך COMSOL של השדה החשמלי הרגעי בכניסה לממ״ד כשהדלת פתוחה: חזיתות גל עוברות דרך הפתח ומתפזרות מכנף הדלת וממוטות הזיון."><source data-src="../assets/sim/wifi-safe-room-door-zoom-comsol.mp4" type="video/mp4"></video>
     <figcaption>השדה בכניסה לממ״ד לאורך מחזור פאזה אחד, דלת פתוחה, מחושב ב‑COMSOL. הקירות ומוטות הזיון מסומנים.</figcaption>
   </figure>
 
@@ -135,5 +135,6 @@
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

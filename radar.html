@@ -88,13 +88,13 @@
     large targets, physical-optics (PO) methods, in COMSOL and MATLAB.</p>
 
   <figure>
-    <img src="assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" loading="lazy" alt="COMSOL full-wave electromagnetic simulation of a plane wave scattering off a target, used to compute its radar cross-section (RCS).">
+    <img src="assets/rcs-scattering-comsol-poster.jpg" width="1000" height="1000" decoding="async" loading="lazy" alt="COMSOL full-wave electromagnetic simulation of a plane wave scattering off a target, used to compute its radar cross-section (RCS).">
     <figcaption>Full-wave electromagnetic scattering off a target in COMSOL: the field solution from
       which the radar cross-section is extracted.</figcaption>
   </figure>
 
   <figure>
-    <img src="assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" loading="lazy" alt="Monostatic radar cross-section (RCS) versus rotation angle of a rotating blade at 94 GHz, computed with a physical-optics model.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/rcs-vs-angle-94ghz-poster.jpg" width="1210" height="528" aria-label="Monostatic radar cross-section (RCS) versus rotation angle of a rotating blade at 94 GHz, computed with a physical-optics model."><source data-src="assets/rcs-vs-angle-94ghz.mp4" type="video/mp4"></video>
     <figcaption>Monostatic RCS versus aspect angle for a rotating blade at 94 GHz (physical optics):
       the angular signature that underlies micro-Doppler classification of rotating targets.</figcaption>
   </figure>
@@ -107,7 +107,7 @@
     of blades times the rotation rate.</p>
 
   <figure>
-    <img src="assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="Animated spectrogram of a simulated quadcopter at 94 GHz: blade flashes up to about ±45 kHz appear when rotor blades cross perpendicular to the radar line of sight.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/radar-drone-micro-doppler-94ghz-poster.jpg" width="760" height="370" aria-label="Animated spectrogram of a simulated quadcopter at 94 GHz: blade flashes up to about ±45 kHz appear when rotor blades cross perpendicular to the radar line of sight."><source data-src="assets/sim/radar-drone-micro-doppler-94ghz.mp4" type="video/mp4"></video>
     <figcaption>Left: the four rotors seen from above, slowed 240 times; a blade turns orange when it
       crosses perpendicular to the line of sight. Right: 0.75 ms spectrogram. The flashes reach ±38 to
       ±45 kHz around the body line and repeat every 5.5 to 6.5 ms for each rotor.</figcaption>
@@ -132,7 +132,7 @@
     so the matched thicknesses are 1.16, 2.32 and 3.48 mm.</p>
 
   <figure>
-    <img src="assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="COMSOL animation at 77 GHz: an 8-element radar array radiates through a bumper panel whose thickness sweeps from 1 to 4 mm, next to a plot of transmitted and reflected power versus thickness.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/radar-radome-77ghz-thickness-sweep-poster.jpg" width="800" height="400" aria-label="COMSOL animation at 77 GHz: an 8-element radar array radiates through a bumper panel whose thickness sweeps from 1 to 4 mm, next to a plot of transmitted and reflected power versus thickness."><source data-src="assets/sim/radar-radome-77ghz-thickness-sweep.mp4" type="video/mp4"></video>
     <figcaption>Left: the field of an 8-element array passing through the panel as its thickness sweeps
       from 1 to 4 mm. Right: transmitted and reflected power for a plane wave, COMSOL (points) and
       analytic (lines). At mismatched thicknesses up to 22% of the power reflects.</figcaption>
@@ -214,5 +214,6 @@
  · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

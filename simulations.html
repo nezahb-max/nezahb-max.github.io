@@ -51,7 +51,7 @@
   <section id="wifi">
     <h2>Wi-Fi in an apartment with a safe room</h2>
     <figure>
-      <img src="assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="Simulation animation of 2.44 GHz Wi-Fi waves in an apartment: the wave spreads from the access point in the living room and enters the safe room through its open door.">
+      <video autoplay muted loop playsinline poster="assets/sim/wifi-apartment-safe-room-comsol-poster.jpg" width="760" height="616" aria-label="Simulation animation of 2.44 GHz Wi-Fi waves in an apartment: the wave spreads from the access point in the living room and enters the safe room through its open door."><source src="assets/sim/wifi-apartment-safe-room-comsol.mp4" type="video/mp4"></video>
       <figcaption>Wi-Fi wavefronts at 2.44 GHz, safe-room door open. COMSOL simulation.</figcaption>
     </figure>
     <div class="grid">
@@ -76,7 +76,7 @@
   <section id="lens-horn">
     <h2>Horn antenna with a focusing lens at 10 GHz</h2>
     <figure>
-      <img src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" loading="lazy" alt="Animation of the 10 GHz electric field: top, a horn without a lens and a diverging wave; bottom, the same horn with a PTFE lens and the wave converging to a focus in front of the aperture.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/antenna-lens-horn-focusing-10ghz-comsol-poster.jpg" width="800" height="704" aria-label="Animation of the 10 GHz electric field: top, a horn without a lens and a diverging wave; bottom, the same horn with a PTFE lens and the wave converging to a focus in front of the aperture."><source data-src="assets/sim/antenna-lens-horn-focusing-10ghz-comsol.mp4" type="video/mp4"></video>
       <figcaption>Top, the horn alone; bottom, with the PTFE lens. Animation built from COMSOL field data.</figcaption>
     </figure>
     <div class="grid">
@@ -102,7 +102,7 @@
   <section id="vivaldi">
     <h2>Antipodal Vivaldi ultra-wideband antenna</h2>
     <figure>
-      <img src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="Animation of the 3D gain pattern of a Vivaldi antenna: each frame is a different frequency from 3 to 11 GHz, and the boresight gain rises with frequency.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency-poster.jpg" width="760" height="600" aria-label="Animation of the 3D gain pattern of a Vivaldi antenna: each frame is a different frequency from 3 to 11 GHz, and the boresight gain rises with frequency."><source data-src="assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.mp4" type="video/mp4"></video>
       <figcaption>3D realized-gain pattern, one frame per GHz from 3 to 11 GHz. COMSOL simulation.</figcaption>
     </figure>
     <div class="grid">
@@ -127,7 +127,7 @@
   <section id="radome">
     <h2>77 GHz automotive radar behind a bumper</h2>
     <figure>
-      <img src="assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="Animation: left, the field of a 77 GHz radar array passing through a bumper panel of changing thickness; right, transmitted and reflected power against panel thickness.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/radar-radome-77ghz-thickness-sweep-poster.jpg" width="800" height="400" aria-label="Animation: left, the field of a 77 GHz radar array passing through a bumper panel of changing thickness; right, transmitted and reflected power against panel thickness."><source data-src="assets/sim/radar-radome-77ghz-thickness-sweep.mp4" type="video/mp4"></video>
       <figcaption>Left, the array field through the panel; right, transmitted and reflected power against thickness.
         COMSOL simulation.</figcaption>
     </figure>
@@ -153,7 +153,7 @@
   <section id="micro-doppler">
     <h2>Quadcopter micro-Doppler at 94 GHz</h2>
     <figure>
-      <img src="assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="Animation: left, a top view of the four rotors of a quadcopter; right, the spectrogram of a 94 GHz radar return in which each blade crossing produces a vertical flash.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/radar-drone-micro-doppler-94ghz-poster.jpg" width="760" height="370" aria-label="Animation: left, a top view of the four rotors of a quadcopter; right, the spectrogram of a 94 GHz radar return in which each blade crossing produces a vertical flash."><source data-src="assets/sim/radar-drone-micro-doppler-94ghz.mp4" type="video/mp4"></video>
       <figcaption>Left, the four rotors slowed 240 times. Right, the spectrogram, where each blade crossing produces a
         vertical flash.</figcaption>
     </figure>
@@ -199,5 +199,6 @@
  · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

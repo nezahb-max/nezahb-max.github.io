@@ -48,7 +48,7 @@
     solved the electromagnetic field at 2.44 GHz twice, with the safe-room door open and with it closed.</p>
 
   <figure>
-    <img src="assets/sim/wifi-apartment-safe-room-comsol.gif" width="760" height="616" decoding="async" alt="Simulation animation: 2.44 GHz Wi-Fi waves spread from the access point in the living room into the rooms and enter the safe room through its open door.">
+    <video autoplay muted loop playsinline poster="assets/sim/wifi-apartment-safe-room-comsol-poster.jpg" width="760" height="616" aria-label="Simulation animation: 2.44 GHz Wi-Fi waves spread from the access point in the living room into the rooms and enter the safe room through its open door."><source src="assets/sim/wifi-apartment-safe-room-comsol.mp4" type="video/mp4"></video>
     <figcaption>Electric-field wavefronts over one phase cycle, safe-room door open. Brightness shows field
       strength on a logarithmic scale. The safe room is in the upper right, and the wave enters it mainly
       through the doorway.</figcaption>
@@ -112,7 +112,7 @@
     except the corridor, the door state changes the average level by 0.5 dB or less.</p>
 
   <figure>
-    <img src="assets/sim/wifi-safe-room-door-zoom-comsol.gif" width="760" height="666" decoding="async" loading="lazy" alt="Animation exported from COMSOL of the instantaneous electric field at the safe-room entrance with the door open: wavefronts pass through the doorway and scatter off the door leaf and the rebar.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/wifi-safe-room-door-zoom-comsol-poster.jpg" width="760" height="666" aria-label="Animation exported from COMSOL of the instantaneous electric field at the safe-room entrance with the door open: wavefronts pass through the doorway and scatter off the door leaf and the rebar."><source data-src="assets/sim/wifi-safe-room-door-zoom-comsol.mp4" type="video/mp4"></video>
     <figcaption>The field at the safe-room entrance over one phase cycle, door open, computed in COMSOL. Walls and rebar are drawn.</figcaption>
   </figure>
 
@@ -140,5 +140,6 @@
  · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

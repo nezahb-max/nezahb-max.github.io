@@ -52,3 +52,7 @@ nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;w
 
 /* Scaled figures keep their aspect ratio (added 2026-10-02) */
 figure img{height:auto}
+
+/* 2026-10-03: looping simulation videos replace GIFs */
+figure video{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#0c1420}
+.card img.thumb{display:block;width:100%;height:auto;border-radius:8px;margin:0 0 10px;border:1px solid var(--line)}

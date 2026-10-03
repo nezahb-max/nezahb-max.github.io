@@ -64,13 +64,13 @@
     block of plasma confinement and magnetic electron optics.</p>
 
   <figure>
-    <img src="assets/electron-magnetic-mirror-trap.gif" width="880" height="660" decoding="async" alt="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points.">
+    <video autoplay muted loop playsinline poster="assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points."><source src="assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
     <figcaption>Electron in a two-coil magnetic bottle (mirror ratio R ≈ 2.2, pitch angle 50°): gyration
       along the field, reflection where it steepens, about 4 gyrations per bounce.</figcaption>
   </figure>
 
   <figure>
-    <img src="assets/magnetic-bottle-field-map.gif" width="960" height="500" decoding="async" loading="lazy" alt="Meridional cross-section of the magnetic bottle: computed |B| field map with field lines and coil cross-sections, the electron orbit projected on the plane bouncing between mirror points, and the on-axis field profile showing the mirror condition B equals B0 over sin-squared theta.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/magnetic-bottle-field-map-poster.jpg" width="960" height="500" aria-label="Meridional cross-section of the magnetic bottle: computed |B| field map with field lines and coil cross-sections, the electron orbit projected on the plane bouncing between mirror points, and the on-axis field profile showing the mirror condition B equals B0 over sin-squared theta."><source data-src="assets/magnetic-bottle-field-map.mp4" type="video/mp4"></video>
     <figcaption>The same orbit over the computed field map (|B|/B₀, log scale): the trajectory turns where
       the field profile (lower panel) crosses B = B₀/sin²θ₀, the mirror condition.</figcaption>
   </figure>
@@ -432,5 +432,6 @@ window.__simFail = function () {
 if (window.THREE) { window.__initSim(); }
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>

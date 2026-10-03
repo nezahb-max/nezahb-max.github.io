@@ -71,13 +71,13 @@
   </div>
 
   <figure>
-    <img src="../assets/rcs-scattering-comsol.gif" width="1000" height="1000" decoding="async" loading="lazy" alt="סימולציית גל־מלא ב‑COMSOL של פיזור גל מישורי ממטרה, לחישוב שטח חתך המכ״ם (RCS).">
+    <img src="../assets/rcs-scattering-comsol-poster.jpg" width="1000" height="1000" decoding="async" loading="lazy" alt="סימולציית גל־מלא ב‑COMSOL של פיזור גל מישורי ממטרה, לחישוב שטח חתך המכ״ם (RCS).">
     <figcaption>פיזור אלקטרומגנטי מגוף המטרה בסימולציית גל־מלא ב‑COMSOL, הפתרון שממנו מחולץ
       שטח חתך המכ״ם (RCS).</figcaption>
   </figure>
 
   <figure>
-    <img src="../assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" loading="lazy" alt="שטח חתך מכ״ם מונוסטטי כתלות בזווית של להב מסתובב ב־94 גיגה־הרץ, מודל אופטיקה פיזיקלית.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/rcs-vs-angle-94ghz-poster.jpg" width="1210" height="528" aria-label="שטח חתך מכ״ם מונוסטטי כתלות בזווית של להב מסתובב ב־94 גיגה־הרץ, מודל אופטיקה פיזיקלית."><source data-src="../assets/rcs-vs-angle-94ghz.mp4" type="video/mp4"></video>
     <figcaption>‏RCS מונוסטטי כתלות בזווית עבור להב מסתובב ב־94 גיגה־הרץ (אופטיקה פיזיקלית),
       החתימה הזוויתית שבבסיס סיווג מיקרו־דופלר של מטרות סובבות.</figcaption>
   </figure>
@@ -89,7 +89,7 @@
     modulation), במרווח של מספר הלהבים כפול קצב הסיבוב.</p>
 
   <figure>
-    <img src="../assets/sim/radar-drone-micro-doppler-94ghz.gif" width="760" height="370" decoding="async" loading="lazy" alt="ספקטרוגרמה מונפשת של רחפן מדומה ב־94 גיגה־הרץ: הבזקי להבים עד כ־±45 קילו־הרץ מופיעים כשהלהבים חוצים את הניצב לקו הראייה של המכ״ם.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/sim/radar-drone-micro-doppler-94ghz-poster.jpg" width="760" height="370" aria-label="ספקטרוגרמה מונפשת של רחפן מדומה ב־94 גיגה־הרץ: הבזקי להבים עד כ־±45 קילו־הרץ מופיעים כשהלהבים חוצים את הניצב לקו הראייה של המכ״ם."><source data-src="../assets/sim/radar-drone-micro-doppler-94ghz.mp4" type="video/mp4"></video>
     <figcaption>משמאל: ארבעת הרוטורים במבט־על, מואטים פי 240. להב נצבע בכתום כשהוא חוצה את הניצב
       לקו הראייה. מימין: ספקטרוגרמה בחלון של 0.75 אלפיות שנייה. ההבזקים מגיעים ל־±38 עד ±45
       קילו־הרץ סביב קו הגוף וחוזרים כל 5.5 עד 6.5 אלפיות שנייה בכל רוטור.</figcaption>
@@ -113,7 +113,7 @@
     2.32 מ״מ, ולכן העוביים המותאמים הם 1.16, ‏2.32 ו־3.48 מ״מ.</p>
 
   <figure>
-    <img src="../assets/sim/radar-radome-77ghz-thickness-sweep.gif" width="800" height="400" decoding="async" loading="lazy" alt="אנימציית COMSOL ב־77 גיגה־הרץ: מערך מכ״ם של 8 מקורות משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, ולצדו גרף ההספק המועבר והמוחזר כתלות בעובי.">
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/sim/radar-radome-77ghz-thickness-sweep-poster.jpg" width="800" height="400" aria-label="אנימציית COMSOL ב־77 גיגה־הרץ: מערך מכ״ם של 8 מקורות משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, ולצדו גרף ההספק המועבר והמוחזר כתלות בעובי."><source data-src="../assets/sim/radar-radome-77ghz-thickness-sweep.mp4" type="video/mp4"></video>
     <figcaption>משמאל: השדה של מערך בן 8 מקורות העובר דרך הלוח, כשהעובי משתנה מ־1 עד 4 מ״מ.
       מימין: ההספק המועבר והמוחזר לגל מישורי, COMSOL (נקודות) ופתרון אנליטי (קווים). בעובי לא
       מותאם עד 22% מההספק חוזר.</figcaption>
@@ -190,5 +190,6 @@
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>
