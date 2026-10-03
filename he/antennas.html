@@ -56,7 +56,7 @@
     הקרן הודפסה בהדפסת תלת־ממד וצופתה במתכת, והעדשה עובדה מ‑PTFE (פרמיטיביות יחסית 2.2).</p>
 
   <figure>
-    <img src="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif" width="800" height="704" decoding="async" alt="אנימציית COMSOL ב‑10 גיגה־הרץ של השדה החשמלי באנטנת קרן קונית, לבדה (למעלה) ועם עדשת PTFE (למטה). עם העדשה חזית הגל מתכנסת למוקד כ־100 מ״מ לפני הפתח.">
+    <video autoplay muted loop playsinline poster="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol-poster.jpg" width="800" height="704" aria-label="אנימציית COMSOL ב‑10 גיגה־הרץ של השדה החשמלי באנטנת קרן קונית, לבדה (למעלה) ועם עדשת PTFE (למטה). עם העדשה חזית הגל מתכנסת למוקד כ־100 מ״מ לפני הפתח."><source src="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol.mp4" type="video/mp4"></video>
     <figcaption>COMSOL, ‏10 גיגה־הרץ: רכיב השדה E<sub>x</sub> לאורך מחזור פאזה אחד, בקרן לבדה (למעלה)
       ובקרן עם העדשה (למטה). המשולשים מסמנים את המוקד.</figcaption>
   </figure>
@@ -103,7 +103,7 @@
       <figcaption>הגאומטריה ב‑COMSOL: נחושת עליונה (כתום), נחושת תחתונה (כחול), פורט 50 Ω (אדום).</figcaption>
     </figure>
     <figure>
-      <img src="../assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif" width="760" height="600" decoding="async" loading="lazy" alt="אנימציה של תבנית ההגבר הממומש התלת־ממדית של אנטנת הוויוואלדי מ־3 עד 11 גיגה־הרץ בצעדים של 1 גיגה־הרץ. האלומה הראשית מכוונת לאורך הלוח, לכיוון הקצה הפתוח של החריץ.">
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/sim/antenna-vivaldi-pattern-3d-vs-frequency-poster.jpg" width="760" height="600" aria-label="אנימציה של תבנית ההגבר הממומש התלת־ממדית של אנטנת הוויוואלדי מ־3 עד 11 גיגה־הרץ בצעדים של 1 גיגה־הרץ. האלומה הראשית מכוונת לאורך הלוח, לכיוון הקצה הפתוח של החריץ."><source data-src="../assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.mp4" type="video/mp4"></video>
       <figcaption>תבנית ההגבר הממומש מ־3 עד 11 גיגה־הרץ, תמונה לכל גיגה־הרץ.</figcaption>
     </figure>
   </div>
@@ -195,5 +195,6 @@
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
 </body>
 </html>
