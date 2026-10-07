@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מאיצי חלקיקים קומפקטיים בגרדיאנט גבוה ולייזר אלקטרונים חופשיים הפוך (IFEL): סימולציה ב‑COMSOL | ד״ר נצח בלל</title>
+<meta name="description" content="מאיץ חלקיקים קומפקטי בגרדיאנט האצה גבוה, במנגנון לייזר אלקטרונים חופשיים הפוך (IFEL): גל טרה־הרץ ואונדולטור סלילי שהפסיעה והשדה שלו משתנים לאורכו מעניקים לאלקטרון תוספת אנרגיה בסדר גודל של MeV לאורך סנטימטרים. מודל ב‑COMSOL Multiphysics.">
+<meta name="keywords" content="מאיץ חלקיקים קומפקטי, מאיץ קומפקטי, גרדיאנט האצה, האצה בגרדיאנט גבוה, לייזר אלקטרונים חופשיים, לייזר אלקטרונים חופשיים הפוך, IFEL, אונדולטור סלילי, האצה בגלי טרה־הרץ, מאיץ מיואונים, מתנגש מיואונים, האצה מהירה, דינמיקת אלומות, COMSOL, קומסול, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/accelerators.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/accelerators.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/accelerators.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/accelerators.html">
+<meta property="og:title" content="מאיצי חלקיקים קומפקטיים בגרדיאנט גבוה ולייזר אלקטרונים חופשיים הפוך (IFEL): סימולציה ב‑COMSOL">
+<meta property="og:description" content="האצה קומפקטית בגרדיאנט גבוה בלייזר אלקטרונים חופשיים הפוך (IFEL): אונדולטור סלילי עם פסיעה ושדה משתנים, גל טרה־הרץ ותוספת אנרגיה בסדר גודל של MeV לאורך סנטימטרים, במודל COMSOL.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/accelerators.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-accelerators.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="מאיצי חלקיקים קומפקטיים בגרדיאנט גבוה ולייזר אלקטרונים חופשיים הפוך (IFEL): סימולציה ב‑COMSOL">
+<meta name="twitter:description" content="האצה קומפקטית בגרדיאנט גבוה בלייזר אלקטרונים חופשיים הפוך (IFEL): אונדולטור סלילי עם פסיעה ושדה משתנים, גל טרה־הרץ ותוספת אנרגיה בסדר גודל של MeV לאורך סנטימטרים, במודל COMSOL.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-accelerators.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"האצת חלקיקים קומפקטית במנגנון לייזר אלקטרונים חופשיים הפוך (IFEL)","description":"מאיץ חלקיקים קומפקטי בגרדיאנט האצה גבוה: גל טרה־הרץ בקיטוב מעגלי ואונדולטור סלילי שהפסיעה והשדה שלו משתנים לאורכו מאיצים אלקטרון יחסותי מ־1.20 ל־2.97 MeV, במודל COMSOL Multiphysics.","about":["מאיץ חלקיקים קומפקטי","האצה בגרדיאנט גבוה","גרדיאנט האצה","לייזר אלקטרונים חופשיים הפוך","אונדולטור סלילי","האצה בגלי טרה־הרץ","האצה מהירה","מאיצי מיואונים","מתנגש מיואונים"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/accelerators.html","mainEntityOfPage":"https://nezahb-max.github.io/he/accelerators.html","image":"https://nezahb-max.github.io/assets/ifel-compact-accelerator-poster.jpg","citation":["https://doi.org/10.1063/5.0199053","https://doi.org/10.1063/5.0060778","https://doi.org/10.1103/PhysRevAccelBeams.20.122401","https://doi.org/10.1063/1.4934495","https://doi.org/10.1109/TPS.2014.2381293"],"inLanguage":"he","dateModified":"2026-10-07"}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../accelerators.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">מאיצים קומפקטיים · התקני אלקטרונים חופשיים</p>
+  <h1>מאיצי חלקיקים קומפקטיים בגרדיאנט גבוה ולייזר אלקטרונים חופשיים הפוך (IFEL)</h1>
+  <p class="lead">מאיצי RF קונבנציונליים גדולים ויקרים. <strong>לייזר אלקטרונים חופשיים הפוך (IFEL)</strong>
+    מציע דרך ל<strong>האצה קומפקטית</strong>: גל אלקטרומגנטי מעביר אנרגיה לאלומת אלקטרונים יחסותית
+    בזמן שהיא מתפתלת לאורך אונדולטור סלילי, וההאצה מגיעה לגרדיאנט גבוה באורכי אינטראקציה של
+    סנטימטרים.</p>
+
+  <figure>
+    <video autoplay muted loop playsinline poster="../assets/ifel-compact-accelerator-poster.jpg" width="1100" height="618" aria-label="סימולציית COMSOL של האצה קומפקטית בלייזר אלקטרונים חופשיים הפוך (IFEL): אלקטרון יחסותי באונדולטור סלילי שהפסיעה והשדה שלו משתנים לאורכו מואץ בגל טרה־הרץ בקיטוב מעגלי, ואנרגייתו עולה מ־1.2 ל־2.97 MeV."><source src="../assets/ifel-compact-accelerator.mp4" type="video/mp4"></video>
+    <figcaption>האצת IFEL במודל COMSOL Multiphysics: אלקטרון יחסותי באונדולטור סלילי, מואץ בגל טרה־הרץ בקיטוב
+      מעגלי. האנרגיה הקינטית עולה מ־1.20 ל־2.97 MeV. השינוי ההדרגתי בפסיעה ובשדה לאורך האונדולטור, המותאם
+      לתנאי התהודה, שומר את האלקטרון בפאזה עם הגל.</figcaption>
+  </figure>
+
+  <h2>הפיזיקה</h2>
+  <p>אלקטרון שעובר בשדה מגנטי מחזורי (שדה אונדולטור) מקבל רכיב מהירות רוחבי. כאשר גל
+    אלקטרומגנטי המתקדם באותו כיוון (כאן גל טרה־הרץ בקיטוב מעגלי) מתואם בפאזה לתנועה הרוחבית
+    הזאת, הגל מבצע על האלקטרון עבודה נטו, והאלקטרון <em>צובר</em> אנרגיה (התהליך ההפוך לפליטת
+    הקרינה בלייזר אלקטרונים חופשיים). כדי שהעברת האנרגיה תימשך בזמן שהאלקטרון מואץ, נדרש
+    <strong>שינוי הדרגתי</strong> (tapering) של מחזור האונדולטור (פסיעת הסליל) ושל השדה לאורכו,
+    השומר על תנאי התהודה.</p>
+
+  <h2>המודל</h2>
+  <p>המסלול מחושב ב‑COMSOL Multiphysics ממשוואת התנועה היחסותית המלאה תחת כוח לורנץ, בצימוד
+    בין השדה של האונדולטור הסלילי לגל הטרה־הרץ. התוצאות כוללות את מסלול האלקטרון בתלת־ממד, את
+    עקומת תוספת האנרגיה לאורך מקטע האינטראקציה ואת פרופיל השינוי ההדרגתי הנדרש להאצה נעולת
+    פאזה. אלה נתוני הקלט לקביעת המידות של שלב האצה במאיץ קומפקטי.</p>
+
+  <h2>גרדיאנט האצה גבוה</h2>
+  <p>היתרון של ה‑IFEL הוא <strong>גרדיאנט ההאצה</strong> (acceleration gradient): תוספת האנרגיה
+    ליחידת אורך. גרדיאנט גבוה דוחס לסנטימטרים האצה שמאיץ RF קונבנציונלי מבצע לאורך מטרים, ועל
+    כך מבוססת האפשרות לבנות מאיץ קומפקטי של ממש. הגרדיאנט מכריע גם כשהחלקיקים צריכים להגיע
+    לאנרגיה הנדרשת לפני שהם דועכים: מיואונים, שזמן חייהם נמדד במיקרו־שניות, הם המקרה שמניע
+    שיטות האצה מהירה ותכנונים רעיוניים של מתנגש מיואונים (muon collider).</p>
+
+  <div class="tags"><span class="tag">מאיץ קומפקטי</span><span class="tag">האצה בגרדיאנט גבוה</span>
+    <span class="tag">לייזר אלקטרונים חופשיים הפוך</span><span class="tag">אונדולטור סלילי</span><span class="tag">גל טרה־הרץ</span>
+    <span class="tag">מאיצי מיואונים</span><span class="tag">האצה מהירה</span>
+    <span class="tag">דינמיקה של אלומות יחסותיות</span><span class="tag">COMSOL</span></div>
+
+  <h2 id="publications">פרסומים נבחרים: מאיצים ולייזרי אלקטרונים חופשיים</h2>
+  <ul class="publist">
+    <li>מיקרו־אונדולטורים סליליים ממגנטים קבועים ללייזרי אלקטרונים חופשיים בתחום קרני X.
+      <span lang="en" dir="ltr" style="display:block">Magory E, Bratman VL, <strong>Balal N</strong>. Permanent helical micro-undulators for x-ray free electron lasers.
+      <em>Physics of Plasmas</em> 31, 053301 (2024).
+      <a href="https://doi.org/10.1063/5.0199053">doi:10.1063/5.0199053</a></span></li>
+    <li>נצילות קרינת אונדולטור בתחום הטרה־הרץ מחבילות אלקטרונים קצרות בשדה של סלילים ממוגנטים באופן קבוע.
+      <span lang="en" dir="ltr" style="display:block"><strong>Balal N</strong>, Bratman VL, Lurie Yu, Magory E. Efficiency of terahertz undulator radiation
+      from short electron bunches moving in the field of permanently magnetized helices. <em>Physics of Plasmas</em> 28, 093301 (2021).
+      <a href="https://doi.org/10.1063/5.0060778">doi:10.1063/5.0060778</a></span></li>
+    <li>אונדולטור סלילי המבוסס על חלוקה מחדש חלקית של שדה מגנטי אחיד.
+      <span lang="en" dir="ltr" style="display:block"><strong>Balal N</strong>, Bandurkin IV, Bratman VL, Fedotov AE. Helical undulator based on partial
+      redistribution of uniform magnetic field. <em>Physical Review Accelerators and Beams</em> 20, 122401 (2017).
+      <a href="https://doi.org/10.1103/PhysRevAccelBeams.20.122401" style="white-space:normal">doi:10.1103/<wbr>PhysRevAccelBeams.20.122401</a></span></li>
+    <li>הפחתת הדחייה הקולונית באמצעות אפקט המסה השלילית בקרינת אונדולטור בתחום הטרה־הרץ מחבילות אלקטרונים.
+      <span lang="en" dir="ltr" style="display:block"><strong>Balal N</strong>, Bandurkin IV, Bratman VL, Magory E, Savilov AV. Negative-mass mitigation of Coulomb repulsion
+      for terahertz undulator radiation of electron bunches. <em>Applied Physics Letters</em> 107, 163505 (2015).
+      <a href="https://doi.org/10.1063/1.4934495">doi:10.1063/1.4934495</a></span></li>
+    <li>קרינת אונדולטור מחבילות אלקטרונים מישוריות צפופות.
+      <span lang="en" dir="ltr" style="display:block"><strong>Balal N</strong>, Bratman VL. Undulator Radiation of Dense Plane Electron Bunches.
+      <em>IEEE Transactions on Plasma Science</em> 43, 532-538 (2015).
+      <a href="https://doi.org/10.1109/TPS.2014.2381293">doi:10.1109/TPS.2014.2381293</a></span></li>
+  </ul>
+  <p>תכנוני האונדולטורים שעליהם נשענת העבודה מפורטים ב<a href="magnetics.html">דף המגנטיות השימושית</a>,
+    והפיזיקה של כליאת אלקטרונים שבבסיסה נבחנת ב<a href="particle-dynamics.html">דף דינמיקת החלקיקים</a>.
+    דוגמאות COMSOL נוספות מרוכזות ב<a href="simulations.html">דף הסימולציות</a>.</p>
+
+  <section class="capabilities" aria-labelledby="accelerator-capabilities">
+    <h2 id="accelerator-capabilities">מחקר יישומי ויכולות טכניות</h2>
+    <ul class="capability-list">
+      <li>דינמיקה של חלקיקים טעונים יחסותיים</li>
+      <li>מידול מצומד של שדות אלקטרומגנטיים ומגנטיים</li>
+      <li>בחינת סנכרון פאזה ופרופיל השינוי ההדרגתי</li>
+      <li>סריקות פרמטריות וניתוחי רגישות</li>
+      <li>הערכת היתכנות ובחינה בלתי תלויה של מודלים</li>
+    </ul>
+  </section>
+
+  <div class="inquiry">
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
+  </div>
+
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מאיצים קומפקטיים ו‑IFEL. · עדכון אחרון: אוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

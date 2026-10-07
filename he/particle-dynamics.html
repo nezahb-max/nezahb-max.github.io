@@ -1,30 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Magnetic-Mirror Particle Trap: Charged-Particle Dynamics &amp; Boris-Pusher Simulation | Dr. Nezah Balal</title>
-<meta name="description" content="Magnetic-mirror (magnetic-bottle) particle trap between two magnetic lenses: Boris-pusher electron tracing in the exact Biot–Savart coil field, meridional field map, mirror condition and loss cone, and a live interactive WebGL simulation.">
-<meta name="keywords" content="magnetic mirror, magnetic bottle, particle trap, magnetic lens, charged particle dynamics, Boris pusher, particle tracing, Lorentz force, guiding center, adiabatic invariant, loss cone, mirror ratio, Biot-Savart, magnetostatic field map, cyclotron motion, plasma confinement, Nezah Balal">
-<link rel="canonical" href="https://nezahb-max.github.io/particle-dynamics.html">
-<meta property="og:title" content="Magnetic-Mirror Particle Trap: Charged-Particle Dynamics &amp; Boris-Pusher Simulation">
-<meta property="og:description" content="Magnetic-mirror (magnetic-bottle) particle trap between two magnetic lenses: Boris-pusher electron tracing in the exact Biot–Savart coil field, meridional field map, mirror condition and loss cone, and a live interactive WebGL simulation.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://nezahb-max.github.io/particle-dynamics.html">
-<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Magnetic-Mirror Particle Trap: Charged-Particle Dynamics &amp; Boris-Pusher Simulation">
-<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta name="theme-color" content="#0a5c8a">
+<title>מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס | ד״ר נצח בלל</title>
+<meta name="description" content="מלכודת מראה מגנטית (בקבוק מגנטי) בין שתי עדשות מגנטיות: מעקב מסלול אלקטרון באלגוריתם בוריס בשדה המדויק של הסלילים לפי חוק ביו־סבר, מפת שדה בחתך מרידיונלי, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית בזמן אמת.">
+<meta name="keywords" content="מלכודת מראה מגנטית, בקבוק מגנטי, מלכודת חלקיקים, עדשה מגנטית, דינמיקת חלקיקים טעונים, אלגוריתם בוריס, Boris pusher, מעקב חלקיקים, כוח לורנץ, מרכז מוביל, שמורה אדיאבטית, חרוט האובדן, יחס מראה, חוק ביו־סבר, מפת שדה מגנטוסטטית, תנועה ציקלוטרונית, כליאת פלזמה, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/particle-dynamics.html">
 <link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/particle-dynamics.html">
 <link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/particle-dynamics.html">
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/particle-dynamics.html">
-<link rel="stylesheet" href="assets/style.css">
+<meta property="og:title" content="מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס">
+<meta property="og:description" content="אלקטרון בבקבוק מגנטי של שני סלילים: מעקב מסלול באלגוריתם בוריס בשדה ביו־סבר, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/particle-dynamics.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס">
+<meta name="twitter:description" content="אלקטרון בבקבוק מגנטי של שני סלילים: מעקב מסלול באלגוריתם בוריס בשדה ביו־סבר, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"inLanguage":"en","dateModified":"2026-10-02"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מלכודות מראה מגנטיות: דינמיקת חלקיקים טעונים בין שתי עדשות מגנטיות","about":["מלכודת מראה מגנטית","דינמיקת חלקיקים טעונים","אלגוריתם בוריס","שמורה אדיאבטית","חרוט האובדן","מפת שדה מגנטוסטטית"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/particle-dynamics.html","mainEntityOfPage":"https://nezahb-max.github.io/he/particle-dynamics.html","image":"https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg","inLanguage":"he","dateModified":"2026-10-07"}
 </script>
 <style>
 /* --- page-local styles for the interactive simulation --- */
@@ -44,112 +47,119 @@
 .simstat .esc{color:#ff8fa8;font-weight:700}
 .simnote{font-size:13px;color:var(--mut);margin:8px 0 22px}
 @media(max-width:600px){.simbar input[type=range]{width:84px}}
+/* Hebrew labels in the readout: proportional Hebrew face after the monospace faces */
+.simstat{font-family:"Arial Hebrew",Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0}
+.simstat b{font-family:ui-monospace,Menlo,Consolas,monospace}
+/* keep inline formulas and readout items on one line in RTL text */
+main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
-  <a class="home" href="index.html">Dr. Nezah Balal</a>
-  <a href="accelerators.html">Accelerators</a><a href="magnetics.html">Applied Magnetism</a>
-  <a href="particle-dynamics.html">Particle Dynamics</a>
-  <a href="antennas.html">Antennas</a><a href="radar.html">Radar</a>
-  <a href="simulations.html">Simulations</a>
-  <a href="he/particle-dynamics.html" lang="he">עברית</a>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../particle-dynamics.html" lang="en">English</a>
 </nav></div></header>
 
 <main class="wrap">
-  <p class="sub">Charged-particle dynamics · Magnetic traps</p>
-  <h1>Magnetic-mirror particle traps &amp; charged-particle dynamics</h1>
-  <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. I trace
-    <strong>electron dynamics</strong> in magnetic-lens systems with an in-house particle-tracing code (a
-    volume-preserving <strong>Boris pusher</strong> in the ideal thin-loop <strong>Biot–Savart field</strong>
-    of the coils), applied here to the <strong>magnetic-mirror trap</strong> (“magnetic bottle”), a basic building
-    block of plasma confinement and magnetic electron optics.</p>
+  <p class="sub">דינמיקת חלקיקים טעונים · מלכודות מגנטיות</p>
+  <h1>מלכודות מראה מגנטיות ודינמיקת חלקיקים טעונים</h1>
+  <p class="lead">המבחן של מערכת מגנטים הוא מה שהיא עושה לחלקיק טעון. אני מחשב את <strong>תנועת
+    האלקטרונים</strong> במערכות של עדשות מגנטיות בקוד מעקב חלקיקים בפיתוח עצמי. הקוד מקדם את החלקיק
+    ב<strong>אלגוריתם בוריס (Boris pusher)</strong>, המשמר נפח במרחב הפאזה, בשדה של הסלילים לפי
+    <strong>חוק ביו־סבר</strong>, כשכל סליל ממודל כלולאת זרם דקה אידאלית. בדף זה הקוד מיושם על <strong>מלכודת מראה מגנטית</strong>, המכונה גם בקבוק
+    מגנטי, אבן בניין בסיסית בכליאת פלזמה ובאופטיקה אלקטרונית מגנטית.</p>
 
   <figure>
-    <video autoplay muted loop playsinline poster="assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points."><source src="assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
-    <figcaption>Electron in a two-coil magnetic bottle (mirror ratio R ≈ 2.2, pitch angle 50°): gyration
-      along the field, reflection where it steepens, about 4 gyrations per bounce.</figcaption>
+    <video autoplay muted loop playsinline poster="../assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="סימולציה תלת־ממדית של מסלול אלקטרון הכלוא במלכודת מראה מגנטית (בקבוק מגנטי) שיוצרות שתי עדשות מגנטיות על ציר משותף: המסלול הסלילי, קווי השדה וההחזרות בנקודות המראה."><source src="../assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
+    <figcaption>אלקטרון בבקבוק מגנטי של שני סלילים (יחס מראה <bdi dir="ltr">R ≈ 2.2</bdi>, זווית נטייה 50°):
+      סיבוב ציקלוטרוני לאורך השדה, החזרה במקום שבו השדה מתחזק, וכ־4 סיבובים בין החזרה להחזרה.</figcaption>
   </figure>
 
   <figure>
-    <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/magnetic-bottle-field-map-poster.jpg" width="960" height="500" aria-label="Meridional cross-section of the magnetic bottle: computed |B| field map with field lines and coil cross-sections, the electron orbit projected on the plane bouncing between mirror points, and the on-axis field profile showing the mirror condition B equals B0 over sin-squared theta."><source data-src="assets/magnetic-bottle-field-map.mp4" type="video/mp4"></video>
-    <figcaption>The same orbit over the computed field map (|B|/B₀, log scale): the trajectory turns where
-      the field profile (lower panel) crosses B = B₀/sin²θ₀, the mirror condition.</figcaption>
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/magnetic-bottle-field-map-poster.jpg" width="960" height="500" aria-label="חתך מרידיונלי של הבקבוק המגנטי: מפת |B| מחושבת עם קווי שדה וחתכי הסלילים, היטל מסלול האלקטרון על המישור, הנע הלוך ושוב בין נקודות המראה, ופרופיל השדה על הציר עם תנאי המראה, B שווה B0 חלקי סינוס בריבוע של תטא."><source data-src="../assets/magnetic-bottle-field-map.mp4" type="video/mp4"></video>
+    <figcaption>אותו מסלול על מפת השדה המחושבת (<bdi dir="ltr">|B|/B₀</bdi>, סולם לוגריתמי): המסלול משנה
+      כיוון במקום שבו פרופיל השדה (בגרף התחתון) חוצה את <bdi dir="ltr">B = B₀/sin²θ₀</bdi>, תנאי המראה.</figcaption>
   </figure>
 
-  <h2>The physics</h2>
-  <p>In the non-relativistic adiabatic limit, the electron’s rapid gyration makes its magnetic moment
-    μ = mv<sub>⊥</sub>²/2B an
-    <strong>adiabatic invariant</strong>: as B grows toward a coil, v<sub>⊥</sub> must grow with it and, since the
-    magnetic force does no work, v<sub>∥</sub> is exhausted. Reflection occurs where
-    B = B₀/sin²θ₀ (θ₀ is the mid-plane pitch angle); particles inside the <strong>loss cone</strong>,
-    sin²θ<sub>lc</sub> = 1/R, here θ<sub>lc</sub> ≈ 43°, escape through the mirror throat. The orbit shown
-    is deliberately fat to keep the gyration visible, so μ wanders by ~10%; at a gyroradius of 0.05a it
-    tightens to ~1.5%.</p>
+  <h2>הפיזיקה</h2>
+  <p>בגבול האדיאבטי הלא־יחסותי, הסיבוב המהיר של האלקטרון הופך את המומנט המגנטי שלו,
+    <bdi dir="ltr">μ = mv<sub>⊥</sub>²/2B</bdi>, ל<strong>שמורה אדיאבטית</strong> (adiabatic invariant):
+    כש־B גדל בהתקרבות לסליל, גם <bdi dir="ltr">v<sub>⊥</sub></bdi> חייב לגדול, ומאחר שהכוח המגנטי אינו מבצע
+    עבודה, <bdi dir="ltr">v<sub>∥</sub></bdi> קטן עד שהוא מתאפס. ההחזרה מתרחשת במקום שבו
+    <bdi dir="ltr">B = B₀/sin²θ₀</bdi>, כאשר θ₀ היא זווית הנטייה (pitch angle) במישור האמצע. חלקיקים
+    שזווית הנטייה שלהם בתוך <strong>חרוט האובדן (loss cone)</strong>,
+    <bdi dir="ltr">sin²θ<sub>lc</sub> = 1/R</bdi>, ובמלכודת הזאת <bdi dir="ltr">θ<sub>lc</sub> ≈ 43°</bdi>,
+    נמלטים דרך צוואר המראה. המסלול המוצג נבחר עם רדיוס לרמור גדול, כדי שהסיבוב ייראה בבירור, ולכן μ
+    משתנה בכ־10%. ברדיוס לרמור של <bdi dir="ltr">0.05a</bdi> השינוי קטן לכ־1.5%.</p>
 
-  <h2>The model</h2>
-  <p>The ideal thin-loop coil field is evaluated from complete-elliptic-integral expressions,
-    avoiding interpolation from a sampled field map. Trajectories are advanced with the <strong>Boris
-    algorithm</strong>, the volume-preserving pusher of particle-in-cell plasma codes; in a static magnetic
-    field it conserves kinetic energy to machine precision (~10⁻¹⁴ here). The same pusher runs on
-    COMSOL-computed or measured field maps, and live in the browser below.</p>
+  <h2>המודל</h2>
+  <p>השדה של לולאות הזרם מחושב מביטויים של אינטגרלים אליפטיים שלמים, בלי
+    אינטרפולציה ממפת שדה דגומה. המסלולים מקודמים בזמן ב<strong>אלגוריתם בוריס</strong>, שיטת קידום המשמרת נפח
+    במרחב הפאזה ומקובלת בקודי פלזמה מסוג PIC ‏(particle‑in‑cell). בשדה מגנטי סטטי האלגוריתם משמר את האנרגיה
+    הקינטית ברמת דיוק המכונה (כאן כ־<bdi dir="ltr">10⁻¹⁴</bdi>). אותו אלגוריתם רץ גם על מפות שדה שחושבו
+    ב‑COMSOL או שנמדדו, ובזמן אמת בדפדפן, בסימולציה שלמטה.</p>
 
-  <h2 id="sim">Interactive simulation: fly the trap yourself</h2>
-  <p>The same Boris pusher and two-coil field, integrated live in the browser (WebGL). Push the pitch
-    angle below the <strong>loss cone</strong> (≈43°) and the electron escapes.</p>
+  <h2 id="sim">סימולציה אינטראקטיבית של המלכודת</h2>
+  <p>הסימולציה פועלת ב‑WebGL באותו שדה של שני סלילים. כשמורידים את
+    זווית הנטייה אל מתחת לזווית <strong>חרוט האובדן</strong> (כ־43°), האלקטרון נמלט מהמלכודת.</p>
 
   <div class="simwrap">
-    <div class="simhead"><span>Magnetic-bottle particle tracing (live)</span>
-      <span class="hint">drag to rotate · scroll to zoom · rendered with WebGL</span></div>
+    <div class="simhead"><span>מעקב חלקיק בבקבוק מגנטי (בזמן אמת)</span>
+      <span class="hint">גרירה לסיבוב · גלילה להגדלה והקטנה · תצוגה ב‑WebGL</span></div>
     <canvas id="simcanvas"></canvas>
     <div class="simbar">
-      <label>pitch angle <input type="range" id="s_pitch" min="25" max="80" value="50" step="1"> <span id="v_pitch">50°</span></label>
-      <label>field <input type="range" id="s_field" min="0.6" max="2.5" value="1.0" step="0.05"> <span id="v_field">1.00×</span></label>
-      <label>speed <input type="range" id="s_speed" min="0.2" max="3" value="1" step="0.1"> <span id="v_speed">1.0×</span></label>
-      <button id="b_restart">restart</button>
-      <button id="b_pause">pause</button>
-      <button id="b_loss" title="set the pitch angle inside the loss cone">loss-cone shot</button>
-      <label><input type="checkbox" id="c_lines" class="chk" checked> field lines</label>
-      <label><input type="checkbox" id="c_cone" class="chk"> loss cone</label>
+      <label>זווית נטייה <input type="range" id="s_pitch" min="25" max="80" value="50" step="1"> <span id="v_pitch" dir="ltr">50°</span></label>
+      <label>עוצמת שדה <input type="range" id="s_field" min="0.6" max="2.5" value="1.0" step="0.05"> <span id="v_field" dir="ltr">1.00×</span></label>
+      <label>מהירות סימולציה <input type="range" id="s_speed" min="0.2" max="3" value="1" step="0.1"> <span id="v_speed" dir="ltr">1.0×</span></label>
+      <button id="b_restart">התחלה מחדש</button>
+      <button id="b_pause">השהיה</button>
+      <button id="b_loss" title="קביעת זווית נטייה בתוך חרוט האובדן">שיגור בחרוט האובדן</button>
+      <label><input type="checkbox" id="c_lines" class="chk" checked> קווי שדה</label>
+      <label><input type="checkbox" id="c_cone" class="chk"> חרוט האובדן</label>
     </div>
-    <div class="simstat" id="simstat">loading WebGL…</div>
+    <div class="simstat" id="simstat">טעינת WebGL…</div>
   </div>
-  <p class="simnote">Gyration, mirror reflection where v<sub>∥</sub> → 0, and a live readout of the
-    (approximately conserved) invariant μ. If WebGL is unavailable, the animations above show the same
-    physics.</p>
+  <p class="simnote">סיבוב ציקלוטרוני, החזרה במראה במקום שבו <bdi dir="ltr">v<sub>∥</sub> → 0</bdi>, וקריאה
+    רציפה של המומנט המגנטי μ, שנשמר בקירוב. אם WebGL אינו זמין, האנימציות שלמעלה מציגות את אותה פיזיקה.</p>
 
-  <h2>From model to hardware</h2>
-  <p>The same Lorentz-force integration underpins the <a href="accelerators.html">compact IFEL
-    accelerator</a> work and connects to the <a href="magnetics.html">applied-magnetism</a> projects: the
-    fields being designed are the fields particles must fly through. Mirror-type magnetic lenses are
-    building blocks of electron sources, beam-transport lines, and plasma-confinement devices.</p>
+  <h2>מהמודל לחומרה</h2>
+  <p>אותו חישוב מסלולים תחת כוח לורנץ עומד בבסיס העבודה על <a href="accelerators.html">מאיץ קומפקטי
+    מסוג לייזר אלקטרונים חופשיים הפוך (IFEL)</a>, וקשור לפרויקטים ב<a href="magnetics.html">מגנטיות
+    שימושית</a>: השדות שמתכננים שם הם השדות שהחלקיקים צריכים לעבור דרכם. עדשות מגנטיות מסוג מראה הן
+    אבני בניין במקורות אלקטרונים, בקווי הולכת אלומה ובמתקני כליאת פלזמה.</p>
 
-  <div class="tags"><span class="tag">Magnetic mirror / bottle</span><span class="tag">Charged-particle dynamics</span>
-    <span class="tag">Boris pusher</span><span class="tag">Biot–Savart field</span>
-    <span class="tag">Adiabatic invariant μ</span><span class="tag">Loss cone</span>
-    <span class="tag">Magnetostatics</span><span class="tag">Python · WebGL</span></div>
+  <div class="tags"><span class="tag">מראה מגנטית / בקבוק מגנטי</span><span class="tag">דינמיקת חלקיקים טעונים</span>
+    <span class="tag">אלגוריתם בוריס</span><span class="tag">שדה ביו־סבר</span>
+    <span class="tag">שמורה אדיאבטית μ</span><span class="tag">חרוט האובדן</span>
+    <span class="tag">מגנטוסטטיקה</span><span class="tag">Python · WebGL</span></div>
 
   <section class="capabilities" aria-labelledby="particle-capabilities">
-    <h2 id="particle-capabilities">Applied research and technical capabilities</h2>
+    <h2 id="particle-capabilities">מחקר יישומי ויכולות טכניות</h2>
     <ul class="capability-list">
-      <li>Charged-particle tracing in magnetic and electromagnetic fields</li>
-      <li>Numerical integrator verification and conservation checks</li>
-      <li>Field-map integration and trajectory visualization</li>
-      <li>Loss, stability, and parameter-sensitivity studies</li>
-      <li>Independent review of particle-dynamics models</li>
+      <li>חישוב מסלולי חלקיקים טעונים בשדות מגנטיים ואלקטרומגנטיים</li>
+      <li>אימות אינטגרטורים נומריים ובדיקת גדלים נשמרים</li>
+      <li>שילוב מפות שדה בחישוב והצגה חזותית של מסלולים</li>
+      <li>ניתוח אובדן חלקיקים, יציבות ורגישות לפרמטרים</li>
+      <li>בחינה בלתי תלויה של מודלים לדינמיקת חלקיקים</li>
     </ul>
   </section>
 
   <div class="inquiry">
-    <p>Technical questions and research collaboration: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
   </div>
 
-  <p class="back"><a href="index.html">← All research projects</a></p>
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
 </main>
 
-<footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Charged-particle dynamics &amp; magnetic traps.
- · Last updated: August 2026</div></footer>
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · דינמיקת חלקיקים טעונים ומלכודות מגנטיות. · עדכון אחרון: אוקטובר 2026
+</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
         onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onload=function(){window.__initSim&&window.__initSim();};s.onerror=function(){window.__simFail&&window.__simFail();};document.head.appendChild(s);})()"></script>
@@ -159,7 +169,7 @@ window.__initSim = function () {
   if (window.__simStarted) return; window.__simStarted = true;
   var canvas = document.getElementById("simcanvas");
   var statEl = document.getElementById("simstat");
-  if (!window.THREE) { statEl.textContent = "WebGL library failed to load. The animations above show the same physics."; return; }
+  if (!window.THREE) { statEl.textContent = "ספריית WebGL לא נטענה. האנימציות שלמעלה מציגות את אותה פיזיקה."; return; }
 
   /* ---------------- physics: two-coil Biot-Savart bottle ---------------- */
   var ZC = 1.25, ACOIL = 1.0;
@@ -234,7 +244,7 @@ window.__initSim = function () {
   /* ---------------- three.js scene ---------------- */
   var renderer;
   try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false }); }
-  catch (e) { statEl.textContent = "WebGL is unavailable on this device. The animations above show the same physics."; return; }
+  catch (e) { statEl.textContent = "WebGL אינו זמין במכשיר הזה. האנימציות שלמעלה מציגות את אותה פיזיקה."; return; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   var scene = new THREE.Scene(); scene.background = new THREE.Color(0x0c1420);
   var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 100);
@@ -375,7 +385,7 @@ window.__initSim = function () {
   sField.oninput = function () { FIELD_MULT = +sField.value; vField.textContent = (+sField.value).toFixed(2) + "×"; };
   sSpeed.oninput = function () { vSpeed.textContent = (+sSpeed.value).toFixed(1) + "×"; };
   document.getElementById("b_restart").onclick = restart;
-  document.getElementById("b_pause").onclick = function () { paused = !paused; this.textContent = paused ? "run" : "pause"; };
+  document.getElementById("b_pause").onclick = function () { paused = !paused; this.textContent = paused ? "המשך" : "השהיה"; };
   document.getElementById("b_loss").onclick = function () {
     sPitch.value = Math.max(25, Math.round(LOSS_DEG - 6)); vPitch.textContent = sPitch.value + "°"; restart();
   };
@@ -418,10 +428,10 @@ window.__initSim = function () {
       var m = muNow();
       var drift = Math.abs(m.mu / mu0 - 1) * 100;
       statEl.innerHTML = escaped
-        ? '<span class="esc">ESCAPED: pitch angle inside the loss cone (θ<sub>lc</sub> ≈ ' + LOSS_DEG.toFixed(0) + '°). Press restart.</span>'
-        : "|B| = <b>" + m.B.toFixed(2) + "</b>   v∥ = <b>" + m.vpar.toFixed(3) + "</b>   pitch = <b>" +
-          m.pitch.toFixed(0) + "°</b>   μ drift = <b>" + drift.toFixed(1) + "%</b>   " +
-          "mirror ratio R = <b>" + (R_MIRROR).toFixed(2) + "</b>   loss cone ≈ <b>" + LOSS_DEG.toFixed(0) + "°</b>";
+        ? '<span class="esc">האלקטרון נמלט: זווית הנטייה בתוך חרוט האובדן (<bdi dir="ltr">θ<sub>lc</sub> ≈ ' + LOSS_DEG.toFixed(0) + '°</bdi>). לחצו על "התחלה מחדש".</span>'
+        : "<bdi dir='ltr'>|B| = <b>" + m.B.toFixed(2) + "</b></bdi>   <bdi dir='ltr'>v∥ = <b>" + m.vpar.toFixed(3) + "</b></bdi>   <bdi>זווית נטייה = <b dir='ltr'>" +
+          m.pitch.toFixed(0) + "°</b></bdi>   <bdi>סחיפת μ = <b dir='ltr'>" + drift.toFixed(1) + "%</b></bdi>   " +
+          "<bdi>יחס מראה <bdi dir='ltr'>R = <b>" + (R_MIRROR).toFixed(2) + "</b></bdi></bdi>   <bdi>חרוט האובדן ≈ <b dir='ltr'>" + LOSS_DEG.toFixed(0) + "°</b></bdi>";
     }
     renderer.render(scene, camera);
   }
@@ -429,7 +439,7 @@ window.__initSim = function () {
 };
 window.__simFail = function () {
   document.getElementById("simstat").textContent =
-    "WebGL library failed to load. The animations above show the same physics.";
+    "ספריית WebGL לא נטענה. האנימציות שלמעלה מציגות את אותה פיזיקה.";
 };
 if (window.THREE) { window.__initSim(); }
 </script>
