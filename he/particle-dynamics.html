@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס | ד״ר נצח בלל</title>
+<meta name="description" content="מלכודת מראה מגנטית (בקבוק מגנטי) בין שתי עדשות מגנטיות: מעקב מסלול אלקטרון באלגוריתם בוריס בשדה המדויק של הסלילים לפי חוק ביו־סבר, מפת שדה בחתך מרידיונלי, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית בזמן אמת.">
+<meta name="keywords" content="מלכודת מראה מגנטית, בקבוק מגנטי, מלכודת חלקיקים, עדשה מגנטית, דינמיקת חלקיקים טעונים, אלגוריתם בוריס, Boris pusher, מעקב חלקיקים, כוח לורנץ, מרכז מוביל, שמורה אדיאבטית, חרוט האובדן, יחס מראה, חוק ביו־סבר, מפת שדה מגנטוסטטית, תנועה ציקלוטרונית, כליאת פלזמה, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/particle-dynamics.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/particle-dynamics.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/particle-dynamics.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/particle-dynamics.html">
+<meta property="og:title" content="מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס">
+<meta property="og:description" content="אלקטרון בבקבוק מגנטי של שני סלילים: מעקב מסלול באלגוריתם בוריס בשדה ביו־סבר, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/particle-dynamics.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="מלכודת מראה מגנטית: דינמיקת חלקיקים טעונים וסימולציה באלגוריתם בוריס">
+<meta name="twitter:description" content="אלקטרון בבקבוק מגנטי של שני סלילים: מעקב מסלול באלגוריתם בוריס בשדה ביו־סבר, תנאי המראה וחרוט האובדן, וסימולציית WebGL אינטראקטיבית.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מלכודות מראה מגנטיות: דינמיקת חלקיקים טעונים בין שתי עדשות מגנטיות","about":["מלכודת מראה מגנטית","דינמיקת חלקיקים טעונים","אלגוריתם בוריס","שמורה אדיאבטית","חרוט האובדן","מפת שדה מגנטוסטטית"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/particle-dynamics.html","mainEntityOfPage":"https://nezahb-max.github.io/he/particle-dynamics.html","image":"https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg","inLanguage":"he","dateModified":"2026-10-07"}
+</script>
+<style>
+/* --- page-local styles for the interactive simulation --- */
+.simwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0c1420;margin:14px 0 6px}
+.simhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 14px 8px;color:#cdd9e5;font-size:13.5px;font-weight:700}
+.simhead .hint{color:#66798a;font-size:11.5px;font-weight:400}
+#simcanvas{display:block;width:100%;height:auto;cursor:grab}
+#simcanvas:active{cursor:grabbing}
+.simbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 14px;background:#0f1a29;border-top:1px solid #1b2a3d}
+.simbar label{color:#a9bccb;font-size:12px;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.simbar input[type=range]{width:110px;accent-color:#0d7bb8}
+.simbar button{background:#12324a;color:#bfe3f7;border:1px solid #1e4a68;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.simbar button:hover{background:#164060}
+.simbar .chk{accent-color:#0d7bb8}
+.simstat{padding:7px 14px 10px;background:#0f1a29;color:#7e93a6;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:.2px;border-top:1px solid #16233310}
+.simstat b{color:#9fdcff;font-weight:600}
+.simstat .esc{color:#ff8fa8;font-weight:700}
+.simnote{font-size:13px;color:var(--mut);margin:8px 0 22px}
+@media(max-width:600px){.simbar input[type=range]{width:84px}}
+/* Hebrew labels in the readout: proportional Hebrew face after the monospace faces */
+.simstat{font-family:"Arial Hebrew",Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0}
+.simstat b{font-family:ui-monospace,Menlo,Consolas,monospace}
+/* keep inline formulas and readout items on one line in RTL text */
+main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../particle-dynamics.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">דינמיקת חלקיקים טעונים · מלכודות מגנטיות</p>
+  <h1>מלכודות מראה מגנטיות ודינמיקת חלקיקים טעונים</h1>
+  <p class="lead">המבחן של מערכת מגנטים הוא מה שהיא עושה לחלקיק טעון. אני מחשב את <strong>תנועת
+    האלקטרונים</strong> במערכות של עדשות מגנטיות בקוד מעקב חלקיקים בפיתוח עצמי. הקוד מקדם את החלקיק
+    ב<strong>אלגוריתם בוריס (Boris pusher)</strong>, המשמר נפח במרחב הפאזה, בשדה של הסלילים לפי
+    <strong>חוק ביו־סבר</strong>, כשכל סליל ממודל כלולאת זרם דקה אידאלית. בדף זה הקוד מיושם על <strong>מלכודת מראה מגנטית</strong>, המכונה גם בקבוק
+    מגנטי, אבן בניין בסיסית בכליאת פלזמה ובאופטיקה אלקטרונית מגנטית.</p>
+
+  <figure>
+    <video autoplay muted loop playsinline poster="../assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="סימולציה תלת־ממדית של מסלול אלקטרון הכלוא במלכודת מראה מגנטית (בקבוק מגנטי) שיוצרות שתי עדשות מגנטיות על ציר משותף: המסלול הסלילי, קווי השדה וההחזרות בנקודות המראה."><source src="../assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
+    <figcaption>אלקטרון בבקבוק מגנטי של שני סלילים (יחס מראה <bdi dir="ltr">R ≈ 2.2</bdi>, זווית נטייה 50°):
+      סיבוב ציקלוטרוני לאורך השדה, החזרה במקום שבו השדה מתחזק, וכ־4 סיבובים בין החזרה להחזרה.</figcaption>
+  </figure>
+
+  <figure>
+    <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/magnetic-bottle-field-map-poster.jpg" width="960" height="500" aria-label="חתך מרידיונלי של הבקבוק המגנטי: מפת |B| מחושבת עם קווי שדה וחתכי הסלילים, היטל מסלול האלקטרון על המישור, הנע הלוך ושוב בין נקודות המראה, ופרופיל השדה על הציר עם תנאי המראה, B שווה B0 חלקי סינוס בריבוע של תטא."><source data-src="../assets/magnetic-bottle-field-map.mp4" type="video/mp4"></video>
+    <figcaption>אותו מסלול על מפת השדה המחושבת (<bdi dir="ltr">|B|/B₀</bdi>, סולם לוגריתמי): המסלול משנה
+      כיוון במקום שבו פרופיל השדה (בגרף התחתון) חוצה את <bdi dir="ltr">B = B₀/sin²θ₀</bdi>, תנאי המראה.</figcaption>
+  </figure>
+
+  <h2>הפיזיקה</h2>
+  <p>בגבול האדיאבטי הלא־יחסותי, הסיבוב המהיר של האלקטרון הופך את המומנט המגנטי שלו,
+    <bdi dir="ltr">μ = mv<sub>⊥</sub>²/2B</bdi>, ל<strong>שמורה אדיאבטית</strong> (adiabatic invariant):
+    כש־B גדל בהתקרבות לסליל, גם <bdi dir="ltr">v<sub>⊥</sub></bdi> חייב לגדול, ומאחר שהכוח המגנטי אינו מבצע
+    עבודה, <bdi dir="ltr">v<sub>∥</sub></bdi> קטן עד שהוא מתאפס. ההחזרה מתרחשת במקום שבו
+    <bdi dir="ltr">B = B₀/sin²θ₀</bdi>, כאשר θ₀ היא זווית הנטייה (pitch angle) במישור האמצע. חלקיקים
+    שזווית הנטייה שלהם בתוך <strong>חרוט האובדן (loss cone)</strong>,
+    <bdi dir="ltr">sin²θ<sub>lc</sub> = 1/R</bdi>, ובמלכודת הזאת <bdi dir="ltr">θ<sub>lc</sub> ≈ 43°</bdi>,
+    נמלטים דרך צוואר המראה. המסלול המוצג נבחר עם רדיוס לרמור גדול, כדי שהסיבוב ייראה בבירור, ולכן μ
+    משתנה בכ־10%. ברדיוס לרמור של <bdi dir="ltr">0.05a</bdi> השינוי קטן לכ־1.5%.</p>
+
+  <h2>המודל</h2>
+  <p>השדה של לולאות הזרם מחושב מביטויים של אינטגרלים אליפטיים שלמים, בלי
+    אינטרפולציה ממפת שדה דגומה. המסלולים מקודמים בזמן ב<strong>אלגוריתם בוריס</strong>, שיטת קידום המשמרת נפח
+    במרחב הפאזה ומקובלת בקודי פלזמה מסוג PIC ‏(particle‑in‑cell). בשדה מגנטי סטטי האלגוריתם משמר את האנרגיה
+    הקינטית ברמת דיוק המכונה (כאן כ־<bdi dir="ltr">10⁻¹⁴</bdi>). אותו אלגוריתם רץ גם על מפות שדה שחושבו
+    ב‑COMSOL או שנמדדו, ובזמן אמת בדפדפן, בסימולציה שלמטה.</p>
+
+  <h2 id="sim">סימולציה אינטראקטיבית של המלכודת</h2>
+  <p>הסימולציה פועלת ב‑WebGL באותו שדה של שני סלילים. כשמורידים את
+    זווית הנטייה אל מתחת לזווית <strong>חרוט האובדן</strong> (כ־43°), האלקטרון נמלט מהמלכודת.</p>
+
+  <div class="simwrap">
+    <div class="simhead"><span>מעקב חלקיק בבקבוק מגנטי (בזמן אמת)</span>
+      <span class="hint">גרירה לסיבוב · גלילה להגדלה והקטנה · תצוגה ב‑WebGL</span></div>
+    <canvas id="simcanvas"></canvas>
+    <div class="simbar">
+      <label>זווית נטייה <input type="range" id="s_pitch" min="25" max="80" value="50" step="1"> <span id="v_pitch" dir="ltr">50°</span></label>
+      <label>עוצמת שדה <input type="range" id="s_field" min="0.6" max="2.5" value="1.0" step="0.05"> <span id="v_field" dir="ltr">1.00×</span></label>
+      <label>מהירות סימולציה <input type="range" id="s_speed" min="0.2" max="3" value="1" step="0.1"> <span id="v_speed" dir="ltr">1.0×</span></label>
+      <button id="b_restart">התחלה מחדש</button>
+      <button id="b_pause">השהיה</button>
+      <button id="b_loss" title="קביעת זווית נטייה בתוך חרוט האובדן">שיגור בחרוט האובדן</button>
+      <label><input type="checkbox" id="c_lines" class="chk" checked> קווי שדה</label>
+      <label><input type="checkbox" id="c_cone" class="chk"> חרוט האובדן</label>
+    </div>
+    <div class="simstat" id="simstat">טעינת WebGL…</div>
+  </div>
+  <p class="simnote">סיבוב ציקלוטרוני, החזרה במראה במקום שבו <bdi dir="ltr">v<sub>∥</sub> → 0</bdi>, וקריאה
+    רציפה של המומנט המגנטי μ, שנשמר בקירוב. אם WebGL אינו זמין, האנימציות שלמעלה מציגות את אותה פיזיקה.</p>
+
+  <h2>מהמודל לחומרה</h2>
+  <p>אותו חישוב מסלולים תחת כוח לורנץ עומד בבסיס העבודה על <a href="accelerators.html">מאיץ קומפקטי
+    מסוג לייזר אלקטרונים חופשיים הפוך (IFEL)</a>, וקשור לפרויקטים ב<a href="magnetics.html">מגנטיות
+    שימושית</a>: השדות שמתכננים שם הם השדות שהחלקיקים צריכים לעבור דרכם. עדשות מגנטיות מסוג מראה הן
+    אבני בניין במקורות אלקטרונים, בקווי הולכת אלומה ובמתקני כליאת פלזמה.</p>
+
+  <div class="tags"><span class="tag">מראה מגנטית / בקבוק מגנטי</span><span class="tag">דינמיקת חלקיקים טעונים</span>
+    <span class="tag">אלגוריתם בוריס</span><span class="tag">שדה ביו־סבר</span>
+    <span class="tag">שמורה אדיאבטית μ</span><span class="tag">חרוט האובדן</span>
+    <span class="tag">מגנטוסטטיקה</span><span class="tag">Python · WebGL</span></div>
+
+  <section class="capabilities" aria-labelledby="particle-capabilities">
+    <h2 id="particle-capabilities">מחקר יישומי ויכולות טכניות</h2>
+    <ul class="capability-list">
+      <li>חישוב מסלולי חלקיקים טעונים בשדות מגנטיים ואלקטרומגנטיים</li>
+      <li>אימות אינטגרטורים נומריים ובדיקת גדלים נשמרים</li>
+      <li>שילוב מפות שדה בחישוב והצגה חזותית של מסלולים</li>
+      <li>ניתוח אובדן חלקיקים, יציבות ורגישות לפרמטרים</li>
+      <li>בחינה בלתי תלויה של מודלים לדינמיקת חלקיקים</li>
+    </ul>
+  </section>
+
+  <div class="inquiry">
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
+  </div>
+
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · דינמיקת חלקיקים טעונים ומלכודות מגנטיות. · עדכון אחרון: אוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+        onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onload=function(){window.__initSim&&window.__initSim();};s.onerror=function(){window.__simFail&&window.__simFail();};document.head.appendChild(s);})()"></script>
+<script>
+window.__initSim = function () {
+  "use strict";
+  if (window.__simStarted) return; window.__simStarted = true;
+  var canvas = document.getElementById("simcanvas");
+  var statEl = document.getElementById("simstat");
+  if (!window.THREE) { statEl.textContent = "ספריית WebGL לא נטענה. האנימציות שלמעלה מציגות את אותה פיזיקה."; return; }
+
+  /* ---------------- physics: two-coil Biot-Savart bottle ---------------- */
+  var ZC = 1.25, ACOIL = 1.0;
+
+  // complete elliptic integrals K(m), E(m), Abramowitz & Stegun 17.3.34/35
+  function ellipKE(m) {
+    if (m > 1 - 1e-12) m = 1 - 1e-12;
+    var m1 = 1 - m, lm = Math.log(1 / m1);
+    var K = (((0.01451196212 * m1 + 0.03742563713) * m1 + 0.03590092383) * m1 + 0.09666344259) * m1 + 1.38629436112
+          + ((((0.00441787012 * m1 + 0.03328355346) * m1 + 0.06880248576) * m1 + 0.12498593597) * m1 + 0.5) * lm;
+    var E = (((0.01736506451 * m1 + 0.04757383546) * m1 + 0.06260601220) * m1 + 0.44325141463) * m1 + 1.0
+          + (((0.00526449639 * m1 + 0.04069697526) * m1 + 0.09200180037) * m1 + 0.24998368310) * m1 * lm;
+    return [K, E];
+  }
+
+  function loopBrz(rho, z, out) {           // single loop at z=0, radius ACOIL
+    var r = Math.max(Math.abs(rho), 1e-9);
+    var d1 = (ACOIL + r) * (ACOIL + r) + z * z;
+    var d2 = (ACOIL - r) * (ACOIL - r) + z * z;
+    var ke = ellipKE(4 * ACOIL * r / d1), K = ke[0], E = ke[1], sq = Math.sqrt(d1);
+    out.bz = (K + (ACOIL * ACOIL - r * r - z * z) / d2 * E) / sq;
+    out.br = (Math.abs(rho) < 1e-9) ? 0 : (z / (r * sq)) * (-K + (ACOIL * ACOIL + r * r + z * z) / d2 * E);
+  }
+
+  var _t1 = { br: 0, bz: 0 }, _t2 = { br: 0, bz: 0 }, BSCALE = 1, FIELD_MULT = 1;
+  function fieldB(x, y, z, out) {           // out: THREE.Vector3
+    var rho = Math.sqrt(x * x + y * y);
+    loopBrz(rho, z - ZC, _t1); loopBrz(rho, z + ZC, _t2);
+    var br = _t1.br + _t2.br, bz = _t1.bz + _t2.bz;
+    var c = rho < 1e-9 ? 1 : x / rho, s = rho < 1e-9 ? 0 : y / rho;
+    out.set(br * c * BSCALE, br * s * BSCALE, bz * BSCALE).multiplyScalar(FIELD_MULT);
+    return out;
+  }
+  var _b0 = new THREE.Vector3(); fieldB(0, 0, 0, _b0); BSCALE = 1 / _b0.z;
+
+  var R_MIRROR = (function () { var a = new THREE.Vector3(), b = new THREE.Vector3();
+    fieldB(0, 0, ZC, a); fieldB(0, 0, 0, b); return a.length() / b.length(); })();
+  var LOSS_DEG = Math.asin(Math.sqrt(1 / R_MIRROR)) * 180 / Math.PI;
+
+  /* ---------------- Boris pusher state ---------------- */
+  var QM = -1, DT = 0.01;
+  var pos = new THREE.Vector3(), vel = new THREE.Vector3();
+  var mu0 = 1, escaped = false, escapedAt = 0, paused = false;
+  var _bv = new THREE.Vector3(), _tv = new THREE.Vector3(), _sv = new THREE.Vector3(), _vp = new THREE.Vector3();
+
+  function borisStep() {
+    fieldB(pos.x, pos.y, pos.z, _bv);
+    _tv.copy(_bv).multiplyScalar(0.5 * DT * QM);
+    var t2 = _tv.lengthSq();
+    _sv.copy(_tv).multiplyScalar(2 / (1 + t2));
+    _vp.copy(vel).add(new THREE.Vector3().crossVectors(vel, _tv));
+    vel.add(new THREE.Vector3().crossVectors(_vp, _sv));
+    pos.addScaledVector(vel, DT);
+  }
+
+  function muNow() {
+    fieldB(pos.x, pos.y, pos.z, _bv);
+    var B = _bv.length(), vpar = vel.dot(_bv) / B;
+    var vperp2 = vel.lengthSq() - vpar * vpar;
+    return { mu: vperp2 / (2 * B), B: B, vpar: vpar,
+             pitch: Math.atan2(Math.sqrt(vperp2), Math.abs(vpar)) * 180 / Math.PI };
+  }
+
+  var lastVz = 1;
+  function restart() {
+    var th = +sPitch.value * Math.PI / 180, vperp = 0.23, v = vperp / Math.sin(th);
+    pos.set(0.08 + vperp / FIELD_MULT, 0, 0);
+    vel.set(0, vperp, v * Math.cos(th));
+    escaped = false; trailReset(); mu0 = muNow().mu; lastVz = vel.z;
+  }
+
+  /* ---------------- three.js scene ---------------- */
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false }); }
+  catch (e) { statEl.textContent = "WebGL אינו זמין במכשיר הזה. האנימציות שלמעלה מציגות את אותה פיזיקה."; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var scene = new THREE.Scene(); scene.background = new THREE.Color(0x0c1420);
+  var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 100);
+
+  // coils
+  var coilMat = new THREE.MeshBasicMaterial({ color: 0xffa04e });
+  var coilGlow = new THREE.MeshBasicMaterial({ color: 0xff7a2f, transparent: true, opacity: 0.14, blending: THREE.AdditiveBlending, depthWrite: false });
+  [ZC, -ZC].forEach(function (z) {
+    var t1 = new THREE.Mesh(new THREE.TorusGeometry(ACOIL, 0.028, 12, 90), coilMat);
+    var t2 = new THREE.Mesh(new THREE.TorusGeometry(ACOIL, 0.055, 12, 90), coilGlow);
+    t1.position.z = z; t2.position.z = z; scene.add(t1); scene.add(t2);
+  });
+
+  // symmetry axis
+  (function () {
+    var g = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, -1.55), new THREE.Vector3(0, 0, 1.55)]);
+    scene.add(new THREE.Line(g, new THREE.LineDashedMaterial({ color: 0x24384c, dashSize: 0.07, gapSize: 0.09, transparent: true, opacity: 0.8 })));
+    scene.children[scene.children.length - 1].computeLineDistances();
+  })();
+
+  // field lines (RK4 tracing)
+  var lineGroup = new THREE.Group(); scene.add(lineGroup);
+  function traceLine(seed) {
+    var pts = [], p = seed.clone(), dir, h, k1 = new THREE.Vector3(), k2 = new THREE.Vector3(), k3 = new THREE.Vector3(), k4 = new THREE.Vector3(), tmp = new THREE.Vector3();
+    function f(q, out) { fieldB(q.x, q.y, q.z, out); out.normalize(); }
+    for (dir = -1; dir <= 1; dir += 2) {
+      p.copy(seed); var side = [];
+      for (var i = 0; i < 700; i++) {
+        h = 0.025 * dir;
+        f(p, k1); f(tmp.copy(p).addScaledVector(k1, h / 2), k2);
+        f(tmp.copy(p).addScaledVector(k2, h / 2), k3); f(tmp.copy(p).addScaledVector(k3, h), k4);
+        p.addScaledVector(k1, h / 6).addScaledVector(k2, h / 3).addScaledVector(k3, h / 3).addScaledVector(k4, h / 6);
+        side.push(p.clone());
+        if (Math.hypot(p.x, p.y) > 2.1 || Math.abs(p.z) > 2.2) break;
+      }
+      if (dir < 0) side.reverse().push(seed.clone());
+      pts = pts.concat(side);
+    }
+    return pts;
+  }
+  (function () {
+    var mat = new THREE.LineBasicMaterial({ color: 0x39648f, transparent: true, opacity: 0.35 });
+    for (var ri = 0; ri < 2; ri++) {
+      var r = [0.55, 0.88][ri];
+      for (var k = 0; k < 8; k++) {
+        var ph = k * Math.PI / 4;
+        var pts = traceLine(new THREE.Vector3(r * Math.cos(ph), r * Math.sin(ph), 0));
+        lineGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat));
+      }
+    }
+  })();
+
+  // loss cone (toggle)
+  var coneGroup = new THREE.Group(); coneGroup.visible = false; scene.add(coneGroup);
+  (function () {
+    var hc = 0.85, rc = hc * Math.tan(LOSS_DEG * Math.PI / 180);
+    var mat = new THREE.MeshBasicMaterial({ color: 0xff5c8a, transparent: true, opacity: 0.10, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, depthWrite: false });
+    [1, -1].forEach(function (sg) {
+      var c = new THREE.Mesh(new THREE.ConeGeometry(rc, hc, 40, 1, true), mat);
+      c.rotation.x = sg > 0 ? -Math.PI / 2 : Math.PI / 2;   // open along +/- z
+      c.position.z = sg * hc / 2; coneGroup.add(c);
+    });
+  })();
+
+  // electron sprite + trail
+  function glowTexture(inner, outer) {
+    var cv = document.createElement("canvas"); cv.width = cv.height = 64;
+    var g = cv.getContext("2d"), gr = g.createRadialGradient(32, 32, 2, 32, 32, 30);
+    gr.addColorStop(0, inner); gr.addColorStop(0.35, outer); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(cv);
+  }
+  var head = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture("rgba(255,255,255,1)", "rgba(70,215,255,0.55)"), blending: THREE.AdditiveBlending, depthWrite: false }));
+  head.scale.set(0.22, 0.22, 1); scene.add(head);
+
+  var TRAIL_N = 850, trailPos = new Float32Array(TRAIL_N * 3), trailCol = new Float32Array(TRAIL_N * 3), trailLen = 0;
+  var trailGeo = new THREE.BufferGeometry();
+  trailGeo.setAttribute("position", new THREE.BufferAttribute(trailPos, 3));
+  trailGeo.setAttribute("color", new THREE.BufferAttribute(trailCol, 3));
+  var trail = new THREE.Line(trailGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
+  scene.add(trail);
+  function trailReset() { trailLen = 0; trailGeo.setDrawRange(0, 0); }
+  function trailPush() {
+    if (trailLen < TRAIL_N) trailLen++;
+    trailPos.copyWithin(3, 0, (trailLen - 1) * 3);
+    trailPos[0] = pos.x; trailPos[1] = pos.y; trailPos[2] = pos.z;
+    var c1 = { r: 0.36, g: 0.91, b: 1.0 }, k;                    // head color
+    for (var i = 0; i < trailLen; i++) {
+      k = Math.pow(1 - i / TRAIL_N, 1.7);
+      trailCol[i * 3] = c1.r * k * 0.9; trailCol[i * 3 + 1] = c1.g * k * 0.9; trailCol[i * 3 + 2] = c1.b * k;
+    }
+    trailGeo.attributes.position.needsUpdate = true;
+    trailGeo.attributes.color.needsUpdate = true;
+    trailGeo.setDrawRange(0, trailLen);
+  }
+
+  // mirror pings
+  var pings = [];
+  function spawnPing() {
+    var m = new THREE.Mesh(new THREE.RingGeometry(0.96, 1.0, 48),
+      new THREE.MeshBasicMaterial({ color: 0xa9c3ff, transparent: true, opacity: 0.5, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }));
+    m.position.copy(pos); m.scale.set(0.06, 0.06, 1); m.userData.age = 0;
+    scene.add(m); pings.push(m);
+  }
+  function updatePings() {
+    for (var i = pings.length - 1; i >= 0; i--) {
+      var m = pings[i]; m.userData.age += 1;
+      var k = m.userData.age / 34;
+      m.scale.setScalar(0.06 + 0.55 * k);
+      m.material.opacity = 0.5 * Math.pow(Math.max(1 - k, 0), 1.5);
+      if (k >= 1) { scene.remove(m); m.geometry.dispose(); m.material.dispose(); pings.splice(i, 1); }
+    }
+  }
+
+  /* ---------------- camera control ---------------- */
+  var az = -0.9, el = 0.36, dist = 4.6, autoRot = true, lastUser = 0;
+  function placeCamera() {
+    camera.position.set(dist * Math.cos(el) * Math.cos(az), dist * Math.cos(el) * Math.sin(az), dist * Math.sin(el));
+    camera.up.set(0, 0, 1); camera.lookAt(0, 0, 0);
+  }
+  var dragging = false, px = 0, py = 0;
+  canvas.addEventListener("pointerdown", function (e) { dragging = true; px = e.clientX; py = e.clientY; canvas.setPointerCapture(e.pointerId); });
+  window.addEventListener("pointermove", function (e) {
+    if (!dragging) return;
+    az -= (e.clientX - px) * 0.008; el = Math.min(1.35, Math.max(-1.35, el + (e.clientY - py) * 0.006));
+    px = e.clientX; py = e.clientY; lastUser = performance.now(); autoRot = false;
+  });
+  window.addEventListener("pointerup", function () { dragging = false; });
+  canvas.addEventListener("wheel", function (e) {
+    e.preventDefault(); dist = Math.min(9, Math.max(2.6, dist * (1 + e.deltaY * 0.001)));
+    lastUser = performance.now(); autoRot = false;
+  }, { passive: false });
+
+  /* ---------------- UI ---------------- */
+  var sPitch = document.getElementById("s_pitch"), sField = document.getElementById("s_field"), sSpeed = document.getElementById("s_speed");
+  var vPitch = document.getElementById("v_pitch"), vField = document.getElementById("v_field"), vSpeed = document.getElementById("v_speed");
+  sPitch.oninput = function () { vPitch.textContent = sPitch.value + "°"; restart(); };
+  sField.oninput = function () { FIELD_MULT = +sField.value; vField.textContent = (+sField.value).toFixed(2) + "×"; };
+  sSpeed.oninput = function () { vSpeed.textContent = (+sSpeed.value).toFixed(1) + "×"; };
+  document.getElementById("b_restart").onclick = restart;
+  document.getElementById("b_pause").onclick = function () { paused = !paused; this.textContent = paused ? "המשך" : "השהיה"; };
+  document.getElementById("b_loss").onclick = function () {
+    sPitch.value = Math.max(25, Math.round(LOSS_DEG - 6)); vPitch.textContent = sPitch.value + "°"; restart();
+  };
+  document.getElementById("c_lines").onchange = function () { lineGroup.visible = this.checked; };
+  document.getElementById("c_cone").onchange = function () { coneGroup.visible = this.checked; };
+
+  function resize() {
+    var w = canvas.clientWidth || canvas.parentElement.clientWidth;
+    var h = Math.round(w * 0.62);
+    renderer.setSize(w, h, false);
+    canvas.style.height = h + "px";
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener("resize", resize);
+
+  /* ---------------- main loop ---------------- */
+  var frame = 0;
+  function animate(tms) {
+    requestAnimationFrame(animate);
+    if (frame === 0) resize();
+    frame++;
+    if (autoRot || performance.now() - lastUser > 6000) az += 0.0022;
+    placeCamera();
+
+    if (!paused && !escaped) {
+      var sub = Math.max(2, Math.round(16 * +sSpeed.value));
+      for (var i = 0; i < sub; i++) {
+        borisStep();
+        if (vel.z * lastVz < 0) { spawnPing(); }
+        lastVz = vel.z;
+        if (Math.abs(pos.z) > 2.45 || Math.hypot(pos.x, pos.y) > 2.1) { escaped = true; escapedAt = performance.now(); break; }
+      }
+      trailPush();
+      head.position.copy(pos);
+    }
+    updatePings();
+    if (escaped && performance.now() - escapedAt > 5200) restart();
+
+    if (frame % 6 === 0) {
+      var m = muNow();
+      var drift = Math.abs(m.mu / mu0 - 1) * 100;
+      statEl.innerHTML = escaped
+        ? '<span class="esc">האלקטרון נמלט: זווית הנטייה בתוך חרוט האובדן (<bdi dir="ltr">θ<sub>lc</sub> ≈ ' + LOSS_DEG.toFixed(0) + '°</bdi>). לחצו על "התחלה מחדש".</span>'
+        : "<bdi dir='ltr'>|B| = <b>" + m.B.toFixed(2) + "</b></bdi>   <bdi dir='ltr'>v∥ = <b>" + m.vpar.toFixed(3) + "</b></bdi>   <bdi>זווית נטייה = <b dir='ltr'>" +
+          m.pitch.toFixed(0) + "°</b></bdi>   <bdi>סחיפת μ = <b dir='ltr'>" + drift.toFixed(1) + "%</b></bdi>   " +
+          "<bdi>יחס מראה <bdi dir='ltr'>R = <b>" + (R_MIRROR).toFixed(2) + "</b></bdi></bdi>   <bdi>חרוט האובדן ≈ <b dir='ltr'>" + LOSS_DEG.toFixed(0) + "°</b></bdi>";
+    }
+    renderer.render(scene, camera);
+  }
+  restart(); resize(); animate(0);
+};
+window.__simFail = function () {
+  document.getElementById("simstat").textContent =
+    "ספריית WebGL לא נטענה. האנימציות שלמעלה מציגות את אותה פיזיקה.";
+};
+if (window.THREE) { window.__initSim(); }
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
+</body>
+</html>

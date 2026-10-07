@@ -58,6 +58,8 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - [Hebrew version](https://nezahb-max.github.io/he/): עמודי האתר בעברית, כולל
   https://nezahb-max.github.io/he/radar.html, https://nezahb-max.github.io/he/antennas.html,
   https://nezahb-max.github.io/he/magnetics.html,
+  https://nezahb-max.github.io/he/accelerators.html (מאיצי חלקיקים קומפקטיים ו־IFEL),
+  https://nezahb-max.github.io/he/particle-dynamics.html (מלכודות מראה מגנטיות ודינמיקת חלקיקים),
   https://nezahb-max.github.io/he/simulations.html (סימולציות אלקטרומגנטיות),
   https://nezahb-max.github.io/he/wifi-mamad.html (Wi-Fi בדירה עם ממ"ד).
 
@@ -120,4 +122,4 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
 - This is a personal academic portfolio, not affiliated content published on behalf
   of Ariel University or the Technion.
 
-Last updated: 2026-10-02
+Last updated: 2026-10-07
