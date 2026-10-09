@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>תכנון אנטנות וסימולציית גל־מלא ב‑COMSOL וב‑CST | ד״ר נצח בלל</title>
-<meta name="description" content="תכנון אנטנות וסימולציית גל־מלא ב‑COMSOL וב‑CST: אנטנת קרן מודפסת עם עדשת PTFE, אנטנת ויוואלדי רחבת סרט וממיר אופנים מודפס בגלבו, בהשוואה למדידה.">
-<meta name="keywords" content="תכנון אנטנות, סימולציית אנטנות, COMSOL, קומסול, CST, אנטנת קרן, עדשה דיאלקטרית, אנטנת ויוואלדי, אנטנות רחבות סרט, UWB, ממיר אופנים, גלבו, חדר אל־הד, מדידת אנטנות, נצח בלל">
+<title>תכנון אנטנות וסימולציה אלקטרומגנטית מלאה ב‑COMSOL וב‑CST | ד״ר נצח בלל</title>
+<meta name="description" content="תכנון אנטנות וסימולציה אלקטרומגנטית מלאה ב‑COMSOL וב‑CST: אנטנת שופר מודפסת עם עדשת PTFE, אנטנת ויוואלדי רחבת סרט וממיר אופנים מודפס בגלבו, בהשוואה למדידה.">
+<meta name="keywords" content="תכנון אנטנות, סימולציית אנטנות, COMSOL, קומסול, CST, אנטנת שופר, עדשה דיאלקטרית, אנטנת ויוואלדי, אנטנות רחבות סרט, UWB, ממיר אופנים, גלבו, חדר אל־הד, מדידת אנטנות, נצח בלל">
 <link rel="canonical" href="https://nezahb-max.github.io/he/antennas.html">
 <link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/antennas.html">
 <link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/antennas.html">
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/antennas.html">
-<meta property="og:title" content="תכנון אנטנות וסימולציית גל־מלא ב‑COMSOL וב‑CST">
-<meta property="og:description" content="אנטנת קרן מודפסת עם עדשת מיקוד, אנטנת ויוואלדי רחבת סרט וממיר אופנים בגלבו: מודלים ב‑COMSOL וב‑CST והשוואה למדידה.">
+<meta property="og:title" content="תכנון אנטנות וסימולציה אלקטרומגנטית מלאה ב‑COMSOL וב‑CST">
+<meta property="og:description" content="אנטנת שופר מודפסת עם עדשת מיקוד, אנטנת ויוואלדי רחבת סרט וממיר אופנים בגלבו: מודלים ב‑COMSOL וב‑CST והשוואה למדידה.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://nezahb-max.github.io/he/antennas.html">
 <meta property="og:image" content="https://nezahb-max.github.io/assets/sim/antenna-lens-horn-og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="תכנון אנטנות וסימולציית גל־מלא ב‑COMSOL וב‑CST">
-<meta name="twitter:description" content="אנטנת קרן מודפסת עם עדשת מיקוד, אנטנת ויוואלדי רחבת סרט וממיר אופנים בגלבו: מודלים ב‑COMSOL וב‑CST והשוואה למדידה.">
+<meta name="twitter:title" content="תכנון אנטנות וסימולציה אלקטרומגנטית מלאה ב‑COMSOL וב‑CST">
+<meta name="twitter:description" content="אנטנת שופר מודפסת עם עדשת מיקוד, אנטנת ויוואלדי רחבת סרט וממיר אופנים בגלבו: מודלים ב‑COMSOL וב‑CST והשוואה למדידה.">
 <meta name="twitter:image" content="https://nezahb-max.github.io/assets/sim/antenna-lens-horn-og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -27,14 +27,14 @@
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"תכנון אנטנות וסימולציה אלקטרומגנטית: קרן עם עדשה, ויוואלדי אנטיפודלית וממיר אופנים בגלבו","about":["תכנון אנטנות","אנטנת קרן","עדשה דיאלקטרית","אנטנת ויוואלדי","אנטנות רחבות סרט","ממיר אופנים בגלבו","מדידת אנטנות","סימולציה אלקטרומגנטית","COMSOL","CST"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"url":"https://nezahb-max.github.io/he/antennas.html","mainEntityOfPage":"https://nezahb-max.github.io/he/antennas.html","image":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-field-3d-comsol.png","inLanguage":"he","dateModified":"2026-10-02","citation":["https://doi.org/10.3390/electronics14163191","https://doi.org/10.23919/PIERS-Fall62445.2025.11394043"]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"תכנון אנטנות וסימולציה אלקטרומגנטית: שופר עם עדשה, ויוואלדי אנטיפודלית וממיר אופנים בגלבו","about":["תכנון אנטנות","אנטנת שופר","עדשה דיאלקטרית","אנטנת ויוואלדי","אנטנות רחבות סרט","ממיר אופנים בגלבו","מדידת אנטנות","סימולציה אלקטרומגנטית","COMSOL","CST"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"url":"https://nezahb-max.github.io/he/antennas.html","mainEntityOfPage":"https://nezahb-max.github.io/he/antennas.html","image":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-field-3d-comsol.png","inLanguage":"he","dateModified":"2026-10-02","citation":["https://doi.org/10.3390/electronics14163191","https://doi.org/10.23919/PIERS-Fall62445.2025.11394043"]}
 </script>
 </head>
 <body>
 <header><div class="wrap"><nav>
   <a class="home" href="index.html">ד״ר נצח בלל</a>
   <a href="accelerators.html">מאיצים</a>
-  <a href="magnetics.html">מגנטיות שימושית</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
   <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
   <a href="antennas.html">אנטנות</a>
   <a href="radar.html">מכ״ם</a>
@@ -45,49 +45,49 @@
 <main class="wrap">
   <p class="sub">אנטנות · תדר רדיו ומיקרוגל</p>
   <h1>תכנון אנטנות וסימולציה אלקטרומגנטית</h1>
-  <p class="lead">אני מתכנן אנטנות <strong>קרן</strong>, אנטנות <strong>רחבות סרט (UWB)</strong>, רכיבים מקרינים
-    ל<strong>גלים מילימטריים</strong> וממירי אופנים בגלבו, ומנתח אותם בסימולציית גל־מלא
+  <p class="lead">אני מתכנן אנטנות <strong>שופר</strong>, אנטנות <strong>רחבות סרט (UWB)</strong>, רכיבים מקרינים
+    ל<strong>גלים מילימטריים</strong> וממירי אופנים בגלבו, ומנתח אותם בסימולציה אלקטרומגנטית מלאה
     ב‑<strong>COMSOL</strong>, ‏<strong>CST</strong> ו‑<strong>HFSS</strong>. תכנונים נבחרים מאומתים
     במדידה במעבדה.</p>
 
-  <h2 id="lens-horn">אנטנת קרן מודפסת עם עדשת מיקוד מ‑PTFE ‏(10 גיגה־הרץ)</h2>
-  <p>האלומה של אנטנת קרן קונית מתרחבת מרגע שהגל יוצא מהפתח. עדשה דו־קמורה מ‑PTFE בפתח
-    הקרן הופכת את חזית הגל המתבדרת לחזית מתכנסת, וההספק מתרכז בכתם במרחק כ־100 מ״מ מעבר לפתח הקרן.
-    הקרן הודפסה בהדפסת תלת־ממד וצופתה במתכת, והעדשה עובדה מ‑PTFE (פרמיטיביות יחסית 2.2).</p>
+  <h2 id="lens-horn">אנטנת שופר מודפסת עם עדשת מיקוד מ‑PTFE ‏(10 גיגה־הרץ)</h2>
+  <p>האלומה של אנטנת שופר קונית מתרחבת מרגע שהגל יוצא מהפתח. עדשה דו־קמורה מ‑PTFE בפתח
+    השופר הופכת את חזית הגל המתבדרת לחזית מתכנסת, וההספק מתרכז בכתם במרחק כ־100 מ״מ מעבר לפתח השופר.
+    השופר הודפס בהדפסת תלת־ממד ומצופה במתכת, והעדשה עובדה מ‑PTFE (פרמיטיביות יחסית 2.2).</p>
 
   <figure>
-    <video autoplay muted loop playsinline poster="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol-poster.jpg" width="800" height="704" aria-label="אנימציית COMSOL ב‑10 גיגה־הרץ של השדה החשמלי באנטנת קרן קונית, לבדה (למעלה) ועם עדשת PTFE (למטה). עם העדשה חזית הגל מתכנסת למוקד כ־100 מ״מ לפני הפתח."><source src="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol.mp4" type="video/mp4"></video>
-    <figcaption>COMSOL, ‏10 גיגה־הרץ: רכיב השדה E<sub>x</sub> לאורך מחזור פאזה אחד, בקרן לבדה (למעלה)
-      ובקרן עם העדשה (למטה). המשולשים מסמנים את המוקד.</figcaption>
+    <video autoplay muted loop playsinline poster="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol-poster.jpg" width="800" height="704" aria-label="אנימציית COMSOL ב‑10 גיגה־הרץ של השדה החשמלי באנטנת שופר קונית, לבדה (למעלה) ועם עדשת PTFE (למטה). עם העדשה חזית הגל מתכנסת למוקד כ־100 מ״מ לפני הפתח."><source src="../assets/sim/antenna-lens-horn-focusing-10ghz-comsol.mp4" type="video/mp4"></video>
+    <figcaption>COMSOL, ‏10 גיגה־הרץ: רכיב השדה E<sub>x</sub> לאורך מחזור פאזה אחד, בשופר לבדו (למעלה)
+      ובשופר עם העדשה (למטה). המשולשים מסמנים את המוקד.</figcaption>
   </figure>
 
   <div class="grid">
     <figure>
-      <img src="../assets/photos/antenna-lens-horn-3d-printed-ptfe-lens.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="אנטנת הקרן המודפסת והמצופה במתכת (צהובה) עם עדשת ה‑PTFE הלבנה המחוברת לפתח, על שולחן המעבדה.">
-      <figcaption>הקרן המודפסת עם עדשת ה‑PTFE. מתוך:
+      <img src="../assets/photos/antenna-lens-horn-3d-printed-ptfe-lens.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="אנטנת השופר המודפסת והמצופה במתכת (צהובה) עם עדשת ה‑PTFE הלבנה המחוברת לפתח, על שולחן המעבדה.">
+      <figcaption>השופר המודפס עם עדשת ה‑PTFE. מתוך:
         <bdi><a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</bdi></figcaption>
     </figure>
     <figure>
-      <img src="../assets/sim/antenna-lens-horn-field-3d-comsol.png" width="1200" height="763" decoding="async" loading="lazy" alt="תצוגת COMSOL תלת־ממדית של הקרן והעדשה מול מישור השדה: האלומה מצטמצמת אחרי העדשה.">
-      <figcaption>תצוגת COMSOL תלת־ממדית: הקרן והעדשה מול מישור השדה E<sub>x</sub>.</figcaption>
+      <img src="../assets/sim/antenna-lens-horn-field-3d-comsol.png" width="1200" height="763" decoding="async" loading="lazy" alt="תצוגת COMSOL תלת־ממדית של השופר והעדשה מול מישור השדה: האלומה מצטמצמת אחרי העדשה.">
+      <figcaption>תצוגת COMSOL תלת־ממדית: השופר והעדשה מול מישור השדה E<sub>x</sub>.</figcaption>
     </figure>
   </div>
 
-  <p>במודל ההספק על הציר מגיע לשיא 101.5 מ״מ מעבר לפתח הקרן. רוחב הכתם בחצי הספק הוא כ־27 מ״מ
-    (0.9 אורך גל), לעומת 138 מ״מ בקרן ללא עדשה באותו מרחק. גם במדידה ההספק על הציר מגיע לשיא
+  <p>במודל ההספק על הציר מגיע לשיא 101.5 מ״מ מעבר לפתח השופר. רוחב הכתם בחצי הספק הוא כ־27 מ״מ
+    (0.9 אורך גל), לעומת 138 מ״מ בשופר ללא עדשה באותו מרחק. גם במדידה ההספק על הציר מגיע לשיא
     כ־100 מ״מ מהפתח. המודל דו־ממדי וסימטרי סביב הציר, הדפנות בו מוליכות אידאליות והעדשה ללא הפסדים.</p>
 
   <figure>
-    <img src="../assets/photos/antenna-lens-horn-pattern-sim-vs-measured-published.jpg" width="794" height="567" decoding="async" loading="lazy" alt="תבנית קרינה מנורמלת של הקרן המודפסת בלי העדשה ב‑10 גיגה־הרץ, בין ‎−20° ל־20°: סימולציה (קו) ומדידה עם קווי שגיאה (נקודות).">
-    <figcaption>תבנית הקרינה של הקרן המודפסת בלי העדשה ב‑10 גיגה־הרץ: סימולציה מול מדידה.
+    <img src="../assets/photos/antenna-lens-horn-pattern-sim-vs-measured-published.jpg" width="794" height="567" decoding="async" loading="lazy" alt="תבנית קרינה מנורמלת של השופר המודפס בלי העדשה ב‑10 גיגה־הרץ, בין ‎−20° ל־20°: סימולציה (קו) ומדידה עם קווי שגיאה (נקודות).">
+    <figcaption>תבנית הקרינה של השופר המודפס בלי העדשה ב‑10 גיגה־הרץ: סימולציה מול מדידה.
       מתוך: <a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0.</figcaption>
   </figure>
 
   <figure>
-    <img src="../assets/sim/antenna-horn-pattern-comsol-vs-cst.jpg" width="1400" height="771" decoding="async" loading="lazy" alt="תבנית השדה הרחוק של הקרן ללא עדשה ב‑10 גיגה־הרץ, מחושבת ב‑COMSOL (נקודות כחולות) וב‑CST Studio Suite (קו אדום). שתי העקומות חופפות באונה הראשית.">
-    <figcaption>אותה קרן ללא העדשה, ממודלת ב‑COMSOL (נקודות) וב‑CST Studio Suite (קו), ‏10 גיגה־הרץ.
+    <img src="../assets/sim/antenna-horn-pattern-comsol-vs-cst.jpg" width="1400" height="771" decoding="async" loading="lazy" alt="תבנית השדה הרחוק של השופר ללא עדשה ב‑10 גיגה־הרץ, מחושבת ב‑COMSOL (נקודות כחולות) וב‑CST Studio Suite (קו אדום). שתי העקומות חופפות באונה הראשית.">
+    <figcaption>אותו שופר ללא העדשה, ממודל ב‑COMSOL (נקודות) וב‑CST Studio Suite (קו), ‏10 גיגה־הרץ.
       הציר האופקי: זווית ברדיאנים, כיוון הקרינה הראשי ב‑π/2. הציר האנכי: תבנית מנורמלת. שתי
-      התוכנות מסכימות על האונה הראשית ועל מיקומי אונות הצד. מתוך:
+      התוכנות נותנות אותה אונה ראשית ואותם מיקומי אונות צד. מתוך:
       <bdi><a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</bdi></figcaption>
   </figure>
 
@@ -127,9 +127,9 @@
   </figure>
 
   <h2 id="mode-converter">ממיר אופנים מודפס מגלבו מלבני לגלבו עגול (תחום X)</h2>
-  <p>בגלבו מלבני מתקדם האופן TE<sub>10</sub>, ואנטנת קרן עגולה מוזנת באופן TE<sub>11</sub>. הממיר
+  <p>בגלבו מלבני מתקדם האופן TE<sub>10</sub>, ואנטנת שופר עגולה מוזנת באופן TE<sub>11</sub>. הממיר
     משנה את החתך לאורך 150 מ״מ, מגלבו מלבני תקני בתחום X ‏(<bdi dir="ltr">22.86 × 10.16</bdi> מ״מ) לגלבו עגול ברדיוס
-    11.9 מ״מ. שני אבות טיפוס, אחד בהדפסת פלסטיק ואחד בהדפסת מתכת, נמדדו בנתח רשת וקטורי
+    11.9 מ״מ. שני אבות טיפוס, אחד בהדפסת פלסטיק ואחד בהדפסת מתכת, נמדדו בנתח רשתות וקטורי
     בתחום 8 עד 12 גיגה־הרץ והושוו לסימולציה ב‑CST Microwave Studio.</p>
 
   <figure>
@@ -141,23 +141,23 @@
   </figure>
 
   <h2 id="measurements">מדידות אנטנות בחדר אל־הד</h2>
-  <p>במעבדה יש חדר אל־הד, נתח רשת וקטורי ומערכת סריקה תלת־צירית (XYZ). אני מודד בהם פרמטרי S
+  <p>במעבדה יש חדר אל־הד, נתח רשתות וקטורי ומערכת סריקה תלת־צירית (XYZ). אני מודד בהם פרמטרי S
     ותבניות קרינה ומשווה אותם לסימולציה של אותו מבנה. מערכת ה‑XYZ ממפה גם את השדה בקרבת אנטנה,
-    למשל את ההספק לאורך הציר של קרן העדשה שלמעלה.</p>
+    למשל את ההספק לאורך הציר של השופר עם העדשה שתואר למעלה.</p>
 
   <figure>
-    <img src="../assets/photos/antenna-xyz-scanning-system.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="מערכת הסריקה XYZ של המעבדה: גשר ממונע בשלושה צירים על שולחן, מול אנטנת הקרן הצהובה המודפסת על חצובה.">
-    <figcaption>מערכת הסריקה XYZ, ערוכה למדידת ההספק על הציר של קרן העדשה. מתוך:
+    <img src="../assets/photos/antenna-xyz-scanning-system.jpg" width="1400" height="1050" decoding="async" loading="lazy" alt="מערכת הסריקה XYZ של המעבדה: גשר ממונע בשלושה צירים על שולחן, מול אנטנת השופר הצהובה המודפסת על חצובה.">
+    <figcaption>מערכת הסריקה XYZ, ערוכה למדידת ההספק על הציר של השופר עם העדשה. מתוך:
       <bdi><a href="https://doi.org/10.3390/electronics14163191">A. Michael, N. Balal, Electronics 14, 3191 (2025)</a>, CC BY 4.0</bdi></figcaption>
   </figure>
 
   <h2>יכולת התכנון</h2>
   <p>המודל מספק את מקדם ההחזרה (פרמטרי S), תבניות קרינה בשדה קרוב ורחוק, הגבר, נצילות
-    מפתח ורוחב סרט, עבור אנטנות קרן ו‑UWB, מעברים מגלבו למקרן וממירי אופנים. בכלל זה
-    רכיבי גלים מילימטריים <strong>בהדפסת תלת־ממד</strong>: אנטנות קרן בתחום Ka וממירי אופנים
+    מפתח ורוחב סרט, עבור אנטנות שופר ו‑UWB, מעברים מגלבו למקרן וממירי אופנים. בכלל זה
+    רכיבי גלים מילימטריים <strong>בהדפסת תלת־ממד</strong>: אנטנות שופר בתחום Ka וממירי אופנים
     בתחום X שתוכננו, יוצרו ונמדדו.</p>
 
-  <div class="tags"><span class="tag">אנטנות קרן</span><span class="tag">UWB</span>
+  <div class="tags"><span class="tag">אנטנות שופר</span><span class="tag">UWB</span>
     <span class="tag">גלים מילימטריים</span><span class="tag">ממיר אופנים</span>
     <span class="tag">תבנית קרינה</span><span class="tag">COMSOL · CST · HFSS</span>
     <span class="tag">הדפסת תלת־ממד + אימות</span></div>
@@ -167,7 +167,7 @@
     <li>ממירי אופנים מודפסים מגלבו מלבני לגלבו עגול: תכנון, ייצור ואימות ניסויי בתחום X.
       <em>PIERS-Fall 2025</em>, עמ׳ 1–5 (2025).
       <a href="https://doi.org/10.23919/PIERS-Fall62445.2025.11394043" style="white-space:normal">doi:10.23919/PIERS-Fall62445.2025.11394043</a></li>
-    <li>אנטנת קרן עגולה מודפסת עם עדשה דיאלקטרית להעברת אנרגיית RF ממוקדת.
+    <li>אנטנת שופר עגולה מודפסת עם עדשה דיאלקטרית להעברת אנרגיית RF ממוקדת.
       <em>Electronics</em> 14, 3191 (2025).
       <a href="https://doi.org/10.3390/electronics14163191">doi:10.3390/electronics14163191</a></li>
   </ul>
@@ -175,8 +175,8 @@
   <section class="capabilities" aria-labelledby="antenna-capabilities">
     <h2 id="antenna-capabilities">מחקר יישומי ויכולות טכניות</h2>
     <ul class="capability-list">
-      <li>מידול אלקטרומגנטי של גל־מלא</li>
-      <li>תכנון אנטנות קרן, UWB וגלים מילימטריים</li>
+      <li>מידול אלקטרומגנטי מלא</li>
+      <li>תכנון אנטנות שופר, UWB וגלים מילימטריים</li>
       <li>מעברי גלבו וממירי אופנים</li>
       <li>ניתוח פרמטרי S ושדות קרוב ורחוק</li>
       <li>אופטימיזציה והשוואה בין סימולציה למדידה</li>
@@ -191,7 +191,7 @@
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · אנטנות, RF וסימולציית גל־מלא. · עדכון אחרון: אוקטובר 2026
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · אנטנות, RF וסימולציה אלקטרומגנטית מלאה. · עדכון אחרון: אוקטובר 2026
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
