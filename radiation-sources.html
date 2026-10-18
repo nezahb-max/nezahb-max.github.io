@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microwave Radiation Sources: Klystron and Traveling-Wave Tube (TWT) in COMSOL | Dr. Nezah Balal</title>
+<meta name="description" content="COMSOL models of microwave vacuum-electron sources: an X-band klystron from the resonant cavity and beam bunching to the electron gun and waveguide output, and a 6-18 GHz helix traveling-wave tube with its dispersion and slow wave.">
+<meta name="keywords" content="microwave radiation sources, klystron, traveling-wave tube, TWT, vacuum electron devices, re-entrant cavity, velocity modulation, beam bunching, Pierce electron gun, slow-wave structure, helix TWT, folded waveguide, X band, Ka band, electronic warfare, radar transmitter, COMSOL Multiphysics, Nezah Balal">
+<link rel="canonical" href="https://nezahb-max.github.io/radiation-sources.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/radiation-sources.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/radiation-sources.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/radiation-sources.html">
+<meta property="og:title" content="Microwave Radiation Sources: Klystron and TWT in COMSOL">
+<meta property="og:description" content="An X-band klystron and a 6-18 GHz helix TWT: resonant cavities, beam bunching, electron gun, dispersion and slow waves, modeled in COMSOL.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/radiation-sources.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-radiation-sources.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Microwave Radiation Sources: Klystron and TWT in COMSOL">
+<meta name="twitter:description" content="An X-band klystron and a 6-18 GHz helix TWT: resonant cavities, beam bunching, electron gun, dispersion and slow waves, modeled in COMSOL.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-radiation-sources.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="Dr. Nezah Balal">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Microwave radiation sources: klystron and traveling-wave tube (TWT) in COMSOL","description":"COMSOL Multiphysics models of an X-band klystron (resonant cavity, beam bunching, electron gun, output cavity and waveguide) and of a 6-18 GHz helix traveling-wave tube (dispersion and slow wave along the helix).","about":["Microwave radiation sources","Klystron","Traveling-wave tube","Vacuum electron devices","Slow-wave structure","Electron gun","COMSOL simulation"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/radiation-sources.html","mainEntityOfPage":"https://nezahb-max.github.io/radiation-sources.html","image":"https://nezahb-max.github.io/assets/sim/klystron-xband-cutaway-beam-comsol.jpg","inLanguage":"en","dateModified":"2026-10-18"}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">Dr. Nezah Balal</a>
+  <a href="accelerators.html">Accelerators</a>
+  <a href="magnetics.html">Applied magnetics</a>
+  <a href="particle-dynamics.html">Particle dynamics</a>
+  <a href="antennas.html">Antennas</a>
+  <a href="radar.html">Radar</a>
+  <a href="simulations.html">Simulations</a>
+  <a href="he/radiation-sources.html" lang="he">עברית</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">Radiation sources · Microwave tubes · COMSOL simulation</p>
+  <h1>Microwave radiation sources: klystron and traveling-wave tube (TWT)</h1>
+  <p class="lead">In a klystron or a traveling-wave tube, an electron beam in vacuum gives part of its kinetic energy
+    to an electromagnetic wave and amplifies it. Such tubes are the power amplifiers in radar transmitters, electronic-warfare systems and satellite links. This page shows models I built in COMSOL Multiphysics for both devices: an X-band klystron (9.4 GHz), modeled from the electron gun to the wave leaving through the waveguide, a 6-18 GHz helix TWT and a Ka-band folded-waveguide slow-wave structure.</p>
+
+  <figure>
+    <img src="assets/sim/klystron-xband-cutaway-beam-comsol.jpg" width="1400" height="856" decoding="async" alt="COMSOL 3D cutaway of a four-cavity klystron: electron gun on the left, copper focusing solenoid around the drift region, output cavity and waveguide on top, finned collector on the right, electron beam in light blue along the axis.">
+    <figcaption>Four-cavity X-band klystron, cutaway of the 3D COMSOL model. Electron gun on the left, focusing solenoid
+      around the drift region, output cavity and waveguide on top, collector on the right. The beam is shown in light blue.</figcaption>
+  </figure>
+
+  <section id="klystron">
+    <h2>Klystron: velocity modulation and bunching</h2>
+    <p>A continuous beam crosses the gap of a resonant cavity. The alternating gap voltage speeds some electrons up and
+      slows others down, and in the drift region the fast electrons catch up with the slow ones: the beam gathers into
+      bunches that repeat at the signal frequency. The output cavity sits where the first harmonic of the beam current peaks, and the bunched
+      current excites a field there that leaves through the waveguide.</p>
+    <figure>
+      <video autoplay muted loop playsinline poster="assets/sim/klystron-xband-bunching-comsol-poster.jpg" width="1800" height="440" aria-label="COMSOL animation: electrons of a 30 kV beam cross the cavity gap, gain or lose energy, and gather into bunches further along the drift region."><source src="assets/sim/klystron-xband-bunching-comsol.mp4" type="video/mp4"></video>
+      <figcaption>Bunch formation in a 30 kV beam, COMSOL particle tracing in the field of the input cavity. Color shows
+        the energy each electron gained or lost in the gap. The radial axis is stretched by a factor of four.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/klystron-xband-cavity-efield-3d-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="COMSOL revolved cutaway of a copper re-entrant cavity: the electric field is concentrated in the narrow gap between the two noses around the beam tunnel.">
+        <figcaption>The 9.4 GHz cavity: the electric field is concentrated in the gap between the noses.</figcaption>
+      </figure>
+      <div>
+        <p>The cavity is solved as a 2D axisymmetric model, and a tuning script adjusts its radius until the fundamental
+          mode sits at 9.4 GHz. Wall losses come from a copper impedance boundary condition.</p>
+        <ul>
+          <li>Q0 of <strong>4,080</strong> with copper walls</li>
+          <li>R/Q of <strong>77 Ω</strong> (circuit convention, V²/(2ωU))</li>
+        </ul>
+      </div>
+    </div>
+    <p>The computed cavity mode drives the particle tracing directly as the modulating field. Space charge is left out, so the field-particle coupling can be compared with ballistic theory: the distance to maximum bunching, about
+      93 mm from the gap averaged over the beam, matches theory within 0.3%, and the peak first harmonic of the beam
+      current is 1.17 times the DC current, compared with 1.16 in theory.</p>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/klystron-applegate-diagram-comsol.png" width="1339" height="945" decoding="async" loading="lazy" alt="Applegate diagram: axial position of electrons against time. Red trajectories of accelerated electrons and blue trajectories of decelerated electrons converge near the dashed line of the optimum bunching plane.">
+        <figcaption>Applegate diagram: accelerated electrons (red) catch up with decelerated ones (blue) near the bunching plane.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sim/klystron-bunching-harmonic-vs-theory-comsol.png" width="1339" height="906" decoding="async" loading="lazy" alt="First harmonic of the beam current against distance from the gap: COMSOL points lie on the 2J1(X) theory curves at radii 0.2 and 1.3 mm.">
+        <figcaption>First harmonic of the current along the drift region: COMSOL (markers) compared with 2J<sub>1</sub>(X) (lines).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="output-cavity">
+    <h2>Output cavity and waveguide</h2>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/klystron-output-cavity-wr90-comsol.jpg" width="1400" height="720" decoding="async" loading="lazy" alt="COMSOL 3D model of the output cavity coupled through an iris to a rectangular waveguide: the electric field in the cavity and in the wave leaving along the waveguide.">
+        <figcaption>The output cavity and the wave leaving into WR-90: axial electric field in the cavity and the waveguide.</figcaption>
+      </figure>
+      <div>
+        <p>The output cavity couples through an iris into a WR-90 waveguide. An eigenfrequency solution of the cavity
+          together with the waveguide gives a complex frequency, and from it the loaded quality factor and the external Q, which sets how fast the energy delivered by the bunches leaves into the waveguide.</p>
+        <ul>
+          <li>Loaded quality factor of <strong>368</strong>, from the complex eigenfrequency</li>
+          <li>External Q of about <strong>400</strong>, compared with an unloaded Q0 of the output cavity of about 4,060 (wall losses): about 90% of the power the bunches deliver to the cavity leaves into the waveguide</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="electron-gun">
+    <h2>Electron gun</h2>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/electron-gun-pierce-trajectories-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="COMSOL r-z section of a Pierce gun: concave spherical cathode, focus electrode and anode in gray, electron trajectories colored by energy converging into the beam tunnel, and equipotential lines.">
+        <figcaption>Pierce gun: electron trajectories colored by energy, with equipotential lines.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sim/electron-gun-pierce-3d-cutaway-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="COMSOL 3D cutaway of a Pierce gun: cathode body and focus electrode in gray, anode and beam tunnel in copper, and the beam colored by energy from 0 to 30 keV.">
+        <figcaption>The gun in a 3D cutaway. Beam color shows energy, from 0 at the cathode to 30 keV.</figcaption>
+      </figure>
+    </div>
+    <p>A concave spherical cathode emits a space-charge-limited current (Child's law), and the focus electrode and anode
+      shape the field so that the beam converges into a 2 mm-radius beam tunnel. Field and trajectories are iterated until the
+      emitted current settles. The gun emits 4.16 A at 30 kV (perveance 0.80 µP) with an average cathode loading of
+      about 9 A/cm², and the beam reaches a waist of 1.1 mm radius about 12 mm past the anode lip. Without a magnetic field the beam
+      hits the beam-tunnel wall about 20 mm after the waist, which is why a focusing solenoid surrounds it in the klystron.</p>
+  </section>
+
+  <section id="twt">
+    <h2>Traveling-wave tube: helix slow-wave structure</h2>
+    <p>In a traveling-wave tube the beam and the wave travel together, and the electrons give energy to the wave while they move slightly faster than its phase velocity. The helix slows the wave down: the signal runs along the metal tape
+      at nearly the speed of light, and along the axis it advances about eight times slower. The phase velocity changes
+      little with frequency, which is why a helix amplifier covers a band as wide as 6-18 GHz.</p>
+    <figure>
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="assets/sim/helix-twt-slow-wave-12ghz-comsol-poster.jpg" width="1400" height="856" aria-label="COMSOL animation of a slow wave along a copper helix inside a metal barrel: the axial electric field on the cut plane advances along the helix at 12 GHz and fades before the far end."><source data-src="assets/sim/helix-twt-slow-wave-12ghz-comsol.mp4" type="video/mp4"></video>
+      <figcaption>The slow wave along a 19.5-turn helix at 12 GHz, 3D COMSOL model. Color shows the axial electric field.
+        The wave enters from a coaxial feed at one end and fades in an attenuator before the far end.</figcaption>
+    </figure>
+    <p>In the 3D model the axial wavelength at 12 GHz is 3.03 mm, compared with 25 mm in free space. The phase velocity, 0.121 of the speed of light, matches a beam of about 3.8 kV.</p>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/helix-twt-structure-cutaway-comsol.jpg" width="1400" height="1000" decoding="async" loading="lazy" alt="COMSOL 3D cutaway of a copper helix inside a metal barrel, held by three ceramic rods, with coaxial feeds at both ends.">
+        <figcaption>The helix of the 3D model inside the barrel, held by three ceramic support rods.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sim/helix-6-18ghz-phase-velocity-comsol.png" width="1339" height="956" decoding="async" loading="lazy" alt="Phase velocity relative to the speed of light against frequency for two helix-to-barrel spacings, with the 6-18 GHz band marked.">
+        <figcaption>Phase velocity over 6-18 GHz from two unit-cell models.</figcaption>
+      </figure>
+    </div>
+    <p>One unit cell of the helix with periodic (Floquet) boundary conditions is enough to compute the dispersion curve and
+      the interaction impedance across the band. The cell chosen for the band is a smaller helix (0.6 mm radius, compared with 0.8 mm in the 3D model) in a closer barrel. In this cell the phase velocity falls from 0.121 to 0.112 of the speed of
+      light between 6 and 18 GHz (±3.8%), and a 3.45 kV beam is synchronous with the wave at 12 GHz. A metal barrel close to
+      the helix flattens the dispersion: with a wider barrel the variation grows to ±7.8%.</p>
+  </section>
+
+  <section id="folded-waveguide">
+    <h2>Ka-band folded waveguide</h2>
+    <p>At higher frequencies the helix becomes very small and limited in power, and the slow-wave structure is made of a
+      rectangular waveguide that folds back and forth across the beam tunnel. The wave follows the serpentine path while the beam crosses it at every fold, twice per period, so along the axis the wave advances slower than light. The structure is all metal and
+      removes heat better than a helix held on ceramic rods. The model is a unit cell with periodic boundary conditions, solved around 35 GHz.</p>
+    <div class="grid">
+      <figure>
+        <img src="assets/sim/folded-waveguide-ka-35ghz-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="COMSOL cutaway of a copper block containing a folded waveguide and a straight beam tunnel, with the axial electric field at 35 GHz in red and blue along the serpentine path.">
+        <figcaption>Axial electric field at 35 GHz on a cut through the folded waveguide and the beam tunnel.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sim/folded-waveguide-ka-channel-comsol.jpg" width="1400" height="1000" decoding="async" loading="lazy" alt="The vacuum channel of the folded waveguide shown as a solid copper body: a meandering rectangular waveguide crossed by a round beam tunnel along the axis.">
+        <figcaption>The vacuum channel of several periods as a solid body: the meandering waveguide and the beam tunnel.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="capabilities" aria-labelledby="rs-capabilities">
+    <h2 id="rs-capabilities">What the models demonstrate</h2>
+    <ul class="capability-list">
+      <li>Eigenfrequencies of resonant cavities with wall losses</li>
+      <li>A computed RF field as input to relativistic particle tracing</li>
+      <li>Space-charge-limited emission and Pierce-gun beam optics</li>
+      <li>Periodic boundary conditions for dispersion and interaction impedance</li>
+      <li>Coupling to waveguide and coaxial lines, scattering parameters</li>
+      <li>Full 3D geometry and animations rendered in COMSOL</li>
+    </ul>
+  </section>
+
+  <p>My PhD dealt with terahertz generation in free-electron devices. Research on undulator radiation from electron
+    bunches and on acceleration in helical undulators is on the <a href="accelerators.html">accelerators page</a>, and more
+    COMSOL examples are on the <a href="simulations.html">simulations page</a>.</p>
+
+  <div class="inquiry">
+    <p>For technical questions and research collaboration: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
+  </div>
+
+  <p class="back"><a href="index.html">← All research areas</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Microwave radiation sources. · Last updated: October 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
+</body>
+</html>
