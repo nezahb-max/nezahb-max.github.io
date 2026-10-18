@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT), סימולציה ב‑COMSOL | ד״ר נצח בלל</title>
+<meta name="description" content="מודלי COMSOL של מקורות קרינת מיקרוגל: קליסטרון ב־X-band, מחלל התהודה וקיבוץ האלומה ועד תותח האלקטרונים והמוצא לגלבו, ושפופרת גל נע סלילית לתחום 6 עד 18 GHz עם עקומת נפיצה וגל איטי לאורך הסליל.">
+<meta name="keywords" content="מקורות קרינה, מקורות קרינת מיקרוגל, קליסטרון, שפופרת גל נע, TWT, שפופרות מיקרוגל, חלל תהודה, אפנון מהירות, קיבוץ אלומה, תותח אלקטרונים, מבנה גל איטי, סליל, גלבו מקופל, X-band, Ka-band, לוחמה אלקטרונית, משדר מכ״ם, COMSOL, קומסול, נצח בלל">
+<link rel="canonical" href="https://nezahb-max.github.io/he/radiation-sources.html">
+<link rel="alternate" hreflang="en" href="https://nezahb-max.github.io/radiation-sources.html">
+<link rel="alternate" hreflang="he" href="https://nezahb-max.github.io/he/radiation-sources.html">
+<link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/radiation-sources.html">
+<meta property="og:title" content="מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT) ב‑COMSOL">
+<meta property="og:description" content="קליסטרון ב־X-band ושפופרת גל נע סלילית ל־6 עד 18 GHz: חללי תהודה, קיבוץ אלומה, תותח אלקטרונים, עקומות נפיצה וגל איטי, במודלי COMSOL.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/radiation-sources.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-radiation-sources.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT) ב‑COMSOL">
+<meta name="twitter:description" content="קליסטרון ב־X-band ושפופרת גל נע סלילית ל־6 עד 18 GHz: חללי תהודה, קיבוץ אלומה, תותח אלקטרונים, עקומות נפיצה וגל איטי, במודלי COMSOL.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-radiation-sources.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a5c8a">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT) במודלי COMSOL","description":"מודלי COMSOL Multiphysics של קליסטרון ב־X-band (חלל תהודה, קיבוץ אלומה, תותח אלקטרונים, חלל מוצא וגלבו) ושל שפופרת גל נע סלילית לתחום 6 עד 18 GHz (עקומת נפיצה וגל איטי לאורך הסליל).","about":["מקורות קרינה","קליסטרון","שפופרת גל נע","שפופרות מיקרוגל","מבנה גל איטי","תותח אלקטרונים","סימולציה ב-COMSOL"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/radiation-sources.html","mainEntityOfPage":"https://nezahb-max.github.io/he/radiation-sources.html","image":"https://nezahb-max.github.io/assets/sim/klystron-xband-cutaway-beam-comsol.jpg","inLanguage":"he","dateModified":"2026-10-18"}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="../radiation-sources.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">מקורות קרינה · שפופרות מיקרוגל · סימולציה ב‑COMSOL</p>
+  <h1>מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT)</h1>
+  <p class="lead">בקליסטרון ובשפופרת גל נע, אלומת אלקטרונים בוואקום מוסרת חלק מהאנרגיה הקינטית שלה לגל
+    אלקטרומגנטי ומגבירה אותו. שפופרות כאלה משמשות במשדרי מכ״ם, בלוחמה אלקטרונית ובתקשורת לוויינית. בדף
+    מוצגים מודלים שבניתי ב‑COMSOL Multiphysics לשני ההתקנים:
+    קליסטרון בתדר <bdi dir="ltr">9.4 GHz</bdi> בתחום X-band, מתותח האלקטרונים ועד הגל שיוצא לגלבו, שפופרת גל נע סלילית לתחום 6 עד 18 GHz ומבנה גל איטי מגלבו מקופל ב־Ka-band.</p>
+
+  <figure>
+    <img src="../assets/sim/klystron-xband-cutaway-beam-comsol.jpg" width="1400" height="856" decoding="async" alt="חתך תלת־ממדי מתוך COMSOL של קליסטרון בעל ארבעה חללים: תותח אלקטרונים משמאל, סולנואיד מיקוד מנחושת סביב מרחב הסחיפה, חלל המוצא והגלבו למעלה, קולט עם צלעות קירור מימין, ואלומה בתכלת לאורך הציר.">
+    <figcaption>קליסטרון בעל ארבעה חללים ב־X-band, חתך של המודל התלת־ממדי ב‑COMSOL. משמאל תותח האלקטרונים,
+      במרכז סולנואיד המיקוד סביב מרחב הסחיפה, למעלה חלל המוצא והגלבו, ומימין הקולט. האלומה מסומנת בתכלת.</figcaption>
+  </figure>
+
+  <section id="klystron">
+    <h2>קליסטרון: אפנון מהירות וקיבוץ</h2>
+    <p>אלומה רציפה עוברת במרווח של חלל תהודה. המתח המתחלף על המרווח מאיץ חלק מהאלקטרונים ומאט אחרים,
+      ובמרחב הסחיפה המהירים משיגים את האיטיים: האלומה מתקבצת לחבילות שחוזרות בתדר האות. חלל המוצא נמצא
+      במרחק שבו ההרמוניה הראשונה של הזרם מרבית, וזרם החבילות מעורר בו שדה שיוצא לגלבו.</p>
+    <figure>
+      <video autoplay muted loop playsinline poster="../assets/sim/klystron-xband-bunching-comsol-poster.jpg" width="1800" height="440" aria-label="אנימציה מתוך COMSOL: אלקטרונים של אלומת 30 kV עוברים במרווח של חלל התהודה, מקבלים או מאבדים אנרגיה, ובהמשך מרחב הסחיפה מתקבצים לחבילות."><source src="../assets/sim/klystron-xband-bunching-comsol.mp4" type="video/mp4"></video>
+      <figcaption>היווצרות החבילות באלומה של 30 kV, מעקב חלקיקים ב‑COMSOL בשדה של חלל הכניסה. הצבע מראה את
+        האנרגיה שהאלקטרון קיבל או איבד במרווח. הציר הרדיאלי מוגדל פי ארבעה.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/klystron-xband-cavity-efield-3d-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="חתך מסובב מתוך COMSOL של חלל תהודה חוזר־פנימה מנחושת: השדה החשמלי מרוכז במרווח הצר שבין שני האפים שסביב צינור האלומה.">
+        <figcaption>חלל התהודה ב־9.4 GHz: השדה החשמלי מרוכז במרווח שבין האפים.</figcaption>
+      </figure>
+      <div>
+        <p>חלל התהודה נפתר במודל דו־ממדי צירי־סימטרי, וסקריפט הכוונון מעדכן את רדיוס החלל עד שהאופן היסודי
+          נמצא ב־9.4 GHz. הפסדי הדופן מחושבים מתנאי שפה עכבתי (<span lang="en" dir="ltr">impedance boundary condition</span>) של נחושת.</p>
+        <ul>
+          <li>Q0 של <strong>4,080</strong> עם דפנות נחושת</li>
+          <li>R/Q של <strong>77 Ω</strong> (מוסכמת המעגל, <bdi dir="ltr">V²/(2ωU)</bdi>)</li>
+        </ul>
+      </div>
+    </div>
+    <p>השדה של האופן, כפי שחושב במודל החלל, משמש ישירות כשדה המאפנן במעקב החלקיקים. המודל מזניח את המטען
+      המרחבי, ולכן אפשר להשוות את הצימוד בין השדה לחלקיקים לתאוריה הבליסטית: המרחק לקיבוץ המרבי, כ־93 מ״מ
+      מהמרווח בממוצע על האלומה, שונה מהתאוריה בפחות מ־0.3%, ושיא ההרמוניה הראשונה של הזרם גדול פי 1.17 מזרם
+      האלומה הישר, לעומת פי 1.16 בתאוריה.</p>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/klystron-applegate-diagram-comsol.png" width="1339" height="945" decoding="async" loading="lazy" alt="דיאגרמת Applegate: מיקום האלקטרונים לאורך הציר כתלות בזמן. מסלולים אדומים של אלקטרונים שהואצו ומסלולים כחולים של אלקטרונים שהואטו מתכנסים סמוך לקו מקווקו של מישור הקיבוץ המרבי.">
+        <figcaption>דיאגרמת Applegate: אלקטרונים שהואצו (אדום) משיגים את אלה שהואטו (כחול) סמוך למישור הקיבוץ.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/sim/klystron-bunching-harmonic-vs-theory-comsol.png" width="1339" height="906" decoding="async" loading="lazy" alt="גרף ההרמוניה הראשונה של זרם האלומה כתלות במרחק מהמרווח: נקודות מחושבות ב‑COMSOL מונחות על עקומות התאוריה 2J1(X) ברדיוסים 0.2 ו־1.3 מ״מ.">
+        <figcaption>ההרמוניה הראשונה של הזרם לאורך מרחב הסחיפה: COMSOL (נקודות) מול 2J<sub>1</sub>(X) (קווים).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="output-cavity">
+    <h2>חלל המוצא והגלבו</h2>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/klystron-output-cavity-wr90-comsol.jpg" width="1400" height="720" decoding="async" loading="lazy" alt="מודל תלת־ממדי מתוך COMSOL של חלל המוצא מחובר דרך צמצם לגלבו מלבני: השדה החשמלי בחלל ובגל שיוצא לאורך הגלבו.">
+        <figcaption>חלל המוצא והגל שיוצא לגלבו WR-90: הרכיב הצירי של השדה החשמלי בחלל ובגלבו.</figcaption>
+      </figure>
+      <div>
+        <p>חלל המוצא מחובר דרך צמצם לגלבו WR-90. פתרון התדרים העצמיים של החלל יחד עם הגלבו נותן תדר מרוכב, שממנו
+          מחושבים גורם האיכות המועמס וה־Q החיצוני. ה־Q החיצוני קובע באיזה קצב האנרגיה שהחבילות מוסרות לחלל יוצאת לגלבו.</p>
+        <ul>
+          <li>גורם איכות מועמס של <strong>368</strong>, מהתדר העצמי המרוכב</li>
+          <li>Q חיצוני של כ־<strong>400</strong>, לעומת Q0 של חלל המוצא, כ־4,060 (הפסדי דופן): כ־90% מההספק שהחבילות מוסרות לחלל יוצא לגלבו</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="electron-gun">
+    <h2>תותח האלקטרונים</h2>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/electron-gun-pierce-trajectories-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="חתך r-z של תותח Pierce מתוך COMSOL: קתודה כדורית קעורה, אלקטרודת מיקוד ואנודה באפור, מסלולי האלקטרונים צבועים לפי האנרגיה ומתכנסים לתוך צינור הסחיפה, וקווי שווה־פוטנציאל.">
+        <figcaption>תותח Pierce: מסלולי האלקטרונים בצבע לפי האנרגיה, וקווי שווה־פוטנציאל.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/sim/electron-gun-pierce-3d-cutaway-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="חתך תלת־ממדי מתוך COMSOL של תותח Pierce: גוף הקתודה ואלקטרודת המיקוד באפור, האנודה וצינור הסחיפה בנחושת, והאלומה צבועה לפי האנרגיה מ־0 עד 30 keV.">
+        <figcaption>התותח בחתך תלת־ממדי. צבע האלומה מראה את האנרגיה, מ־0 ליד הקתודה עד 30 keV.</figcaption>
+      </figure>
+    </div>
+    <p>קתודה כדורית קעורה פולטת זרם המוגבל על ידי המטען המרחבי (חוק צ׳יילד), ואלקטרודת המיקוד והאנודה מעצבות את השדה כך
+      שהאלומה מתכנסת לתוך צינור ברדיוס 2 מ״מ. השדה והמסלולים מחושבים בלולאה, עד שהזרם הנפלט מתייצב. התותח פולט 4.16 A ב־30 kV (פרוויאנס של <bdi dir="ltr">0.80 µP</bdi>) בצפיפות זרם ממוצעת של כ־9 A/cm² על
+      הקתודה, והאלומה מגיעה למותן ברדיוס 1.1 מ״מ, כ־12 מ״מ אחרי שפת האנודה. בלי שדה מגנטי האלומה פוגעת בדופן
+      הצינור כ־20 מ״מ אחרי המותן, ולכן בקליסטרון מקיף אותה סולנואיד מיקוד.</p>
+  </section>
+
+  <section id="twt">
+    <h2>שפופרת גל נע: מבנה גל איטי סלילי</h2>
+    <p>בשפופרת גל נע האלומה והגל מתקדמים יחד, והאלקטרונים מוסרים לגל אנרגיה כל עוד מהירותם מעט גבוהה ממהירות הפאזה
+      שלו. הסליל מאט את הגל: האות מתקדם לאורך הסרט המתכתי כמעט במהירות האור, ולאורך הציר הוא מתקדם לאט פי
+      שמונה בערך. מהירות הפאזה משתנה מעט עם התדר, ולכן מגבר סלילי מכסה תחום רחב, למשל 6 עד 18 GHz.</p>
+    <figure>
+      <video data-lazy autoplay muted loop playsinline preload="none" poster="../assets/sim/helix-twt-slow-wave-12ghz-comsol-poster.jpg" width="1400" height="856" aria-label="אנימציה מתוך COMSOL של גל איטי לאורך סליל נחושת בתוך צינור מתכתי: הרכיב הצירי של השדה החשמלי במישור החתך מתקדם לאורך הסליל ב־12 GHz ודועך לפני הקצה השני."><source data-src="../assets/sim/helix-twt-slow-wave-12ghz-comsol.mp4" type="video/mp4"></video>
+      <figcaption>הגל האיטי לאורך סליל של 19.5 כריכות ב־12 GHz, מודל תלת־ממדי ב‑COMSOL. הצבע מראה את הרכיב הצירי
+        של השדה החשמלי. הגל נכנס מהזנה קואקסיאלית בקצה אחד ודועך במנחת לפני הקצה השני.</figcaption>
+    </figure>
+    <p>במודל התלת־ממדי אורך הגל לאורך הציר ב־12 GHz הוא 3.03 מ״מ, לעומת 25 מ״מ במרחב החופשי. מהירות הפאזה,
+      0.121 ממהירות האור, מתאימה לאלומה של כ־3.8 kV.</p>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/helix-twt-structure-cutaway-comsol.jpg" width="1400" height="1000" decoding="async" loading="lazy" alt="חתך תלת־ממדי מתוך COMSOL של סליל נחושת בתוך צינור מתכתי, נתמך בשלושה מוטות קרמיים, עם הזנות קואקסיאליות בשני הקצוות.">
+        <figcaption>הסליל של המודל התלת־ממדי בתוך הצינור, על שלושה מוטות תמיכה קרמיים.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/sim/helix-6-18ghz-phase-velocity-comsol.png" width="1339" height="956" decoding="async" loading="lazy" alt="גרף מהירות הפאזה היחסית למהירות האור כתלות בתדר, לשני מרחקים בין הסליל לצינור, עם סימון התחום 6 עד 18 GHz.">
+        <figcaption>מהירות הפאזה בתחום 6 עד 18 GHz, משני מודלים של תא היחידה.</figcaption>
+      </figure>
+    </div>
+    <p>תא יחידה אחד של הסליל, עם תנאי שפה מחזוריים (Floquet), מספיק לחישוב עקומת הנפיצה ועכבת האינטראקציה
+      (<span lang="en" dir="ltr">interaction impedance</span>) בכל התחום. תא היחידה שנבחר לתחום הוא סליל קטן יותר (רדיוס 0.6 מ״מ, לעומת 0.8 מ״מ במודל
+      התלת־ממדי) בצינור קרוב יותר. בתא הזה מהירות הפאזה יורדת מ־0.121 ל־0.112 ממהירות האור בין 6 ל־18 GHz
+      (‎±3.8%), ואלומה של 3.45 kV סינכרונית לגל ב־12 GHz. צינור מתכתי קרוב לסליל משטח את עקומת הנפיצה: בצינור
+      רחב יותר השינוי גדל ל־‎±7.8%.</p>
+  </section>
+
+  <section id="folded-waveguide">
+    <h2>גלבו מקופל ב־Ka-band</h2>
+    <p>בתדרים גבוהים יותר הסליל קטן מאוד ומוגבל בהספק, ומבנה הגל האיטי נבנה מגלבו מלבני שמתפתל הלוך ושוב לרוחב צינור
+      האלומה. הגל עובר במסלול המפותל והאלומה חוצה אותו בכל קיפול, פעמיים בכל מחזור, ולכן לאורך הציר הגל מתקדם לאט
+      יותר מהאור.
+      המבנה כולו מתכת, והחום מתפזר דרכו טוב יותר מאשר בסליל הנתמך על מוטות קרמיים. המודל הוא תא יחידה עם
+      תנאי שפה מחזוריים, שנפתר בתדרים שסביב 35 GHz.</p>
+    <div class="grid">
+      <figure>
+        <img src="../assets/sim/folded-waveguide-ka-35ghz-comsol.jpg" width="1400" height="856" decoding="async" loading="lazy" alt="חתך מתוך COMSOL של בלוק נחושת ובתוכו גלבו מקופל וצינור אלומה ישר, עם הרכיב הצירי של השדה החשמלי ב־35 GHz באדום ובכחול לאורך המסלול המתפתל.">
+        <figcaption>הרכיב הצירי של השדה החשמלי ב־35 GHz בחתך של הגלבו המקופל וצינור האלומה.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/sim/folded-waveguide-ka-channel-comsol.jpg" width="1400" height="1000" decoding="async" loading="lazy" alt="ערוץ הוואקום של הגלבו המקופל מוצג כגוף נחושת מוצק: גלבו מלבני מתפתל וצינור אלומה עגול שחוצה אותו לאורך הציר.">
+        <figcaption>ערוץ הוואקום של כמה מחזורים כגוף מוצק: הגלבו המתפתל וצינור האלומה.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="capabilities" aria-labelledby="rs-capabilities">
+    <h2 id="rs-capabilities">מה המודלים מדגימים</h2>
+    <ul class="capability-list">
+      <li>תדרים עצמיים של חללי תהודה עם הפסדי דופן</li>
+      <li>שדה RF מחושב כקלט למעקב חלקיקים יחסותי</li>
+      <li>פליטה המוגבלת על ידי המטען המרחבי ואופטיקת אלומה בתותח Pierce</li>
+      <li>תנאי שפה מחזוריים לעקומות נפיצה ועכבת אינטראקציה</li>
+      <li>צימוד לגלבו ולקו קואקסיאלי ופרמטרי פיזור</li>
+      <li>גאומטריה תלת־ממדית מלאה ואנימציות מתוך COMSOL</li>
+    </ul>
+  </section>
+
+  <p>עבודת הדוקטורט שלי עסקה ביצירת קרינת טרה־הרץ בהתקני אלקטרונים חופשיים. מחקר על קרינת אונדולטור מחבילות
+    אלקטרונים ועל האצה באונדולטור סלילי מוצג ב<a href="accelerators.html">דף המאיצים</a>, ודוגמאות COMSOL נוספות
+    ב<a href="simulations.html">דף הסימולציות</a>.</p>
+
+  <div class="inquiry">
+    <p>לשאלות טכניות ולשיתופי פעולה מחקריים: <a href="mailto:nezahb@ariel.ac.il">nezahb@ariel.ac.il</a></p>
+  </div>
+
+  <p class="back"><a href="index.html">→ כל תחומי המחקר</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מקורות קרינת מיקרוגל. · עדכון אחרון: אוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
+</body>
+</html>

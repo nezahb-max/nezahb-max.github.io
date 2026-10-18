@@ -46,6 +46,10 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - [Compact accelerators & IFEL](https://nezahb-max.github.io/accelerators.html):
   inverse free-electron-laser acceleration with tapered helical undulators, modeled
   in COMSOL, MeV-scale energy gain over centimeters at high acceleration gradient.
+- [Microwave radiation sources](https://nezahb-max.github.io/radiation-sources.html):
+  COMSOL models of an X-band klystron (re-entrant cavity, velocity-modulation bunching
+  validated against ballistic theory, Pierce gun, output cavity into WR-90) and a 6-18 GHz
+  helix traveling-wave tube (Floquet dispersion, slow wave along a finite helix).
 - [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html):
   electron confinement between two magnetic lenses with a live interactive simulation.
 - [Electromagnetic simulations](https://nezahb-max.github.io/simulations.html): gallery
