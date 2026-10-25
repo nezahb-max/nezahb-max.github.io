@@ -1,0 +1,9 @@
+/* Dedicated single-video pages; the shared research-page styles stay unchanged. */
+.watch-page h1{font-size:clamp(25px,3.5vw,31px);margin:20px 0 12px}
+.watch-figure{margin:0 0 12px}
+.watch-figure video{max-height:58vh;object-fit:contain}
+.watch-meta{color:var(--mut);font-size:13.5px;margin:0 0 20px}
+.watch-context{max-width:760px}
+.watch-context h2{margin-top:22px}
+.watch-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:20px 0}
+@media(max-width:600px){.watch-page h1{margin-top:16px}.watch-figure video{max-height:52vh}}
