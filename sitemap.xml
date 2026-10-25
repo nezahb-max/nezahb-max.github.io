@@ -1,23 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://nezahb-max.github.io/</loc><lastmod>2026-10-02</lastmod><priority>1.0</priority></url>
-  <url><loc>https://nezahb-max.github.io/accelerators.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/accelerators.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/magnetics.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/antennas.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/radar.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/particle-dynamics.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/antennas.html</loc><lastmod>2026-10-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/radar.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/particle-dynamics.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/simulations.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/radiation-sources.html</loc><lastmod>2026-10-18</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/wifi-safe-room.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/he/</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/he/accelerators.html</loc><lastmod>2026-10-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/accelerators.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/he/magnetics.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/he/antennas.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/he/radar.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nezahb-max.github.io/he/particle-dynamics.html</loc><lastmod>2026-10-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/antennas.html</loc><lastmod>2026-10-09</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/radar.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nezahb-max.github.io/he/particle-dynamics.html</loc><lastmod>2026-10-25</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/he/simulations.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/he/radiation-sources.html</loc><lastmod>2026-10-18</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/he/wifi-mamad.html</loc><lastmod>2026-10-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://nezahb-max.github.io/cv.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://nezahb-max.github.io/ams-lab.html</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://nezahb-max.github.io/he/videos/ifel-compact-accelerator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/ifel-compact-accelerator-poster.jpg</video:thumbnail_loc>
+      <video:title>האצת IFEL באונדולטור סלילי</video:title>
+      <video:description>צפו בסימולציית COMSOL של האצת לייזר אלקטרונים חופשיים הפוך: גל טרה־הרץ בקיטוב מעגלי מאיץ אלקטרון מ־1.20 ל־2.97 MeV באונדולטור סלילי משתנה.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/ifel-compact-accelerator.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://nezahb-max.github.io/he/videos/magnetic-mirror-trap.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/electron-magnetic-mirror-trap-poster.jpg</video:thumbnail_loc>
+      <video:title>אלקטרון במלכודת מראה מגנטית</video:title>
+      <video:description>צפו במסלול אלקטרון הכלוא בין שני סלילים במלכודת מראה מגנטית. אלגוריתם בוריס בשדה ביו־סבר אידאלי מציג סיבוב סלילי והחזרה בין שתי עדשות מגנטיות.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/electron-magnetic-mirror-trap.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://nezahb-max.github.io/he/videos/rotating-blade-rcs-94ghz.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg</video:thumbnail_loc>
+      <video:title>שטח חתך מכ״ם של להב מסתובב ב־94 גיגה־הרץ</video:title>
+      <video:description>צפו בסימולציית אופטיקה פיזיקלית של להב מסתובב ב־94 גיגה־הרץ: כיוון הלהב לצד שטח חתך המכ״ם המונוסטטי כתלות בזווית.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://nezahb-max.github.io/videos/ifel-compact-accelerator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/ifel-compact-accelerator-poster.jpg</video:thumbnail_loc>
+      <video:title>IFEL acceleration in a helical undulator</video:title>
+      <video:description>Watch a COMSOL simulation of inverse free-electron laser acceleration. A circularly polarized THz wave drives an electron from 1.20 to 2.97 MeV in a tapered helical undulator.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/ifel-compact-accelerator.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://nezahb-max.github.io/videos/magnetic-mirror-trap.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/electron-magnetic-mirror-trap-poster.jpg</video:thumbnail_loc>
+      <video:title>Electron in a magnetic-mirror trap</video:title>
+      <video:description>Watch an electron orbit in a two-coil magnetic-mirror trap. Boris-pusher tracing in an ideal Biot–Savart field shows gyration and reflection between two magnetic lenses.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/electron-magnetic-mirror-trap.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://nezahb-max.github.io/videos/rotating-blade-rcs-94ghz.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg</video:thumbnail_loc>
+      <video:title>Rotating-blade RCS at 94 GHz</video:title>
+      <video:description>Watch a physical-optics simulation of a rotating blade at 94 GHz. The animation pairs blade orientation with monostatic radar cross-section versus aspect angle.</video:description>
+      <video:content_loc>https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:publication_date>2026-10-03T13:32:09+03:00</video:publication_date>
+    </video:video>
+  </url>
 </urlset>
