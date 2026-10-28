@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סימולציות פיסיקליות עם קומסול: קורס מבוא בעברית להורדה | ד״ר נצח בלל</title>
+<meta name="description" content="קורס מבוא בעברית ל-COMSOL Multiphysics: חוברת PDF בת 50 עמודים, מקורות LaTeX וקובצי תרגול. ארבע מעבדות בהולכת חום, אלקטרוסטטיקה, קירור בזמן וחימום ג׳אול, עם בדיקות ואימות תוצאות.">
+<link rel="canonical" href="https://nezahb-max.github.io/he/comsol-intro.html">
+<meta property="og:title" content="סימולציות פיסיקליות עם קומסול: קורס מבוא בעברית">
+<meta property="og:description" content="50 עמודי הדרכה למתחילים, ארבע מעבדות וקובצי תרגול: מן המודל הראשון ועד בדיקת אמינות התוצאה.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/comsol-intro.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/og/og-comsol-intro.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="סימולציות פיסיקליות עם קומסול: קורס מבוא בעברית">
+<meta name="twitter:description" content="חוברת הדרכה למתחילים ב-COMSOL Multiphysics, עם תרגילים מדורגים, פתרונות ייחוס ובדיקת אמינות התוצאות.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/og/og-comsol-intro.jpg">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "@id": "https://nezahb-max.github.io/he/comsol-intro.html#course",
+  "name": "סימולציות פיסיקליות עם קומסול: קורס מבוא",
+  "description": "חוברת מבוא בעברית ל-COMSOL Multiphysics, בת 50 עמודים, עם ארבע מעבדות בהולכת חום, אלקטרוסטטיקה, קירור תלוי־זמן וחימום ג׳אול, תרגילי אימות ופרויקט מסכם.",
+  "url": "https://nezahb-max.github.io/he/comsol-intro.html",
+  "mainEntityOfPage": "https://nezahb-max.github.io/he/comsol-intro.html",
+  "author": {"@id": "https://nezahb-max.github.io/#person"},
+  "inLanguage": "he",
+  "educationalLevel": "Beginner",
+  "learningResourceType": "חוברת הדרכה ותרגול",
+  "educationalUse": "self study",
+  "competencyRequired": "פיסיקה בסיסית והיכרות עם נגזרות, אינטגרלים ויחידות פיסיקליות",
+  "teaches": ["בניית מודל פיסיקלי ב-COMSOL", "הגדרת חומרים ותנאי שפה", "רישות ומחקרים", "הולכת חום", "אלקטרוסטטיקה", "חימום ג׳אול", "אימות תוצאות נומריות"],
+  "isAccessibleForFree": true,
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "image": "https://nezahb-max.github.io/assets/og/og-comsol-intro.jpg",
+  "encoding": [
+    {"@type": "MediaObject", "name": "חוברת הקורס בעברית", "encodingFormat": "application/pdf", "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-intro-he.pdf"},
+    {"@type": "MediaObject", "name": "מקורות LaTeX של החוברת", "encodingFormat": "application/zip", "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-intro-he-source.zip"},
+    {"@type": "MediaObject", "name": "קובצי תרגול", "encodingFormat": "application/zip", "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-intro-he-examples.zip"}
+  ],
+  "citation": [
+    "https://doc.comsol.com/6.4/doc/com.comsol.help.comsol/IntroductionToCOMSOLMultiphysics.pdf",
+    "https://www.comsol.com/support/learning-center",
+    "https://doc.comsol.com/6.4/doc/com.comsol.help.comsol/comsol_ref_modeling.19.043.html"
+  ]
+}
+</script>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="ניווט ראשי">
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="comsol-intro.html" aria-current="page">מבוא לקומסול</a>
+</nav></div></header>
+
+<main class="wrap">
+  <p class="sub">לימוד עצמי · מתחילים · ארבע מעבדות</p>
+  <h1>סימולציות פיסיקליות עם קומסול: קורס מבוא בעברית</h1>
+  <p class="lead">חוברת הדרכה בת <strong>50 עמודים</strong> למי שרוצים לבנות מודל ראשון ב־<bdi lang="en">COMSOL Multiphysics</bdi>
+    ולהבין מה התוצאה אומרת. מתחילים מגאומטריה, חומרים ותנאי שפה, ממשיכים לפתרון ולהצגת נתונים,
+    ולומדים לבדוק את התוצאה מול פתרון פשוט, מאזן אנרגיה ושינוי הרשת.</p>
+  <div class="tags" aria-label="פרטי הקורס">
+    <span class="tag">עברית</span><span class="tag">50 עמודים</span><span class="tag">COMSOL 6.4</span>
+    <span class="tag">PDF + LaTeX</span><span class="tag">ללא תשלום</span>
+  </div>
+
+  <section class="capabilities" aria-labelledby="downloads">
+    <h2 id="downloads">הורדת החוברת וקובצי התרגול</h2>
+    <p>אפשר לקרוא את החוברת בדפדפן או לשמור אותה ללימוד ולהדפסה. מקורות ה־<bdi lang="en">LaTeX</bdi> מאפשרים
+      לערוך ולבנות את המסמך מחדש; חבילת התרגול נלווית למעבדות המפורטות בו.</p>
+    <p><a class="cta" href="../assets/downloads/comsol-intro-he.pdf" type="application/pdf">פתיחת חוברת הקורס (PDF) ←</a>
+      <a class="cta" href="../assets/downloads/comsol-intro-he.pdf" download>שמירת ה־PDF למחשב</a></p>
+    <div class="grid">
+      <a class="card" href="../assets/downloads/comsol-intro-he-source.zip" download type="application/zip"><h3>מקורות החוברת (ZIP) ←</h3><p>קובצי LaTeX, איורים והוראות בנייה.</p></a>
+      <a class="card" href="../assets/downloads/comsol-intro-he-examples.zip" download type="application/zip"><h3>קובצי התרגול (ZIP) ←</h3><p>דוגמאות לשחזור המודלים ונתוני ייחוס; פירוט התכולה בקובץ README שבחבילה.</p></a>
+    </div>
+    <p>התוכנה והרישיון לשימוש בה נדרשים בנפרד. זמינות ממשקי הפיסיקה תלויה במודולים שברישיון.</p>
+  </section>
+
+  <section aria-labelledby="audience">
+    <h2 id="audience">למי הקורס מתאים?</h2>
+    <p>לסטודנטים, למהנדסים ולחוקרים בתחילת דרכם בסימולציות פיסיקליות. נדרשים ידע בסיסי בפיסיקה,
+      עבודה עם יחידות והיכרות עם נגזרות ואינטגרלים. אין צורך בניסיון קודם ב־COMSOL.</p>
+    <p>משך הלימוד המשוער הוא <strong>12–18 שעות</strong>, כולל בנייה עצמית של המודלים, שינוי פרמטרים ופתרון
+      התרגילים. זו הערכת עבודה ללימוד עצמי; אפשר להתקדם בקצב אישי. ההנחיות מתייחסות לגרסה <bdi lang="en">6.4</bdi>.
+      בגרסאות אחרות ובמערכות הפעלה שונות ייתכנו הבדלים בשמות ובמיקום הפקודות.</p>
+  </section>
+
+  <section aria-labelledby="learning">
+    <h2 id="learning">מה לומדים?</h2>
+    <ul>
+      <li>לתרגם שאלה פיסיקלית להנחות, תחום חישוב וגודל תוצאה שאפשר לבדוק.</li>
+      <li>לבנות גאומטריה פרמטרית, לשייך חומרים ולבחור את הגבולות הנכונים.</li>
+      <li>להבחין בין תנאי שפה לתנאי התחלה ובין מחקר מתמיד למחקר תלוי־זמן.</li>
+      <li>לבנות רשת, לפתור, להפיק גרפים וערכים מספריים ולייצא נתונים.</li>
+      <li>לחבר בין זרם חשמלי לחימום ולהבין את משמעות הצימוד.</li>
+      <li>לבדוק רזולוציה, יחידות, מאזנים והתאמה לפתרון ייחוס לפני שמסיקים מסקנה.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="labs">
+    <h2 id="labs">ארבע המעבדות</h2>
+    <div class="grid">
+      <article class="card"><h3>1. הולכת חום במצב מתמיד</h3><p>פס בעל קצה חם וקצה קר: בניית מלבן, חומרים, טמפרטורות ובידוד, קריאת פרופיל הטמפרטורה וחישוב שטף והספק מול פתרון אנליטי.</p></article>
+      <article class="card"><h3>2. קבל לוחות ואלקטרוסטטיקה</h3><p>תחום דיאלקטרי אידיאלי: פוטנציאל, כיוון השדה, מטען, קיבול ואנרגיה, עם תשומת לב לעובי מחוץ למישור ולמגבלות המודל ללא שדות שוליים.</p></article>
+      <article class="card"><h3>3. קירור כדור כתלות בזמן</h3><p>טמפרטורה התחלתית, מעבר חום לסביבה ובחירת טווח זמן. השוואת התוצאה לקירוב טמפרטורה אחידה ובדיקת התנאים שבהם הקירוב מוצדק.</p></article>
+      <article class="card"><h3>4. חימום ג׳אול במודל מצומד</h3><p>חיבור בין הולכה חשמלית לחום בפס מוליך. חישוב זרם, הספק וטמפרטורה מרבית ובדיקת השפעת המתח והנחות החומר.</p></article>
+    </div>
+    <p>בסיום מופיעים פרויקט מסכם, שאלות לבדיקה עצמית, פתרונות ייחוס, מילון מונחים ודף עבודה מהיר.
+      בכל מעבדה כדאי לבנות את המודל לפי ההוראות, לרשום תחזית, ורק אז להשוות לתוצאה.</p>
+  </section>
+
+  <section aria-labelledby="interpretation">
+    <h2 id="interpretation">איך להשתמש בתוצאות הדוגמה?</h2>
+    <p>המעבדות משתמשות בגאומטריות פשוטות ובתכונות חומר לימודיות כדי שאפשר יהיה לבדוק את החישוב.
+      החוברת מבחינה בין פתרון ייחוס אנליטי לבין תוצאה שהופקה בסימולציה. התאמה לתרגיל מלמדת על אותו מודל
+      ועל הנחותיו; מעבר למוצר או למערכת אמיתיים מחייב נתוני חומר, תנאי סביבה ואימות המתאימים למערכת.</p>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">מקורות והמשך לימוד</h2>
+    <p>ההדרכה נכתבה בעברית כחומר לימוד עצמאי. שמות הפקודות והעקרונות נבדקו מול מקורות רשמיים של COMSOL,
+      ובחוברת מופיעות הפניות לנושאים הרלוונטיים:</p>
+    <ul>
+      <li><a href="https://doc.comsol.com/6.4/doc/com.comsol.help.comsol/IntroductionToCOMSOLMultiphysics.pdf" lang="en" dir="ltr">Introduction to COMSOL Multiphysics 6.4</a> — מדריך הפתיחה הרשמי.</li>
+      <li><a href="https://www.comsol.com/support/learning-center" lang="en" dir="ltr">COMSOL Learning Center</a> — קורסים ומאמרי הדרכה.</li>
+      <li><a href="https://doc.comsol.com/6.4/doc/com.comsol.help.comsol/comsol_ref_modeling.19.043.html" lang="en" dir="ltr">Analyzing Model Convergence and Accuracy</a> — בדיקת התכנסות ודיוק.</li>
+    </ul>
+    <p class="creds"><bdi lang="en">COMSOL</bdi> ו־<bdi lang="en">COMSOL Multiphysics</bdi> הם סימנים מסחריים רשומים
+      של <bdi lang="en">COMSOL AB</bdi>. החוברת היא חומר לימוד עצמאי באתר ד״ר נצח בלל, ללא זיקה רשמית ליצרן.</p>
+  </section>
+
+  <p class="back"><a href="simulations.html">→ גלריית הסימולציות באתר</a></p>
+</main>
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · קורס מבוא לסימולציות פיסיקליות ·
+  עדכון אחרון: <time datetime="2026-10-28">28 באוקטובר 2026</time>
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
