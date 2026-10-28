@@ -27,7 +27,7 @@
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם","description":"גלריית סימולציות אלקטרומגנטיות: Wi-Fi בדירה עם ממ״ד, אנטנת שופר עם עדשה ב־10 GHz, אנטנת ויוואלדי אנטיפודלית, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן ב־94 GHz.","about":["סימולציה אלקטרומגנטית","COMSOL Multiphysics","תכנון אנטנות","התפשטות גלים","מכ״ם"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"he","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/he/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/he/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד, דלת פתוחה, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"אנטנת שופר ב־10 GHz בלי עדשה ועם עדשת PTFE: העדשה ממקדת את הגל, מודל COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"תבנית ההגבר התלת־ממדית של אנטנת ויוואלדי אנטיפודלית מ־3 עד 11 GHz, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"מכ״ם 77 GHz משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"מיקרו־דופלר מדומה של רחפן בעל ארבעה רוטורים במכ״ם 94 GHz"}]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"סימולציות אלקטרומגנטיות ב-COMSOL: אנטנות, התפשטות גלים ומכ״ם","description":"גלריית סימולציות אלקטרומגנטיות: Wi-Fi בדירה עם ממ״ד, אנטנת שופר עם עדשה ב־10 GHz, אנטנת ויוואלדי אנטיפודלית, מכ״ם 77 GHz מאחורי פגוש ומיקרו־דופלר של רחפן ב־94 GHz.","about":["סימולציה אלקטרומגנטית","COMSOL Multiphysics","תכנון אנטנות","התפשטות גלים","מכ״ם"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"he","datePublished":"2026-10-02","dateModified":"2026-10-28","url":"https://nezahb-max.github.io/he/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/he/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"Wi-Fi בתדר 2.44 GHz בדירה עם ממ״ד, דלת פתוחה, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"אנטנת שופר ב־10 GHz בלי עדשה ועם עדשת PTFE: העדשה ממקדת את הגל, מודל COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"תבנית ההגבר התלת־ממדית של אנטנת ויוואלדי אנטיפודלית מ־3 עד 11 GHz, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"מכ״ם 77 GHz משדר דרך לוח פגוש שעוביו משתנה מ־1 עד 4 מ״מ, סימולציית COMSOL"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"מיקרו־דופלר מדומה של רחפן בעל ארבעה רוטורים במכ״ם 94 GHz"}]}
 </script>
 </head>
 <body>
@@ -49,6 +49,12 @@
     שהמבנה קיים. רוב המודלים בדף נבנו ב‑COMSOL Multiphysics (קומסול), ובעבודות שפורסמו השתמשתי גם
     ב‑CST Studio Suite. את העיבוד והניתוח אני עושה ב‑MATLAB וב‑Python, ובמידת האפשר משווה את
     התוצאות למדידות בחדר האל־הד של המעבדה.</p>
+
+  <section class="example" aria-label="קורס מבוא לקומסול">
+    <strong>מתחילים בסימולציות?</strong>
+    <p><a href="comsol-intro.html">סימולציות פיסיקליות עם קומסול: קורס מבוא בעברית ←</a>
+      חוברת בת 50 עמודים עם ארבע מעבדות, פתרונות ייחוס וקובצי תרגול להורדה.</p>
+  </section>
 
   <section id="wifi">
     <h2>Wi-Fi בדירה עם ממ״ד</h2>
@@ -197,7 +203,7 @@
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · סימולציות אלקטרומגנטיות. · עדכון אחרון: אוקטובר 2026
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · סימולציות אלקטרומגנטיות. · עדכון אחרון: <time datetime="2026-10-28">28 באוקטובר 2026</time>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
