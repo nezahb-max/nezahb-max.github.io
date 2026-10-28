@@ -26,7 +26,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/simulations.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar","description":"A gallery of electromagnetic simulations: Wi-Fi in an apartment with a safe room, a horn with a focusing lens at 10 GHz, an antipodal Vivaldi antenna, 77 GHz radar behind a bumper and quadcopter micro-Doppler at 94 GHz.","about":["electromagnetic simulation","COMSOL Multiphysics","antenna design","radio-wave propagation","radar"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-10-28","url":"https://nezahb-max.github.io/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"10 GHz horn without and with a PTFE lens: the lens focuses the wave, COMSOL model"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"3D realized-gain pattern of an antipodal Vivaldi antenna from 3 to 11 GHz, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"77 GHz radar array radiating through a bumper panel whose thickness sweeps from 1 to 4 mm, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"Simulated micro-Doppler of a quadcopter seen by a 94 GHz radar"}]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Electromagnetic Simulation in COMSOL: Antennas, Propagation and Radar","description":"A gallery of electromagnetic simulations: Wi-Fi in an apartment with a safe room, a horn with a focusing lens at 10 GHz, an antipodal Vivaldi antenna, 77 GHz radar behind a bumper and quadcopter micro-Doppler at 94 GHz.","about":["electromagnetic simulation","COMSOL Multiphysics","antenna design","radio-wave propagation","radar"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/simulations.html","mainEntityOfPage":"https://nezahb-max.github.io/simulations.html","citation":["https://doi.org/10.3390/electronics14163191","https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-lens-horn-focusing-10ghz-comsol.gif","caption":"10 GHz horn without and with a PTFE lens: the lens focuses the wave, COMSOL model"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/antenna-vivaldi-pattern-3d-vs-frequency.gif","caption":"3D realized-gain pattern of an antipodal Vivaldi antenna from 3 to 11 GHz, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-radome-77ghz-thickness-sweep.gif","caption":"77 GHz radar array radiating through a bumper panel whose thickness sweeps from 1 to 4 mm, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/radar-drone-micro-doppler-94ghz.gif","caption":"Simulated micro-Doppler of a quadcopter seen by a 94 GHz radar"}]}
 </script>
 </head>
 <body>
@@ -47,12 +47,6 @@
     in <strong>COMSOL Multiphysics</strong>. In published work I have also used <strong>CST Studio Suite</strong>
    . I process and analyse the results in MATLAB and Python and, where possible, compare
     them with measurements in the lab's anechoic chamber.</p>
-
-  <section class="example" aria-label="COMSOL beginner course in Hebrew">
-    <strong>Getting started with simulation?</strong>
-    <p><a href="he/comsol-intro.html" hreflang="he">Physical simulations with COMSOL: introductory course in Hebrew →</a>
-      A 50-page workbook with four labs, analytical references and downloadable practice files.</p>
-  </section>
 
   <section id="wifi">
     <h2>Wi-Fi in an apartment with a safe room</h2>
@@ -207,7 +201,7 @@
 
 <footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
   <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Electromagnetic simulation.
- · Last updated: <time datetime="2026-10-28">28 October 2026</time></div></footer>
+ · Last updated: October 2026</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
 <script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>
