@@ -33,7 +33,7 @@
 .comsol-course #magnet-example figure{background:#fff;padding:14px;border:1px solid var(--line);border-radius:11px}
 .comsol-course #magnet-example img{display:block;border:0;border-radius:2px;background:#fff}
 .comsol-course #magnet-example figcaption{max-width:750px;margin:12px auto 0;line-height:1.65}
-.comsol-course .course-downloads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:21px}
+.comsol-course .course-downloads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:21px}
 .comsol-course .course-download{padding:20px 18px;background:#fff;border:1px solid var(--line);border-radius:11px;display:flex;flex-direction:column;align-items:flex-start}
 .comsol-course .course-format{font-size:11px;font-weight:700;color:var(--mut);margin:0 0 10px;direction:ltr;unicode-bidi:isolate}
 .comsol-course .course-download h3{font-size:17px;color:var(--acc);margin-bottom:9px}

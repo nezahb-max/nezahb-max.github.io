@@ -127,7 +127,7 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
   a free 52-page guide by Dr. Nezah Balal with 15 screenshot figures and five solved
   teaching models: steady heat conduction, an ideal capacitor, an axisymmetric
   current loop, transient sphere cooling and Joule heating. The page links to the
-  Hebrew PDF, LaTeX source and MPH/Java/CSV example package. Models were built in
+  Hebrew PDF and MPH/Java/CSV example package. Models were built in
   COMSOL Multiphysics 6.4 and require a suitable software license to open.
 
 ## Notes
