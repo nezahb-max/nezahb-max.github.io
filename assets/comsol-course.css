@@ -40,10 +40,6 @@
 .comsol-course .course-download>p:not(.course-format){font-size:14px;color:#40535f;flex:1;margin-bottom:20px}
 .comsol-course .course-download .cta{font-size:13px}
 .comsol-course .course-save{font-size:12px;margin-top:9px}
-.comsol-course .course-faq{border-top:1px solid var(--line)}
-.comsol-course .course-faq details{border-bottom:1px solid var(--line);padding:16px 0}
-.comsol-course .course-faq summary{cursor:pointer;font-weight:650;color:#263e4c;line-height:1.5;padding-inline-end:12px}
-.comsol-course .course-faq details p{margin:12px 0 0;font-size:15px;color:#40535f;max-width:800px}
 .comsol-course .course-related{border-top:1px solid var(--line);padding-top:30px}
 @media(max-width:720px){
   .comsol-course .course-hero{grid-template-columns:1fr;gap:22px;margin-top:18px}
