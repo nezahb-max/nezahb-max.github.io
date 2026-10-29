@@ -1,0 +1,67 @@
+/* COMSOL course page — the site typography and palette remain in style.css. */
+.comsol-course .course-skip{position:absolute;inset-inline-start:16px;top:-100px;padding:10px 18px;background:#fff;border:2px solid var(--acc);z-index:10;border-radius:6px}
+.comsol-course .course-skip:focus{top:10px}
+.comsol-course a:focus-visible,.comsol-course summary:focus-visible{outline:3px solid var(--acc2);outline-offset:4px}
+.comsol-course header a[aria-current="page"]{color:var(--acc);text-decoration:underline;text-underline-offset:5px}
+.comsol-course .course-breadcrumb{display:flex;gap:7px 10px;min-height:0;padding:19px 0 8px;font-size:13px;color:var(--mut)}
+.comsol-course .course-breadcrumb a{font-size:13px;font-weight:400;color:var(--mut)}
+.comsol-course .course-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:34px;align-items:center;margin:20px 0 28px}
+.comsol-course .course-hero h1{font-size:36px;margin:13px 0 16px;line-height:1.22;letter-spacing:-.4px}
+.comsol-course .course-hero .sub{font-size:13px;letter-spacing:0}
+.comsol-course .course-hero .lead{font-size:20px;line-height:1.55;margin-bottom:15px}
+.comsol-course .course-hero p:not(.lead):not(.sub):not(.course-meta){color:#40535f;font-size:16px}
+.comsol-course .course-preview{margin:0;max-width:320px;justify-self:center}
+.comsol-course .course-preview img{display:block;background:#fff;border-radius:3px;box-shadow:0 10px 30px rgba(20,32,43,.10)}
+.comsol-course .course-preview figcaption{font-size:12px;max-width:280px;margin:12px auto 0}
+.comsol-course .course-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 13px}
+.comsol-course .course-primary{background:var(--acc);color:#fff}
+.comsol-course .course-primary:hover{background:#084b71;color:#fff}
+.comsol-course .course-meta{font-size:12.5px;color:var(--mut);line-height:1.7}
+.comsol-course .course-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 20px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.comsol-course .course-facts div{text-align:center}
+.comsol-course .course-facts dt{font-size:20px;font-weight:750;color:var(--acc)}
+.comsol-course .course-facts dd{margin:3px 0 0;font-size:13px;color:var(--mut)}
+.comsol-course .course-jump{min-height:0;gap:7px 19px;padding:0 0 18px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.comsol-course .course-jump a{font-size:13px;color:var(--acc)}
+.comsol-course section{scroll-margin-top:24px;margin:36px 0}
+.comsol-course section h2{font-size:23px;line-height:1.35;margin:0 0 14px}
+.comsol-course .course-labs{list-style:none;counter-reset:lab;padding:0;margin:23px 0;display:grid;gap:13px}
+.comsol-course .course-labs li{counter-increment:lab;position:relative;padding:18px 65px 18px 20px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.comsol-course .course-labs li::before{content:counter(lab);position:absolute;right:20px;top:19px;width:28px;height:28px;display:grid;place-items:center;font-size:14px;font-weight:700;color:var(--acc);background:var(--code);border-radius:50%}
+.comsol-course .course-labs h3{font-size:17px;color:var(--acc);margin:0 0 5px}
+.comsol-course .course-labs p{font-size:15px;color:#40535f;margin:0}
+.comsol-course #magnet-example figure{background:#fff;padding:14px;border:1px solid var(--line);border-radius:11px}
+.comsol-course #magnet-example img{display:block;border:0;border-radius:2px;background:#fff}
+.comsol-course #magnet-example figcaption{max-width:750px;margin:12px auto 0;line-height:1.65}
+.comsol-course .course-downloads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:21px}
+.comsol-course .course-download{padding:20px 18px;background:#fff;border:1px solid var(--line);border-radius:11px;display:flex;flex-direction:column;align-items:flex-start}
+.comsol-course .course-format{font-size:11px;font-weight:700;color:var(--mut);margin:0 0 10px;direction:ltr;unicode-bidi:isolate}
+.comsol-course .course-download h3{font-size:17px;color:var(--acc);margin-bottom:9px}
+.comsol-course .course-download>p:not(.course-format){font-size:14px;color:#40535f;flex:1;margin-bottom:20px}
+.comsol-course .course-download .cta{font-size:13px}
+.comsol-course .course-save{font-size:12px;margin-top:9px}
+.comsol-course .course-faq{border-top:1px solid var(--line)}
+.comsol-course .course-faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.comsol-course .course-faq summary{cursor:pointer;font-weight:650;color:#263e4c;line-height:1.5;padding-inline-end:12px}
+.comsol-course .course-faq details p{margin:12px 0 0;font-size:15px;color:#40535f;max-width:800px}
+.comsol-course .course-related{border-top:1px solid var(--line);padding-top:30px}
+@media(max-width:720px){
+  .comsol-course .course-hero{grid-template-columns:1fr;gap:22px;margin-top:18px}
+  .comsol-course .course-hero h1{font-size:30px}
+  .comsol-course .course-hero .lead{font-size:19px}
+  .comsol-course .course-preview{max-width:240px}
+  .comsol-course .course-downloads{grid-template-columns:1fr}
+  .comsol-course .course-download{padding:20px}
+  .comsol-course .course-facts{gap:8px}
+  .comsol-course .course-facts dt{font-size:17px}
+  .comsol-course .course-facts dd{font-size:12px}
+  .comsol-course section h2{font-size:21px}
+}
+@media(max-width:400px){
+  .comsol-course .course-facts{grid-template-columns:1fr;gap:14px}
+  .comsol-course .course-facts div{text-align:start}
+  .comsol-course .course-labs li{padding-right:55px;padding-left:15px}
+  .comsol-course .course-labs li::before{right:15px}
+  .comsol-course .course-actions{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
