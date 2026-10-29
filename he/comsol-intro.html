@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קורס COMSOL בעברית למתחילים | מדריך PDF ודוגמאות — ד״ר נצח בלל</title>
+<meta name="description" content="מדריך COMSOL בעברית למתחילים: חוברת PDF חינמית בת 52 עמודים, 15 איורי צילום מסך וחמישה מודלים פתורים. הולכת חום, קבל, שדה מגנטי וקירור בזמן, עם תרגול ובדיקת תוצאות.">
+<link rel="canonical" href="https://nezahb-max.github.io/he/comsol-intro.html">
+<meta property="og:title" content="קורס COMSOL בעברית למתחילים — מדריך ותרגול">
+<meta property="og:description" content="52 עמודי הדרכה, צילומי מסך וחמישה מודלים פתורים: מתחילים בבניית מודל, ממשיכים לשדות חשמליים ומגנטיים ובודקים את התוצאות.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/comsol-intro.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/comsol-intro/magnet-field.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="השדה המגנטי של לולאת זרם — תוצאה ממודל COMSOL המצורף למדריך">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="קורס COMSOL בעברית למתחילים">
+<meta name="twitter:description" content="מדריך PDF חינמי, צילומי מסך וחמישה מודלים פתורים ללימוד סימולציות פיזיקליות ב־COMSOL Multiphysics.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/comsol-intro/magnet-field.png">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/comsol-course.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LearningResource",
+      "@id": "https://nezahb-max.github.io/he/comsol-intro.html#guide",
+      "name": "קורס COMSOL בעברית למתחילים: סימולציות פיזיקליות עם קומסול",
+      "description": "מדריך מעשי בעברית עם חמש מעבדות מודרכות, צילומי מסך, מודלים פתורים ובדיקות תוצאות. החוברת כוללת הולכת חום, קבל אידאלי, השדה המגנטי של לולאת זרם, קירור כדור וחימום ג׳אול.",
+      "url": "https://nezahb-max.github.io/he/comsol-intro.html",
+      "mainEntityOfPage": "https://nezahb-max.github.io/he/comsol-intro.html",
+      "author": {"@type": "Person", "@id": "https://nezahb-max.github.io/#person", "name": "ד״ר נצח בלל"},
+      "inLanguage": "he",
+      "educationalLevel": "Beginner",
+      "learningResourceType": ["מדריך", "קורס מבוא ללימוד עצמי", "תרגול"],
+      "educationalUse": "self study",
+      "competencyRequired": "פיזיקה בסיסית, נגזרות, אינטגרלים ויחידות מידה",
+      "teaches": ["בניית מודל ב־COMSOL Multiphysics", "הגדרת חומרים ותנאי שפה", "יצירת רשת חישוב", "הולכת חום", "אלקטרוסטטיקה", "חישוב שדה מגנטי", "חימום ג׳אול", "אימות תוצאות נומריות"],
+      "isAccessibleForFree": true,
+      "datePublished": "2026-10-29",
+      "dateModified": "2026-10-29",
+      "image": "https://nezahb-max.github.io/assets/comsol-intro/magnet-field.png",
+      "encoding": {
+        "@type": "MediaObject",
+        "name": "סימולציות פיזיקליות עם קומסול — מדריך מעשי למתחילים",
+        "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-intro-he.pdf",
+        "encodingFormat": "application/pdf",
+        "inLanguage": "he"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://nezahb-max.github.io/he/"},
+        {"@type": "ListItem", "position": 2, "name": "סימולציות", "item": "https://nezahb-max.github.io/he/simulations.html"},
+        {"@type": "ListItem", "position": 3, "name": "קורס COMSOL בעברית", "item": "https://nezahb-max.github.io/he/comsol-intro.html"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="comsol-course">
+<a class="course-skip" href="#course-content">דלגו לתוכן</a>
+<header><div class="wrap"><nav aria-label="ניווט ראשי">
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="comsol-intro.html" aria-current="page">קורס COMSOL</a>
+  <a href="../index.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap" id="course-content">
+  <nav class="course-breadcrumb" aria-label="מיקום באתר">
+    <a href="index.html">דף הבית</a><span aria-hidden="true">/</span>
+    <a href="simulations.html">סימולציות</a><span aria-hidden="true">/</span>
+    <span aria-current="page">קורס COMSOL בעברית</span>
+  </nav>
+
+  <div class="course-hero">
+    <div>
+      <p class="sub">מדריך ללימוד עצמי · חוברת ותרגול להורדה</p>
+      <h1>קורס COMSOL בעברית למתחילים</h1>
+      <p class="lead">סימולציות פיזיקליות עם קומסול: מדריך מעשי לבניית מודלים, להגדרת חומרים ותנאי שפה ולבדיקת התוצאות.</p>
+      <p>החוברת מאת ד״ר נצח בלל מלווה את העבודה ב־<bdi lang="en">COMSOL Multiphysics</bdi> באמצעות הוראות מפורטות, צילומי מסך וחמש מעבדות. מתחילים בהולכת חום, ממשיכים לקבל וללולאת זרם מגנטית, ובהמשך מנתחים קירור בזמן וחימום ג׳אול.</p>
+      <div class="course-actions">
+        <a class="cta course-primary" href="../assets/downloads/comsol-intro-he.pdf">פתיחת המדריך בעברית — PDF</a>
+        <a class="cta" href="#downloads">כל קובצי ההורדה</a>
+      </div>
+      <p class="course-meta">ללא תשלום · מאת ד״ר נצח בלל · עדכון: <time datetime="2026-10-29">29 באוקטובר 2026</time></p>
+    </div>
+    <figure class="course-preview">
+      <a href="../assets/downloads/comsol-intro-he.pdf#page=5" aria-label="פתיחת עמוד לדוגמה מתוך מדריך COMSOL בעברית">
+        <img src="../assets/comsol-intro/course-preview.png" width="893" height="1263" decoding="async" fetchpriority="high" alt="עמוד לדוגמה מתוך המדריך: ניסוח הבעיה ובחירת הממשק הפיזיקלי ב־COMSOL, עם הוראות ותיבת הסבר.">
+      </a>
+      <figcaption>עמוד לדוגמה מתוך החוברת. לחצו לפתיחת ה־PDF.</figcaption>
+    </figure>
+  </div>
+
+  <dl class="course-facts" aria-label="מה כלול במדריך">
+    <div><dt>52 עמודים</dt><dd>הדרכה בעברית בפורמט PDF</dd></div>
+    <div><dt>5 מעבדות</dt><dd>מודלים פתורים ונתוני תוצאות</dd></div>
+    <div><dt>15 איורי צילום מסך</dt><dd>מתוך סביבת COMSOL</dd></div>
+  </dl>
+
+  <nav class="course-jump" aria-label="תוכן הדף">
+    <a href="#audience">למי מתאים</a>
+    <a href="#curriculum">נושאי הלימוד</a>
+    <a href="#magnet-example">הדגמת שדה מגנטי</a>
+    <a href="#downloads">הורדות</a>
+    <a href="#questions">שאלות נפוצות</a>
+  </nav>
+
+  <section id="audience" aria-labelledby="audience-title">
+    <h2 id="audience-title">למי מיועד המדריך, ומה צריך לדעת מראש?</h2>
+    <p>המדריך מיועד לסטודנטים, למהנדסים ולחוקרים המתחילים לעבוד עם סימולציות פיזיקליות ב־COMSOL. נדרשת היכרות בסיסית עם פיזיקה, נגזרות, אינטגרלים ויחידות מידה. לא נדרש ניסיון קודם בתוכנה.</p>
+    <p>ה־PDF מאפשר להכיר את תהליך המידול גם לפני התקנת התוכנה. לבניית הדוגמאות ולפתיחת קובצי המודל נדרשות התקנת COMSOL ורישיון מתאים לממשקים הפיזיקליים שבשימוש. המודלים נבנו בגרסה <bdi dir="ltr">6.4.0.378</bdi>; אין הבטחת תאימות לגרסאות קודמות.</p>
+    <div class="example">
+      <strong>דרך העבודה המומלצת</strong>
+      <p>בנו תחילה את המודל לפי ההוראות, חשבו מה צפוי להתקבל, ורק לאחר מכן השוו לקובץ הפתור. בכל מעבדה בודקים גם ערכים מספריים, יחידות ופתרון ייחוס — לצד מפת הצבעים.</p>
+    </div>
+  </section>
+
+  <section id="curriculum" aria-labelledby="curriculum-title">
+    <h2 id="curriculum-title">מה לומדים בקורס המבוא לקומסול?</h2>
+    <p>תחילה מכירים את סביבת העבודה: <bdi lang="en">Model Builder</bdi>, פרמטרים ויחידות, גאומטריה, קבוצות בחירה, תכונות חומר, תנאי שפה ורשת חישוב. לאחר מכן מתרגלים את התהליך בחמש מעבדות:</p>
+    <ol class="course-labs">
+      <li><h3>הולכת חום בפס מלבני</h3><p>הגדרת טמפרטורות בקצוות, בידוד תרמי ורשת חישוב. הפקת מפת טמפרטורה, גרף חתך והספק חום, והשוואה לחוק פורייה ולמאזן ההספק.</p></li>
+      <li><h3>קבל אידאלי ושדה חשמלי</h3><p>הגדרת חומר דיאלקטרי ופוטנציאל על הלוחות. חישוב השדה, המטען והאנרגיה, והפקת הקיבול בשתי דרכים כדי לבדוק יחידות ועובי מחוץ למישור.</p></li>
+      <li><h3>השדה המגנטי של לולאת זרם</h3><p>בניית מודל בעל סימטריה צירית, הגדרת מקור זרם ועידון הרשת באזור החוט. חישוב השדה לאורך הציר והשוואה לחוק ביו־סבר.</p></li>
+      <li><h3>קירור כדור כתלות בזמן</h3><p>הגדרת טמפרטורה התחלתית ומעבר חום בהסעה. בחירת זמני שמירת התוצאות וסבולת השגיאה, חישוב עקומת הקירור ובדיקת מאזן האנרגיה.</p></li>
+      <li><h3>חימום ג׳אול וצימוד חשמל–חום</h3><p>חיבור בין הולכה חשמלית למקור חום. חישוב הזרם, ההספק והטמפרטורה המרבית ובדיקת השפעת מתח ההפעלה.</p></li>
+    </ol>
+    <p>פרקי הסיום עוסקים בהתכנסות הרשת, בבדיקות רגישות, באימות נומרי ובתיקוף פיזיקלי. הפרויקט המסכם מתרגל בחירת מתח לפס חימום תוך עמידה בדרישת טמפרטורה והתחשבות באי־ודאות בנתוני הקלט.</p>
+  </section>
+
+  <section id="magnet-example" aria-labelledby="magnet-title">
+    <h2 id="magnet-title">דוגמה מתוך המדריך: סימולציה של שדה מגנטי</h2>
+    <figure>
+      <img src="../assets/comsol-intro/magnet-field.png" width="1400" height="900" loading="lazy" decoding="async" alt="מפת גודל השדה המגנטי וקווי השדה סביב חתך של לולאת זרם, שהופקה ממודל COMSOL במדריך. סולם הצבעים הוא 0 עד 5 מיליטסלה.">
+      <figcaption>תוצאת מודל הלולאה ב־COMSOL. הצבע מציין את גודל השדה וקווי השדה מציינים את כיוונו. הסולם מוגבל ל־<bdi dir="ltr">0–5 mT</bdi>; סמוך לחוט יש ערכים גדולים יותר, המוצגים בצבע הרווי.</figcaption>
+    </figure>
+    <p>בדוגמה נבנית לולאה ברדיוס 20 מ״מ, עם חתך חוט שרדיוסו 0.5 מ״מ ומקור זרם שקול של 100 אמפר. המודל מחשב שדה מגנטוסטטי ממקור זרם נתון. הוא אינו מחשב את התנגדות החוט, את חימומו או את הזרם המותר בחוט ממשי.</p>
+    <p>השדה המחושב במרכז הוא כ־<bdi dir="ltr">3.1356 mT</bdi>, לעומת כ־<bdi dir="ltr">3.1416 mT</bdi> בפתרון הייחוס ללולאה דקה במרחב אינסופי. זהו פער של כ־0.19% במרכז בלבד. בחוברת נבדקת גם השפעת הרשת וגודל תחום האוויר, ומוסבר מדוע התאמה בנקודה אחת אינה מעידה על דיוק בכל המרחב.</p>
+    <p>להרחבה על יישומים מחקריים: <a href="magnetics.html">מגנטיות יישומית ומיפוי שדה מגנטי</a>.</p>
+  </section>
+
+  <section id="downloads" aria-labelledby="downloads-title">
+    <h2 id="downloads-title">הורדת מדריך COMSOL, קובצי המקור והמודלים</h2>
+    <div class="course-downloads">
+      <article class="course-download">
+        <p class="course-format" lang="en">PDF · 52 עמודים</p>
+        <h3>המדריך בעברית</h3>
+        <p>כל פרקי ההדרכה, צילומי המסך, הדוגמאות, התרגילים ומילון המושגים. אפשר לקרוא בדפדפן או לשמור למחשב.</p>
+        <a class="cta course-primary" href="../assets/downloads/comsol-intro-he.pdf">פתיחת החוברת</a>
+        <a class="course-save" href="../assets/downloads/comsol-intro-he.pdf" download>שמירת PDF למחשב</a>
+      </article>
+      <article class="course-download">
+        <p class="course-format" lang="en">ZIP · LaTeX</p>
+        <h3>מקור החוברת והתמונות</h3>
+        <p>קובצי LaTeX והאיורים לעריכת החוברת ולקימפול באמצעות XeLaTeX. אין צורך ב־COMSOL לצורך קימפול המסמך.</p>
+        <a class="cta" href="../assets/downloads/comsol-intro-he-source.zip" download>הורדת קובצי המקור</a>
+      </article>
+      <article class="course-download">
+        <p class="course-format" lang="en">ZIP · MPH / Java / CSV</p>
+        <h3>חמשת המודלים הפתורים</h3>
+        <p>קובצי MPH עם פתרונות שמורים, קוד Java, נתוני CSV ותיעוד הבדיקות. פתיחת המודלים דורשת COMSOL ורישיון מתאים.</p>
+        <a class="cta" href="../assets/downloads/comsol-intro-he-examples.zip" download>הורדת המודלים והנתונים</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="questions" aria-labelledby="questions-title">
+    <h2 id="questions-title">שאלות נפוצות על לימוד COMSOL</h2>
+    <div class="course-faq">
+      <details><summary>האם אפשר ללמוד מהמדריך בלי ניסיון קודם ב־COMSOL?</summary><p>כן. ההדרכה מתחילה בהיכרות עם הממשק ובבניית מודל פשוט. נדרש רקע בסיסי בפיזיקה ובמתמטיקה, כולל נגזרות, אינטגרלים ויחידות מידה.</p></details>
+      <details><summary>האם ההורדות כוללות את תוכנת COMSOL או רישיון?</summary><p>לא. ההורדות כוללות חומרי הדרכה, מודלים וקוד מקור. התוכנה והרישיון אינם מצורפים. אפשר לקרוא את החוברת ואת נתוני ה־CSV בלי רישיון; לפתיחת קובצי MPH ולפתרון המודלים נדרשים COMSOL ורכיבי הרישיון המתאימים.</p></details>
+      <details><summary>האם זה קורס רשמי של COMSOL?</summary><p>זהו מדריך עצמאי מאת ד״ר נצח בלל, ללא זיקה רשמית ליצרן וללא תעודת הסמכה. COMSOL ו־COMSOL Multiphysics הם סימנים מסחריים רשומים של COMSOL AB.</p></details>
+      <details><summary>האם המדריך מלמד סימולציות של אנטנות?</summary><p>הקורס מתמקד ביסודות המידול ובדוגמאות של חום ושדות חשמליים ומגנטיים. הדגמת האלקטרומגנטיות המודרכת עוסקת בלולאת זרם מגנטוסטטית, ולא באנטנה משדרת. אפשר להמשיך אל <a href="antennas.html">דוגמאות של אנטנות באתר</a> ואל <a href="simulations.html">גלריית הסימולציות</a>.</p></details>
+      <details><summary>כיצד יודעים שהתוצאה של הסימולציה נכונה?</summary><p>במדריך משווים לפתרונות ייחוס, בודקים יחידות ומאזני שימור ובוחנים את השפעת הרשת והקלט. בדיקות אלה מאמתות את הדוגמאות בהנחות שהוגדרו; התאמה למערכת ממשית דורשת גם בחינת הנחות והשוואה למדידות.</p></details>
+    </div>
+  </section>
+
+  <section class="course-related" aria-labelledby="related-title">
+    <h2 id="related-title">להמשך לימוד ויישומים</h2>
+    <div class="grid">
+      <a class="card" href="simulations.html"><h3>סימולציות אלקטרומגנטיות</h3><p>דוגמאות של אנטנות, התפשטות גלים ומכ״ם ב־COMSOL ובכלים נוספים.</p></a>
+      <a class="card" href="magnetics.html"><h3>מגנטיות יישומית</h3><p>מודלים מגנטוסטטיים, מערכי מגנטים והשוואה בין חישוב למדידה.</p></a>
+    </div>
+  </section>
+  <p class="back"><a href="index.html">→ חזרה לדף הבית</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · קורס מבוא ל־COMSOL בעברית · עודכן ב־29 באוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
