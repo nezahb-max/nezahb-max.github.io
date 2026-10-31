@@ -129,10 +129,13 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
   current loop, transient sphere cooling and Joule heating. The page links to the
   Hebrew PDF and MPH/Java/CSV example package. Models were built in
   COMSOL Multiphysics 6.4 and require a suitable software license to open.
+- [Horn antenna in COMSOL — Hebrew practical guide](https://nezahb-max.github.io/he/comsol-horn-antenna.html):
+  Building a pyramidal horn at 10 GHz, TE10 waveguide feed, radiation patterns,
+  screenshots and a solved RF Module model. An 18-page follow-on to the beginner course.
 
 ## Notes
 
 - This is a personal academic portfolio, not affiliated content published on behalf
   of Ariel University or the Technion.
 
-Last updated: 2026-10-29
+Last updated: 2026-10-31

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אנטנת שופר ב־COMSOL | מדריך בעברית, PDF ומודל פתור — ד״ר נצח בלל</title>
+<meta name="description" content="מדריך מעשי בעברית לסימולציה של אנטנת שופר ב־COMSOL: חוברת PDF, צילומי מסך ומודל פתור ב־10 GHz. בניית השופר, הזנת TE10, רשת, שדה חשמלי ועקום קרינה.">
+<link rel="canonical" href="https://nezahb-max.github.io/he/comsol-horn-antenna.html">
+<meta property="og:title" content="אנטנת שופר ב־COMSOL — מדריך מעשי בעברית">
+<meta property="og:description" content="בניית מודל של שופר פירמידלי, הגדרת ההזנה וחישוב הקרינה. PDF בעברית, צילומי מסך ומודל COMSOL פתור להורדה.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nezahb-max.github.io/he/comsol-horn-antenna.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/comsol-horn/horn-field.png">
+<meta property="og:image:width" content="1700">
+<meta property="og:image:height" content="1100">
+<meta property="og:image:alt" content="מפת השדה החשמלי באנטנת שופר פירמידלית בתדר 10 GHz מתוך מודל COMSOL שבמדריך">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="אנטנת שופר ב־COMSOL — מדריך בעברית">
+<meta name="twitter:description" content="הדרכה לבניית מודל אנטנת שופר ולחישוב השדה ועקום הקרינה, עם PDF ומודל פתור.">
+<meta name="twitter:image" content="https://nezahb-max.github.io/assets/comsol-horn/horn-field.png">
+<meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/comsol-course.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LearningResource",
+      "@id": "https://nezahb-max.github.io/he/comsol-horn-antenna.html#guide",
+      "name": "אנטנת שופר ב־COMSOL: בניית המודל וחישוב הקרינה",
+      "description": "מדריך מעשי בעברית לבניית אנטנת שופר פירמידלית בתדר 10 GHz ב־COMSOL Multiphysics. כולל צילומי מסך, הגדרת פורט TE10, רשת חישוב, שדה חשמלי, עקומי קרינה ובדיקות דיוק.",
+      "url": "https://nezahb-max.github.io/he/comsol-horn-antenna.html",
+      "mainEntityOfPage": "https://nezahb-max.github.io/he/comsol-horn-antenna.html",
+      "author": {"@type": "Person", "@id": "https://nezahb-max.github.io/#person", "name": "ד״ר נצח בלל"},
+      "inLanguage": "he",
+      "educationalLevel": "Intermediate",
+      "learningResourceType": ["מדריך", "תרגול בסימולציית אנטנות"],
+      "educationalUse": "self study",
+      "competencyRequired": "היכרות בסיסית עם COMSOL, גלים אלקטרומגנטיים ויחידות מידה",
+      "teaches": ["מידול אנטנת שופר פירמידלית", "פורט מוליך גלים TE10", "תנאי קרינה", "רשת חישוב בתדר רדיו", "מקדם החזרה S11", "עקום קרינה", "בדיקת התכנסות ומאזן הספק"],
+      "isAccessibleForFree": true,
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "image": "https://nezahb-max.github.io/assets/comsol-horn/horn-field.png",
+      "isPartOf": {"@type": "LearningResource", "@id": "https://nezahb-max.github.io/he/comsol-intro.html#guide", "name": "קורס COMSOL בעברית למתחילים", "url": "https://nezahb-max.github.io/he/comsol-intro.html"},
+      "encoding": {"@type": "MediaObject", "name": "אנטנת שופר ב־COMSOL — מדריך מעשי", "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-horn-intro-he.pdf", "encodingFormat": "application/pdf", "inLanguage": "he"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://nezahb-max.github.io/he/"},
+        {"@type": "ListItem", "position": 2, "name": "קורס COMSOL", "item": "https://nezahb-max.github.io/he/comsol-intro.html"},
+        {"@type": "ListItem", "position": 3, "name": "אנטנת שופר ב־COMSOL", "item": "https://nezahb-max.github.io/he/comsol-horn-antenna.html"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="comsol-course">
+<a class="course-skip" href="#course-content">דלגו לתוכן</a>
+<header><div class="wrap"><nav aria-label="ניווט ראשי">
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="comsol-intro.html">קורס COMSOL</a>
+  <a href="../index.html" lang="en">English</a>
+</nav></div></header>
+
+<main class="wrap" id="course-content">
+  <nav class="course-breadcrumb" aria-label="מיקום באתר">
+    <a href="index.html">דף הבית</a><span aria-hidden="true">/</span>
+    <a href="comsol-intro.html">קורס COMSOL</a><span aria-hidden="true">/</span>
+    <span aria-current="page">אנטנת שופר</span>
+  </nav>
+
+  <div class="course-hero">
+    <div>
+      <p class="sub">הדרכת המשך לקורס COMSOL בעברית</p>
+      <h1>אנטנת שופר ב־COMSOL</h1>
+      <p class="lead">בניית המודל, הגדרת ההזנה וחישוב הקרינה.</p>
+      <p>מדריך מעשי מאת ד״ר נצח בלל לסימולציה של אנטנת שופר פירמידלית בתדר <bdi dir="ltr">10 GHz</bdi>, בהזנת מוליך גלים מלבני <bdi lang="en">WR90</bdi>. ההדרכה מלווה את העבודה מהגדרת המידות ותנאי השפה ועד להצגת השדה החשמלי, מקדם ההחזרה ועקום הקרינה.</p>
+      <div class="course-actions">
+        <a class="cta course-primary" href="../assets/downloads/comsol-horn-intro-he.pdf">פתיחת המדריך בעברית — PDF</a>
+        <a class="cta" href="#downloads">הורדת המודל הפתור</a>
+      </div>
+      <p class="course-meta">ללא תשלום · מאת ד״ר נצח בלל · פורסם: <time datetime="2026-10-31">31 באוקטובר 2026</time></p>
+    </div>
+    <figure class="course-preview">
+      <a href="../assets/downloads/comsol-horn-intro-he.pdf" aria-label="פתיחת המדריך לאנטנת שופר ב־COMSOL">
+        <img src="../assets/comsol-horn/guide-preview.png" width="893" height="1263" decoding="async" fetchpriority="high" alt="עמוד מתוך המדריך לאנטנת שופר: הוראות עבודה וצילומי מסך מקוריים של ההגדרות ב־COMSOL.">
+      </a>
+      <figcaption>עמוד מתוך המדריך. לחצו לפתיחת ה־PDF.</figcaption>
+    </figure>
+  </div>
+
+  <dl class="course-facts" aria-label="מה כלול בהדרכה">
+    <div><dt>18 עמודים</dt><dd>הדרכה בעברית עם צילומי מסך</dd></div>
+    <div><dt><bdi dir="ltr">10 GHz</bdi></dt><dd>שופר פירמידלי בהזנת מוליך גלים</dd></div>
+    <div><dt>מודל פתור</dt><dd>קובץ COMSOL עם תוצאות שמורות</dd></div>
+  </dl>
+
+  <nav class="course-jump" aria-label="תוכן הדף">
+    <a href="#audience">ידע מקדים</a>
+    <a href="#steps">נושאי ההדרכה</a>
+    <a href="#results">תוצאות הסימולציה</a>
+    <a href="#downloads">הורדות</a>
+  </nav>
+
+  <section id="audience" aria-labelledby="audience-title">
+    <h2 id="audience-title">ידע מקדים ותוכנה נדרשת</h2>
+    <p>ההדרכה מיועדת למי שכבר מכירים את העבודה הבסיסית עם פרמטרים, גאומטריה, בחירות ורשת ב־COMSOL. לפני תחילת התרגול אפשר ללמוד את היסודות ב־<a href="comsol-intro.html">קורס COMSOL בעברית למתחילים</a>.</p>
+    <p>המודל נבנה ב־<bdi dir="ltr">COMSOL Multiphysics 6.4.0.378</bdi>, בממשק <bdi lang="en">Electromagnetic Waves, Frequency Domain</bdi>. לפתיחתו ולהרצתו נדרש רישיון הכולל את <bdi lang="en">RF Module</bdi>. בחוברת מפורטות גם דרישות הזיכרון שנמדדו בהרצות ההדגמה.</p>
+  </section>
+
+  <section id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title">נושאי ההדרכה</h2>
+    <ol class="course-labs">
+      <li><h3>מבנה האנטנה ותחום האוויר</h3><p>הזנת מידות, בניית מוליך גלים ומקטע מתרחב, יצירת מעטפת המתכת והגדרת האוויר שבתוך האנטנה ומחוצה לה.</p></li>
+      <li><h3>הזנה ותנאי שפה</h3><p>בחירת פאת פורט ההזנה, אופן <bdi dir="ltr">TE10</bdi> והספק העירור. הגדרת דופנות כמוליך מושלם, גבול קרינה ומשטח סגור לחישוב השדה הרחוק.</p></li>
+      <li><h3>רשת ופתרון המודל</h3><p>בחירת גודל האלמנטים לפי אורך הגל, יצירת רשת טטראדרית והרצה בתדר יחיד.</p></li>
+      <li><h3>הצגת התוצאות</h3><p>הערכת <bdi dir="ltr">S11</bdi>, הצגת גודל השדה החשמלי בחתך מרכזי וחישוב חתכי הקרינה במישורי E ו־H.</p></li>
+      <li><h3>בדיקת דיוק ותרגול נוסף</h3><p>השוואת רשתות ותחומי אוויר, בדיקת מאזן ההספק ושינוי התדר, מידות הפתח והספק ההזנה.</p></li>
+    </ol>
+  </section>
+
+  <section id="results" aria-labelledby="results-title">
+    <h2 id="results-title">תוצאות הסימולציה</h2>
+    <figure>
+      <img src="../assets/comsol-horn/horn-field.png" width="1700" height="1100" loading="lazy" decoding="async" alt="גודל השדה החשמלי בחתך y=0 של אנטנת השופר, בתדר 10 GHz ובעירור של 1 ואט. השדה מתרחב ממוליך הגלים אל פתח השופר והאוויר.">
+      <figcaption>גודל השדה החשמלי בחתך המרכזי מתוך הפתרון ב־COMSOL. היחידות הן V/m; סרגל הצבעים כולל גורם כפל <bdi dir="ltr">10³</bdi>.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/comsol-horn/horn-pattern.png" width="2266" height="1056" loading="lazy" decoding="async" alt="חתכי עקום הקרינה במישורי E ו־H של השופר. שני העקומים מנורמלים לשיאם וזווית אפס פונה אל פתח האנטנה בכיוון z החיובי.">
+      <figcaption>חתכי הקרינה במישורי E ו־H, שחושבו מנתוני הפתרון. כל חתך מנורמל לשיאו; הגרף מציג את צורת האלומה.</figcaption>
+    </figure>
+    <h3>בדיקת התוצאות</h3>
+    <p>החוברת משווה שלוש ריצות של אותו שופר. האלומה הראשית יציבה יחסית, אך ערך ההחזרה משתנה עם גודל תחום האוויר, ונשארת שארית במאזן ההספק. ההבדלים והצעדים לשיפור הדיוק מפורטים במדריך. הדוגמה מיועדת ללימוד תהליך המידול ולתרגול בדיקות נומריות.</p>
+  </section>
+
+  <section id="downloads" aria-labelledby="downloads-title">
+    <h2 id="downloads-title">המדריך והמודל להורדה</h2>
+    <div class="course-downloads">
+      <article class="course-download">
+        <p class="course-format">PDF · 18 עמודים</p>
+        <h3>אנטנת שופר ב־COMSOL</h3>
+        <p>הוראות הבנייה וההרצה, צילומי מסך, תוצאות הסימולציה, בדיקות הדיוק ותרגילים להמשך.</p>
+        <a class="cta course-primary" href="../assets/downloads/comsol-horn-intro-he.pdf">פתיחת המדריך</a>
+        <a class="course-save" href="../assets/downloads/comsol-horn-intro-he.pdf" download>שמירת PDF למחשב</a>
+      </article>
+      <article class="course-download">
+        <p class="course-format" lang="en">MPH · COMSOL 6.4</p>
+        <h3>מודל השופר הפתור</h3>
+        <p>מודל עצמאי שנבנה עבור ההדרכה, עם פתרון שמור, חתך שדה וחתכי קרינה. נדרשים COMSOL ו־RF Module.</p>
+        <a class="cta" href="../assets/downloads/comsol-horn-10ghz.mph" download>הורדת מודל COMSOL</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="course-related" aria-labelledby="related-title">
+    <h2 id="related-title">לימוד נוסף</h2>
+    <div class="grid">
+      <a class="card" href="comsol-intro.html"><h3>קורס COMSOL למתחילים</h3><p>יסודות העבודה בתוכנה וחמש מעבדות בתחומי החום, החשמל והמגנטיות.</p></a>
+      <a class="card" href="antennas.html"><h3>אנטנות ויישומים מחקריים</h3><p>שופרים, אנטנות רחבות סרט, עדשות מיקוד והשוואה למדידות במעבדה.</p></a>
+    </div>
+  </section>
+  <p class="back"><a href="comsol-intro.html">→ חזרה לקורס COMSOL</a></p>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · אנטנת שופר ב־COMSOL · פורסם ב־31 באוקטובר 2026
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
