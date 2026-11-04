@@ -1,1 +1,4 @@
 .DS_Store
+
+# Keep editable LaTeX source archives out of the public download directory.
+assets/downloads/*-source.zip
