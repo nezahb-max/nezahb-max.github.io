@@ -12,6 +12,9 @@ h1{font-size:31px;line-height:1.22;margin:26px 0 8px;letter-spacing:-.2px}
 h2{font-size:21px;margin:30px 0 10px}
 h3{font-size:16px;margin:0 0 4px}
 p{margin:0 0 14px}.lead{font-size:18.5px;color:#2a3a45}
+.site-home{padding-block-start:30px}
+.site-home h1{margin-block-start:0}
+.site-home .lead{max-inline-size:68ch}
 figure{margin:22px 0}figure img{width:100%;border:1px solid var(--line);border-radius:10px;background:#0c1420}
 figcaption{font-size:13px;color:var(--mut);margin-top:7px;text-align:center}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
@@ -41,12 +44,13 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0;color:var
 footer a{font-weight:600}
 .back{font-size:14px;color:var(--mut)}
 @media(max-width:600px){.grid,.capability-list{grid-template-columns:1fr}h1{font-size:25px}
-nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;width:100%}}
+nav{gap:4px 12px;padding:9px 0}nav a{font-size:13.5px}nav .home{font-size:16px;width:100%}
+header nav a{padding-block:4px}.site-home{padding-block-start:22px}}
 
 /* Publications & FAQ (added 2026-08-16) */
 .publist{padding-inline-start:1.2em;margin:0 0 1em}
 .publist li{margin:.45em 0;line-height:1.5}
-.publist a{white-space:nowrap}
+.publist a{overflow-wrap:anywhere}
 .faq dt{font-weight:700;margin-top:.9em}
 .faq dd{margin:0.25em 0 0.6em;line-height:1.55}
 
