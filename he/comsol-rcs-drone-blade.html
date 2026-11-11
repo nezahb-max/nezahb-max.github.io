@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>שטח חתך מכ״ם של להב רחפן ב־COMSOL | מדריך RCS בעברית</title>
-<meta name="description" content="מדריך COMSOL בעברית לחישוב שטח חתך מכ״ם (RCS): מודל תלת־ממדי של לוח מתכת ולהב רחפן ב־10 GHz, סריקת זווית, גרפים ומודל פתור להורדה.">
+<meta name="description" content="מדריך COMSOL בעברית לחישוב שטח חתך מכ״ם (RCS) של לוח מתכת ולהב רחפן ב־10 GHz, עם הוראות לבניית המודל, גרפים ונתוני סריקה להורדה.">
 <link rel="canonical" href="https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL">
-<meta property="og:description" content="מדריך בעברית לחישוב RCS ב־10 GHz. השוואה בין לוח מתכת ללהב טרפזי, סריקת זוויות ומודלים פתורים להורדה.">
+<meta property="og:description" content="מדריך בעברית לחישוב RCS ב־10 GHz. השוואה בין לוח מתכת ללהב טרפזי, סריקת זוויות ותוצאות להורדה.">
 <meta property="og:url" content="https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html">
 <meta property="og:image" content="https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg">
 <meta property="og:image:alt" content="להב מסתובב ולצדו גרף של שטח חתך המכ״ם כתלות בזווית הסיבוב">
@@ -57,7 +57,7 @@
     <a href="#results">תוצאות</a>
     <a href="#blade-rotation">להב מסתובב</a>
     <a href="#blade-section">חתך להב ב־COMSOL</a>
-    <a href="#downloads">קבצים להורדה</a>
+    <a href="#downloads">תוצאות להורדה</a>
   </nav>
 
   <figure class="rcs-animation rcs-motion">
@@ -70,7 +70,7 @@
     <h2 id="basics-title">שטח חתך מכ״ם מונוסטטי</h2>
     <p>שטח חתך המכ״ם הוא מדד לעוצמת ההד מהמטרה בכיוון המקלט, ביחס לגל הפוגע. ערכו נתון במטרים רבועים ויכול להיות גדול או קטן בהרבה משטחה הפיזי של המטרה. כשהמשדר והמקלט נמצאים באותו מקום, מחשבים <strong>RCS מונוסטטי</strong> לפי השדה המפוזר בכיוון ההפוך להתקדמות הגל הפוגע.</p>
     <p>נציג את התוצאות ב־<bdi dir="ltr">dBsm</bdi>, דציבלים ביחס למטר רבוע אחד: <bdi dir="ltr">0 dBsm = 1 m²</bdi>, ואילו <bdi dir="ltr">−20 dBsm = 0.01 m²</bdi>. הזווית <bdi>α</bdi> נמדדת מהניצב למשטח: <bdi dir="ltr">0°</bdi> הוא מבט ישר על הפאה הרחבה.</p>
-    <p>לעבודה עם המודלים נדרשים <bdi lang="en">COMSOL Multiphysics 6.4</bdi> ו־<bdi lang="en">RF Module</bdi>. הגדרת הפרמטרים, הגאומטריה והרשת מוסברת גם ב<a href="comsol-intro.html">מדריך המבוא ל־COMSOL</a>.</p>
+    <p>התרגיל נבנה ב־<bdi lang="en">COMSOL Multiphysics 6.4</bdi> עם <bdi lang="en">RF Module</bdi>. הגדרת הפרמטרים, הגאומטריה והרשת מוסברת גם ב<a href="comsol-intro.html">מדריך המבוא ל־COMSOL</a>.</p>
   </section>
 
   <section id="steps" aria-labelledby="steps-title">
@@ -109,7 +109,7 @@ Ebz = 0</code></pre>
      +abs(Efary(-sin(alpha),0,cos(alpha)))^2
      +abs(Efarz(-sin(alpha),0,cos(alpha)))^2)/E0^2</code></pre>
         <pre class="rcs-code"><code>10*log10(sigma/1[m^2])</code></pre>
-        <p>כאן <bdi dir="ltr">sigma</bdi> מסמן את הביטוי הראשון. מזינים אותו במלואו במקום <bdi dir="ltr">sigma</bdi> בתוך הלוגריתם, או מגדירים אותו כמשתנה. בקבצים המצורפים שני הביטויים כבר מופיעים תחת <bdi lang="en">Monostatic RCS</bdi>.</p>
+        <p>כאן <bdi dir="ltr">sigma</bdi> מסמן את הביטוי הראשון. מזינים אותו במלואו במקום <bdi dir="ltr">sigma</bdi> בתוך הלוגריתם, או מגדירים אותו כמשתנה.</p>
       </li>
     </ol>
   </section>
@@ -176,11 +176,8 @@ Ebz = 0</code></pre>
   </section>
 
   <section id="downloads" aria-labelledby="downloads-title">
-    <h2 id="downloads-title">קבצים להורדה</h2>
-    <p>שני המודלים נפתחים ב־<bdi lang="en">COMSOL 6.4</bdi> עם <bdi lang="en">RF Module</bdi>. בכל אחד שמור הפתרון ב־<bdi dir="ltr">0°</bdi>. כדי לחשב זווית אחרת, שנו את <bdi dir="ltr">alpha</bdi> והריצו שוב.</p>
+    <h2 id="downloads-title">תוצאות להורדה</h2>
     <ul class="rcs-files">
-      <li><a href="../assets/downloads/comsol-rcs-plate-10ghz.mph" download>מודל הלוח המלבני</a> <span class="rcs-file-type" lang="en">MPH</span><p>פתרון עם חתך שדה, תצוגת רשת וביטויים לחישוב RCS.</p></li>
-      <li><a href="../assets/downloads/comsol-rcs-blade-10ghz.mph" download>מודל הלהב הטרפזי</a> <span class="rcs-file-type" lang="en">MPH</span><p>להב טרפזי עם אותן הגדרות עירור כמו במודל הלוח.</p></li>
       <li><a href="../assets/downloads/comsol-rcs-10ghz.csv" download>תוצאות הסריקה ב־10 GHz</a> <span class="rcs-file-type" lang="en">CSV</span><p>זווית הפגיעה, מספר האלמנטים ושטח חתך המכ״ם. העמודה <code dir="ltr">case</code> מסמנת רשת בסיס (<bdi dir="ltr">base</bdi>), רשת צפופה (<bdi dir="ltr">fine</bdi>) או תחום אוויר גדול יותר (<bdi dir="ltr">larger</bdi>).</p></li>
       <li><a href="../assets/downloads/blade-rcs-94ghz-po.csv" download>נתוני הלהב המסתובב ב־94 GHz</a> <span class="rcs-file-type" lang="en">CSV</span><p>סיבוב מלא בדגימה של מעלה אחת, כשהמכ״ם נמצא <bdi dir="ltr">25°</bdi> מעל מישור הסיבוב.</p></li>
     </ul>

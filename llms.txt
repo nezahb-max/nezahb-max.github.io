@@ -133,7 +133,7 @@ Full publication list: https://scholar.google.com/citations?user=WLig7e4AAAAJ
   screenshots and a solved RF Module model. An 18-page follow-on to the beginner course.
 - [Drone blade radar cross section in COMSOL](https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html):
   A Hebrew tutorial comparing a rectangular plate and a tapered blade at 10 GHz.
-  Includes two solved COMSOL RF models, angle-sweep data and a separate 94 GHz
+  Includes instructions for building the models, angle-sweep data and a separate 94 GHz
   rotating-blade demonstration based on physical optics.
 
 ## Notes
