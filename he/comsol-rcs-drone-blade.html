@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>שטח חתך מכ״ם של להב רחפן ב־COMSOL | מדריך RCS בעברית</title>
+<meta name="description" content="מדריך COMSOL בעברית לחישוב שטח חתך מכ״ם (RCS): מודל תלת־ממדי של לוח מתכת ולהב רחפן ב־10 GHz, סריקת זווית, גרפים ומודל פתור להורדה.">
+<link rel="canonical" href="https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL">
+<meta property="og:description" content="מדריך בעברית לחישוב RCS ב־10 GHz. השוואה בין לוח מתכת ללהב טרפזי, סריקת זוויות ומודלים פתורים להורדה.">
+<meta property="og:url" content="https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html">
+<meta property="og:image" content="https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg">
+<meta property="og:image:alt" content="להב מסתובב ולצדו גרף של שטח חתך המכ״ם כתלות בזווית הסיבוב">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="ד״ר נצח בלל">
+<meta name="theme-color" content="#0a5c8a">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/comsol-course.css">
+<link rel="stylesheet" href="../assets/comsol-rcs.css">
+<script defer src="../assets/rcs-motion.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL","inLanguage":"he","datePublished":"2026-11-11","dateModified":"2026-11-11","mainEntityOfPage":"https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html","author":{"@type":"Person","name":"Nezah Balal","url":"https://nezahb-max.github.io/he/"},"image":"https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg"}
+</script>
+</head>
+<body class="comsol-course rcs-guide">
+<a class="course-skip" href="#course-content">דלגו לתוכן</a>
+<header><div class="wrap"><nav aria-label="ניווט ראשי">
+  <a class="home" href="index.html">ד״ר נצח בלל</a>
+  <a href="accelerators.html">מאיצים</a>
+  <a href="magnetics.html">מגנטיות יישומית</a>
+  <a href="particle-dynamics.html">דינמיקת חלקיקים</a>
+  <a href="antennas.html">אנטנות</a>
+  <a href="radar.html">מכ״ם</a>
+  <a href="simulations.html">סימולציות</a>
+  <a href="comsol-intro.html">קורס COMSOL</a>
+  <a href="../index.html" lang="en">English</a>
+</nav></div></header>
+<main class="wrap" id="course-content">
+  <nav class="course-breadcrumb" aria-label="מיקום באתר">
+    <a href="index.html">דף הבית</a><span aria-hidden="true">/</span>
+    <a href="comsol-intro.html">קורס COMSOL</a><span aria-hidden="true">/</span>
+    <span aria-current="page">שטח חתך מכ״ם של להב רחפן</span>
+  </nav>
+
+  <div class="rcs-intro">
+    <h1>חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL</h1>
+    <p class="lead">בתרגיל מחשבים את שטח חתך המכ״ם (RCS) של לוח מתכת ושל דגם פשוט של להב רחפן בתדר <bdi dir="ltr">10&nbsp;GHz</bdi>. משנים את זווית הפגיעה ובודקים כמה חזק ההד בכיוון שממנו הגיע הגל.</p>
+    <p class="course-meta">ד״ר נצח בלל · <time datetime="2026-11-11">11 בנובמבר 2026</time></p>
+  </div>
+
+  <nav class="course-jump rcs-contents" aria-label="תוכן המדריך">
+    <a href="#basics">מהו RCS</a>
+    <a href="#steps">הקמת המודל</a>
+    <a href="#results">תוצאות</a>
+    <a href="#blade-rotation">להב מסתובב</a>
+    <a href="#blade-section">חתך להב ב־COMSOL</a>
+    <a href="#downloads">קבצים להורדה</a>
+  </nav>
+
+  <figure class="rcs-animation rcs-motion">
+    <img src="../assets/rcs-vs-angle-94ghz-poster.jpg" data-gif="../assets/rcs-vs-angle-94ghz.gif" width="1210" height="528" decoding="async" fetchpriority="high" alt="להב מסתובב ולצדו גרף של ההחזרה למכ״ם. הסמן בגרף נע עם זווית הלהב.">
+    <button type="button" hidden>הפעלת האנימציה</button>
+    <figcaption>הדגמה נפרדת ב־<bdi dir="ltr">94&nbsp;GHz</bdi>: החזר מלהב מסתובב לפי מודל של אופטיקה פיזיקלית. התוצאה מוצגת ביחס לשיא הסריקה. <a href="#blade-rotation">על החישוב</a></figcaption>
+  </figure>
+
+  <section id="basics" aria-labelledby="basics-title">
+    <h2 id="basics-title">שטח חתך מכ״ם מונוסטטי</h2>
+    <p>שטח חתך המכ״ם הוא מדד לעוצמת ההד מהמטרה בכיוון המקלט, ביחס לגל הפוגע. ערכו נתון במטרים רבועים ויכול להיות גדול או קטן בהרבה משטחה הפיזי של המטרה. כשהמשדר והמקלט נמצאים באותו מקום, מחשבים <strong>RCS מונוסטטי</strong> לפי השדה המפוזר בכיוון ההפוך להתקדמות הגל הפוגע.</p>
+    <p>נציג את התוצאות ב־<bdi dir="ltr">dBsm</bdi>, דציבלים ביחס למטר רבוע אחד: <bdi dir="ltr">0 dBsm = 1 m²</bdi>, ואילו <bdi dir="ltr">−20 dBsm = 0.01 m²</bdi>. הזווית <bdi>α</bdi> נמדדת מהניצב למשטח: <bdi dir="ltr">0°</bdi> הוא מבט ישר על הפאה הרחבה.</p>
+    <p>לעבודה עם המודלים נדרשים <bdi lang="en">COMSOL Multiphysics 6.4</bdi> ו־<bdi lang="en">RF Module</bdi>. הגדרת הפרמטרים, הגאומטריה והרשת מוסברת גם ב<a href="comsol-intro.html">מדריך המבוא ל־COMSOL</a>.</p>
+  </section>
+
+  <section id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title">הקמת המודל ב־COMSOL</h2>
+    <figure class="rcs-figure">
+      <img src="../assets/comsol-rcs/rcs-setup.svg" width="1000" height="420" loading="lazy" decoding="async" alt="משמאל חתך בתחום האוויר: זווית הפגיעה נמדדת מהניצב ללוח וכיוון הקליטה הפוך לכיוון הגל הפוגע. מימין מבט מלמעלה על לוח מלבני ולהב טרפזי.">
+      <figcaption><strong>איור 1.</strong> משמאל כיווני הפגיעה והקליטה בחתך <bdi dir="ltr">xz</bdi>. מימין מבט מלמעלה על שתי המטרות. לשתיהן אותו אורך ואותו עובי.</figcaption>
+    </figure>
+    <ol class="rcs-steps">
+      <li>
+        <h3>גאומטריית המטרה ותחום האוויר</h3>
+        <p>ב־<bdi lang="en">Model Wizard</bdi> בוחרים <bdi dir="ltr">3D</bdi>, ממשק <bdi lang="en">Electromagnetic Waves, Frequency Domain (emw)</bdi> ומחקר <bdi lang="en">Frequency Domain</bdi>. ב־<bdi lang="en">Geometry</bdi> בוחרים מילימטרים ויוצרים כדור ברדיוס <bdi dir="ltr">49 mm</bdi> ולוח ממורכז במידות <bdi dir="ltr">60 × 24 × 1.5 mm</bdi>. אורך הלוח בכיוון <bdi dir="ltr">x</bdi> והעובי בכיוון <bdi dir="ltr">z</bdi>.</p>
+        <p>ב־<bdi lang="en">Difference</bdi> מחסירים את הלוח מהכדור ומשאירים תחום אוויר אחד. מגדירים את המקדם הדיאלקטרי היחסי ואת החדירות המגנטית היחסית ל־1, ואת המוליכות החשמלית לאפס. על הפאות שנחשפו בחיסור הלוח מחילים <bdi lang="en">Perfect Electric Conductor (PEC)</bdi>. בתרגיל הלהב מחליפים את הלוח בטרפז באותו אורך ועובי, שרוחבו מצטמצם מ־24 ל־12 מ״מ. משרטטים את הטרפז ב־<bdi lang="en">Work Plane</bdi> בגובה <bdi dir="ltr">z = −0.75 mm</bdi> ומוסיפים לו עובי של <bdi dir="ltr">1.5 mm</bdi> באמצעות <bdi lang="en">Extrude</bdi>. אלה קודקודי הטרפז במ״מ, לפי סדר ההקפה.</p>
+        <pre class="rcs-code"><code>(-30, -12), (30, -6), (30, 6), (-30, 12)</code></pre>
+      </li>
+      <li>
+        <h3>הגל הפוגע</h3>
+        <p>מגדירים את הפרמטרים <bdi dir="ltr">f0 = 10[GHz]</bdi>, <bdi dir="ltr">E0 = 1[V/m]</bdi> ו־<bdi dir="ltr">alpha = 0[deg]</bdi>. בהגדרות הממשק <bdi lang="en">emw</bdi> בוחרים <bdi lang="en">Scattered field</bdi> ומציבים את וקטור שדה הרקע הבא. הקיטוב בכיוון <bdi dir="ltr">y</bdi>, והגל מתקדם במישור <bdi dir="ltr">xz</bdi>. בזווית אפס הגל מתקדם לאורך <bdi dir="ltr">−z</bdi>.</p>
+        <pre class="rcs-code"><code>Ebx = 0
+Eby = E0*exp(-j*emw.k0*(x*sin(alpha)-z*cos(alpha)))
+Ebz = 0</code></pre>
+      </li>
+      <li>
+        <h3>תנאי שפה וחישוב השדה הרחוק</h3>
+        <p>על המעטפת החיצונית של הכדור מוסיפים <bdi lang="en">Scattering Boundary Condition</bdi> מסדר שני, ללא גל פוגע נוסף בגבול. תחת <bdi lang="en">Far-Field Domain</bdi> בוחרים את האוויר, וב־<bdi lang="en">Far-Field Calculation</bdi> בוחרים את המעטפת החיצונית בלבד. כך מחשבים את השדה הרחוק מן השדה המפוזר.</p>
+      </li>
+      <li>
+        <h3>רשת וסריקת זוויות</h3>
+        <p>מגדירים <bdi dir="ltr">lambda0 = c_const/f0</bdi> ובונים רשת <bdi lang="en">Free Tetrahedral</bdi>. ברשת הבסיס גודל האלמנט המרבי הוא <bdi dir="ltr">lambda0/5</bdi> באוויר ו־<bdi dir="ltr">lambda0/8</bdi> על המטרה. במחקר מזינים את <bdi dir="ltr">f0</bdi> כתדר. מריצים פעם ראשונה ב־<bdi dir="ltr">0°</bdi> ובודקים שהפתרון מציג שדה מפוזר סביב הלוח.</p>
+        <p>לאחר מכן משנים את <bdi dir="ltr">alpha</bdi> ומחשבים שוב בכל זווית. אפשר לחזור על הפעולה ידנית למספר זוויות או להוסיף <bdi lang="en">Parametric Sweep</bdi> עם <bdi dir="ltr">range(0,5,80)</bdi> ויחידת <bdi dir="ltr">deg</bdi>. הגאומטריה נשארת קבועה; כיוון הגל משתנה.</p>
+      </li>
+      <li>
+        <h3>חישוב RCS מהשדה הרחוק</h3>
+        <p>תחת <bdi lang="en">Results → Derived Values → Global Evaluation</bdi> משתמשים בכיוון החזרה <bdi dir="ltr">u = (−sin(α), 0, cos(α))</bdi>. מחברים את ריבועי הגדלים של שלושת רכיבי השדה הרחוק, מכפילים ב־<bdi dir="ltr">4π</bdi> ומחלקים בריבוע משרעת הגל הפוגע. הביטוי הראשון מחזיר ערך במטרים רבועים; לגרף משתמשים בביטוי השני.</p>
+        <pre class="rcs-code"><code>4*pi*(abs(Efarx(-sin(alpha),0,cos(alpha)))^2
+     +abs(Efary(-sin(alpha),0,cos(alpha)))^2
+     +abs(Efarz(-sin(alpha),0,cos(alpha)))^2)/E0^2</code></pre>
+        <pre class="rcs-code"><code>10*log10(sigma/1[m^2])</code></pre>
+        <p>כאן <bdi dir="ltr">sigma</bdi> מסמן את הביטוי הראשון. מזינים אותו במלואו במקום <bdi dir="ltr">sigma</bdi> בתוך הלוגריתם, או מגדירים אותו כמשתנה. בקבצים המצורפים שני הביטויים כבר מופיעים תחת <bdi lang="en">Monostatic RCS</bdi>.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="results" aria-labelledby="results-title">
+    <h2 id="results-title">תוצאות הסריקה ב־10 GHz</h2>
+    <p>בכל זווית פתרנו את שני המודלים באותו תדר ובאותו קיטוב. בפגיעה ניצבת מתקבלים <bdi dir="ltr">−14.3&nbsp;dBsm</bdi> ללוח ו־<bdi dir="ltr">−15.4&nbsp;dBsm</bdi> ללהב. ב־<bdi dir="ltr">15°</bdi> ההחזר מהלוח נמוך בכ־<bdi dir="ltr">19&nbsp;dB</bdi> מערכו בפגיעה ניצבת.</p>
+    <figure class="rcs-figure">
+      <img src="../assets/comsol-rcs/rcs-angle-10ghz.svg" width="960" height="470" loading="lazy" decoding="async" alt="גרף של שטח חתך המכ״ם מול זווית הפגיעה. הקו הכחול מציג לוח מלבני והקו הכתום להב טרפזי. ההחזרה חזקה במבט ישר, ונחלשת עם שינוי הזווית; בשני העקומים מופיעים גם שיאים משניים.">
+      <figcaption><strong>איור 2.</strong> שטח חתך מכ״ם מונוסטטי. הזווית נמדדת מהניצב למטרה; הקווים מחברים נקודות שחושבו במרווחים של <bdi dir="ltr">5°</bdi>.</figcaption>
+    </figure>
+    <div class="rcs-table" role="region" aria-label="ערכי RCS בזוויות נבחרות" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">זווית מהניצב</th><th scope="col">לוח מלבני (<bdi dir="ltr">dBsm</bdi>)</th><th scope="col">להב טרפזי (<bdi dir="ltr">dBsm</bdi>)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><bdi dir="ltr">0°</bdi></th><td><bdi dir="ltr">−14.3</bdi></td><td><bdi dir="ltr">−15.4</bdi></td></tr>
+          <tr><th scope="row"><bdi dir="ltr">10°</bdi></th><td><bdi dir="ltr">−22.9</bdi></td><td><bdi dir="ltr">−22.5</bdi></td></tr>
+          <tr><th scope="row"><bdi dir="ltr">15°</bdi></th><td><bdi dir="ltr">−33.6</bdi></td><td><bdi dir="ltr">−33.7</bdi></td></tr>
+          <tr><th scope="row"><bdi dir="ltr">30°</bdi></th><td><bdi dir="ltr">−33.3</bdi></td><td><bdi dir="ltr">−35.3</bdi></td></tr>
+          <tr><th scope="row"><bdi dir="ltr">60°</bdi></th><td><bdi dir="ltr">−31.3</bdi></td><td><bdi dir="ltr">−29.0</bdi></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>אחרי השפל ב־<bdi dir="ltr">15°</bdi> ההד מתחזק שוב ב־<bdi dir="ltr">20°</bdi>. בזווית אחרת משתנים הפרשי המופע בין חלקי המשטח, ולכן גלים שחזרו מהם יכולים לחזק זה את זה או להתבטל חלקית.</p>
+    <h3>השדה המפוזר ורשת החישוב</h3>
+    <div class="rcs-figpair">
+      <figure>
+        <img src="../assets/comsol-rcs/plate-field.png" width="1000" height="780" loading="lazy" decoding="async" alt="חתך במישור xz של רכיב השדה המפוזר Ey. הלוח נראה כמלבן דק במרכז ומשרעת השדה מסומנת בסולם צבעים.">
+        <figcaption><strong>איור 3.</strong> חתך של <bdi dir="ltr">|E<sub>y,scat</sub>|</bdi> סביב הלוח, בפגיעה ניצבת. סרגל הצבעים ב־<bdi dir="ltr">V/m</bdi>. הצבעים מציגים את השדה בחתך; לחישוב ההד משתמשים בשדה הרחוק.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/comsol-rcs/plate-mesh.png" width="1000" height="710" loading="lazy" decoding="async" alt="תצוגת רשת COMSOL על המעטפת הכדורית של תחום האוויר. סרגל הצבעים מציין את איכות האלמנטים.">
+        <figcaption><strong>איור 4.</strong> רשת החישוב במבט על המעטפת הכדורית. סרגל הצבעים מציין את איכות האלמנטים; בתוכה יש רשת נפח טטראדרית.</figcaption>
+      </figure>
+    </div>
+    <h3>רגישות לרשת ולגודל תחום האוויר</h3>
+    <p>הרצנו שוב את שני המודלים ב־<bdi dir="ltr">0°, 10°, 30°, 60°</bdi>. כשהקטנו את גודל האלמנט המרבי בכ־20%, השינוי הגדול ביותר היה <bdi dir="ltr">0.11 dB</bdi>. כשהגדלנו את רדיוס תחום האוויר מ־49 ל־59 מ״מ, באותן הגדרות רשת בסיס, השינוי הגדול ביותר היה <bdi dir="ltr">0.53 dB</bdi>. הבדיקה נותנת סדר גודל לרגישות בזוויות שנבדקו. סמוך לשפל בגרף כדאי לבדוק זוויות צפופות יותר ולחזור על בדיקת הרשת.</p>
+    <p>הלוח והלהב בתרגיל הם מוליכים מושלמים, ללא מבנה פנימי או חומרים מרוכבים. התוצאות מיועדות ללימוד ולהשוואה בין המודלים. כדי להעריך להב אמיתי צריך להגדיר גם את צורתו, תכונות החומר ותנאי המדידה.</p>
+    <p><strong>תרגיל להמשך:</strong> חשבו שוב ב־<bdi dir="ltr">10°</bdi>, הפעם עם קיטוב במישור הפגיעה: הכפילו את גורם המופע ב־<bdi dir="ltr">E0*(cos(alpha),0,sin(alpha))</bdi>. בדקו אם ההחזר משתנה גם כשהזווית נשארת קבועה.</p>
+  </section>
+
+  <section id="blade-rotation" aria-labelledby="rotation-title">
+    <h2 id="rotation-title">להב מסתובב ב־94 GHz</h2>
+    <p>באנימציה שבראש הדף, להב יחיד מסתובב סיבוב שלם סביב ציר הרוטור והמכ״ם נמצא בזווית הגבהה של <bdi dir="ltr">25°</bdi> מעל מישור הסיבוב. החישוב ב־<bdi dir="ltr">94 GHz</bdi> משתמש באופטיקה פיזיקלית על משטח מוליך אידאלי: התרומות מהפאות הפונות למכ״ם מצטרפות לפי המופע שלהן. בחלק מהזוויות הן מחזקות זו את זו ומתקבל הד חזק; בזוויות אחרות הן מבטלות זו את זו חלקית.</p>
+    <p>בתרגיל ה־COMSOL הזווית נמדדת מהניצב לפאה; באנימציה היא מתארת סיבוב סביב הציר. בציר האנכי של האנימציה <bdi dir="ltr">0 dB</bdi> הוא שיא הסריקה; קובץ ה־CSV מציג ערכים מוחלטים ב־<bdi dir="ltr">dBsm</bdi>. גם התדר והגאומטריה שונים, ולכן לא מצפים שהשיאים בשני הגרפים יופיעו באותן זוויות. ההדגמה מחשבת את עוצמת ההחזרה, ואינה ספקטרוגרמה של מיקרו־דופלר.</p>
+    <p>בסריקה הזו שיא ההחזרה היה <bdi dir="ltr">−34.7 dBsm</bdi> בזווית סיבוב של <bdi dir="ltr">274°</bdi>.</p>
+    <p><a href="videos/rotating-blade-rcs-94ghz.html">לצפייה בהדגמה המלאה של הלהב ב־94 GHz</a></p>
+  </section>
+
+  <section id="blade-section" aria-labelledby="blade-section-title">
+    <h2 id="blade-section-title">השדה החשמלי סביב חתך להב ב־COMSOL</h2>
+    <p>באיור גל מישורי בתדר <bdi dir="ltr">94&nbsp;GHz</bdi> פוגע בחתך הלהב, שמופיע בלבן במרכז. הצבעים מציינים את החלק הממשי של רכיב השדה החשמלי <bdi dir="ltr">E<sub>z</sub></bdi>, והטבעת החיצונית היא שכבה בולעת <bdi dir="ltr">(PML)</bdi>.</p>
+    <div class="rcs-figpair rcs-blade-visuals">
+      <figure>
+        <img src="../assets/comsol-rcs/blade-section-field-94ghz.png" width="1600" height="1200" loading="lazy" decoding="async" alt="תוצאת COMSOL עם פסים אדומים וכחולים של השדה החשמלי סביב חתך להב לבן, וסרגל צבעים לצד התמונה.">
+        <figcaption><strong>איור 5.</strong> מפת השדה החשמלי הכולל סביב חתך הלהב, מתוך COMSOL. הסולם ביחידות <bdi dir="ltr">V/m</bdi>.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/comsol-rcs/radar-lab-setup-94ghz.jpg" width="1460" height="620" loading="lazy" decoding="async" alt="מכ״ם מעבדתי עם אנטנת שופר שמכוונת אל רוטור דו־להבי.">
+        <figcaption><strong>איור 6.</strong> צילום מעבדה. אנטנת השופר של מכ״ם <bdi dir="ltr">94&nbsp;GHz</bdi> מכוונת אל הרוטור.</figcaption>
+      </figure>
+    </div>
+    <p>מודל חתך דו־ממדי נותן רוחב פיזור, שנמדד ביחידות אורך. בתרגיל התלת־ממדי שלמעלה מחשבים את שטח חתך המכ״ם, שנמדד ביחידות שטח.</p>
+  </section>
+
+  <section id="downloads" aria-labelledby="downloads-title">
+    <h2 id="downloads-title">קבצים להורדה</h2>
+    <p>שני המודלים נפתחים ב־<bdi lang="en">COMSOL 6.4</bdi> עם <bdi lang="en">RF Module</bdi>. בכל אחד שמור הפתרון ב־<bdi dir="ltr">0°</bdi>. כדי לחשב זווית אחרת, שנו את <bdi dir="ltr">alpha</bdi> והריצו שוב.</p>
+    <ul class="rcs-files">
+      <li><a href="../assets/downloads/comsol-rcs-plate-10ghz.mph" download>מודל הלוח המלבני</a> <span class="rcs-file-type" lang="en">MPH</span><p>פתרון עם חתך שדה, תצוגת רשת וביטויים לחישוב RCS.</p></li>
+      <li><a href="../assets/downloads/comsol-rcs-blade-10ghz.mph" download>מודל הלהב הטרפזי</a> <span class="rcs-file-type" lang="en">MPH</span><p>להב טרפזי עם אותן הגדרות עירור כמו במודל הלוח.</p></li>
+      <li><a href="../assets/downloads/comsol-rcs-10ghz.csv" download>תוצאות הסריקה ב־10 GHz</a> <span class="rcs-file-type" lang="en">CSV</span><p>זווית הפגיעה, מספר האלמנטים ושטח חתך המכ״ם. העמודה <code dir="ltr">case</code> מסמנת רשת בסיס (<bdi dir="ltr">base</bdi>), רשת צפופה (<bdi dir="ltr">fine</bdi>) או תחום אוויר גדול יותר (<bdi dir="ltr">larger</bdi>).</p></li>
+      <li><a href="../assets/downloads/blade-rcs-94ghz-po.csv" download>נתוני הלהב המסתובב ב־94 GHz</a> <span class="rcs-file-type" lang="en">CSV</span><p>סיבוב מלא בדגימה של מעלה אחת, כשהמכ״ם נמצא <bdi dir="ltr">25°</bdi> מעל מישור הסיבוב.</p></li>
+    </ul>
+  </section>
+
+  <section class="rcs-references" aria-labelledby="related-title">
+    <h2 id="related-title">מקורות וקריאה נוספת</h2>
+    <ul>
+      <li><a href="https://doc.comsol.com/6.4/doc/com.comsol.help.models.rf.rcs_sphere/rcs_sphere.html" lang="en" dir="ltr">Radar Cross Section of a Perfectly Conducting Sphere</a> · דוגמת ייחוס בתיעוד COMSOL.</li>
+      <li><a href="https://doc.comsol.com/6.4/doc/com.comsol.help.models.rf.radar_cross_section/radar_cross_section.html" lang="en" dir="ltr">Radar Cross Section</a> · סריקת זווית במודל דו־ממדי ב־COMSOL.</li>
+      <li><a href="comsol-horn-antenna.html">מדריך לאנטנת שופר ב־COMSOL</a> · הזנה דרך גלבו וחישוב עקום קרינה.</li>
+      <li><a href="radar.html">מכ״ם גלים מילימטריים</a> · מחקר ויישומים במכ״ם ובמיקרו־דופלר.</li>
+    </ul>
+  </section>
+  <p class="back"><a href="comsol-intro.html">→ חזרה לקורס COMSOL</a></p>
+</main>
+<footer><div class="wrap">© ד״ר נצח בלל · <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · <a href="privacy.html">פרטיות</a></div></footer>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

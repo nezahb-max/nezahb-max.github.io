@@ -1,0 +1,279 @@
+/* The RCS guide follows the site's typography and colors. */
+.rcs-guide {
+  background: #fff;
+}
+
+.rcs-guide main {
+  line-height: 1.72;
+}
+
+.rcs-guide main h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.rcs-intro {
+  margin: 25px 0 18px;
+}
+
+.rcs-guide main p {
+  max-width: 73ch;
+}
+
+.rcs-intro .lead {
+  margin-bottom: 12px;
+  font-size: clamp(17px, 2.6vw, 20px);
+}
+
+.rcs-intro .course-meta {
+  margin: 0;
+  font-size: 14px;
+}
+
+.rcs-guide .rcs-contents {
+  margin: 0;
+  padding: 10px 0;
+  border-block: 1px solid var(--line);
+  gap: 4px 19px;
+}
+
+.rcs-guide .rcs-contents a {
+  padding-block: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rcs-guide main a:not(nav a) {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.rcs-guide .rcs-animation {
+  margin: 21px 0 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "visual visual" "caption toggle";
+  align-items: baseline;
+  column-gap: 12px;
+}
+
+.rcs-guide .rcs-animation img { grid-area: visual; }
+.rcs-guide .rcs-animation figcaption { grid-area: caption; }
+.rcs-guide .rcs-animation button { grid-area: toggle; }
+
+.rcs-motion img {
+  aspect-ratio: 1210 / 528;
+  object-fit: contain;
+  background: #fff;
+}
+
+.rcs-motion button {
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: var(--acc);
+  font: inherit;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  cursor: pointer;
+}
+
+.rcs-motion button:focus-visible {
+  outline: 2px solid var(--acc2);
+  outline-offset: 4px;
+}
+
+.rcs-guide main section {
+  margin: 38px 0;
+  padding-block-start: 19px;
+  border-block-start: 1px solid var(--line);
+}
+
+.rcs-guide main h3 {
+  margin: 26px 0 7px;
+  font-size: 17px;
+}
+
+.rcs-guide .rcs-steps {
+  padding-inline-start: 1.65em;
+  margin: 22px 0 0;
+}
+
+.rcs-guide .rcs-steps li {
+  padding-inline-start: .28em;
+  margin-block: 0 22px;
+}
+
+.rcs-guide .rcs-steps li::marker {
+  color: var(--mut);
+  font-size: .92em;
+  font-weight: 650;
+}
+
+.rcs-guide .rcs-steps h3 {
+  margin-block-start: 0;
+}
+
+.rcs-guide .rcs-code {
+  direction: ltr;
+  text-align: left;
+  background: #f5f7f9;
+  border-inline-start: 2px solid #b5c8d5;
+  padding: 10px 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: .86rem;
+  margin: 10px 0 15px;
+}
+
+.rcs-guide .rcs-table {
+  overflow-x: auto;
+  margin: 17px 0;
+}
+
+.rcs-guide table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .92rem;
+}
+
+.rcs-guide th,
+.rcs-guide td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: start;
+  font-variant-numeric: tabular-nums;
+}
+
+.rcs-guide thead th {
+  border-block-start: 1px solid #b5c8d5;
+  border-block-end: 1px solid #b5c8d5;
+}
+
+.rcs-guide .rcs-figpair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.rcs-guide .rcs-blade-visuals {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.rcs-guide .rcs-figpair figure,
+.rcs-guide .rcs-figure {
+  margin: 12px 0 17px;
+}
+
+.rcs-guide main figure img {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.rcs-guide main figcaption {
+  margin: 8px 0 0;
+  font-size: 13px;
+  text-align: start;
+  line-height: 1.55;
+}
+
+.rcs-guide main figcaption strong {
+  color: var(--ink);
+}
+
+.rcs-guide .rcs-files {
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.rcs-guide .rcs-files li {
+  padding: 10px 0;
+  border-block-start: 1px solid var(--line);
+}
+
+.rcs-guide .rcs-files a {
+  font-weight: 650;
+}
+
+.rcs-guide .rcs-files p {
+  margin: 3px 0 0;
+  font-size: .9rem;
+  color: var(--mut);
+}
+
+.rcs-file-type {
+  margin-inline-start: 6px;
+  font: 600 .73rem ui-monospace, monospace;
+  color: var(--mut);
+}
+
+.rcs-references ul {
+  margin: 0;
+  padding-inline-start: 1.35em;
+}
+
+.rcs-references li + li {
+  margin-top: 5px;
+}
+
+.rcs-home {
+  margin: 25px 0 29px;
+  padding: 17px 0;
+  border-block: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.rcs-home h2 {
+  margin: 3px 0 6px;
+}
+
+.rcs-home p {
+  margin: 0 0 6px;
+}
+
+.rcs-home .rcs-home-kicker {
+  margin: 0;
+  font-size: 13px;
+  color: var(--mut);
+}
+
+.rcs-home figure {
+  margin: 0;
+}
+
+.rcs-home figure img {
+  display: block;
+  border-radius: 0;
+}
+
+.rcs-home figcaption {
+  text-align: start;
+}
+
+@media (max-width: 680px) {
+  .rcs-home,
+  .rcs-guide .rcs-figpair {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rcs-guide .rcs-animation {
+    grid-template-columns: 1fr;
+    grid-template-areas: "visual" "caption" "toggle";
+    justify-items: start;
+  }
+
+  .rcs-guide .rcs-animation button {
+    margin-block-start: 4px;
+  }
+}
