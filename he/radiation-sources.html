@@ -27,7 +27,7 @@
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT) במודלי COMSOL","description":"מודלי COMSOL Multiphysics של קליסטרון ב־X-band (חלל תהודה, קיבוץ אלומה, תותח אלקטרונים, חלל מוצא וגלבו) ושל שפופרת גל נע סלילית לתחום 6 עד 18 GHz (עקומת נפיצה וגל איטי לאורך הסליל).","about":["מקורות קרינה","קליסטרון","שפופרת גל נע","שפופרות מיקרוגל","מבנה גל איטי","תותח אלקטרונים","סימולציה ב-COMSOL"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/radiation-sources.html","mainEntityOfPage":"https://nezahb-max.github.io/he/radiation-sources.html","image":"https://nezahb-max.github.io/assets/sim/klystron-xband-cutaway-beam-comsol.jpg","inLanguage":"he","dateModified":"2026-10-18"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT) במודלי COMSOL","description":"מודלי COMSOL Multiphysics של קליסטרון ב־X-band (חלל תהודה, קיבוץ אלומה, תותח אלקטרונים, חלל מוצא וגלבו) ושל שפופרת גל נע סלילית לתחום 6 עד 18 GHz (עקומת נפיצה וגל איטי לאורך הסליל).","about":["מקורות קרינה","קליסטרון","שפופרת גל נע","שפופרות מיקרוגל","מבנה גל איטי","תותח אלקטרונים","סימולציה ב-COMSOL"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/radiation-sources.html","mainEntityOfPage":"https://nezahb-max.github.io/he/radiation-sources.html","image":"https://nezahb-max.github.io/assets/sim/klystron-xband-cutaway-beam-comsol.jpg","inLanguage":"he","dateModified":"2026-11-12"}
 </script>
 </head>
 <body>
@@ -46,10 +46,11 @@
 <main class="wrap">
   <p class="sub">מקורות קרינה · שפופרות מיקרוגל · סימולציה ב‑COMSOL</p>
   <h1>מקורות קרינת מיקרוגל: קליסטרון ושפופרת גל נע (TWT)</h1>
-  <p class="lead">בקליסטרון ובשפופרת גל נע, אלומת אלקטרונים בוואקום מוסרת חלק מהאנרגיה הקינטית שלה לגל
-    אלקטרומגנטי ומגבירה אותו. שפופרות כאלה משמשות במשדרי מכ״ם, בלוחמה אלקטרונית ובתקשורת לוויינית. בדף
-    מוצגים מודלים שבניתי ב‑COMSOL Multiphysics לשני ההתקנים:
-    קליסטרון בתדר <bdi dir="ltr">9.4 GHz</bdi> בתחום X-band, מתותח האלקטרונים ועד הגל שיוצא לגלבו, שפופרת גל נע סלילית לתחום 6 עד 18 GHz ומבנה גל איטי מגלבו מקופל ב־Ka-band.</p>
+  <p class="lead">בקליסטרון ובשפופרת גל נע, אלומת אלקטרונים בוואקום מוסרת חלק מהאנרגיה הקינטית
+    שלה לגל אלקטרומגנטי ומגבירה אותו. שפופרות כאלה משמשות במשדרי מכ״ם, בלוחמה אלקטרונית ובתקשורת
+    לוויינית. בניתי ב־COMSOL מודל של קליסטרון ב־<bdi dir="ltr">9.4 GHz</bdi> עם תותח האלקטרונים
+    וגלבו המוצא, מודל של שפופרת גל נע סלילית לתחום <bdi dir="ltr">6–18 GHz</bdi> ומודל של מבנה גל
+    איטי המבוסס על גלבו מקופל בתחום <bdi dir="ltr">Ka</bdi>.</p>
 
   <figure>
     <img src="../assets/sim/klystron-xband-cutaway-beam-comsol.jpg" width="1400" height="856" decoding="async" alt="חתך תלת־ממדי מתוך COMSOL של קליסטרון בעל ארבעה חללים: תותח אלקטרונים משמאל, סולנואיד מיקוד מנחושת סביב מרחב הסחיפה, חלל המוצא והגלבו למעלה, קולט עם צלעות קירור מימין, ואלומה בתכלת לאורך הציר.">
@@ -163,7 +164,7 @@
   </section>
 
   <section id="folded-waveguide">
-    <h2>גלבו מקופל ב־Ka-band</h2>
+    <h2>גלבו מקופל בתחום Ka</h2>
     <p>בתדרים גבוהים יותר הסליל קטן מאוד ומוגבל בהספק, ומבנה הגל האיטי נבנה מגלבו מלבני שמתפתל הלוך ושוב לרוחב צינור
       האלומה. הגל עובר במסלול המפותל והאלומה חוצה אותו בכל קיפול, פעמיים בכל מחזור, ולכן לאורך הציר הגל מתקדם לאט
       יותר מהאור.
@@ -182,7 +183,7 @@
   </section>
 
   <section class="capabilities" aria-labelledby="rs-capabilities">
-    <h2 id="rs-capabilities">מה המודלים מדגימים</h2>
+    <h2 id="rs-capabilities">מידול חללי תהודה, אלומות וגלים איטיים</h2>
     <ul class="capability-list">
       <li>תדרים עצמיים של חללי תהודה עם הפסדי דופן</li>
       <li>שדה RF מחושב כקלט למעקב חלקיקים יחסותי</li>
@@ -205,7 +206,7 @@
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מקורות קרינת מיקרוגל. · עדכון אחרון: אוקטובר 2026 · <a href="privacy.html">פרטיות</a>
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · מקורות קרינת מיקרוגל. · עודכן ב־12 בנובמבר 2026 · <a href="privacy.html">פרטיות</a>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->

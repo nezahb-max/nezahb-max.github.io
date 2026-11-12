@@ -24,7 +24,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/particle-dynamics.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"inLanguage":"en","dateModified":"2026-10-25"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Magnetic-Mirror Particle Traps: Charged-Particle Dynamics Between Two Magnetic Lenses","about":["magnetic mirror trap","charged-particle dynamics","Boris pusher","adiabatic invariant","loss cone","magnetostatic field map"],"author":{"@type":"Person","@id":"https://nezahb-max.github.io/#person","name":"Dr. Nezah Balal","identifier":"https://orcid.org/0000-0003-4382-4053","affiliation":{"@type":"CollegeOrUniversity","name":"Ariel University"}},"inLanguage":"en","dateModified":"2026-11-12"}
 </script>
 <style>
 /* --- page-local styles for the interactive simulation --- */
@@ -59,11 +59,10 @@
 <main class="wrap">
   <p class="sub">Charged-particle dynamics · Magnetic traps</p>
   <h1>Magnetic-mirror particle traps &amp; charged-particle dynamics</h1>
-  <p class="lead">A magnet system is ultimately judged by what it does to a charged particle. I trace
-    <strong>electron dynamics</strong> in magnetic-lens systems with an in-house particle-tracing code (a
-    volume-preserving <strong>Boris pusher</strong> in the ideal thin-loop <strong>Biot–Savart field</strong>
-    of the coils), applied here to the <strong>magnetic-mirror trap</strong> (“magnetic bottle”), a basic building
-    block of plasma confinement and magnetic electron optics.</p>
+  <p class="lead">I use a particle-tracing code I developed to follow <strong>electrons in magnetic lenses</strong>.
+    This example follows an electron in a <strong>magnetic mirror trap</strong>, also known as a magnetic bottle.
+    The volume-preserving <strong>Boris algorithm</strong> advances the electron in the <strong>Biot–Savart field</strong>
+    of ideal thin current loops. Magnetic mirrors are used in plasma confinement and electron optics.</p>
 
   <figure>
     <video autoplay muted loop playsinline poster="assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="3D particle-tracing simulation of an electron confined in a magnetic mirror trap (magnetic bottle) formed by two coaxial magnetic lenses, showing the helical orbit, field lines, and reflections at the mirror points."><source src="assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
@@ -78,7 +77,7 @@
       the field profile (lower panel) crosses B = B₀/sin²θ₀, the mirror condition.</figcaption>
   </figure>
 
-  <h2>The physics</h2>
+  <h2>When the electron reflects</h2>
   <p>In the non-relativistic adiabatic limit, the electron’s rapid gyration makes its magnetic moment
     μ = mv<sub>⊥</sub>²/2B an
     <strong>adiabatic invariant</strong>: as B grows toward a coil, v<sub>⊥</sub> must grow with it and, since the
@@ -88,14 +87,14 @@
     is deliberately fat to keep the gyration visible, so μ wanders by ~10%; at a gyroradius of 0.05a it
     tightens to ~1.5%.</p>
 
-  <h2>The model</h2>
+  <h2>Calculating the electron trajectory</h2>
   <p>The ideal thin-loop coil field is evaluated from complete-elliptic-integral expressions,
     avoiding interpolation from a sampled field map. Trajectories are advanced with the <strong>Boris
     algorithm</strong>, the volume-preserving pusher of particle-in-cell plasma codes; in a static magnetic
     field it conserves kinetic energy to machine precision (~10⁻¹⁴ here). The same pusher runs on
     COMSOL-computed or measured field maps, and live in the browser below.</p>
 
-  <h2 id="sim">Interactive simulation: fly the trap yourself</h2>
+  <h2 id="sim">Interactive magnetic mirror trap</h2>
   <p>The same Boris pusher and two-coil field, integrated live in the browser (WebGL). Push the pitch
     angle below the <strong>loss cone</strong> (≈43°) and the electron escapes.</p>
 
@@ -119,7 +118,7 @@
     (approximately conserved) invariant μ. If WebGL is unavailable, the animations above show the same
     physics.</p>
 
-  <h2>From model to hardware</h2>
+  <h2>Uses of magnetic lenses</h2>
   <p>The same Lorentz-force integration underpins the <a href="accelerators.html">compact IFEL
     accelerator</a> work and connects to the <a href="magnetics.html">applied-magnetism</a> projects: the
     fields being designed are the fields particles must fly through. Mirror-type magnetic lenses are
@@ -131,7 +130,7 @@
     <span class="tag">Magnetostatics</span><span class="tag">Python · WebGL</span></div>
 
   <section class="capabilities" aria-labelledby="particle-capabilities">
-    <h2 id="particle-capabilities">Applied research and technical capabilities</h2>
+    <h2 id="particle-capabilities">Computing and checking particle trajectories</h2>
     <ul class="capability-list">
       <li>Charged-particle tracing in magnetic and electromagnetic fields</li>
       <li>Numerical integrator verification and conservation checks</li>
@@ -150,7 +149,7 @@
 
 <footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
   <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Charged-particle dynamics &amp; magnetic traps.
- · Last updated: October 2026 · <a href="privacy.html">Privacy</a></div></footer>
+ · Updated 12 November 2026 · <a href="privacy.html">Privacy</a></div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
         onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onload=function(){window.__initSim&&window.__initSim();};s.onerror=function(){window.__simFail&&window.__simFail();};document.head.appendChild(s);})()"></script>

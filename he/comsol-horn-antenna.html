@@ -45,7 +45,7 @@
       "teaches": ["מידול אנטנת שופר פירמידלית", "פורט מוליך גלים TE10", "תנאי קרינה", "רשת חישוב בתדר רדיו", "מקדם החזרה S11", "עקום קרינה", "בדיקת התכנסות ומאזן הספק"],
       "isAccessibleForFree": true,
       "datePublished": "2026-10-31",
-      "dateModified": "2026-10-31",
+      "dateModified": "2026-11-12",
       "image": "https://nezahb-max.github.io/assets/comsol-horn/horn-field.png",
       "isPartOf": {"@type": "LearningResource", "@id": "https://nezahb-max.github.io/he/comsol-intro.html#guide", "name": "קורס COMSOL בעברית למתחילים", "url": "https://nezahb-max.github.io/he/comsol-intro.html"},
       "encoding": {"@type": "MediaObject", "name": "אנטנת שופר ב־COMSOL — מדריך מעשי", "contentUrl": "https://nezahb-max.github.io/assets/downloads/comsol-horn-intro-he.pdf", "encodingFormat": "application/pdf", "inLanguage": "he"}
@@ -88,7 +88,7 @@
       <p class="sub">הדרכת המשך לקורס COMSOL בעברית</p>
       <h1>אנטנת שופר ב־COMSOL</h1>
       <p class="lead">בניית המודל, הגדרת ההזנה וחישוב הקרינה.</p>
-      <p>מדריך מעשי מאת ד״ר נצח בלל לסימולציה של אנטנת שופר פירמידלית בתדר <bdi dir="ltr">10 GHz</bdi>, בהזנת מוליך גלים מלבני <bdi lang="en">WR90</bdi>. ההדרכה מלווה את העבודה מהגדרת המידות ותנאי השפה ועד להצגת השדה החשמלי, מקדם ההחזרה ועקום הקרינה.</p>
+      <p>במדריך של ד״ר נצח בלל בונים מודל של אנטנת שופר פירמידלית בתדר <bdi dir="ltr">10 GHz</bdi> עם הזנה דרך גלבו מלבני <bdi lang="en">WR90</bdi>. אחרי הגדרת המידות ותנאי השפה מחשבים את השדה החשמלי, את מקדם ההחזרה ואת עקום הקרינה.</p>
       <div class="course-actions">
         <a class="cta course-primary" href="../assets/downloads/comsol-horn-intro-he.pdf">פתיחת המדריך בעברית — PDF</a>
         <a class="cta" href="#downloads">הורדת המודל הפתור</a>
@@ -111,23 +111,23 @@
 
   <nav class="course-jump" aria-label="תוכן הדף">
     <a href="#audience">ידע מקדים</a>
-    <a href="#steps">נושאי ההדרכה</a>
+    <a href="#steps">שלבי הסימולציה</a>
     <a href="#results">תוצאות הסימולציה</a>
     <a href="#downloads">הורדות</a>
   </nav>
 
   <section id="audience" aria-labelledby="audience-title">
-    <h2 id="audience-title">ידע מקדים ותוכנה נדרשת</h2>
+    <h2 id="audience-title">ידע מוקדם ודרישות תוכנה</h2>
     <p>ההדרכה מיועדת למי שכבר מכירים את העבודה הבסיסית עם פרמטרים, גאומטריה, בחירות ורשת ב־COMSOL. לפני תחילת התרגול אפשר ללמוד את היסודות ב־<a href="comsol-intro.html">קורס COMSOL בעברית למתחילים</a>.</p>
     <p>המודל נבנה ב־<bdi dir="ltr">COMSOL Multiphysics 6.4.0.378</bdi>, בממשק <bdi lang="en">Electromagnetic Waves, Frequency Domain</bdi>. לפתיחתו ולהרצתו נדרש רישיון הכולל את <bdi lang="en">RF Module</bdi>. בחוברת מפורטות גם דרישות הזיכרון שנמדדו בהרצות ההדגמה.</p>
   </section>
 
   <section id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title">נושאי ההדרכה</h2>
+    <h2 id="steps-title">שלבי הסימולציה</h2>
     <ol class="course-labs">
       <li><h3>מבנה האנטנה ותחום האוויר</h3><p>הזנת מידות, בניית מוליך גלים ומקטע מתרחב, יצירת מעטפת המתכת והגדרת האוויר שבתוך האנטנה ומחוצה לה.</p></li>
       <li><h3>הזנה ותנאי שפה</h3><p>בחירת פאת פורט ההזנה, אופן <bdi dir="ltr">TE10</bdi> והספק העירור. הגדרת דופנות כמוליך מושלם, גבול קרינה ומשטח סגור לחישוב השדה הרחוק.</p></li>
-      <li><h3>רשת ופתרון המודל</h3><p>בחירת גודל האלמנטים לפי אורך הגל, יצירת רשת טטראדרית והרצה בתדר יחיד.</p></li>
+      <li><h3>רשת החישוב והרצת הסימולציה</h3><p>בחירת גודל האלמנטים לפי אורך הגל, יצירת רשת טטראדרית והרצה בתדר יחיד.</p></li>
       <li><h3>הצגת התוצאות</h3><p>הערכת <bdi dir="ltr">S11</bdi>, הצגת גודל השדה החשמלי בחתך מרכזי וחישוב חתכי הקרינה במישורי E ו־H.</p></li>
       <li><h3>בדיקת דיוק ותרגול נוסף</h3><p>השוואת רשתות ותחומי אוויר, בדיקת מאזן ההספק ושינוי התדר, מידות הפתח והספק ההזנה.</p></li>
     </ol>
@@ -143,7 +143,7 @@
       <img src="../assets/comsol-horn/horn-pattern.png" width="2266" height="1056" loading="lazy" decoding="async" alt="חתכי עקום הקרינה במישורי E ו־H של השופר. שני העקומים מנורמלים לשיאם וזווית אפס פונה אל פתח האנטנה בכיוון z החיובי.">
       <figcaption>חתכי הקרינה במישורי E ו־H, שחושבו מנתוני הפתרון. כל חתך מנורמל לשיאו; הגרף מציג את צורת האלומה.</figcaption>
     </figure>
-    <h3>בדיקת התוצאות</h3>
+    <h3>השפעת הרשת וגודל תחום האוויר</h3>
     <p>החוברת משווה שלוש ריצות של אותו שופר. האלומה הראשית יציבה יחסית, אך ערך ההחזרה משתנה עם גודל תחום האוויר, ונשארת שארית במאזן ההספק. ההבדלים והצעדים לשיפור הדיוק מפורטים במדריך. הדוגמה מיועדת ללימוד תהליך המידול ולתרגול בדיקות נומריות.</p>
   </section>
 
@@ -167,7 +167,7 @@
   </section>
 
   <section class="course-related" aria-labelledby="related-title">
-    <h2 id="related-title">לימוד נוסף</h2>
+    <h2 id="related-title">מדריך המבוא ודוגמאות מחקר באנטנות</h2>
     <div class="grid">
       <a class="card" href="comsol-intro.html"><h3>קורס COMSOL למתחילים</h3><p>יסודות העבודה בתוכנה וחמש מעבדות בתחומי החום, החשמל והמגנטיות.</p></a>
       <a class="card" href="antennas.html"><h3>אנטנות ויישומים מחקריים</h3><p>שופרים, אנטנות רחבות סרט, עדשות מיקוד והשוואה למדידות במעבדה.</p></a>

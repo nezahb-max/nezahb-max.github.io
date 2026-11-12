@@ -29,7 +29,7 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 ## Research pages
 
 - [Home](https://nezahb-max.github.io/): overview of research areas and technical
-  capabilities in computational electromagnetics and numerical simulation.
+  work in computational electromagnetics and numerical simulation.
 - [Millimeter-wave & micro-Doppler radar](https://nezahb-max.github.io/radar.html):
   94 GHz radar systems for remote sensing, contactless human sensing and target
   classification, with MATLAB signal processing and machine learning; a simulated
@@ -52,7 +52,7 @@ free-electron devices) and is an IEEE Senior Member. Contact: nezahb@ariel.ac.il
 - [Magnetic-mirror traps & particle dynamics](https://nezahb-max.github.io/particle-dynamics.html):
   electron confinement between two magnetic lenses with a live interactive simulation.
 - [Electromagnetic simulations](https://nezahb-max.github.io/simulations.html): gallery
-  of COMSOL models with field animations, from antennas and radar to indoor Wi-Fi.
+  of COMSOL models with field animations for antennas, radar and indoor Wi-Fi.
 - [Wi-Fi in an apartment with a safe room](https://nezahb-max.github.io/wifi-safe-room.html):
   2D COMSOL model of 2.44 GHz Wi-Fi propagation through the reinforced-concrete walls,
   door and shutter of a residential safe room (mamad).

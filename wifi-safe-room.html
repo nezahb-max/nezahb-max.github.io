@@ -26,7 +26,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nezahb-max.github.io/wifi-safe-room.html">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Wi-Fi in a safe room: door open versus door closed, a COMSOL simulation of an apartment","description":"Electromagnetic simulation of 2.44 GHz Wi-Fi in an apartment with a reinforced-concrete safe room (mamad), door open and door closed, with building materials from ITU-R P.2040-4.","about":["indoor radio propagation","Wi-Fi","reinforced concrete","electromagnetic simulation","COMSOL Multiphysics"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-10-02","url":"https://nezahb-max.github.io/wifi-safe-room.html","mainEntityOfPage":"https://nezahb-max.github.io/wifi-safe-room.html","citation":["https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi wavefronts in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-field-db-door-closed-vs-open.jpg","caption":"Field level in the apartment with the safe-room door closed and open: the safe room averages 34 dB and 14 dB below the reference"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-floorplan-materials.png","caption":"Model floor plan by material, with the safe-room door and rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-mesh-rebar-comsol.png","caption":"COMSOL mesh at the safe-room corner, refined around each rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-entrance-ez-comsol.gif","caption":"Instantaneous electric field at the safe-room entrance, door open, animation exported from COMSOL"}]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Wi-Fi in a safe room: door open versus door closed, a COMSOL simulation of an apartment","description":"Electromagnetic simulation of 2.44 GHz Wi-Fi in an apartment with a reinforced-concrete safe room (mamad), door open and door closed, with building materials from ITU-R P.2040-4.","about":["indoor radio propagation","Wi-Fi","reinforced concrete","electromagnetic simulation","COMSOL Multiphysics"],"author":{"@id":"https://nezahb-max.github.io/#person"},"inLanguage":"en","datePublished":"2026-10-02","dateModified":"2026-11-12","url":"https://nezahb-max.github.io/wifi-safe-room.html","mainEntityOfPage":"https://nezahb-max.github.io/wifi-safe-room.html","citation":["https://www.itu.int/rec/R-REC-P.2040/en"],"image":[{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-safe-room-comsol.gif","caption":"2.44 GHz Wi-Fi wavefronts in an apartment with a safe room, door open, COMSOL simulation"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-field-db-door-closed-vs-open.jpg","caption":"Field level in the apartment with the safe-room door closed and open: the safe room averages 34 dB and 14 dB below the reference"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-apartment-floorplan-materials.png","caption":"Model floor plan by material, with the safe-room door and rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-mesh-rebar-comsol.png","caption":"COMSOL mesh at the safe-room corner, refined around each rebar"},{"@type":"ImageObject","contentUrl":"https://nezahb-max.github.io/assets/sim/wifi-safe-room-entrance-ez-comsol.gif","caption":"Instantaneous electric field at the safe-room entrance, door open, animation exported from COMSOL"}]}
 </script>
 </head>
 <body>
@@ -54,7 +54,7 @@
       through the doorway.</figcaption>
   </figure>
 
-  <h2>The model</h2>
+  <h2>Apartment layout and materials</h2>
   <div class="grid">
     <figure>
       <img src="assets/sim/wifi-apartment-floorplan-materials.png" width="1400" height="1003" decoding="async" loading="lazy" alt="Model floor plan coloured by material: living room with the access point, kitchen, two bedrooms, corridor and a reinforced-concrete safe room with rebar, blast door and steel shutter.">
@@ -92,7 +92,7 @@
     </figure>
   </div>
 
-  <h2>Door closed versus door open</h2>
+  <h2>How the door affects Wi-Fi reception</h2>
   <figure>
     <img src="assets/sim/wifi-apartment-field-db-door-closed-vs-open.jpg" width="1400" height="620" decoding="async" loading="lazy" alt="Field-level maps of the apartment for both door states. With the door closed the safe room is dark, 34 dB below the reference. With the door open a beam enters through the doorway and the safe room averages 14 dB below the reference.">
     <figcaption>Field level in dB relative to the mean |E|² on a 1 m circle around the access point, on the same
@@ -137,7 +137,7 @@
 
 <footer><div class="wrap">© <span id="y">2026</span> Dr. Nezah Balal ·
   <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · Wi-Fi in a safe room, COMSOL simulation.
- · Last updated: October 2026 · <a href="privacy.html">Privacy</a></div></footer>
+ · Updated 12 November 2026 · <a href="privacy.html">Privacy</a></div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a9b2eaa64344cd7b48b491004ad8c1b"}'></script><!-- End Cloudflare Web Analytics -->
 <script>document.addEventListener("DOMContentLoaded",function(){var vs=document.querySelectorAll("video[data-lazy]");if(!("IntersectionObserver" in window)){vs.forEach(function(v){v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load()});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;v.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});v.load();var p=v.play();if(p)p.catch(function(){});io.unobserve(v)}})},{rootMargin:"300px"});vs.forEach(function(v){io.observe(v)})});</script>

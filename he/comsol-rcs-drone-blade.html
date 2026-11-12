@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/comsol-rcs.css">
 <script defer src="../assets/rcs-motion.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL","inLanguage":"he","datePublished":"2026-11-11","dateModified":"2026-11-11","mainEntityOfPage":"https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html","author":{"@type":"Person","name":"Nezah Balal","url":"https://nezahb-max.github.io/he/"},"image":"https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"חישוב שטח חתך מכ״ם של להב רחפן ב־COMSOL","inLanguage":"he","datePublished":"2026-11-11","dateModified":"2026-11-12","mainEntityOfPage":"https://nezahb-max.github.io/he/comsol-rcs-drone-blade.html","author":{"@type":"Person","name":"Nezah Balal","url":"https://nezahb-max.github.io/he/"},"image":"https://nezahb-max.github.io/assets/rcs-vs-angle-94ghz-poster.jpg"}
 </script>
 </head>
 <body class="comsol-course rcs-guide">
@@ -53,10 +53,10 @@
 
   <nav class="course-jump rcs-contents" aria-label="תוכן המדריך">
     <a href="#basics">מהו RCS</a>
-    <a href="#steps">הקמת המודל</a>
+    <a href="#steps">בניית המודל</a>
     <a href="#results">תוצאות</a>
     <a href="#blade-rotation">להב מסתובב</a>
-    <a href="#blade-section">חתך להב ב־COMSOL</a>
+    <a href="#blade-section">השדה סביב הלהב</a>
     <a href="#downloads">תוצאות להורדה</a>
   </nav>
 
@@ -74,7 +74,7 @@
   </section>
 
   <section id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title">הקמת המודל ב־COMSOL</h2>
+    <h2 id="steps-title">בניית המודל ב־COMSOL</h2>
     <figure class="rcs-figure">
       <img src="../assets/comsol-rcs/rcs-setup.svg" width="1000" height="420" loading="lazy" decoding="async" alt="משמאל חתך בתחום האוויר: זווית הפגיעה נמדדת מהניצב ללוח וכיוון הקליטה הפוך לכיוון הגל הפוגע. מימין מבט מלמעלה על לוח מלבני ולהב טרפזי.">
       <figcaption><strong>איור 1.</strong> משמאל כיווני הפגיעה והקליטה בחתך <bdi dir="ltr">xz</bdi>. מימין מבט מלמעלה על שתי המטרות. לשתיהן אותו אורך ואותו עובי.</figcaption>
@@ -145,7 +145,7 @@ Ebz = 0</code></pre>
         <figcaption><strong>איור 4.</strong> רשת החישוב במבט על המעטפת הכדורית. סרגל הצבעים מציין את איכות האלמנטים; בתוכה יש רשת נפח טטראדרית.</figcaption>
       </figure>
     </div>
-    <h3>רגישות לרשת ולגודל תחום האוויר</h3>
+    <h3>השפעת הרשת וגודל תחום האוויר</h3>
     <p>הרצנו שוב את שני המודלים ב־<bdi dir="ltr">0°, 10°, 30°, 60°</bdi>. כשהקטנו את גודל האלמנט המרבי בכ־20%, השינוי הגדול ביותר היה <bdi dir="ltr">0.11 dB</bdi>. כשהגדלנו את רדיוס תחום האוויר מ־49 ל־59 מ״מ, באותן הגדרות רשת בסיס, השינוי הגדול ביותר היה <bdi dir="ltr">0.53 dB</bdi>. הבדיקה נותנת סדר גודל לרגישות בזוויות שנבדקו. סמוך לשפל בגרף כדאי לבדוק זוויות צפופות יותר ולחזור על בדיקת הרשת.</p>
     <p>הלוח והלהב בתרגיל הם מוליכים מושלמים, ללא מבנה פנימי או חומרים מרוכבים. התוצאות מיועדות ללימוד ולהשוואה בין המודלים. כדי להעריך להב אמיתי צריך להגדיר גם את צורתו, תכונות החומר ותנאי המדידה.</p>
     <p><strong>תרגיל להמשך:</strong> חשבו שוב ב־<bdi dir="ltr">10°</bdi>, הפעם עם קיטוב במישור הפגיעה: הכפילו את גורם המופע ב־<bdi dir="ltr">E0*(cos(alpha),0,sin(alpha))</bdi>. בדקו אם ההחזר משתנה גם כשהזווית נשארת קבועה.</p>
@@ -160,7 +160,7 @@ Ebz = 0</code></pre>
   </section>
 
   <section id="blade-section" aria-labelledby="blade-section-title">
-    <h2 id="blade-section-title">השדה החשמלי סביב חתך להב ב־COMSOL</h2>
+    <h2 id="blade-section-title">השדה החשמלי סביב חתך הלהב</h2>
     <p>באיור גל מישורי בתדר <bdi dir="ltr">94&nbsp;GHz</bdi> פוגע בחתך הלהב, שמופיע בלבן במרכז. הצבעים מציינים את החלק הממשי של רכיב השדה החשמלי <bdi dir="ltr">E<sub>z</sub></bdi>, והטבעת החיצונית היא שכבה בולעת <bdi dir="ltr">(PML)</bdi>.</p>
     <div class="rcs-figpair rcs-blade-visuals">
       <figure>

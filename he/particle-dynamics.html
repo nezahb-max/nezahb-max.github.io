@@ -27,7 +27,7 @@
 <meta name="author" content="ד&quot;ר נצח בלל (Dr. Nezah Balal)">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"מלכודות מראה מגנטיות: דינמיקת חלקיקים טעונים בין שתי עדשות מגנטיות","about":["מלכודת מראה מגנטית","דינמיקת חלקיקים טעונים","אלגוריתם בוריס","שמורה אדיאבטית","חרוט האובדן","מפת שדה מגנטוסטטית"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/particle-dynamics.html","mainEntityOfPage":"https://nezahb-max.github.io/he/particle-dynamics.html","image":"https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg","inLanguage":"he","dateModified":"2026-10-25"}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מלכודות מראה מגנטיות: דינמיקת חלקיקים טעונים בין שתי עדשות מגנטיות","about":["מלכודת מראה מגנטית","דינמיקת חלקיקים טעונים","אלגוריתם בוריס","שמורה אדיאבטית","חרוט האובדן","מפת שדה מגנטוסטטית"],"author":{"@id":"https://nezahb-max.github.io/#person"},"url":"https://nezahb-max.github.io/he/particle-dynamics.html","mainEntityOfPage":"https://nezahb-max.github.io/he/particle-dynamics.html","image":"https://nezahb-max.github.io/assets/og/og-particle-dynamics.jpg","inLanguage":"he","dateModified":"2026-11-12"}
 </script>
 <style>
 /* --- page-local styles for the interactive simulation --- */
@@ -70,11 +70,11 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
 <main class="wrap">
   <p class="sub">דינמיקת חלקיקים טעונים · מלכודות מגנטיות</p>
   <h1>מלכודות מראה מגנטיות ודינמיקת חלקיקים טעונים</h1>
-  <p class="lead">המבחן של מערכת מגנטים הוא מה שהיא עושה לחלקיק טעון. אני מחשב את <strong>תנועת
-    האלקטרונים</strong> במערכות של עדשות מגנטיות בקוד מעקב חלקיקים בפיתוח עצמי. הקוד מקדם את החלקיק
-    ב<strong>אלגוריתם בוריס (Boris pusher)</strong>, המשמר נפח במרחב הפאזה, בשדה של הסלילים לפי
-    <strong>חוק ביו־סבר</strong>, כשכל סליל ממודל כלולאת זרם דקה אידאלית. בדף זה הקוד מיושם על <strong>מלכודת מראה מגנטית</strong>, המכונה גם בקבוק
-    מגנטי, אבן בניין בסיסית בכליאת פלזמה ובאופטיקה אלקטרונית מגנטית.</p>
+  <p class="lead">אני מחשב את <strong>מסלולי האלקטרונים בעדשות מגנטיות</strong> בעזרת קוד שפיתחתי.
+    הדוגמה כאן עוסקת ב<strong>מלכודת מראה מגנטית</strong>, המכונה גם בקבוק מגנטי. הקוד מחשב את תנועת
+    האלקטרון ב<strong>אלגוריתם בוריס</strong>, המשמר נפח במרחב הפאזה, ואת שדה הסלילים לפי
+    <strong>חוק ביו־סבר</strong>. כל סליל מיוצג כלולאת זרם דקה אידאלית. מלכודות כאלה משמשות
+    בכליאת פלזמה ובאופטיקה של אלומות אלקטרונים.</p>
 
   <figure>
     <video autoplay muted loop playsinline poster="../assets/electron-magnetic-mirror-trap-poster.jpg" width="880" height="660" aria-label="סימולציה תלת־ממדית של מסלול אלקטרון הכלוא במלכודת מראה מגנטית (בקבוק מגנטי) שיוצרות שתי עדשות מגנטיות על ציר משותף: המסלול הסלילי, קווי השדה וההחזרות בנקודות המראה."><source src="../assets/electron-magnetic-mirror-trap.mp4" type="video/mp4"></video>
@@ -89,7 +89,7 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
       כיוון במקום שבו פרופיל השדה (בגרף התחתון) חוצה את <bdi dir="ltr">B = B₀/sin²θ₀</bdi>, תנאי המראה.</figcaption>
   </figure>
 
-  <h2>הפיזיקה</h2>
+  <h2>החזרת האלקטרון במלכודת</h2>
   <p>בגבול האדיאבטי הלא־יחסותי, הסיבוב המהיר של האלקטרון הופך את המומנט המגנטי שלו,
     <bdi dir="ltr">μ = mv<sub>⊥</sub>²/2B</bdi>, ל<strong>שמורה אדיאבטית</strong> (adiabatic invariant):
     כש־B גדל בהתקרבות לסליל, גם <bdi dir="ltr">v<sub>⊥</sub></bdi> חייב לגדול, ומאחר שהכוח המגנטי אינו מבצע
@@ -100,7 +100,7 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
     נמלטים דרך צוואר המראה. המסלול המוצג נבחר עם רדיוס לרמור גדול, כדי שהסיבוב ייראה בבירור, ולכן μ
     משתנה בכ־10%. ברדיוס לרמור של <bdi dir="ltr">0.05a</bdi> השינוי קטן לכ־1.5%.</p>
 
-  <h2>המודל</h2>
+  <h2>חישוב מסלול האלקטרון</h2>
   <p>השדה של לולאות הזרם מחושב מביטויים של אינטגרלים אליפטיים שלמים, בלי
     אינטרפולציה ממפת שדה דגומה. המסלולים מקודמים בזמן ב<strong>אלגוריתם בוריס</strong>, שיטת קידום המשמרת נפח
     במרחב הפאזה ומקובלת בקודי פלזמה מסוג PIC ‏(particle‑in‑cell). בשדה מגנטי סטטי האלגוריתם משמר את האנרגיה
@@ -130,7 +130,7 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
   <p class="simnote">סיבוב ציקלוטרוני, החזרה במראה במקום שבו <bdi dir="ltr">v<sub>∥</sub> → 0</bdi>, וקריאה
     רציפה של המומנט המגנטי μ, שנשמר בקירוב. אם WebGL אינו זמין, האנימציות שלמעלה מציגות את אותה פיזיקה.</p>
 
-  <h2>מהמודל לחומרה</h2>
+  <h2>יישומים של עדשות מגנטיות</h2>
   <p>אותו חישוב מסלולים תחת כוח לורנץ עומד בבסיס העבודה על <a href="accelerators.html">מאיץ קומפקטי
     מסוג לייזר אלקטרונים חופשיים הפוך (IFEL)</a>, וקשור לפרויקטים ב<a href="magnetics.html">מגנטיות
     יישומית</a>: השדות שמתכננים שם הם השדות שהחלקיקים צריכים לעבור דרכם. עדשות מגנטיות מסוג מראה הן
@@ -142,7 +142,7 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
     <span class="tag">מגנטוסטטיקה</span><span class="tag">Python · WebGL</span></div>
 
   <section class="capabilities" aria-labelledby="particle-capabilities">
-    <h2 id="particle-capabilities">מחקר יישומי ויכולות טכניות</h2>
+    <h2 id="particle-capabilities">חישוב ובדיקת מסלולי חלקיקים</h2>
     <ul class="capability-list">
       <li>חישוב מסלולי חלקיקים טעונים בשדות מגנטיים ואלקטרומגנטיים</li>
       <li>אימות אינטגרטורים נומריים ובדיקת גדלים נשמרים</li>
@@ -160,7 +160,7 @@ main bdi[dir="ltr"],.simstat bdi{white-space:nowrap}
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> ד״ר נצח בלל ·
-  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · דינמיקת חלקיקים טעונים ומלכודות מגנטיות. · עדכון אחרון: אוקטובר 2026 · <a href="privacy.html">פרטיות</a>
+  <a href="https://orcid.org/0000-0003-4382-4053">ORCID</a> · דינמיקת חלקיקים טעונים ומלכודות מגנטיות. · עודכן ב־12 בנובמבר 2026 · <a href="privacy.html">פרטיות</a>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
